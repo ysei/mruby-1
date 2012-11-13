@@ -1,0 +1,97 @@
+Txpcat
+v5
+r1
+cCheck dependencies
+cCompileC tools/xpcat/mruby.build/Debug/xpcat.build/Objects-normal/x86_64/xpcat.o /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/xpcat.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug/xpcat normal x86_64
+cPhaseScriptExecution "CMake PostBuild Rules" /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/Script-028A79994E9D47C4BFBF7777.sh
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+c000000005096731500000000000000AA
+t1352037141
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/stdio.h
+c00000000505F5ADF0000000000004523
+t1348426463
+s17699
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/stdlib.h
+c00000000505F5ADF0000000000003089
+t1348426463
+s12425
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/string.h
+c00000000505F5ADF0000000000001A3A
+t1348426463
+s6714
+
+N/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug/xpcat
+t2
+s0
+
+N/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/Objects-normal/x86_64/xpcat.LinkFileList
+c00000000509FF7E0000000000000006C
+t1352660960
+s108
+
+N/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/Objects-normal/x86_64/xpcat.o
+t2
+s0
+
+N/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/Script-028A79994E9D47C4BFBF7777.sh
+c00000000509FF7E000000000000000AE
+t1352660960
+s174
+
+N/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/xpcat.c
+c00000000509E98DB0000000000000549
+t1352571099
+s1353
+i<stdio.h>
+i<stdlib.h>
+i<string.h>
+
+CBuild AST from /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/xpcat.c
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies323ca2602f50b641^0c02a3602f50b641^---0#1#0#--18"Check dependencies36"87D3DFDE-51AF-4D94-8DE4-00946D2E8B64-
+
+CCompileC tools/xpcat/mruby.build/Debug/xpcat.build/Objects-normal/x86_64/xpcat.o /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/xpcat.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+s374353760.638926
+e374353761.445141
+r1
+xCompileC
+xtools/xpcat/mruby.build/Debug/xpcat.build/Objects-normal/x86_64/xpcat.o
+x/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/xpcat.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Compile /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/xpcat.cb6bba3602f50b641^210272612f50b641^---0#0#0#-19%DVTDocumentLocation2@71"file://localhost/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/xpcat.c0000000000000000^1942"CompileC tools/xpcat/mruby.build/Debug/xpcat.build/Objects-normal/x86_64/xpcat.o tools/xpcat/xpcat.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/Objects-normal/x86_64/xpcat.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/Objects-normal/x86_64/xpcat.dia -c /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/xpcat.c -o /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/Objects-normal/x86_64/xpcat.o36"97EA7048-75AF-4FC3-9931-25E29743BC7F-
+
+CLd /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug/xpcat normal x86_64
+s374353761.500381
+e374353761.927799
+r1
+xLd
+x/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug/xpcat
+xnormal
+xx86_64
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Link /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug/xpcatb03880612f50b641^4985ed612f50b641^---0#0#0#--731"Ld tools/xpcat/Debug/xpcat normal x86_64    cd /Users/cmauceri/Documents/IOS/mruby    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug -F/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug -filelist /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/Objects-normal/x86_64/xpcat.LinkFileList -mmacosx-version-min=10.8 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -o /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug/xpcat36"DF22319A-AE7F-4BCA-8D51-7AECD415ADF7-
+
+CPhaseScriptExecution "CMake PostBuild Rules" /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/Script-028A79994E9D47C4BFBF7777.sh
+s374353763.931746
+e374353764.044046
+r1
+xPhaseScriptExecution
+xCMake PostBuild Rules
+x/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/Script-028A79994E9D47C4BFBF7777.sh
+oecho "Depend check for xcode"
+oDepend check for xcode
+ocd /Users/cmauceri/Documents/IOS/mruby && make -C /Users/cmauceri/Documents/IOS/mruby -f /Users/cmauceri/Documents/IOS/mruby/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.xpcat.Debug
+omake[1]: Nothing to be done for `PostBuild.xpcat.Debug'.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Run custom shell script 'CMake PostBuild Rules'1a86ef632f50b641^95620b642f50b641^-295"echo "Depend check for xcode"Depend check for xcodecd /Users/cmauceri/Documents/IOS/mruby && make -C /Users/cmauceri/Documents/IOS/mruby -f /Users/cmauceri/Documents/IOS/mruby/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.xpcat.Debugmake[1]: Nothing to be done for `PostBuild.xpcat.Debug'.4(21%IDEActivityLogMessage2@30"echo "Depend check for xcode"-374353763#0#30#-0#-----2@23"Depend check for xcode-374353763#30#23#-0#-----2@185"cd /Users/cmauceri/Documents/IOS/mruby && make -C /Users/cmauceri/Documents/IOS/mruby -f /Users/cmauceri/Documents/IOS/mruby/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.xpcat.Debug-374353763#53#185#-0#-----2@57"make[1]: Nothing to be done for `PostBuild.xpcat.Debug'.-374353764#238#57#-0#-----0#0#0#--293"PhaseScriptExecution "CMake PostBuild Rules" tools/xpcat/mruby.build/Debug/xpcat.build/Script-028A79994E9D47C4BFBF7777.sh    cd /Users/cmauceri/Documents/IOS/mruby    /bin/sh -c /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/mruby.build/Debug/xpcat.build/Script-028A79994E9D47C4BFBF7777.sh36"D022BC58-ACFA-4AAA-A4B0-BAD488C81E03-
+

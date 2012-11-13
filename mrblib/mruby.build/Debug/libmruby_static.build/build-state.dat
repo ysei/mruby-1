@@ -1,0 +1,1897 @@
+Tlibmruby_static
+v5
+r1
+cCheck dependencies
+cPhaseScriptExecution "CMake Rules" /Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Script-1DCCA517074A4BA09BBA5E85.sh
+cCompileC mrblib/mruby.build/Debug/libmruby_static.build/Objects-normal/x86_64/mrblib.o /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+cLibtool /Users/cmauceri/Documents/IOS/mruby/mrblib/Debug/libmruby.a normal x86_64
+cPhaseScriptExecution "CMake PostBuild Rules" /Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Script-887FC0F65BD64D96BDC5750E.sh
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+c000000005096731500000000000000AA
+t1352037141
+s170
+
+N/Users/cmauceri/Documents/IOS/mruby/include/mrbconf.h
+c00000000509E98DB0000000000000908
+t1352571099
+s2312
+
+N/Users/cmauceri/Documents/IOS/mruby/include/mruby.h
+c0000000050A0FE8E0000000000003588
+t1352728206
+s13704
+
+N/Users/cmauceri/Documents/IOS/mruby/include/mruby/data.h
+c00000000509E98DB00000000000004E9
+t1352571099
+s1257
+
+N/Users/cmauceri/Documents/IOS/mruby/include/mruby/dump.h
+c00000000509E98DB0000000000000F44
+t1352571099
+s3908
+
+N/Users/cmauceri/Documents/IOS/mruby/include/mruby/irep.h
+c00000000509E98DB0000000000000209
+t1352571099
+s521
+
+N/Users/cmauceri/Documents/IOS/mruby/include/mruby/khash.h
+c00000000509E98DB0000000000003577
+t1352571099
+s13687
+
+N/Users/cmauceri/Documents/IOS/mruby/include/mruby/object.h
+c00000000509E98DB000000000000068F
+t1352571099
+s1679
+
+N/Users/cmauceri/Documents/IOS/mruby/include/mruby/proc.h
+c00000000509E98DB000000000000057B
+t1352571099
+s1403
+
+N/Users/cmauceri/Documents/IOS/mruby/include/mruby/string.h
+c00000000509E98DB0000000000000CB9
+t1352571099
+s3257
+
+N/Users/cmauceri/Documents/IOS/mruby/include/mruby/value.h
+c00000000509FFC110000000000001437
+t1352662033
+s5175
+
+N/Users/cmauceri/Documents/IOS/mruby/mrblib/Debug/libmruby.a
+t1352728287
+s2333576
+
+N/Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.c
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Objects-normal/x86_64/mrblib.o
+t1352728287
+s25532
+
+N/Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Objects-normal/x86_64/mruby.LinkFileList
+c00000000509FF7E40000000000000072
+t1352660964
+s114
+
+N/Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Script-1DCCA517074A4BA09BBA5E85.sh
+c00000000509FF7E400000000000000B4
+t1352660964
+s180
+
+N/Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Script-887FC0F65BD64D96BDC5750E.sh
+c00000000509FF7E400000000000000AE
+t1352660964
+s174
+
+N/Users/cmauceri/Documents/IOS/mruby/src/encoding.h
+c00000000509E98DB00000000000039D9
+t1352571099
+s14809
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/array.o
+c0000000050A0FE91000000000000D954
+t1352728209
+s55636
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/ascii.o
+c0000000050A0FE900000000000001458
+t1352728208
+s5208
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/cdump.o
+c0000000050A0FE9100000000000047F8
+t1352728209
+s18424
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/class.o
+c0000000050A0FE9100000000000131B8
+t1352728209
+s78264
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/codegen.o
+c0000000050A2456000000000000148A0
+t1352811872
+s84128
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/compar.o
+c0000000050A0FE910000000000001C94
+t1352728209
+s7316
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/crc.o
+c00000000509FF7E10000000000000CDC
+t1352660961
+s3292
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/dump.o
+c0000000050A245600000000000008784
+t1352811872
+s34692
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/encoding.o
+c0000000050A0FE910000000000015600
+t1352728209
+s87552
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/enum.o
+c0000000050A0FE910000000000001C8C
+t1352728209
+s7308
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/error.o
+c0000000050A0FE910000000000006A28
+t1352728209
+s27176
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/etc.o
+c0000000050A0FE910000000000003400
+t1352728209
+s13312
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/gc.o
+c0000000050A0FE91000000000000A798
+t1352728209
+s42904
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/hash.o
+c0000000050A0FE91000000000000CD74
+t1352728209
+s52596
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init.o
+c0000000050A0FE910000000000002024
+t1352728209
+s8228
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init_ext.o
+c0000000050A0FE910000000000001BBC
+t1352728209
+s7100
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/kernel.o
+c0000000050A24560000000000000C27C
+t1352811872
+s49788
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/load.o
+c0000000050A0FE9100000000000081F4
+t1352728209
+s33268
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/math.o
+c0000000050A0FE910000000000005B74
+t1352728209
+s23412
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/numeric.o
+c0000000050A0FE92000000000000CE40
+t1352728210
+s52800
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/object.o
+c0000000050A2456000000000000079EC
+t1352811872
+s31212
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/parse.o
+c0000000050A02112000000000003E734
+t1352671506
+s255796
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/pool.o
+c0000000050A0FE910000000000002E3C
+t1352728209
+s11836
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/print.o
+c0000000050A0FE9200000000000028C0
+t1352728210
+s10432
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/proc.o
+c0000000050A0FE920000000000004404
+t1352728210
+s17412
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/range.o
+c0000000050A0FE92000000000000637C
+t1352728210
+s25468
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/re.o
+c0000000050A245600000000000019E6C
+t1352811872
+s106092
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regcomp.o
+c0000000050A0FE9200000000000228A0
+t1352728210
+s141472
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regenc.o
+c0000000050A0FE920000000000008780
+t1352728210
+s34688
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regerror.o
+c0000000050A0FE920000000000004EF8
+t1352728210
+s20216
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regexec.o
+c0000000050A0FE92000000000001470C
+t1352728210
+s83724
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regparse.o
+c0000000050A0FE920000000000024DA0
+t1352728210
+s150944
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/sprintf.o
+c0000000050A0FE92000000000000C838
+t1352728210
+s51256
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/st.o
+c00000000509FF7E30000000000004DC8
+t1352660963
+s19912
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/state.o
+c0000000050A0FEB80000000000002D74
+t1352728248
+s11636
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/string.o
+c0000000050A24560000000000001B8F0
+t1352811872
+s112880
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/struct.o
+c0000000050A0FE93000000000000AD14
+t1352728211
+s44308
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/symbol.o
+c0000000050A0FE930000000000007DF0
+t1352728211
+s32240
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/time.o
+c0000000050A0FE93000000000000A6FC
+t1352728211
+s42748
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/unicode.o
+c0000000050A0FE93000000000003C2D4
+t1352728211
+s246484
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/us_ascii.o
+c0000000050A0FE930000000000001714
+t1352728211
+s5908
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/utf_8.o
+c0000000050A0FE930000000000003B74
+t1352728211
+s15220
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/variable.o
+c0000000050A0FE93000000000000B890
+t1352728211
+s47248
+
+N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/vm.o
+c0000000050A245600000000000013EA0
+t1352811872
+s81568
+
+N/Users/cmauceri/Documents/IOS/mruby/src/oniguruma.h
+c00000000509E98DB000000000000864F
+t1352571099
+s34383
+
+CBuild AST from /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.c
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies361e38e17c52b641^1ea738e17c52b641^---0#1#0#--18"Check dependencies36"B030C0C7-6A96-493B-98F2-CB2139983CEE-
+
+CCompileC mrblib/mruby.build/Debug/libmruby_static.build/Objects-normal/x86_64/mrblib.o /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+s374504673.894677
+e374504674.054163
+r1
+xCompileC
+xmrblib/mruby.build/Debug/libmruby_static.build/Objects-normal/x86_64/mrblib.o
+x/Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.c
+xnormal
+xx86_64
+xc
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection59"Compile /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.c6729e5e17c52b641^be140ee27c52b641^---0#0#0#-19%DVTDocumentLocation2@67"file://localhost/Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.c0000000000000000^1958"CompileC mrblib/mruby.build/Debug/libmruby_static.build/Objects-normal/x86_64/mrblib.o mrblib/mrblib.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/mrblib/Debug/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/mrblib/Debug -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Objects-normal/x86_64/mrblib.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Objects-normal/x86_64/mrblib.dia -c /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.c -o /Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Objects-normal/x86_64/mrblib.o36"568E37EB-0E44-44F3-B0CA-78C33E84AB25-
+
+CLibtool /Users/cmauceri/Documents/IOS/mruby/mrblib/Debug/libmruby.a normal x86_64
+s374504674.064854
+e374504674.100141
+r1
+xLibtool
+x/Users/cmauceri/Documents/IOS/mruby/mrblib/Debug/libmruby.a
+xnormal
+xx86_64
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Libtool mrblib/Debug/libmruby.a normal x86_6441ba10e27c52b641^6aa419e27c52b641^---0#0#0#--5334"Libtool mrblib/Debug/libmruby.a normal x86_64    cd /Users/cmauceri/Documents/IOS/mruby    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only x86_64 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/cmauceri/Documents/IOS/mruby/mrblib/Debug -filelist /Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Objects-normal/x86_64/mruby.LinkFileList /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/array.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/ascii.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/cdump.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/class.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/codegen.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/compar.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/crc.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/dump.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/encoding.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/enum.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/error.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/etc.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/gc.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/hash.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init_ext.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/kernel.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/load.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/math.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/numeric.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/object.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/pool.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/print.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/proc.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/range.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/re.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regcomp.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regenc.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regerror.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regexec.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regparse.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/sprintf.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/st.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/state.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/string.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/struct.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/symbol.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/time.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/unicode.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/us_ascii.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/utf_8.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/variable.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/vm.o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/parse.o -o /Users/cmauceri/Documents/IOS/mruby/mrblib/Debug/libmruby.a36"FF705ABF-1587-4D5E-9250-EB7E2B6E1388-
+
+CPhaseScriptExecution "CMake PostBuild Rules" /Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Script-887FC0F65BD64D96BDC5750E.sh
+s374504674.107844
+e374504674.154594
+r1
+xPhaseScriptExecution
+xCMake PostBuild Rules
+x/Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Script-887FC0F65BD64D96BDC5750E.sh
+oecho "Depend check for xcode"
+oDepend check for xcode
+ocd /Users/cmauceri/Documents/IOS/mruby && make -C /Users/cmauceri/Documents/IOS/mruby -f /Users/cmauceri/Documents/IOS/mruby/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.libmruby_static.Debug
+o/bin/rm -f /Users/cmauceri/Documents/IOS/mruby/tools/mruby/Debug/mruby
+o/bin/rm -f /Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug/mirb
+o/bin/rm -f /Users/cmauceri/Documents/IOS/mruby/test/Debug/mrbtest
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Run custom shell script 'CMake PostBuild Rules'7c291ce27c52b641^4b9227e27c52b641^-454"echo "Depend check for xcode"Depend check for xcodecd /Users/cmauceri/Documents/IOS/mruby && make -C /Users/cmauceri/Documents/IOS/mruby -f /Users/cmauceri/Documents/IOS/mruby/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.libmruby_static.Debug/bin/rm -f /Users/cmauceri/Documents/IOS/mruby/tools/mruby/Debug/mruby/bin/rm -f /Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug/mirb/bin/rm -f /Users/cmauceri/Documents/IOS/mruby/test/Debug/mrbtest6(21%IDEActivityLogMessage2@30"echo "Depend check for xcode"-374504674#0#30#-0#-----2@23"Depend check for xcode-374504674#30#23#-0#-----2@195"cd /Users/cmauceri/Documents/IOS/mruby && make -C /Users/cmauceri/Documents/IOS/mruby -f /Users/cmauceri/Documents/IOS/mruby/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.libmruby_static.Debug-374504674#53#195#-0#-----2@71"/bin/rm -f /Users/cmauceri/Documents/IOS/mruby/tools/mruby/Debug/mruby-374504674#248#71#-0#-----2@69"/bin/rm -f /Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug/mirb-374504674#319#69#-0#-----2@66"/bin/rm -f /Users/cmauceri/Documents/IOS/mruby/test/Debug/mrbtest-374504674#388#66#-0#-----0#0#0#--303"PhaseScriptExecution "CMake PostBuild Rules" mrblib/mruby.build/Debug/libmruby_static.build/Script-887FC0F65BD64D96BDC5750E.sh    cd /Users/cmauceri/Documents/IOS/mruby    /bin/sh -c /Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Script-887FC0F65BD64D96BDC5750E.sh36"64C6F725-EE77-47EB-B90E-BAC1BE5818A6-
+
+CPhaseScriptExecution "CMake Rules" /Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Script-1DCCA517074A4BA09BBA5E85.sh
+s374504673.225047
+e374504673.885807
+r1
+xPhaseScriptExecution
+xCMake Rules
+x/Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Script-1DCCA517074A4BA09BBA5E85.sh
+o/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug/xpcat -o /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.rbtmp /Users/cmauceri/Documents/IOS/mruby/mrblib/array.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/class.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/compar.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/enum.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/error.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/hash.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/kernel.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/numeric.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/print.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/range.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/string.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/struct.rb
+o/Users/cmauceri/Documents/IOS/mruby/tools/mrbc/Debug/mrbc -Bmrblib_irep -o"/Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.ctmp" /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.rbtmp
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: Array 5
+ostr_dump: Enumerable 10
+ostr_dump: Comparable 10
+ostr_dump: Module 6
+ostr_dump: Exception 9
+ostr_dump: StandardError 13
+ostr_dump: ArgumentError 13
+ostr_dump: LocalJumpError 14
+ostr_dump: RangeError 10
+ostr_dump: FloatDomainError 16
+ostr_dump: RegexpError 11
+ostr_dump: TypeError 9
+ostr_dump: NameError 9
+ostr_dump: NoMethodError 13
+ostr_dump: IndexError 10
+ostr_dump: KeyError 8
+ostr_dump: ScriptError 11
+ostr_dump: SyntaxError 11
+ostr_dump: NotImplementedError 19
+ostr_dump: Hash 4
+ostr_dump: Kernel 6
+ostr_dump: Integer 7
+ostr_dump: Numeric 7
+ostr_dump: Range 5
+ostr_dump: String 6
+ostr_dump: Object 6
+ostr_dump: const_defined? 14
+ostr_dump: Struct 6
+ostr_dump: Array 5
+ostr_dump: Enumerable 10
+ostr_dump: Comparable 10
+ostr_dump: Module 6
+ostr_dump: Exception 9
+ostr_dump: StandardError 13
+ostr_dump: ArgumentError 13
+ostr_dump: LocalJumpError 14
+ostr_dump: RangeError 10
+ostr_dump: FloatDomainError 16
+ostr_dump: RegexpError 11
+ostr_dump: TypeError 9
+ostr_dump: NameError 9
+ostr_dump: NoMethodError 13
+ostr_dump: IndexError 10
+ostr_dump: KeyError 8
+ostr_dump: ScriptError 11
+ostr_dump: SyntaxError 11
+ostr_dump: NotImplementedError 19
+ostr_dump: Hash 4
+ostr_dump: Kernel 6
+ostr_dump: Integer 7
+ostr_dump: Numeric 7
+ostr_dump: Range 5
+ostr_dump: String 6
+ostr_dump: Object 6
+ostr_dump: const_defined? 14
+ostr_dump: Struct 6
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each_index 10
+ostr_dump: collect! 8
+ostr_dump: map! 4
+ostr_dump: alias_method 12
+ostr_dump: initialize 10
+ostr_dump: delete 6
+ostr_dump: each 4
+ostr_dump: each_index 10
+ostr_dump: collect! 8
+ostr_dump: map! 4
+ostr_dump: alias_method 12
+ostr_dump: initialize 10
+ostr_dump: delete 6
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: length 6
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: length 6
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: length 6
+ostr_dump: call 4
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: length 6
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each_index 10
+ostr_dump: each_index 10
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: []= 3
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: []= 3
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: expected Integer for 1st argument 33
+oMRB_TT_REGEX 3: expected Integer for 1st argument
+ostr_dump: negative array size 19
+oMRB_TT_REGEX 3: negative array size
+ostr_dump: expected Integer for 1st argument 33
+oMRB_TT_REGEX 3: expected Integer for 1st argument
+ostr_dump: negative array size 19
+oMRB_TT_REGEX 3: negative array size
+obuf = 
+ostr_dump: kind_of? 8
+ostr_dump: Integer 7
+ostr_dump: raise 5
+ostr_dump: TypeError 9
+ostr_dump: < 1
+ostr_dump: ArgumentError 13
+ostr_dump: clear 5
+ostr_dump: > 1
+ostr_dump: []= 3
+ostr_dump: - 1
+ostr_dump: call 4
+ostr_dump: + 1
+ostr_dump: kind_of? 8
+ostr_dump: Integer 7
+ostr_dump: raise 5
+ostr_dump: TypeError 9
+ostr_dump: < 1
+ostr_dump: ArgumentError 13
+ostr_dump: clear 5
+ostr_dump: > 1
+ostr_dump: []= 3
+ostr_dump: - 1
+ostr_dump: call 4
+ostr_dump: + 1
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: delete_at 9
+ostr_dump: index 5
+ostr_dump: == 2
+ostr_dump: call 4
+ostr_dump: delete_at 9
+ostr_dump: index 5
+ostr_dump: == 2
+ostr_dump: call 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: include 7
+ostr_dump: Enumerable 10
+ostr_dump: Comparable 10
+ostr_dump: sort! 5
+ostr_dump: include 7
+ostr_dump: Enumerable 10
+ostr_dump: Comparable 10
+ostr_dump: sort! 5
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: replace 7
+ostr_dump: sort 4
+ostr_dump: replace 7
+ostr_dump: sort 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: attr_reader 11
+ostr_dump: attr_writer 11
+ostr_dump: attr_accessor 13
+ostr_dump: attr 4
+ostr_dump: attr_reader 11
+ostr_dump: attr_writer 11
+ostr_dump: attr_accessor 13
+ostr_dump: attr 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: @ 1
+oMRB_TT_REGEX 3: @
+ostr_dump: @ 1
+oMRB_TT_REGEX 3: @
+obuf = 
+ostr_dump: + 1
+ostr_dump: to_s 4
+ostr_dump: intern 6
+ostr_dump: define_method 13
+ostr_dump: + 1
+ostr_dump: to_s 4
+ostr_dump: intern 6
+ostr_dump: define_method 13
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: instance_variable_get 21
+ostr_dump: instance_variable_get 21
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: @ 1
+oMRB_TT_REGEX 3: @
+ostr_dump: = 1
+oMRB_TT_REGEX 3: =
+ostr_dump: @ 1
+oMRB_TT_REGEX 3: @
+ostr_dump: = 1
+oMRB_TT_REGEX 3: =
+obuf = 
+ostr_dump: + 1
+ostr_dump: to_s 4
+ostr_dump: intern 6
+ostr_dump: define_method 13
+ostr_dump: + 1
+ostr_dump: to_s 4
+ostr_dump: intern 6
+ostr_dump: define_method 13
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: instance_variable_set 21
+ostr_dump: instance_variable_set 21
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: attr_reader 11
+ostr_dump: attr_writer 11
+ostr_dump: attr_reader 11
+ostr_dump: attr_writer 11
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: attr_reader 11
+ostr_dump: attr_reader 11
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: < 1
+ostr_dump: <= 2
+ostr_dump: == 2
+ostr_dump: > 1
+ostr_dump: >= 2
+ostr_dump: between? 8
+ostr_dump: < 1
+ostr_dump: <= 2
+ostr_dump: == 2
+ostr_dump: > 1
+ostr_dump: >= 2
+ostr_dump: between? 8
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: <=> 3
+ostr_dump: nil? 4
+ostr_dump: < 1
+ostr_dump: <=> 3
+ostr_dump: nil? 4
+ostr_dump: < 1
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: <=> 3
+ostr_dump: nil? 4
+ostr_dump: <= 2
+ostr_dump: <=> 3
+ostr_dump: nil? 4
+ostr_dump: <= 2
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: <=> 3
+ostr_dump: == 2
+ostr_dump: <=> 3
+ostr_dump: == 2
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: <=> 3
+ostr_dump: nil? 4
+ostr_dump: > 1
+ostr_dump: <=> 3
+ostr_dump: nil? 4
+ostr_dump: > 1
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: <=> 3
+ostr_dump: nil? 4
+ostr_dump: >= 2
+ostr_dump: <=> 3
+ostr_dump: nil? 4
+ostr_dump: >= 2
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: < 1
+ostr_dump: > 1
+ostr_dump: < 1
+ostr_dump: > 1
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: all? 4
+ostr_dump: any? 4
+ostr_dump: collect 7
+ostr_dump: detect 6
+ostr_dump: each_with_index 15
+ostr_dump: entries 7
+ostr_dump: find 4
+ostr_dump: alias_method 12
+ostr_dump: find_all 8
+ostr_dump: grep 4
+ostr_dump: include? 8
+ostr_dump: inject 6
+ostr_dump: map 3
+ostr_dump: max 3
+ostr_dump: min 3
+ostr_dump: member? 7
+ostr_dump: partition 9
+ostr_dump: reject 6
+ostr_dump: select 6
+ostr_dump: __sort_sub__ 12
+ostr_dump: sort 4
+ostr_dump: to_a 4
+ostr_dump: all? 4
+ostr_dump: any? 4
+ostr_dump: collect 7
+ostr_dump: detect 6
+ostr_dump: each_with_index 15
+ostr_dump: entries 7
+ostr_dump: find 4
+ostr_dump: alias_method 12
+ostr_dump: find_all 8
+ostr_dump: grep 4
+ostr_dump: include? 8
+ostr_dump: inject 6
+ostr_dump: map 3
+ostr_dump: max 3
+ostr_dump: min 3
+ostr_dump: member? 7
+ostr_dump: partition 9
+ostr_dump: reject 6
+ostr_dump: select 6
+ostr_dump: __sort_sub__ 12
+ostr_dump: sort 4
+ostr_dump: to_a 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: call 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: call 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: push 4
+ostr_dump: call 4
+ostr_dump: push 4
+ostr_dump: call 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: call 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: + 1
+ostr_dump: call 4
+ostr_dump: + 1
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: push 4
+ostr_dump: push 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: push 4
+ostr_dump: call 4
+ostr_dump: push 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: === 3
+ostr_dump: push 4
+ostr_dump: call 4
+ostr_dump: === 3
+ostr_dump: push 4
+ostr_dump: call 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: == 2
+ostr_dump: == 2
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: too many arguments 18
+oMRB_TT_REGEX 3: too many arguments
+ostr_dump: too many arguments 18
+oMRB_TT_REGEX 3: too many arguments
+obuf = 
+ostr_dump: size 4
+ostr_dump: > 1
+ostr_dump: raise 5
+ostr_dump: ArgumentError 13
+ostr_dump: each 4
+ostr_dump: size 4
+ostr_dump: > 1
+ostr_dump: raise 5
+ostr_dump: ArgumentError 13
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: empty? 6
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: empty? 6
+ostr_dump: call 4
+ostr_dump: [] 2
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: > 1
+ostr_dump: <=> 3
+ostr_dump: call 4
+ostr_dump: > 1
+ostr_dump: <=> 3
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: < 1
+ostr_dump: <=> 3
+ostr_dump: call 4
+ostr_dump: < 1
+ostr_dump: <=> 3
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: push 4
+ostr_dump: call 4
+ostr_dump: push 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: push 4
+ostr_dump: call 4
+ostr_dump: push 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: == 2
+ostr_dump: [] 2
+ostr_dump: []= 3
+ostr_dump: + 1
+ostr_dump: upto 4
+ostr_dump: % 1
+ostr_dump: > 1
+ostr_dump: __sort_sub__ 12
+ostr_dump: - 1
+ostr_dump: < 1
+ostr_dump: == 2
+ostr_dump: [] 2
+ostr_dump: []= 3
+ostr_dump: + 1
+ostr_dump: upto 4
+ostr_dump: % 1
+ostr_dump: > 1
+ostr_dump: __sort_sub__ 12
+ostr_dump: - 1
+ostr_dump: < 1
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: <=> 3
+ostr_dump: > 1
+ostr_dump: []= 3
+ostr_dump: - 1
+ostr_dump: + 1
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: <=> 3
+ostr_dump: > 1
+ostr_dump: []= 3
+ostr_dump: - 1
+ostr_dump: + 1
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: empty? 6
+ostr_dump: __sort_sub__ 12
+ostr_dump: Array 5
+ostr_dump: new 3
+ostr_dump: size 4
+ostr_dump: - 1
+ostr_dump: each 4
+ostr_dump: empty? 6
+ostr_dump: __sort_sub__ 12
+ostr_dump: Array 5
+ostr_dump: new 3
+ostr_dump: size 4
+ostr_dump: - 1
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: push 4
+ostr_dump: push 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: exception 9
+ostr_dump: exception 9
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: new 3
+ostr_dump: new 3
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: delete 6
+ostr_dump: each 4
+ostr_dump: each_key 8
+ostr_dump: each_value 10
+ostr_dump: initialize 10
+ostr_dump: merge 5
+ostr_dump: reject! 7
+ostr_dump: reject 6
+ostr_dump: select! 7
+ostr_dump: select 6
+ostr_dump: delete 6
+ostr_dump: each 4
+ostr_dump: each_key 8
+ostr_dump: each_value 10
+ostr_dump: initialize 10
+ostr_dump: merge 5
+ostr_dump: reject! 7
+ostr_dump: reject 6
+ostr_dump: select! 7
+ostr_dump: select 6
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: has_key? 8
+ostr_dump: ! 1
+ostr_dump: call 4
+ostr_dump: __delete 8
+ostr_dump: has_key? 8
+ostr_dump: ! 1
+ostr_dump: call 4
+ostr_dump: __delete 8
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: keys 4
+ostr_dump: each 4
+ostr_dump: keys 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: [] 2
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: keys 4
+ostr_dump: each 4
+ostr_dump: keys 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: call 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: keys 4
+ostr_dump: each 4
+ostr_dump: keys 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: [] 2
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: __init_core 11
+ostr_dump: __init_core 11
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: can't convert argument into Hash 32
+oMRB_TT_REGEX 3: can't convert argument into Hash
+ostr_dump: can't convert argument into Hash 32
+oMRB_TT_REGEX 3: can't convert argument into Hash
+obuf = 
+ostr_dump: respond_to? 11
+ostr_dump: to_hash 7
+ostr_dump: raise 5
+ostr_dump: each_key 8
+ostr_dump: respond_to? 11
+ostr_dump: to_hash 7
+ostr_dump: raise 5
+ostr_dump: each_key 8
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: [] 2
+ostr_dump: []= 3
+ostr_dump: [] 2
+ostr_dump: []= 3
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: has_key? 8
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: []= 3
+ostr_dump: has_key? 8
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: []= 3
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: [] 2
+ostr_dump: []= 3
+ostr_dump: [] 2
+ostr_dump: []= 3
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each_key 8
+ostr_dump: size 4
+ostr_dump: == 2
+ostr_dump: each 4
+ostr_dump: each_key 8
+ostr_dump: size 4
+ostr_dump: == 2
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: push 4
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: push 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: delete 6
+ostr_dump: delete 6
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each_key 8
+ostr_dump: each_key 8
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: []= 3
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: []= 3
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each_key 8
+ostr_dump: size 4
+ostr_dump: == 2
+ostr_dump: each 4
+ostr_dump: each_key 8
+ostr_dump: size 4
+ostr_dump: == 2
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: push 4
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: push 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: delete 6
+ostr_dump: delete 6
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each_key 8
+ostr_dump: each_key 8
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: []= 3
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: []= 3
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: include 7
+ostr_dump: Enumerable 10
+ostr_dump: include 7
+ostr_dump: Enumerable 10
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: loop 4
+ostr_dump: eval 4
+ostr_dump: loop 4
+ostr_dump: eval 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: call 4
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: eval not implemented 20
+oMRB_TT_REGEX 3: eval not implemented
+ostr_dump: eval not implemented 20
+oMRB_TT_REGEX 3: eval not implemented
+obuf = 
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: Kernel 6
+ostr_dump: eval 4
+ostr_dump: Kernel 6
+ostr_dump: eval 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: call 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: downto 6
+ostr_dump: times 5
+ostr_dump: upto 4
+ostr_dump: downto 6
+ostr_dump: times 5
+ostr_dump: upto 4
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: expected Integer 16
+oMRB_TT_REGEX 3: expected Integer
+ostr_dump: expected Integer 16
+oMRB_TT_REGEX 3: expected Integer
+obuf = 
+ostr_dump: kind_of? 8
+ostr_dump: Integer 7
+ostr_dump: raise 5
+ostr_dump: TypeError 9
+ostr_dump: call 4
+ostr_dump: - 1
+ostr_dump: >= 2
+ostr_dump: kind_of? 8
+ostr_dump: Integer 7
+ostr_dump: raise 5
+ostr_dump: TypeError 9
+ostr_dump: call 4
+ostr_dump: - 1
+ostr_dump: >= 2
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: call 4
+ostr_dump: + 1
+ostr_dump: < 1
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: expected Integer 16
+oMRB_TT_REGEX 3: expected Integer
+ostr_dump: expected Integer 16
+oMRB_TT_REGEX 3: expected Integer
+obuf = 
+ostr_dump: kind_of? 8
+ostr_dump: Integer 7
+ostr_dump: raise 5
+ostr_dump: TypeError 9
+ostr_dump: call 4
+ostr_dump: + 1
+ostr_dump: <= 2
+ostr_dump: kind_of? 8
+ostr_dump: Integer 7
+ostr_dump: raise 5
+ostr_dump: TypeError 9
+ostr_dump: call 4
+ostr_dump: + 1
+ostr_dump: <= 2
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: include 7
+ostr_dump: Comparable 10
+ostr_dump: include 7
+ostr_dump: Comparable 10
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: Kernel 6
+ostr_dump: respond_to? 11
+ostr_dump: __printstr__ 12
+ostr_dump: sprintf 7
+ostr_dump: printf 6
+ostr_dump: print 5
+ostr_dump: puts 4
+ostr_dump: p 1
+ostr_dump: Kernel 6
+ostr_dump: respond_to? 11
+ostr_dump: __printstr__ 12
+ostr_dump: sprintf 7
+ostr_dump: printf 6
+ostr_dump: print 5
+ostr_dump: puts 4
+ostr_dump: p 1
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: printf not available 20
+oMRB_TT_REGEX 3: printf not available
+ostr_dump: printf not available 20
+oMRB_TT_REGEX 3: printf not available
+obuf = 
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: sprintf not available 21
+oMRB_TT_REGEX 3: sprintf not available
+ostr_dump: sprintf not available 21
+oMRB_TT_REGEX 3: sprintf not available
+obuf = 
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: size 4
+ostr_dump: __printstr__ 12
+ostr_dump: [] 2
+ostr_dump: to_s 4
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: size 4
+ostr_dump: __printstr__ 12
+ostr_dump: [] 2
+ostr_dump: to_s 4
+ostr_dump: + 1
+ostr_dump: < 1
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: 
+o 1
+oMRB_TT_REGEX 3: 
+o
+ostr_dump: 
+o 1
+oMRB_TT_REGEX 3: 
+o
+ostr_dump: 
+o 1
+oMRB_TT_REGEX 3: 
+o
+ostr_dump: 
+o 1
+oMRB_TT_REGEX 3: 
+o
+ostr_dump: 
+o 1
+oMRB_TT_REGEX 3: 
+o
+ostr_dump: 
+o 1
+oMRB_TT_REGEX 3: 
+o
+obuf = 
+ostr_dump: size 4
+ostr_dump: [] 2
+ostr_dump: to_s 4
+ostr_dump: __printstr__ 12
+ostr_dump: != 2
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: == 2
+ostr_dump: size 4
+ostr_dump: [] 2
+ostr_dump: to_s 4
+ostr_dump: __printstr__ 12
+ostr_dump: != 2
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: == 2
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: 
+o 1
+oMRB_TT_REGEX 3: 
+o
+ostr_dump: 
+o 1
+oMRB_TT_REGEX 3: 
+o
+obuf = 
+ostr_dump: size 4
+ostr_dump: __printstr__ 12
+ostr_dump: [] 2
+ostr_dump: inspect 7
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: size 4
+ostr_dump: __printstr__ 12
+ostr_dump: [] 2
+ostr_dump: inspect 7
+ostr_dump: + 1
+ostr_dump: < 1
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: __printstr__ 12
+ostr_dump: sprintf 7
+ostr_dump: __printstr__ 12
+ostr_dump: sprintf 7
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: print not available 19
+oMRB_TT_REGEX 3: print not available
+ostr_dump: print not available 19
+oMRB_TT_REGEX 3: print not available
+obuf = 
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: puts not available 18
+oMRB_TT_REGEX 3: puts not available
+ostr_dump: puts not available 18
+oMRB_TT_REGEX 3: puts not available
+obuf = 
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: p not available 15
+oMRB_TT_REGEX 3: p not available
+ostr_dump: p not available 15
+oMRB_TT_REGEX 3: p not available
+obuf = 
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: printf not available 20
+oMRB_TT_REGEX 3: printf not available
+ostr_dump: printf not available 20
+oMRB_TT_REGEX 3: printf not available
+obuf = 
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+ostr_dump: raise 5
+ostr_dump: NotImplementedError 19
+ostr_dump: new 3
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: can't iterate 13
+oMRB_TT_REGEX 3: can't iterate
+ostr_dump: can't iterate 13
+oMRB_TT_REGEX 3: can't iterate
+obuf = 
+ostr_dump: first 5
+ostr_dump: respond_to? 11
+ostr_dump: succ 4
+ostr_dump: raise 5
+ostr_dump: TypeError 9
+ostr_dump: last 4
+ostr_dump: <=> 3
+ostr_dump: > 1
+ostr_dump: call 4
+ostr_dump: < 1
+ostr_dump: exclude_end? 12
+ostr_dump: first 5
+ostr_dump: respond_to? 11
+ostr_dump: succ 4
+ostr_dump: raise 5
+ostr_dump: TypeError 9
+ostr_dump: last 4
+ostr_dump: <=> 3
+ostr_dump: > 1
+ostr_dump: call 4
+ostr_dump: < 1
+ostr_dump: exclude_end? 12
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: include 7
+ostr_dump: Enumerable 10
+ostr_dump: include 7
+ostr_dump: Enumerable 10
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each_line 9
+ostr_dump: gsub! 5
+ostr_dump: each_char 9
+ostr_dump: each_byte 9
+ostr_dump: []= 3
+ostr_dump: each_line 9
+ostr_dump: gsub! 5
+ostr_dump: each_char 9
+ostr_dump: each_byte 9
+ostr_dump: []= 3
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: + 1
+ostr_dump: - 1
+ostr_dump: index 5
+ostr_dump: size 4
+ostr_dump: > 1
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: + 1
+ostr_dump: - 1
+ostr_dump: index 5
+ostr_dump: size 4
+ostr_dump: > 1
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: gsub 4
+ostr_dump: != 2
+ostr_dump: replace 7
+ostr_dump: gsub 4
+ostr_dump: != 2
+ostr_dump: replace 7
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: size 4
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: size 4
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: C* 2
+oMRB_TT_REGEX 3: C*
+ostr_dump: C* 2
+oMRB_TT_REGEX 3: C*
+obuf = 
+ostr_dump: unpack 6
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: size 4
+ostr_dump: unpack 6
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: + 1
+ostr_dump: < 1
+ostr_dump: size 4
+obuf = 
+obuf = 
+obuf = 
+ostr_dump:  0
+oMRB_TT_REGEX 3: 
+ostr_dump:  0
+oMRB_TT_REGEX 3: 
+ostr_dump:  0
+oMRB_TT_REGEX 3: 
+ostr_dump:  0
+oMRB_TT_REGEX 3: 
+obuf = 
+ostr_dump: [] 2
+ostr_dump: + 1
+ostr_dump: p 1
+ostr_dump: join 4
+ostr_dump: replace 7
+ostr_dump: [] 2
+ostr_dump: + 1
+ostr_dump: p 1
+ostr_dump: join 4
+ostr_dump: replace 7
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: include 7
+ostr_dump: Comparable 10
+ostr_dump: include 7
+ostr_dump: Comparable 10
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: each 4
+ostr_dump: each_pair 9
+ostr_dump: select 6
+ostr_dump: each 4
+ostr_dump: each_pair 9
+ostr_dump: select 6
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: class 5
+ostr_dump: members 7
+ostr_dump: each 4
+ostr_dump: class 5
+ostr_dump: members 7
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: [] 2
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: class 5
+ostr_dump: members 7
+ostr_dump: each 4
+ostr_dump: class 5
+ostr_dump: members 7
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: call 4
+ostr_dump: to_sym 6
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: to_sym 6
+ostr_dump: [] 2
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: class 5
+ostr_dump: members 7
+ostr_dump: each 4
+ostr_dump: class 5
+ostr_dump: members 7
+ostr_dump: each 4
+obuf = 
+obuf = 
+obuf = 
+obuf = 
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: push 4
+ostr_dump: [] 2
+ostr_dump: call 4
+ostr_dump: push 4
+obuf = 
+o/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug/xpcat -o /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.c /Users/cmauceri/Documents/IOS/mruby/mrblib/init_mrblib.c /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.ctmp
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'8b183ae17c52b641^03cee2e17c52b641^-23198"/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug/xpcat -o /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.rbtmp /Users/cmauceri/Documents/IOS/mruby/mrblib/array.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/class.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/compar.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/enum.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/error.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/hash.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/kernel.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/numeric.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/print.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/range.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/string.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/struct.rb/Users/cmauceri/Documents/IOS/mruby/tools/mrbc/Debug/mrbc -Bmrblib_irep -o"/Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.ctmp" /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.rbtmpbuf = buf = buf = str_dump: Array 5str_dump: Enumerable 10str_dump: Comparable 10str_dump: Module 6str_dump: Exception 9str_dump: StandardError 13str_dump: ArgumentError 13str_dump: LocalJumpError 14str_dump: RangeError 10str_dump: FloatDomainError 16str_dump: RegexpError 11str_dump: TypeError 9str_dump: NameError 9str_dump: NoMethodError 13str_dump: IndexError 10str_dump: KeyError 8str_dump: ScriptError 11str_dump: SyntaxError 11str_dump: NotImplementedError 19str_dump: Hash 4str_dump: Kernel 6str_dump: Integer 7str_dump: Numeric 7str_dump: Range 5str_dump: String 6str_dump: Object 6str_dump: const_defined? 14str_dump: Struct 6str_dump: Array 5str_dump: Enumerable 10str_dump: Comparable 10str_dump: Module 6str_dump: Exception 9str_dump: StandardError 13str_dump: ArgumentError 13str_dump: LocalJumpError 14str_dump: RangeError 10str_dump: FloatDomainError 16str_dump: RegexpError 11str_dump: TypeError 9str_dump: NameError 9str_dump: NoMethodError 13str_dump: IndexError 10str_dump: KeyError 8str_dump: ScriptError 11str_dump: SyntaxError 11str_dump: NotImplementedError 19str_dump: Hash 4str_dump: Kernel 6str_dump: Integer 7str_dump: Numeric 7str_dump: Range 5str_dump: String 6str_dump: Object 6str_dump: const_defined? 14str_dump: Struct 6buf = buf = buf = buf = str_dump: each 4str_dump: each_index 10str_dump: collect! 8str_dump: map! 4str_dump: alias_method 12str_dump: initialize 10str_dump: delete 6str_dump: each 4str_dump: each_index 10str_dump: collect! 8str_dump: map! 4str_dump: alias_method 12str_dump: initialize 10str_dump: delete 6buf = buf = buf = buf = str_dump: call 4str_dump: [] 2str_dump: + 1str_dump: < 1str_dump: length 6str_dump: call 4str_dump: [] 2str_dump: + 1str_dump: < 1str_dump: length 6buf = buf = buf = buf = str_dump: call 4str_dump: + 1str_dump: < 1str_dump: length 6str_dump: call 4str_dump: + 1str_dump: < 1str_dump: length 6buf = buf = buf = buf = str_dump: each_index 10str_dump: each_index 10buf = buf = buf = buf = str_dump: call 4str_dump: [] 2str_dump: []= 3str_dump: call 4str_dump: [] 2str_dump: []= 3buf = buf = buf = str_dump: expected Integer for 1st argument 33MRB_TT_REGEX 3: expected Integer for 1st argumentstr_dump: negative array size 19MRB_TT_REGEX 3: negative array sizestr_dump: expected Integer for 1st argument 33MRB_TT_REGEX 3: expected Integer for 1st argumentstr_dump: negative array size 19MRB_TT_REGEX 3: negative array sizebuf = str_dump: kind_of? 8str_dump: Integer 7str_dump: raise 5str_dump: TypeError 9str_dump: < 1str_dump: ArgumentError 13str_dump: clear 5str_dump: > 1str_dump: []= 3str_dump: - 1str_dump: call 4str_dump: + 1str_dump: kind_of? 8str_dump: Integer 7str_dump: raise 5str_dump: TypeError 9str_dump: < 1str_dump: ArgumentError 13str_dump: clear 5str_dump: > 1str_dump: []= 3str_dump: - 1str_dump: call 4str_dump: + 1buf = buf = buf = buf = str_dump: delete_at 9str_dump: index 5str_dump: == 2str_dump: call 4str_dump: delete_at 9str_dump: index 5str_dump: == 2str_dump: call 4buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = str_dump: include 7str_dump: Enumerable 10str_dump: Comparable 10str_dump: sort! 5str_dump: include 7str_dump: Enumerable 10str_dump: Comparable 10str_dump: sort! 5buf = buf = buf = buf = str_dump: replace 7str_dump: sort 4str_dump: replace 7str_dump: sort 4buf = buf = buf = buf = str_dump: attr_reader 11str_dump: attr_writer 11str_dump: attr_accessor 13str_dump: attr 4str_dump: attr_reader 11str_dump: attr_writer 11str_dump: attr_accessor 13str_dump: attr 4buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = str_dump: @ 1MRB_TT_REGEX 3: @str_dump: @ 1MRB_TT_REGEX 3: @buf = str_dump: + 1str_dump: to_s 4str_dump: intern 6str_dump: define_method 13str_dump: + 1str_dump: to_s 4str_dump: intern 6str_dump: define_method 13buf = buf = buf = buf = str_dump: instance_variable_get 21str_dump: instance_variable_get 21buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = str_dump: @ 1MRB_TT_REGEX 3: @str_dump: = 1MRB_TT_REGEX 3: =str_dump: @ 1MRB_TT_REGEX 3: @str_dump: = 1MRB_TT_REGEX 3: =buf = str_dump: + 1str_dump: to_s 4str_dump: intern 6str_dump: define_method 13str_dump: + 1str_dump: to_s 4str_dump: intern 6str_dump: define_method 13buf = buf = buf = buf = str_dump: instance_variable_set 21str_dump: instance_variable_set 21buf = buf = buf = buf = str_dump: attr_reader 11str_dump: attr_writer 11str_dump: attr_reader 11str_dump: attr_writer 11buf = buf = buf = buf = str_dump: attr_reader 11str_dump: attr_reader 11buf = buf = buf = buf = str_dump: < 1str_dump: <= 2str_dump: == 2str_dump: > 1str_dump: >= 2str_dump: between? 8str_dump: < 1str_dump: <= 2str_dump: == 2str_dump: > 1str_dump: >= 2str_dump: between? 8buf = buf = buf = buf = str_dump: <=> 3str_dump: nil? 4str_dump: < 1str_dump: <=> 3str_dump: nil? 4str_dump: < 1buf = buf = buf = buf = str_dump: <=> 3str_dump: nil? 4str_dump: <= 2str_dump: <=> 3str_dump: nil? 4str_dump: <= 2buf = buf = buf = buf = str_dump: <=> 3str_dump: == 2str_dump: <=> 3str_dump: == 2buf = buf = buf = buf = str_dump: <=> 3str_dump: nil? 4str_dump: > 1str_dump: <=> 3str_dump: nil? 4str_dump: > 1buf = buf = buf = buf = str_dump: <=> 3str_dump: nil? 4str_dump: >= 2str_dump: <=> 3str_dump: nil? 4str_dump: >= 2buf = buf = buf = buf = str_dump: < 1str_dump: > 1str_dump: < 1str_dump: > 1buf = buf = buf = buf = str_dump: all? 4str_dump: any? 4str_dump: collect 7str_dump: detect 6str_dump: each_with_index 15str_dump: entries 7str_dump: find 4str_dump: alias_method 12str_dump: find_all 8str_dump: grep 4str_dump: include? 8str_dump: inject 6str_dump: map 3str_dump: max 3str_dump: min 3str_dump: member? 7str_dump: partition 9str_dump: reject 6str_dump: select 6str_dump: __sort_sub__ 12str_dump: sort 4str_dump: to_a 4str_dump: all? 4str_dump: any? 4str_dump: collect 7str_dump: detect 6str_dump: each_with_index 15str_dump: entries 7str_dump: find 4str_dump: alias_method 12str_dump: find_all 8str_dump: grep 4str_dump: include? 8str_dump: inject 6str_dump: map 3str_dump: max 3str_dump: min 3str_dump: member? 7str_dump: partition 9str_dump: reject 6str_dump: select 6str_dump: __sort_sub__ 12str_dump: sort 4str_dump: to_a 4buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: call 4buf = buf = buf = buf = buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: call 4buf = buf = buf = buf = buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: push 4str_dump: call 4str_dump: push 4str_dump: call 4buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: call 4buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: + 1str_dump: call 4str_dump: + 1buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: push 4str_dump: push 4buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: push 4str_dump: call 4str_dump: push 4buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: === 3str_dump: push 4str_dump: call 4str_dump: === 3str_dump: push 4str_dump: call 4buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: == 2str_dump: == 2buf = buf = buf = str_dump: too many arguments 18MRB_TT_REGEX 3: too many argumentsstr_dump: too many arguments 18MRB_TT_REGEX 3: too many argumentsbuf = str_dump: size 4str_dump: > 1str_dump: raise 5str_dump: ArgumentError 13str_dump: each 4str_dump: size 4str_dump: > 1str_dump: raise 5str_dump: ArgumentError 13str_dump: each 4buf = buf = buf = buf = str_dump: empty? 6str_dump: call 4str_dump: [] 2str_dump: empty? 6str_dump: call 4str_dump: [] 2buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: > 1str_dump: <=> 3str_dump: call 4str_dump: > 1str_dump: <=> 3buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: < 1str_dump: <=> 3str_dump: call 4str_dump: < 1str_dump: <=> 3buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: push 4str_dump: call 4str_dump: push 4buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: push 4str_dump: call 4str_dump: push 4buf = buf = buf = buf = str_dump: == 2str_dump: [] 2str_dump: []= 3str_dump: + 1str_dump: upto 4str_dump: % 1str_dump: > 1str_dump: __sort_sub__ 12str_dump: - 1str_dump: < 1str_dump: == 2str_dump: [] 2str_dump: []= 3str_dump: + 1str_dump: upto 4str_dump: % 1str_dump: > 1str_dump: __sort_sub__ 12str_dump: - 1str_dump: < 1buf = buf = buf = buf = str_dump: call 4str_dump: [] 2str_dump: <=> 3str_dump: > 1str_dump: []= 3str_dump: - 1str_dump: + 1str_dump: call 4str_dump: [] 2str_dump: <=> 3str_dump: > 1str_dump: []= 3str_dump: - 1str_dump: + 1buf = buf = buf = buf = str_dump: each 4str_dump: empty? 6str_dump: __sort_sub__ 12str_dump: Array 5str_dump: new 3str_dump: size 4str_dump: - 1str_dump: each 4str_dump: empty? 6str_dump: __sort_sub__ 12str_dump: Array 5str_dump: new 3str_dump: size 4str_dump: - 1buf = buf = buf = buf = str_dump: push 4str_dump: push 4buf = buf = buf = buf = str_dump: exception 9str_dump: exception 9buf = buf = buf = buf = str_dump: new 3str_dump: new 3buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = buf = str_dump: delete 6str_dump: each 4str_dump: each_key 8str_dump: each_value 10str_dump: initialize 10str_dump: merge 5str_dump: reject! 7str_dump: reject 6str_dump: select! 7str_dump: select 6str_dump: delete 6str_dump: each 4str_dump: each_key 8str_dump: each_value 10str_dump: initialize 10str_dump: merge 5str_dump: reject! 7str_dump: reject 6str_dump: select! 7str_dump: select 6buf = buf = buf = buf = str_dump: has_key? 8str_dump: ! 1str_dump: call 4str_dump: __delete 8str_dump: has_key? 8str_dump: ! 1str_dump: call 4str_dump: __delete 8buf = buf = buf = buf = str_dump: keys 4str_dump: each 4str_dump: keys 4str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: [] 2str_dump: call 4str_dump: [] 2buf = buf = buf = buf = str_dump: keys 4str_dump: each 4str_dump: keys 4str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: call 4buf = buf = buf = buf = str_dump: keys 4str_dump: each 4str_dump: keys 4str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: [] 2str_dump: call 4str_dump: [] 2buf = buf = buf = buf = str_dump: __init_core 11str_dump: __init_core 11buf = buf = buf = str_dump: can't convert argument into Hash 32MRB_TT_REGEX 3: can't convert argument into Hashstr_dump: can't convert argument into Hash 32MRB_TT_REGEX 3: can't convert argument into Hashbuf = str_dump: respond_to? 11str_dump: to_hash 7str_dump: raise 5str_dump: each_key 8str_dump: respond_to? 11str_dump: to_hash 7str_dump: raise 5str_dump: each_key 8buf = buf = buf = buf = str_dump: [] 2str_dump: []= 3str_dump: [] 2str_dump: []= 3buf = buf = buf = buf = str_dump: has_key? 8str_dump: call 4str_dump: [] 2str_dump: []= 3str_dump: has_key? 8str_dump: call 4str_dump: [] 2str_dump: []= 3buf = buf = buf = buf = str_dump: [] 2str_dump: []= 3str_dump: [] 2str_dump: []= 3buf = buf = buf = buf = str_dump: each_key 8str_dump: size 4str_dump: == 2str_dump: each 4str_dump: each_key 8str_dump: size 4str_dump: == 2str_dump: each 4buf = buf = buf = buf = str_dump: [] 2str_dump: call 4str_dump: push 4str_dump: [] 2str_dump: call 4str_dump: push 4buf = buf = buf = buf = str_dump: delete 6str_dump: delete 6buf = buf = buf = buf = str_dump: each_key 8str_dump: each_key 8buf = buf = buf = buf = str_dump: [] 2str_dump: call 4str_dump: []= 3str_dump: [] 2str_dump: call 4str_dump: []= 3buf = buf = buf = buf = str_dump: each_key 8str_dump: size 4str_dump: == 2str_dump: each 4str_dump: each_key 8str_dump: size 4str_dump: == 2str_dump: each 4buf = buf = buf = buf = str_dump: [] 2str_dump: call 4str_dump: push 4str_dump: [] 2str_dump: call 4str_dump: push 4buf = buf = buf = buf = str_dump: delete 6str_dump: delete 6buf = buf = buf = buf = str_dump: each_key 8str_dump: each_key 8buf = buf = buf = buf = str_dump: [] 2str_dump: call 4str_dump: []= 3str_dump: [] 2str_dump: call 4str_dump: []= 3buf = buf = buf = buf = buf = buf = buf = buf = str_dump: include 7str_dump: Enumerable 10str_dump: include 7str_dump: Enumerable 10buf = buf = buf = buf = str_dump: loop 4str_dump: eval 4str_dump: loop 4str_dump: eval 4buf = buf = buf = buf = str_dump: call 4str_dump: call 4buf = buf = buf = str_dump: eval not implemented 20MRB_TT_REGEX 3: eval not implementedstr_dump: eval not implemented 20MRB_TT_REGEX 3: eval not implementedbuf = str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3buf = buf = buf = buf = str_dump: Kernel 6str_dump: eval 4str_dump: Kernel 6str_dump: eval 4buf = buf = buf = buf = str_dump: call 4str_dump: call 4buf = buf = buf = buf = str_dump: downto 6str_dump: times 5str_dump: upto 4str_dump: downto 6str_dump: times 5str_dump: upto 4buf = buf = buf = str_dump: expected Integer 16MRB_TT_REGEX 3: expected Integerstr_dump: expected Integer 16MRB_TT_REGEX 3: expected Integerbuf = str_dump: kind_of? 8str_dump: Integer 7str_dump: raise 5str_dump: TypeError 9str_dump: call 4str_dump: - 1str_dump: >= 2str_dump: kind_of? 8str_dump: Integer 7str_dump: raise 5str_dump: TypeError 9str_dump: call 4str_dump: - 1str_dump: >= 2buf = buf = buf = buf = str_dump: call 4str_dump: + 1str_dump: < 1str_dump: call 4str_dump: + 1str_dump: < 1buf = buf = buf = str_dump: expected Integer 16MRB_TT_REGEX 3: expected Integerstr_dump: expected Integer 16MRB_TT_REGEX 3: expected Integerbuf = str_dump: kind_of? 8str_dump: Integer 7str_dump: raise 5str_dump: TypeError 9str_dump: call 4str_dump: + 1str_dump: <= 2str_dump: kind_of? 8str_dump: Integer 7str_dump: raise 5str_dump: TypeError 9str_dump: call 4str_dump: + 1str_dump: <= 2buf = buf = buf = buf = buf = buf = buf = buf = str_dump: include 7str_dump: Comparable 10str_dump: include 7str_dump: Comparable 10buf = buf = buf = buf = str_dump: Kernel 6str_dump: respond_to? 11str_dump: __printstr__ 12str_dump: sprintf 7str_dump: printf 6str_dump: print 5str_dump: puts 4str_dump: p 1str_dump: Kernel 6str_dump: respond_to? 11str_dump: __printstr__ 12str_dump: sprintf 7str_dump: printf 6str_dump: print 5str_dump: puts 4str_dump: p 1buf = buf = buf = str_dump: printf not available 20MRB_TT_REGEX 3: printf not availablestr_dump: printf not available 20MRB_TT_REGEX 3: printf not availablebuf = str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3buf = buf = buf = str_dump: sprintf not available 21MRB_TT_REGEX 3: sprintf not availablestr_dump: sprintf not available 21MRB_TT_REGEX 3: sprintf not availablebuf = str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3buf = buf = buf = buf = str_dump: size 4str_dump: __printstr__ 12str_dump: [] 2str_dump: to_s 4str_dump: + 1str_dump: < 1str_dump: size 4str_dump: __printstr__ 12str_dump: [] 2str_dump: to_s 4str_dump: + 1str_dump: < 1buf = buf = buf = str_dump:  1MRB_TT_REGEX 3: str_dump:  1MRB_TT_REGEX 3: str_dump:  1MRB_TT_REGEX 3: str_dump:  1MRB_TT_REGEX 3: str_dump:  1MRB_TT_REGEX 3: str_dump:  1MRB_TT_REGEX 3: buf = str_dump: size 4str_dump: [] 2str_dump: to_s 4str_dump: __printstr__ 12str_dump: != 2str_dump: + 1str_dump: < 1str_dump: == 2str_dump: size 4str_dump: [] 2str_dump: to_s 4str_dump: __printstr__ 12str_dump: != 2str_dump: + 1str_dump: < 1str_dump: == 2buf = buf = buf = str_dump:  1MRB_TT_REGEX 3: str_dump:  1MRB_TT_REGEX 3: buf = str_dump: size 4str_dump: __printstr__ 12str_dump: [] 2str_dump: inspect 7str_dump: + 1str_dump: < 1str_dump: size 4str_dump: __printstr__ 12str_dump: [] 2str_dump: inspect 7str_dump: + 1str_dump: < 1buf = buf = buf = buf = str_dump: __printstr__ 12str_dump: sprintf 7str_dump: __printstr__ 12str_dump: sprintf 7buf = buf = buf = str_dump: print not available 19MRB_TT_REGEX 3: print not availablestr_dump: print not available 19MRB_TT_REGEX 3: print not availablebuf = str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3buf = buf = buf = str_dump: puts not available 18MRB_TT_REGEX 3: puts not availablestr_dump: puts not available 18MRB_TT_REGEX 3: puts not availablebuf = str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3buf = buf = buf = str_dump: p not available 15MRB_TT_REGEX 3: p not availablestr_dump: p not available 15MRB_TT_REGEX 3: p not availablebuf = str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3buf = buf = buf = str_dump: printf not available 20MRB_TT_REGEX 3: printf not availablestr_dump: printf not available 20MRB_TT_REGEX 3: printf not availablebuf = str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3str_dump: raise 5str_dump: NotImplementedError 19str_dump: new 3buf = buf = buf = buf = str_dump: each 4str_dump: each 4buf = buf = buf = str_dump: can't iterate 13MRB_TT_REGEX 3: can't iteratestr_dump: can't iterate 13MRB_TT_REGEX 3: can't iteratebuf = str_dump: first 5str_dump: respond_to? 11str_dump: succ 4str_dump: raise 5str_dump: TypeError 9str_dump: last 4str_dump: <=> 3str_dump: > 1str_dump: call 4str_dump: < 1str_dump: exclude_end? 12str_dump: first 5str_dump: respond_to? 11str_dump: succ 4str_dump: raise 5str_dump: TypeError 9str_dump: last 4str_dump: <=> 3str_dump: > 1str_dump: call 4str_dump: < 1str_dump: exclude_end? 12buf = buf = buf = buf = buf = buf = buf = buf = str_dump: include 7str_dump: Enumerable 10str_dump: include 7str_dump: Enumerable 10buf = buf = buf = buf = str_dump: each_line 9str_dump: gsub! 5str_dump: each_char 9str_dump: each_byte 9str_dump: []= 3str_dump: each_line 9str_dump: gsub! 5str_dump: each_char 9str_dump: each_byte 9str_dump: []= 3buf = buf = buf = buf = str_dump: call 4str_dump: [] 2str_dump: + 1str_dump: - 1str_dump: index 5str_dump: size 4str_dump: > 1str_dump: call 4str_dump: [] 2str_dump: + 1str_dump: - 1str_dump: index 5str_dump: size 4str_dump: > 1buf = buf = buf = buf = str_dump: gsub 4str_dump: != 2str_dump: replace 7str_dump: gsub 4str_dump: != 2str_dump: replace 7buf = buf = buf = buf = str_dump: call 4str_dump: [] 2str_dump: + 1str_dump: < 1str_dump: size 4str_dump: call 4str_dump: [] 2str_dump: + 1str_dump: < 1str_dump: size 4buf = buf = buf = str_dump: C* 2MRB_TT_REGEX 3: C*str_dump: C* 2MRB_TT_REGEX 3: C*buf = str_dump: unpack 6str_dump: call 4str_dump: [] 2str_dump: + 1str_dump: < 1str_dump: size 4str_dump: unpack 6str_dump: call 4str_dump: [] 2str_dump: + 1str_dump: < 1str_dump: size 4buf = buf = buf = str_dump:  0MRB_TT_REGEX 3: str_dump:  0MRB_TT_REGEX 3: str_dump:  0MRB_TT_REGEX 3: str_dump:  0MRB_TT_REGEX 3: buf = str_dump: [] 2str_dump: + 1str_dump: p 1str_dump: join 4str_dump: replace 7str_dump: [] 2str_dump: + 1str_dump: p 1str_dump: join 4str_dump: replace 7buf = buf = buf = buf = buf = buf = buf = buf = str_dump: include 7str_dump: Comparable 10str_dump: include 7str_dump: Comparable 10buf = buf = buf = buf = str_dump: each 4str_dump: each_pair 9str_dump: select 6str_dump: each 4str_dump: each_pair 9str_dump: select 6buf = buf = buf = buf = str_dump: class 5str_dump: members 7str_dump: each 4str_dump: class 5str_dump: members 7str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: [] 2str_dump: call 4str_dump: [] 2buf = buf = buf = buf = str_dump: class 5str_dump: members 7str_dump: each 4str_dump: class 5str_dump: members 7str_dump: each 4buf = buf = buf = buf = str_dump: call 4str_dump: to_sym 6str_dump: [] 2str_dump: call 4str_dump: to_sym 6str_dump: [] 2buf = buf = buf = buf = str_dump: class 5str_dump: members 7str_dump: each 4str_dump: class 5str_dump: members 7str_dump: each 4buf = buf = buf = buf = str_dump: [] 2str_dump: call 4str_dump: push 4str_dump: [] 2str_dump: call 4str_dump: push 4buf = /Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug/xpcat -o /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.c /Users/cmauceri/Documents/IOS/mruby/mrblib/init_mrblib.c /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.ctmpShowing first 200 notices only201(21%IDEActivityLogMessage2@747"/Users/cmauceri/Documents/IOS/mruby/tools/xpcat/Debug/xpcat -o /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.rbtmp /Users/cmauceri/Documents/IOS/mruby/mrblib/array.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/class.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/compar.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/enum.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/error.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/hash.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/kernel.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/numeric.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/print.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/range.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/string.rb /Users/cmauceri/Documents/IOS/mruby/mrblib/struct.rb-374504673#0#747#-0#-----2@187"/Users/cmauceri/Documents/IOS/mruby/tools/mrbc/Debug/mrbc -Bmrblib_irep -o"/Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.ctmp" /Users/cmauceri/Documents/IOS/mruby/mrblib/mrblib.rbtmp-374504673#747#187#-0#-----2@7"buf = -374504673#934#7#-0#-----2@7"buf = -374504673#941#7#-0#-----2@7"buf = -374504673#948#7#-0#-----2@18"str_dump: Array 5-374504673#955#18#-0#-----2@24"str_dump: Enumerable 10-374504673#973#24#-0#-----2@24"str_dump: Comparable 10-374504673#997#24#-0#-----2@19"str_dump: Module 6-374504673#1021#19#-0#-----2@22"str_dump: Exception 9-374504673#1040#22#-0#-----2@27"str_dump: StandardError 13-374504673#1062#27#-0#-----2@27"str_dump: ArgumentError 13-374504673#1089#27#-0#-----2@28"str_dump: LocalJumpError 14-374504673#1116#28#-0#-----2@24"str_dump: RangeError 10-374504673#1144#24#-0#-----2@30"str_dump: FloatDomainError 16-374504673#1168#30#-0#-----2@25"str_dump: RegexpError 11-374504673#1198#25#-0#-----2@22"str_dump: TypeError 9-374504673#1223#22#-0#-----2@22"str_dump: NameError 9-374504673#1245#22#-0#-----2@27"str_dump: NoMethodError 13-374504673#1267#27#-0#-----2@24"str_dump: IndexError 10-374504673#1294#24#-0#-----2@21"str_dump: KeyError 8-374504673#1318#21#-0#-----2@25"str_dump: ScriptError 11-374504673#1339#25#-0#-----2@25"str_dump: SyntaxError 11-374504673#1364#25#-0#-----2@33"str_dump: NotImplementedError 19-374504673#1389#33#-0#-----2@17"str_dump: Hash 4-374504673#1422#17#-0#-----2@19"str_dump: Kernel 6-374504673#1439#19#-0#-----2@20"str_dump: Integer 7-374504673#1458#20#-0#-----2@20"str_dump: Numeric 7-374504673#1478#20#-0#-----2@18"str_dump: Range 5-374504673#1498#18#-0#-----2@19"str_dump: String 6-374504673#1516#19#-0#-----2@19"str_dump: Object 6-374504673#1535#19#-0#-----2@28"str_dump: const_defined? 14-374504673#1554#28#-0#-----2@19"str_dump: Struct 6-374504673#1582#19#-0#-----2@18"str_dump: Array 5-374504673#1601#18#-0#-----2@24"str_dump: Enumerable 10-374504673#1619#24#-0#-----2@24"str_dump: Comparable 10-374504673#1643#24#-0#-----2@19"str_dump: Module 6-374504673#1667#19#-0#-----2@22"str_dump: Exception 9-374504673#1686#22#-0#-----2@27"str_dump: StandardError 13-374504673#1708#27#-0#-----2@27"str_dump: ArgumentError 13-374504673#1735#27#-0#-----2@28"str_dump: LocalJumpError 14-374504673#1762#28#-0#-----2@24"str_dump: RangeError 10-374504673#1790#24#-0#-----2@30"str_dump: FloatDomainError 16-374504673#1814#30#-0#-----2@25"str_dump: RegexpError 11-374504673#1844#25#-0#-----2@22"str_dump: TypeError 9-374504673#1869#22#-0#-----2@22"str_dump: NameError 9-374504673#1891#22#-0#-----2@27"str_dump: NoMethodError 13-374504673#1913#27#-0#-----2@24"str_dump: IndexError 10-374504673#1940#24#-0#-----2@21"str_dump: KeyError 8-374504673#1964#21#-0#-----2@25"str_dump: ScriptError 11-374504673#1985#25#-0#-----2@25"str_dump: SyntaxError 11-374504673#2010#25#-0#-----2@33"str_dump: NotImplementedError 19-374504673#2035#33#-0#-----2@17"str_dump: Hash 4-374504673#2068#17#-0#-----2@19"str_dump: Kernel 6-374504673#2085#19#-0#-----2@20"str_dump: Integer 7-374504673#2104#20#-0#-----2@20"str_dump: Numeric 7-374504673#2124#20#-0#-----2@18"str_dump: Range 5-374504673#2144#18#-0#-----2@19"str_dump: String 6-374504673#2162#19#-0#-----2@19"str_dump: Object 6-374504673#2181#19#-0#-----2@28"str_dump: const_defined? 14-374504673#2200#28#-0#-----2@19"str_dump: Struct 6-374504673#2228#19#-0#-----2@7"buf = -374504673#2247#7#-0#-----2@7"buf = -374504673#2254#7#-0#-----2@7"buf = -374504673#2261#7#-0#-----2@7"buf = -374504673#2268#7#-0#-----2@17"str_dump: each 4-374504673#2275#17#-0#-----2@24"str_dump: each_index 10-374504673#2292#24#-0#-----2@21"str_dump: collect! 8-374504673#2316#21#-0#-----2@17"str_dump: map! 4-374504673#2337#17#-0#-----2@26"str_dump: alias_method 12-374504673#2354#26#-0#-----2@24"str_dump: initialize 10-374504673#2380#24#-0#-----2@19"str_dump: delete 6-374504673#2404#19#-0#-----2@17"str_dump: each 4-374504673#2423#17#-0#-----2@24"str_dump: each_index 10-374504673#2440#24#-0#-----2@21"str_dump: collect! 8-374504673#2464#21#-0#-----2@17"str_dump: map! 4-374504673#2485#17#-0#-----2@26"str_dump: alias_method 12-374504673#2502#26#-0#-----2@24"str_dump: initialize 10-374504673#2528#24#-0#-----2@19"str_dump: delete 6-374504673#2552#19#-0#-----2@7"buf = -374504673#2571#7#-0#-----2@7"buf = -374504673#2578#7#-0#-----2@7"buf = -374504673#2585#7#-0#-----2@7"buf = -374504673#2592#7#-0#-----2@17"str_dump: call 4-374504673#2599#17#-0#-----2@15"str_dump: [] 2-374504673#2616#15#-0#-----2@14"str_dump: + 1-374504673#2631#14#-0#-----2@14"str_dump: < 1-374504673#2645#14#-0#-----2@19"str_dump: length 6-374504673#2659#19#-0#-----2@17"str_dump: call 4-374504673#2678#17#-0#-----2@15"str_dump: [] 2-374504673#2695#15#-0#-----2@14"str_dump: + 1-374504673#2710#14#-0#-----2@14"str_dump: < 1-374504673#2724#14#-0#-----2@19"str_dump: length 6-374504673#2738#19#-0#-----2@7"buf = -374504673#2757#7#-0#-----2@7"buf = -374504673#2764#7#-0#-----2@7"buf = -374504673#2771#7#-0#-----2@7"buf = -374504673#2778#7#-0#-----2@17"str_dump: call 4-374504673#2785#17#-0#-----2@14"str_dump: + 1-374504673#2802#14#-0#-----2@14"str_dump: < 1-374504673#2816#14#-0#-----2@19"str_dump: length 6-374504673#2830#19#-0#-----2@17"str_dump: call 4-374504673#2849#17#-0#-----2@14"str_dump: + 1-374504673#2866#14#-0#-----2@14"str_dump: < 1-374504673#2880#14#-0#-----2@19"str_dump: length 6-374504673#2894#19#-0#-----2@7"buf = -374504673#2913#7#-0#-----2@7"buf = -374504673#2920#7#-0#-----2@7"buf = -374504673#2927#7#-0#-----2@7"buf = -374504673#2934#7#-0#-----2@24"str_dump: each_index 10-374504673#2941#24#-0#-----2@24"str_dump: each_index 10-374504673#2965#24#-0#-----2@7"buf = -374504673#2989#7#-0#-----2@7"buf = -374504673#2996#7#-0#-----2@7"buf = -374504673#3003#7#-0#-----2@7"buf = -374504673#3010#7#-0#-----2@17"str_dump: call 4-374504673#3017#17#-0#-----2@15"str_dump: [] 2-374504673#3034#15#-0#-----2@16"str_dump: []= 3-374504673#3049#16#-0#-----2@17"str_dump: call 4-374504673#3065#17#-0#-----2@15"str_dump: [] 2-374504673#3082#15#-0#-----2@16"str_dump: []= 3-374504673#3097#16#-0#-----2@7"buf = -374504673#3113#7#-0#-----2@7"buf = -374504673#3120#7#-0#-----2@7"buf = -374504673#3127#7#-0#-----2@47"str_dump: expected Integer for 1st argument 33-374504673#3134#47#-0#-----2@50"MRB_TT_REGEX 3: expected Integer for 1st argument-374504673#3181#50#-0#-----2@33"str_dump: negative array size 19-374504673#3231#33#-0#-----2@36"MRB_TT_REGEX 3: negative array size-374504673#3264#36#-0#-----2@47"str_dump: expected Integer for 1st argument 33-374504673#3300#47#-0#-----2@50"MRB_TT_REGEX 3: expected Integer for 1st argument-374504673#3347#50#-0#-----2@33"str_dump: negative array size 19-374504673#3397#33#-0#-----2@36"MRB_TT_REGEX 3: negative array size-374504673#3430#36#-0#-----2@7"buf = -374504673#3466#7#-0#-----2@21"str_dump: kind_of? 8-374504673#3473#21#-0#-----2@20"str_dump: Integer 7-374504673#3494#20#-0#-----2@18"str_dump: raise 5-374504673#3514#18#-0#-----2@22"str_dump: TypeError 9-374504673#3532#22#-0#-----2@14"str_dump: < 1-374504673#3554#14#-0#-----2@27"str_dump: ArgumentError 13-374504673#3568#27#-0#-----2@18"str_dump: clear 5-374504673#3595#18#-0#-----2@14"str_dump: > 1-374504673#3613#14#-0#-----2@16"str_dump: []= 3-374504673#3627#16#-0#-----2@14"str_dump: - 1-374504673#3643#14#-0#-----2@17"str_dump: call 4-374504673#3657#17#-0#-----2@14"str_dump: + 1-374504673#3674#14#-0#-----2@21"str_dump: kind_of? 8-374504673#3688#21#-0#-----2@20"str_dump: Integer 7-374504673#3709#20#-0#-----2@18"str_dump: raise 5-374504673#3729#18#-0#-----2@22"str_dump: TypeError 9-374504673#3747#22#-0#-----2@14"str_dump: < 1-374504673#3769#14#-0#-----2@27"str_dump: ArgumentError 13-374504673#3783#27#-0#-----2@18"str_dump: clear 5-374504673#3810#18#-0#-----2@14"str_dump: > 1-374504673#3828#14#-0#-----2@16"str_dump: []= 3-374504673#3842#16#-0#-----2@14"str_dump: - 1-374504673#3858#14#-0#-----2@17"str_dump: call 4-374504673#3872#17#-0#-----2@14"str_dump: + 1-374504673#3889#14#-0#-----2@7"buf = -374504673#3903#7#-0#-----2@7"buf = -374504673#3910#7#-0#-----2@7"buf = -374504673#3917#7#-0#-----2@7"buf = -374504673#3924#7#-0#-----2@22"str_dump: delete_at 9-374504673#3931#22#-0#-----2@18"str_dump: index 5-374504673#3953#18#-0#-----2@15"str_dump: == 2-374504673#3971#15#-0#-----2@17"str_dump: call 4-374504673#3986#17#-0#-----2@22"str_dump: delete_at 9-374504673#4003#22#-0#-----2@18"str_dump: index 5-374504673#4025#18#-0#-----2@15"str_dump: == 2-374504673#4043#15#-0#-----2@17"str_dump: call 4-374504673#4058#17#-0#-----2@7"buf = -374504673#4075#7#-0#-----2@7"buf = -374504673#4082#7#-0#-----2@7"buf = -374504673#4089#7#-0#-----2@7"buf = -374504673#4096#7#-0#-----2@7"buf = -374504673#4103#7#-0#-----2@7"buf = -374504673#4110#7#-0#-----2@7"buf = -374504673#4117#7#-0#-----2@7"buf = -374504673#4124#7#-0#-----2@7"buf = -374504673#4131#7#-0#-----2@7"buf = -374504673#4138#7#-0#-----2@7"buf = -374504673#4145#7#-0#-----2@7"buf = -374504673#4152#7#-0#-----2@20"str_dump: include 7-374504673#4159#20#-0#-----2@24"str_dump: Enumerable 10-374504673#4179#24#-0#-----2@24"str_dump: Comparable 10-374504673#4203#24#-0#-----2@18"str_dump: sort! 5-374504673#4227#18#-0#-----2@20"str_dump: include 7-374504673#4245#20#-0#-----2@24"str_dump: Enumerable 10-374504673#4265#24#-0#-----2@24"str_dump: Comparable 10-374504673#4289#24#-0#-----2@18"str_dump: sort! 5-374504673#4313#18#-0#-----2@7"buf = -374504673#4331#7#-0#-----2@7"buf = -374504673#4338#7#-0#-----2@7"buf = -374504673#4345#7#-0#-----2@7"buf = -374504673#4352#7#-0#-----2@20"str_dump: replace 7-374504673#4359#20#-0#-----2@17"str_dump: sort 4-374504673#4379#17#-0#-----2@20"str_dump: replace 7-374504673#4396#20#-0#-----2@17"str_dump: sort 4-374504673#4416#17#-0#-----2@7"buf = -374504673#4433#7#-0#-----2@7"buf = -374504673#4440#7#-0#-----2@7"buf = -374504673#4447#7#-0#-----2@30"Showing first 200 notices only-374504673#18446744073709551615#0#-0#--21"Notice limit exceeded--0#0#0#--293"PhaseScriptExecution "CMake Rules" mrblib/mruby.build/Debug/libmruby_static.build/Script-1DCCA517074A4BA09BBA5E85.sh    cd /Users/cmauceri/Documents/IOS/mruby    /bin/sh -c /Users/cmauceri/Documents/IOS/mruby/mrblib/mruby.build/Debug/libmruby_static.build/Script-1DCCA517074A4BA09BBA5E85.sh36"97DD1C87-8DAE-4B20-97DA-F852BD50A31F-
+

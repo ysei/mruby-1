@@ -1,0 +1,28 @@
+TZERO_CHECK
+v5
+r1
+cCheck dependencies
+cPhaseScriptExecution "CMake Rules" /Users/cmauceri/Documents/IOS/mruby/mruby.build/Debug/ZERO_CHECK.build/Script-3B98B757F968448A8DC54316.sh
+
+N/Users/cmauceri/Documents/IOS/mruby/mruby.build/Debug/ZERO_CHECK.build/Script-3B98B757F968448A8DC54316.sh
+c00000000509FF7E000000000000000A1
+t1352660960
+s161
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciescc6361602f50b641^ecbd64602f50b641^---0#1#0#--18"Check dependencies36"0A92F35F-060E-4D34-90F5-F6B1D1090DCE-
+
+CPhaseScriptExecution "CMake Rules" /Users/cmauceri/Documents/IOS/mruby/mruby.build/Debug/ZERO_CHECK.build/Script-3B98B757F968448A8DC54316.sh
+s374353760.395522
+e374353760.548757
+r1
+xPhaseScriptExecution
+xCMake Rules
+x/Users/cmauceri/Documents/IOS/mruby/mruby.build/Debug/ZERO_CHECK.build/Script-3B98B757F968448A8DC54316.sh
+oecho ""
+o
+omake -f /Users/cmauceri/Documents/IOS/mruby/CMakeScripts/ReRunCMake.make
+omake[1]: `CMakeFiles/cmake.check_cache' is up to date.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'8cd665602f50b641^f0fa8c602f50b641^-137"echo ""make -f /Users/cmauceri/Documents/IOS/mruby/CMakeScripts/ReRunCMake.makemake[1]: `CMakeFiles/cmake.check_cache' is up to date.3(21%IDEActivityLogMessage2@8"echo ""-374353760#0#8#-0#-----2@73"make -f /Users/cmauceri/Documents/IOS/mruby/CMakeScripts/ReRunCMake.make-374353760#9#73#-0#-----2@55"make[1]: `CMakeFiles/cmake.check_cache' is up to date.-374353760#82#55#-0#-----0#0#0#--269"PhaseScriptExecution "CMake Rules" mruby.build/Debug/ZERO_CHECK.build/Script-3B98B757F968448A8DC54316.sh    cd /Users/cmauceri/Documents/IOS/mruby    /bin/sh -c /Users/cmauceri/Documents/IOS/mruby/mruby.build/Debug/ZERO_CHECK.build/Script-3B98B757F968448A8DC54316.sh36"72324AEA-6337-4507-B9FC-3873E1ABE498-
+

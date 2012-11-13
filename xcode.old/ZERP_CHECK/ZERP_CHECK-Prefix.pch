@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ZERP_CHECK' target in the 'ZERP_CHECK' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
