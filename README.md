@@ -5,6 +5,10 @@
     Any suggestion for modification is welcome.
     Delays in replies are to be expected. Sorry in advance.
 
+# Addendum
+	Merging of [require and load](https://github.com/masamitsu-murase/mruby_efi_shell/tree/sample_implementation_of_require_and_load) and [Regexp](https://github.com/junjis0203/mruby/tree/workspace_for_regexp) in order to have a version with load and regexp. I made some slight changes in order to have the Regexp in mrbc.  
+
+
 ## What's mruby
 
 mruby is the lightweight implementation of the Ruby language complying to (part of)
