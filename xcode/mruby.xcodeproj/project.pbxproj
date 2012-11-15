@@ -72,7 +72,6 @@
 		88760B9D1576A37600113BFB /* mruby.h in Headers */ = {isa = PBXBuildFile; fileRef = 88BF356A156C99B200F12AC7 /* mruby.h */; };
 		88760B9F1576A4A200113BFB /* mrblib.c in Sources */ = {isa = PBXBuildFile; fileRef = 88760B1C15769CEE00113BFB /* mrblib.c */; };
 		88760BA01576A4A700113BFB /* libmruby_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88760B1715769BE400113BFB /* libmruby_core.a */; };
-		A5B75C81165521A400000282 /* libmruby_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8844353B1576F1A3007F95A4 /* libmruby_core.a */; };
 		A5B75C82165521B000000282 /* libmruby_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8844353B1576F1A3007F95A4 /* libmruby_core.a */; };
 		A5B75C8516552CEF00000282 /* parse.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B75C8416552CC700000282 /* parse.c */; };
 		A5B75C8B16552EB100000282 /* ascii.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B75C8616552E8D00000282 /* ascii.c */; };
@@ -83,6 +82,7 @@
 		A5B75C9216552F0F00000282 /* libmruby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8844353E1576F1A3007F95A4 /* libmruby.a */; };
 		A5B75C9B1655355500000282 /* init.c in Sources */ = {isa = PBXBuildFile; fileRef = 88BF34E8156C998200F12AC7 /* init.c */; };
 		A5B75C9C1655375800000282 /* libmruby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8844353E1576F1A3007F95A4 /* libmruby.a */; };
+		A5B75C9F1655916300000282 /* libmruby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8844353E1576F1A3007F95A4 /* libmruby.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,13 +99,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 88760A8A157590F000113BFB;
 			remoteInfo = mrbc;
-		};
-		88760B1A15769C5E00113BFB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88BF3371156C992100F12AC7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 88760AE415759EFE00113BFB;
-			remoteInfo = mruby_core;
 		};
 		88760B2E15769E8000113BFB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -128,6 +121,13 @@
 			remoteGlobalIDString = 88760AA115759B4F00113BFB;
 			remoteInfo = ruby_lib;
 		};
+		A5B75C9D1655915700000282 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88BF3371156C992100F12AC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88760AA115759B4F00113BFB;
+			remoteInfo = ruby_lib;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -137,7 +137,6 @@
 		8844353F1576F1A3007F95A4 /* mruby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mruby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8844356215772EF0007F95A4 /* assert.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = assert.rb; sourceTree = "<group>"; };
 		8844356415772EF0007F95A4 /* driver.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = driver.c; sourceTree = "<group>"; };
-		8844356515772EF0007F95A4 /* init_mrbtest.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = init_mrbtest.c; sourceTree = "<group>"; };
 		8844356815772EF0007F95A4 /* argumenterror.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = argumenterror.rb; sourceTree = "<group>"; };
 		8844356915772EF0007F95A4 /* array.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = array.rb; sourceTree = "<group>"; };
 		8844356A15772EF0007F95A4 /* bs_block.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = bs_block.rb; sourceTree = "<group>"; };
@@ -292,7 +291,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5B75C81165521A400000282 /* libmruby_core.a in Frameworks */,
+				A5B75C9F1655916300000282 /* libmruby.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +343,6 @@
 				8844359A157730DB007F95A4 /* mrbtest.c */,
 				8844356215772EF0007F95A4 /* assert.rb */,
 				8844356415772EF0007F95A4 /* driver.c */,
-				8844356515772EF0007F95A4 /* init_mrbtest.c */,
 				8844356715772EF0007F95A4 /* t */,
 			);
 			name = test;
@@ -618,13 +616,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		88760AA015759B4F00113BFB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		88760AE315759EFE00113BFB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -659,23 +650,6 @@
 		};
 /* End PBXHeadersBuildPhase section */
 
-/* Begin PBXLegacyTarget section */
-		88BF3594156CA10D00F12AC7 /* make_mruby */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = 88BF3595156CA10D00F12AC7 /* Build configuration list for PBXLegacyTarget "make_mruby" */;
-			buildPhases = (
-			);
-			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = "$(SRCROOT)/..";
-			dependencies = (
-			);
-			name = make_mruby;
-			passBuildSettingsInEnvironment = 1;
-			productName = make_mruby;
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		8844358E1577301B007F95A4 /* mrbtest */ = {
 			isa = PBXNativeTarget;
@@ -705,7 +679,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				88760B1B15769C5E00113BFB /* PBXTargetDependency */,
+				A5B75C9E1655915700000282 /* PBXTargetDependency */,
 			);
 			name = mrbc;
 			productName = mrbc;
@@ -716,10 +690,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88760AA315759B4F00113BFB /* Build configuration list for PBXNativeTarget "ruby_lib" */;
 			buildPhases = (
-				88760AE015759C3600113BFB /* ShellScript */,
 				88760A9E15759B4F00113BFB /* Sources */,
 				88760A9F15759B4F00113BFB /* Frameworks */,
-				88760AA015759B4F00113BFB /* Headers */,
 			);
 			buildRules = (
 			);
@@ -823,7 +795,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88BF3594156CA10D00F12AC7 /* make_mruby */,
 				88760AE415759EFE00113BFB /* mruby_core */,
 				88760AA115759B4F00113BFB /* ruby_lib */,
 				88760A8A157590F000113BFB /* mrbc */,
@@ -859,19 +830,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd ../test\ncat ./assert.rb ./t/*.rb > mrbtest.rbtmp\n../xcode/bin/mrbc -Bmrbtest_irep -omrbtest.ctmp mrbtest.rbtmp\ncat init_mrbtest.c mrbtest.ctmp > mrbtest.c";
-		};
-		88760AE015759C3600113BFB /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd ../mrblib\ncat ./*.rb > mrblib.rbtmp\n../xcode/bin/mrbc -Bmrblib_irep -omrblib.ctmp mrblib.rbtmp\ncat init_mrblib.c mrblib.ctmp > ../mrblib/mrblib.c";
 		};
 		88760AE915759F5E00113BFB /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1015,11 +973,6 @@
 			target = 88760A8A157590F000113BFB /* mrbc */;
 			targetProxy = 88760ADE15759C1C00113BFB /* PBXContainerItemProxy */;
 		};
-		88760B1B15769C5E00113BFB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 88760AE415759EFE00113BFB /* mruby_core */;
-			targetProxy = 88760B1A15769C5E00113BFB /* PBXContainerItemProxy */;
-		};
 		88760B2F15769E8000113BFB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 88760AA115759B4F00113BFB /* ruby_lib */;
@@ -1034,6 +987,11 @@
 			isa = PBXTargetDependency;
 			target = 88760AA115759B4F00113BFB /* ruby_lib */;
 			targetProxy = 88760B891576A35C00113BFB /* PBXContainerItemProxy */;
+		};
+		A5B75C9E1655915700000282 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88760AA115759B4F00113BFB /* ruby_lib */;
+			targetProxy = A5B75C9D1655915700000282 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1078,19 +1036,6 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				STRIP_STYLE = debugging;
 				USE_HEADERMAP = NO;
-			};
-			name = CLANGDebug;
-		};
-		883AF3B215DA4EEA00AAA509 /* CLANGDebug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = CLANGDebug;
 		};
@@ -1363,29 +1308,6 @@
 			};
 			name = Release;
 		};
-		88BF3596156CA10D00F12AC7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		88BF3597156CA10D00F12AC7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1465,16 +1387,6 @@
 				88BF337C156C992100F12AC7 /* Debug */,
 				883AF3B115DA4EEA00AAA509 /* CLANGDebug */,
 				88BF337D156C992100F12AC7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		88BF3595156CA10D00F12AC7 /* Build configuration list for PBXLegacyTarget "make_mruby" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				88BF3596156CA10D00F12AC7 /* Debug */,
-				883AF3B215DA4EEA00AAA509 /* CLANGDebug */,
-				88BF3597156CA10D00F12AC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

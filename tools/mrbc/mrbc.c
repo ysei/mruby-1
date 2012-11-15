@@ -206,7 +206,3 @@ main(int argc, char **argv)
   return EXIT_SUCCESS;
 }
 
-void
-mrb_init_mrblib(mrb_state *mrb)
-{
-}

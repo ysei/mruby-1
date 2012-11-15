@@ -2045,7 +2045,11 @@ scope_new(mrb_state *mrb, codegen_scope *prev, node *lv)
   p->nlocals = p->sp;
   p->ai = mrb->arena_idx;
 
-  p->idx = mrb->irep_len++;
+    //Because of possible gc before scope_finish
+    mrb_add_irep(mrb, mrb->irep_len);
+    mrb->irep[mrb->irep_len] = (mrb_irep *)mrb_malloc(mrb, sizeof(mrb_irep));
+    
+    p->idx = mrb->irep_len++;
 
   return p;
 }
@@ -2055,10 +2059,8 @@ scope_finish(codegen_scope *s, int idx)
 {
   mrb_state *mrb = s->mrb;
   mrb_irep *irep;
-
-  mrb_add_irep(mrb, idx);
-  irep = mrb->irep[idx] = (mrb_irep *)mrb_malloc(mrb, sizeof(mrb_irep));
-
+    // see scope new
+    irep = mrb->irep[idx] ;//= (mrb_irep *)mrb_malloc(mrb, sizeof(mrb_irep));
   irep->idx = idx;
   irep->flags = 0;
   if (s->iseq) {

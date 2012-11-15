@@ -135,7 +135,6 @@ typedef struct mrb_state {
 
   struct RClass *eException_class;
   struct RClass *eStandardError_class;
-
   void *ud; /* auxiliary data */
 } mrb_state;
 

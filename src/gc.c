@@ -591,9 +591,10 @@ root_scan_phase(mrb_state *mrb)
   for (i=0; i<mrb->irep_len; i++) {
     if (mrb->irep) {
       mrb_irep *irep = mrb->irep[i];
+        //fprintf(stderr,"irep[%d]\n",i);
       if (!irep) continue;
       for (j=0; j<irep->plen; j++) {
-	mrb_gc_mark_value(mrb, irep->pool[j]);
+        mrb_gc_mark_value(mrb, irep->pool[j]);
       }
     }
   }
