@@ -215,6 +215,48 @@ ecall(mrb_state *mrb, int i)
 #define MRB_FUNCALL_ARGC_MAX 16
 #endif
 
+static void
+replace_stop_with_return(mrb_state *mrb, mrb_irep *irep)
+{
+    if (irep->iseq[irep->ilen - 1] == MKOP_A(OP_STOP, 0)) {
+        irep->iseq = mrb_realloc(mrb, irep->iseq, (irep->ilen + 1) * sizeof(mrb_code));
+        irep->iseq[irep->ilen - 1] = MKOP_A(OP_LOADNIL, 0);
+        irep->iseq[irep->ilen] = MKOP_AB(OP_RETURN, 0, OP_R_NORMAL);
+        irep->ilen++;
+    }
+}
+
+mrb_value
+mrb_run_irep_as_proc(mrb_state *mrb, mrb_irep *irep)
+{
+    mrb_callinfo *ci;
+    struct RProc *proc;
+    int nregs = mrb->ci->nregs;
+    mrb_value v;
+    
+    replace_stop_with_return(mrb, irep);
+    
+    proc = mrb_proc_new(mrb, irep);
+    proc->target_class = mrb->object_class;
+    ci = cipush(mrb);
+    ci->mid = 0;
+    ci->proc = proc;
+    ci->stackidx = mrb->stack - mrb->stbase;
+    ci->argc = 0;
+    ci->target_class = mrb->object_class;
+    ci->nregs = irep->nregs + 2;
+    ci->acc = -1;
+    mrb->stack = mrb->stack + nregs;
+    stack_extend(mrb, ci->nregs, 0);
+    mrb->stack[0] = mrb_top_self(mrb);
+    mrb->stack[1] = mrb_nil_value();
+    
+    v = mrb_run(mrb, proc, mrb_top_self(mrb));
+    
+    return v;
+}
+
+
 mrb_value
 mrb_funcall(mrb_state *mrb, mrb_value self, const char *name, int argc, ...)
 {

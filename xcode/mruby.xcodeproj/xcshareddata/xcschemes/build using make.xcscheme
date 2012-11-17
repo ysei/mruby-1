@@ -93,7 +93,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-v ./turlu.rb"
+            argument = "-v ./berlu.rb"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

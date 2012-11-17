@@ -217,6 +217,7 @@ int mrb_checkstack(mrb_state*,int);
 
 mrb_value mrb_top_self(mrb_state *);
 mrb_value mrb_run(mrb_state*, struct RProc*, mrb_value);
+mrb_value mrb_run_irep_as_proc(mrb_state *, struct mrb_irep *);
 
 void mrb_p(mrb_state*, mrb_value);
 mrb_int mrb_obj_id(mrb_value obj);
@@ -304,6 +305,7 @@ void mrb_bug(const char *fmt, ...);
 #define E_SYNTAX_ERROR              (mrb_class_obj_get(mrb, "SyntaxError"))
 #define E_LOCALJUMP_ERROR           (mrb_class_obj_get(mrb, "LocalJumpError"))
 #define E_REGEXP_ERROR              (mrb_class_obj_get(mrb, "RegexpError"))
+#define E_LOAD_ERROR                (mrb_class_obj_get(mrb, "LoadError"))
 
 #define E_NOTIMP_ERROR              (mrb_class_obj_get(mrb, "NotImplementedError"))
 #define E_FLOATDOMAIN_ERROR         (mrb_class_obj_get(mrb, "FloatDomainError"))
