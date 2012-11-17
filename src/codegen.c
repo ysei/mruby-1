@@ -722,7 +722,6 @@ gen_call(codegen_scope *s, node *tree, mrb_sym name, int sp, int val)
   int idx;
   int n = 0, noop = 0, sendv = 0, blk = 0;
 
-    fprintf(stderr,"gen_call %s\n",mrb_sym2name(s->mrb,sym));
   codegen(s, tree->car, VAL); /* receiver */
   idx = new_msym(s, sym);
   tree = tree->cdr->cdr->car;

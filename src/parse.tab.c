@@ -10807,7 +10807,6 @@ void
 mrb_parser_parse(parser_state *p, mrbc_context *c)
 {
    node *tree;
-//   yydebug = 1;
   if (setjmp(p->jmp) != 0) {
     yyerror(p, "memory allocation error");
     p->nerr++;
