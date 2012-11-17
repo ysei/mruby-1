@@ -31,7 +31,6 @@
 #ifdef INCLUDE_ENCODING
 #include <string.h>
 #include "regint.h"
-
 /* temporary definition */
 #define xmalloc  malloc
 #define xrealloc realloc

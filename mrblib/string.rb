@@ -27,16 +27,16 @@ class String
   # final value.
   #
   # ISO 15.2.10.5.18
-#  def gsub(*args, &block)
-#    unless (args.size == 1 && block) || args.size == 2
-#      raise ArgumentError, "wrong number of arguments"
-#    end
-#
-#    ### *** TODO *** ###
-#    unless Object.const_defined?(:Regexp)
-#      raise NotImplementedError, "gsub not available (yet)"
-#    end
-#  end
+    #def gsub(*args, &block)
+    #unless (args.size == 1 && block) || args.size == 2
+    #  raise ArgumentError, "wrong number of arguments"
+    #end
+
+    ### *** TODO *** ###
+    #unless Object.const_defined?(:Regexp)
+    #  raise NotImplementedError, "gsub not available (yet)"
+    #end
+    #end
 
   ##
   # Replace all matches of +pattern+ with +replacement+.
@@ -61,12 +61,12 @@ class String
   # matches of +pattern+.
   #
   # ISO 15.2.10.5.32
-#  def scan(reg, &block)
-#    ### *** TODO *** ###
-#    unless Object.const_defined?(:Regexp)
-#      raise NotImplementedError, "scan not available (yet)"
-#    end
-#  end
+  def scan(reg, &block)
+    ### *** TODO *** ###
+    unless Object.const_defined?(:Regexp)
+      raise NotImplementedError, "scan not available (yet)"
+    end
+  end
 
   ##
   # Replace only the first match of +pattern+ with
@@ -75,16 +75,16 @@ class String
   # block. Return the final value.
   #
   # ISO 15.2.10.5.36
-#  def sub(*args, &block)
-#    unless (args.size == 1 && block) || args.size == 2
-#      raise ArgumentError, "wrong number of arguments"
-#    end
-#
-#    ### *** TODO *** ###
-#    unless Object.const_defined?(:Regexp)
-#      raise NotImplementedError, "sub not available (yet)"
-#    end
-#  end
+  def sub(*args, &block)
+    unless (args.size == 1 && block) || args.size == 2
+      raise ArgumentError, "wrong number of arguments"
+    end
+
+    ### *** TODO *** ###
+    unless Object.const_defined?(:Regexp)
+      raise NotImplementedError, "sub not available (yet)"
+    end
+  end
 
   ##
   # Replace only the first match of +pattern+ with
@@ -93,15 +93,15 @@ class String
   # block. Modify +self+ with the final value.
   #
   # ISO 15.2.10.5.37
-#  def sub!(*args, &block)
-#    str = self.sub(*args, &block)
-#    if str != self
-#      self.replace(str)
-#      self
-#    else
-#      nil
-#    end
-#  end
+  def sub!(*args, &block)
+    str = self.sub(*args, &block)
+    if str != self
+      self.replace(str)
+      self
+    else
+      nil
+    end
+  end
 
   ##
   # Call the given block for each character of
@@ -118,7 +118,7 @@ class String
   ##
   # Call the given block for each byte of +self+.
   def each_byte(&block)
-    bytes = self.unpack("C*")
+    bytes = self.bytes
     pos = 0
     while(pos < bytes.size)
       block.call(bytes[pos])
@@ -133,7 +133,6 @@ class String
   def []=(pos, value)
     b = self[0, pos]
     a = self[pos+1..-1]
-    p [b, value, a].join('')
     self.replace([b, value, a].join(''))
   end
 end

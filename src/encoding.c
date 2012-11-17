@@ -30,6 +30,7 @@
 #include "mruby/array.h"
 #include "mruby/variable.h"
 #include "mruby/hash.h"
+#include "mruby/value.h"
 
 #define pprintf printf
 #define mrb_warning printf
@@ -147,7 +148,7 @@ check_encoding(mrb_state *mrb, mrb_encoding *enc)
 static int
 enc_check_encoding(mrb_state *mrb, mrb_value obj)
 {
-  if (SPECIAL_CONST_P(obj) || !is_data_encoding(obj)) {
+  if (mrb_special_const_p(obj) || !is_data_encoding(obj)) {
     return -1;
   }
   return check_encoding(mrb, RDATA(obj)->data);
@@ -158,7 +159,7 @@ must_encoding(mrb_state *mrb, mrb_value enc)
 {
   int index = enc_check_encoding(mrb, enc);
   if (index < 0) {
-    mrb_raise(mrb, E_TYPE_ERROR, "wrong argument type %s (expected Encoding)",
+    mrb_raisef(mrb, E_TYPE_ERROR, "wrong argument type %s (expected Encoding)",
          mrb_obj_classname(mrb, enc));
   }
   return index;
@@ -198,10 +199,96 @@ to_encoding(mrb_state *mrb, mrb_value enc)
   //idx = mrb_enc_find_index(StringValueCStr(enc));
   idx = mrb_enc_find_index(mrb, mrb_string_value_cstr(mrb, &enc));
   if (idx < 0) {
-    mrb_raise(mrb, E_ARGUMENT_ERROR, "unknown encoding name - %s", RSTRING_PTR(enc));
+    mrb_raisef(mrb, E_ARGUMENT_ERROR, "unknown encoding name - %s", RSTRING_PTR(enc));
   }
   return mrb_enc_from_index(mrb, idx);
 }
+
+
+mrb_value
+mrb_usascii_str_new_cstr(mrb_state *mrb, const char *ptr)
+{
+    mrb_value str = mrb_str_new_cstr(mrb, ptr);//mrb_str_new2(ptr);
+    ENCODING_CODERANGE_SET(mrb, str, mrb_usascii_encindex(), ENC_CODERANGE_7BIT);
+    return str;
+}
+
+#define STR_ENC_GET(mrb, str) mrb_enc_from_index(mrb, ENCODING_GET(mrb, str))
+
+static inline const char *
+search_nonascii(const char *p, const char *e)
+{
+    while (p < e) {
+        if (!ISASCII(*p))
+            return p;
+        p++;
+    }
+    return NULL;
+}
+
+static int
+coderange_scan(const char *p, long len, mrb_encoding *enc)
+{
+    const char *e = p + len;
+    
+    if (mrb_enc_to_index(enc) == 0) {
+        /* enc is ASCII-8BIT.  ASCII-8BIT string never be broken. */
+        p = search_nonascii(p, e);
+        return p ? ENC_CODERANGE_VALID : ENC_CODERANGE_7BIT;
+    }
+    
+    if (mrb_enc_asciicompat(mrb, enc)) {
+        p = search_nonascii(p, e);
+        if (!p) {
+            return ENC_CODERANGE_7BIT;
+        }
+        while (p < e) {
+            int ret = mrb_enc_precise_mbclen(p, e, enc);
+            if (!MBCLEN_CHARFOUND_P(ret)) {
+                return ENC_CODERANGE_BROKEN;
+            }
+            p += MBCLEN_CHARFOUND_LEN(ret);
+            if (p < e) {
+                p = search_nonascii(p, e);
+                if (!p) {
+                    return ENC_CODERANGE_VALID;
+                }
+            }
+        }
+        if (e < p) {
+            return ENC_CODERANGE_BROKEN;
+        }
+        return ENC_CODERANGE_VALID;
+    }
+    
+    while (p < e) {
+        int ret = mrb_enc_precise_mbclen(p, e, enc);
+        
+        if (!MBCLEN_CHARFOUND_P(ret)) {
+            return ENC_CODERANGE_BROKEN;
+        }
+        p += MBCLEN_CHARFOUND_LEN(ret);
+    }
+    if (e < p) {
+        return ENC_CODERANGE_BROKEN;
+    }
+    return ENC_CODERANGE_VALID;
+}
+
+
+int
+mrb_enc_str_coderange(mrb_state *mrb, mrb_value str)
+{
+    int cr = ENC_CODERANGE(str);
+    
+    if (cr == ENC_CODERANGE_UNKNOWN) {
+        mrb_encoding *enc = STR_ENC_GET(mrb, str);
+        cr = coderange_scan(RSTRING_PTR(str), RSTRING_LEN(str), enc);
+        ENC_CODERANGE_SET(str, cr);
+    }
+    return cr;
+}
+
 
 mrb_encoding *
 mrb_to_encoding(mrb_state *mrb, mrb_value enc)
@@ -283,7 +370,7 @@ static void
 enc_check_duplication(mrb_state *mrb, const char *name)
 {
   if (mrb_enc_registered(name) >= 0) {
-    mrb_raise(mrb, E_ARGUMENT_ERROR, "encoding %s is already registered", name);
+    mrb_raisef(mrb, E_ARGUMENT_ERROR, "encoding %s is already registered", name);
   }
 }
 static mrb_encoding*
@@ -541,7 +628,7 @@ mrb_enc_find_index(mrb_state *mrb, const char *name)
   }
   else if (!(enc = mrb_enc_from_index(mrb, i))) {
     if (i != UNSPECIFIED_ENCODING) {
-        mrb_raise(mrb, E_ARGUMENT_ERROR, "encoding %s is not registered", name);
+        mrb_raisef(mrb, E_ARGUMENT_ERROR, "encoding %s is not registered", name);
     }
   }
   else if (enc_autoload_p(enc)) {
@@ -636,6 +723,11 @@ void
 mrb_enc_set_index(mrb_state *mrb, mrb_value obj, int idx)
 {
   if (idx < ENCODING_INLINE_MAX) {
+      do {
+          RDATA(obj)->flags &= ~ENCODING_MASK;
+          RDATA(obj)->flags |= (unsigned int)(idx) << ENCODING_SHIFT;
+      } while (0);
+
     ENCODING_SET_INLINED(obj, idx);
     return;
   }
@@ -679,7 +771,7 @@ mrb_enc_check(mrb_state *mrb, mrb_value str1, mrb_value str2)
 {
   mrb_encoding *enc = mrb_enc_compatible(mrb, str1, str2);
   if (!enc)
-    mrb_raise(mrb, E_ENCODING_ERROR, "incompatible character encodings: %s and %s",
+    mrb_raisef(mrb, E_ENCODING_ERROR, "incompatible character encodings: %s and %s",
          mrb_enc_name(mrb_enc_get(mrb, str1)),
          mrb_enc_name(mrb_enc_get(mrb, str2)));
    return enc;
@@ -838,7 +930,7 @@ mrb_enc_codepoint_len(mrb_state *mrb, const char *p, const char *e, int *len_p, 
       return mrb_enc_mbc_to_codepoint(p, e, enc);
   }
   else
-    mrb_raise(mrb, E_ARGUMENT_ERROR, "invalid byte sequence in %s", mrb_enc_name(enc));
+    mrb_raisef(mrb, E_ARGUMENT_ERROR, "invalid byte sequence in %s", mrb_enc_name(enc));
   return 0;
 }
 
@@ -854,7 +946,7 @@ mrb_enc_codelen(mrb_state *mrb, int c, mrb_encoding *enc)
 {
   int n = ONIGENC_CODE_TO_MBCLEN(enc,c);
   if (n == 0) {
-    mrb_raise(mrb, E_ARGUMENT_ERROR, "invalid codepoint 0x%x in %s", c, mrb_enc_name(enc));
+    mrb_raisef(mrb, E_ARGUMENT_ERROR, "invalid codepoint 0x%x in %s", c, mrb_enc_name(enc));
   }
   return n;
 }
@@ -1647,7 +1739,7 @@ mrb_init_encoding(mrb_state *mrb)
   }
 /* add kusuda --< */
   list = mrb_ary_new_capa(mrb, enc_table.count);//mrb_ary_new2(enc_table.count);
-  RBASIC(list)->c = 0;
+  mrb_basic(list)->c = 0;
   mrb_encoding_list = list;
   //mrb_gc_register_mark_object(list);
 

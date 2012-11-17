@@ -10,10 +10,22 @@
 //#include <sys/types.h>
 #include <stdio.h>
 
-//#include "node.h"
 #include "regex.h"
 #include "encoding.h"
 #include "st.h"
+
+#define MRUBY_OBJECT_HEADER \
+enum mrb_vtype tt; \
+unsigned int color:3;\
+unsigned int flags:21;\
+struct RClass *c;\
+struct RBasic *gcnext
+
+#define RBASIC(obj)  ((struct RBasic*)((obj).value.p))
+#define RBASIC_KLASS(v) ((struct RClass *)(((struct RBasic*)((v).value.p))->c))
+#define ROBJECT(v) ((struct RObject*)((v).value.p))
+#define ROBJECT_IVPTR(v) (((struct RObject*)((v).value.p))->iv)
+#define ROBJECT_NUMIV(v) (ROBJECT_IVPTR(v) ? ROBJECT_IVPTR(v)->size : 0)
 
 #define BEG(no) regs->beg[no]
 #define END(no) regs->end[no]

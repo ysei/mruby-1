@@ -176,7 +176,7 @@ reg_operand(mrb_state *mrb, mrb_value s, int check)
   else {
     mrb_value tmp = mrb_check_string_type(mrb, s);
     if (check && mrb_nil_p(tmp)) {
-      mrb_raise(mrb, E_TYPE_ERROR, "can't convert %s to String",
+      mrb_raisef(mrb, E_TYPE_ERROR, "can't convert %s to String",
          mrb_obj_classname(mrb, s));
     }
     return tmp;
@@ -276,7 +276,7 @@ match_backref_number(mrb_state *mrb, mrb_value match, mrb_value backref)
               (const unsigned char*)name + strlen(name),
               regs);
   if (num < 1) {
-    mrb_raise(mrb, E_INDEX_ERROR, "undefined group name reference: %s", name);
+    mrb_raisef(mrb, E_INDEX_ERROR, "undefined group name reference: %s", name);
   }
 
   return num;
@@ -375,7 +375,7 @@ mrb_reg_raise(mrb_state *mrb, const char *s, long len, const char *err, mrb_valu
 {
     mrb_value desc = mrb_reg_desc(mrb, s, len, re);
 
-    mrb_raise(mrb, E_REGEXP_ERROR, "%s: %s", err, RSTRING_PTR(desc));
+    mrb_raisef(mrb, E_REGEXP_ERROR, "%s: %s", err, RSTRING_PTR(desc));
 }
 
 regex_t *
@@ -399,7 +399,7 @@ mrb_reg_prepare_re(mrb_state *mrb, mrb_value re, mrb_value str)
     &fixed_enc, err);
 
   if (mrb_nil_p(unescaped)) {
-    mrb_raise(mrb, E_ARGUMENT_ERROR, "regexp preprocess failed: %s", err);
+    mrb_raisef(mrb, E_ARGUMENT_ERROR, "regexp preprocess failed: %s", err);
   }
 
   r = onig_new(&reg, (UChar* )RSTRING_PTR(unescaped),
@@ -430,6 +430,8 @@ mrb_reg_search(mrb_state *mrb, mrb_value re, mrb_value str, mrb_int pos, mrb_int
     mrb_backref_set(mrb, mrb_nil_value());
     return -1;
   }
+    char *string = RSTRING_PTR(str);
+    int len = RSTRING_LEN(str);
 
   reg = mrb_reg_prepare_re(mrb, re, str);
   tmpreg = reg != RREGEXP(re)->ptr;
@@ -487,7 +489,7 @@ mrb_reg_search(mrb_state *mrb, mrb_value re, mrb_value str, mrb_int pos, mrb_int
     onig_region_copy(RMATCH_REGS(match), regs);
     onig_region_free(regs, 0);
   }
-
+ 
   RMATCH(match)->str = mrb_str_ptr(str);
   RMATCH(match)->regexp = mrb_regex_ptr(re);
   RMATCH(match)->rmatch->char_offset_updated = 0;
@@ -1157,7 +1159,7 @@ mrb_reg_initialize_m(mrb_state *mrb, /*int argc, mrb_value *argv,*/ mrb_value se
 
   mrb_get_args(mrb, "*", &argv, &argc);
   if (argc == 0 || argc > 3) {
-    mrb_raise(mrb, E_ARGUMENT_ERROR, "wrong number of arguments (%d for 1..3)", argc);
+    mrb_raisef(mrb, E_ARGUMENT_ERROR, "wrong number of arguments (%d for 1..3)", argc);
   }
   if (mrb_type(argv[0]) ==  MRB_TT_REGEX) {
     mrb_value re = argv[0];
@@ -1521,7 +1523,7 @@ name_to_backref_number(mrb_state *mrb, struct re_registers *regs, struct RRegexp
   }
   else {
     mrb_value s = mrb_str_new(mrb, name, (long )(name_end - name));//mrb_str_new(name, (long )(name_end - name));
-    mrb_raise(mrb, E_INDEX_ERROR, "undefined group name reference: %s",
+    mrb_raisef(mrb, E_INDEX_ERROR, "undefined group name reference: %s",
         mrb_string_value_ptr(mrb, s));
     return num; /* not reach */
   }
@@ -1695,7 +1697,7 @@ mrb_match_begin(mrb_state *mrb, mrb_value match/*, mrb_value n*/)
   regs = RMATCH_REGS(match);
 
   if (i < 0 || regs->num_regs <= i)
-    mrb_raise(mrb, E_INDEX_ERROR, "index %d out of matches", i);
+    mrb_raisef(mrb, E_INDEX_ERROR, "index %d out of matches", i);
 
   if (BEG(i) < 0)
     return mrb_nil_value();
@@ -1782,7 +1784,7 @@ mrb_match_end(mrb_state *mrb, mrb_value match/*, mrb_value n*/)
   regs = RMATCH_REGS(match);
 
   if (i < 0 || regs->num_regs <= i)
-    mrb_raise(mrb, E_INDEX_ERROR, "index %d out of matches", i);
+    mrb_raisef(mrb, E_INDEX_ERROR, "index %d out of matches", i);
 
   if (BEG(i) < 0)
     return mrb_nil_value();
@@ -1889,7 +1891,7 @@ mrb_match_offset(mrb_state *mrb, mrb_value match/*, mrb_value n*/)
   i = match_backref_number(mrb, match, n);
 
   if (i < 0 || regs->num_regs <= i)
-    mrb_raise(mrb, E_INDEX_ERROR, "index %d out of matches", i);
+    mrb_raisef(mrb, E_INDEX_ERROR, "index %d out of matches", i);
 
   if (BEG(i) < 0)
     return mrb_assoc_new(mrb, mrb_nil_value(), mrb_nil_value());
@@ -2140,7 +2142,6 @@ mrb_value
 mrb_reg_to_s(mrb_state *mrb, mrb_value re)
 {
   int options, opt;
-    const int embeddable = ONIG_OPTION_MULTILINE|ONIG_OPTION_IGNORECASE|ONIG_OPTION_EXTEND;
   long len;
   const UChar* ptr;
   mrb_value str = mrb_str_new(mrb, "(?", 2);
@@ -2478,7 +2479,7 @@ mrb_init_regexp(mrb_state *mrb)
     mrb_define_method(mrb, s, "inspect",         mrb_match_inspect,     ARGS_NONE());                    /* 15.2.16.3.14(x) */
     mrb_define_method(mrb, s, "==",              mrb_match_equal,       ARGS_REQ(1));                    /* 15.2.16.3.15(x) */
     mrb_define_method(mrb, s, "eql?",            mrb_match_equal,       ARGS_REQ(1));                    /* 15.2.16.3.16(x) */
-    //mrb_define_method(rb_cMatch, "regexp",          match_regexp,      0);
+    //mrb_define_method(s, "regexp",          match_regexp,      0);
     //mrb_define_method(rb_cMatch, "names",           match_names,       0);
     //mrb_define_method(rb_cMatch, "values_at",       match_values_at,   -1);
     //mrb_define_method(rb_cMatch, "hash",            match_hash,        0);

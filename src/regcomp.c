@@ -31,11 +31,11 @@
 #include <string.h>
 #include "regparse.h"
 #ifdef ENABLE_REGEXP
-
 /* temporary definition */
 #define xmalloc  malloc
 #define xrealloc realloc
 #define xfree    free
+
 
 OnigCaseFoldType OnigDefaultCaseFoldFlag = ONIGENC_CASE_FOLD_MIN;
 

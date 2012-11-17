@@ -1,1377 +1,0 @@
-Tmruby_object
-v5
-r1
-cCheck dependencies
-cPhaseScriptExecution "CMake Rules" /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Script-939F3FC2608A416781EE452A.sh
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/array.o /Users/cmauceri/Documents/IOS/mruby/src/array.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/cdump.o /Users/cmauceri/Documents/IOS/mruby/src/cdump.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/ascii.o /Users/cmauceri/Documents/IOS/mruby/src/ascii.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/class.o /Users/cmauceri/Documents/IOS/mruby/src/class.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/codegen.o /Users/cmauceri/Documents/IOS/mruby/src/codegen.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/compar.o /Users/cmauceri/Documents/IOS/mruby/src/compar.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/crc.o /Users/cmauceri/Documents/IOS/mruby/src/crc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/dump.o /Users/cmauceri/Documents/IOS/mruby/src/dump.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/encoding.o /Users/cmauceri/Documents/IOS/mruby/src/encoding.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/enum.o /Users/cmauceri/Documents/IOS/mruby/src/enum.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/etc.o /Users/cmauceri/Documents/IOS/mruby/src/etc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/error.o /Users/cmauceri/Documents/IOS/mruby/src/error.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/gc.o /Users/cmauceri/Documents/IOS/mruby/src/gc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/hash.o /Users/cmauceri/Documents/IOS/mruby/src/hash.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init.o /Users/cmauceri/Documents/IOS/mruby/src/init.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init_ext.o /Users/cmauceri/Documents/IOS/mruby/src/init_ext.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/kernel.o /Users/cmauceri/Documents/IOS/mruby/src/kernel.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/load.o /Users/cmauceri/Documents/IOS/mruby/src/load.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/math.o /Users/cmauceri/Documents/IOS/mruby/src/math.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/numeric.o /Users/cmauceri/Documents/IOS/mruby/src/numeric.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/object.o /Users/cmauceri/Documents/IOS/mruby/src/object.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/pool.o /Users/cmauceri/Documents/IOS/mruby/src/pool.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/print.o /Users/cmauceri/Documents/IOS/mruby/src/print.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/range.o /Users/cmauceri/Documents/IOS/mruby/src/range.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/proc.o /Users/cmauceri/Documents/IOS/mruby/src/proc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/re.o /Users/cmauceri/Documents/IOS/mruby/src/re.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regcomp.o /Users/cmauceri/Documents/IOS/mruby/src/regcomp.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regenc.o /Users/cmauceri/Documents/IOS/mruby/src/regenc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regerror.o /Users/cmauceri/Documents/IOS/mruby/src/regerror.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regexec.o /Users/cmauceri/Documents/IOS/mruby/src/regexec.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regparse.o /Users/cmauceri/Documents/IOS/mruby/src/regparse.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/sprintf.o /Users/cmauceri/Documents/IOS/mruby/src/sprintf.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/st.o /Users/cmauceri/Documents/IOS/mruby/src/st.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/string.o /Users/cmauceri/Documents/IOS/mruby/src/string.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/state.o /Users/cmauceri/Documents/IOS/mruby/src/state.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/struct.o /Users/cmauceri/Documents/IOS/mruby/src/struct.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/symbol.o /Users/cmauceri/Documents/IOS/mruby/src/symbol.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/time.o /Users/cmauceri/Documents/IOS/mruby/src/time.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/unicode.o /Users/cmauceri/Documents/IOS/mruby/src/unicode.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/us_ascii.o /Users/cmauceri/Documents/IOS/mruby/src/us_ascii.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/utf_8.o /Users/cmauceri/Documents/IOS/mruby/src/utf_8.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/variable.o /Users/cmauceri/Documents/IOS/mruby/src/variable.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/vm.o /Users/cmauceri/Documents/IOS/mruby/src/vm.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cLibtool /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/libmruby_object.a normal x86_64
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
-c000000005096731500000000000000AA
-t1352037141
-s170
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/string.h
-c00000000505F5ADF0000000000001A3A
-t1348426463
-s6714
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mrbconf.h
-c00000000509E98DB0000000000000908
-t1352571099
-s2312
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby.h
-c0000000050A0FE8E0000000000003588
-t1352728206
-s13704
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/array.h
-c00000000509E98DB0000000000000795
-t1352571099
-s1941
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/cdump.h
-c00000000509E98DB00000000000001EE
-t1352571099
-s494
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/class.h
-c00000000509E98DB0000000000000996
-t1352571099
-s2454
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/compile.h
-c00000000509E98DB0000000000000D9B
-t1352571099
-s3483
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/data.h
-c00000000509E98DB00000000000004E9
-t1352571099
-s1257
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/dump.h
-c00000000509E98DB0000000000000F44
-t1352571099
-s3908
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/hash.h
-c0000000050A0001C000000000000061A
-t1352663068
-s1562
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/irep.h
-c00000000509E98DB0000000000000209
-t1352571099
-s521
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/khash.h
-c00000000509E98DB0000000000003577
-t1352571099
-s13687
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/numeric.h
-c00000000509E98DB0000000000000338
-t1352571099
-s824
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/object.h
-c00000000509E98DB000000000000068F
-t1352571099
-s1679
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/proc.h
-c00000000509E98DB000000000000057B
-t1352571099
-s1403
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/range.h
-c00000000509E98DB00000000000002B9
-t1352571099
-s697
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/string.h
-c00000000509E98DB0000000000000CB9
-t1352571099
-s3257
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/struct.h
-c00000000509E98DB00000000000001E5
-t1352571099
-s485
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/value.h
-c00000000509FFC110000000000001437
-t1352662033
-s5175
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/variable.h
-c00000000509E98DB0000000000000964
-t1352571099
-s2404
-
-N/Users/cmauceri/Documents/IOS/mruby/src/array.c
-c00000000509E98DB0000000000006BF2
-t1352571099
-s27634
-i"mruby.h"
-i"mruby/array.h"
-i<string.h>
-i"mruby/string.h"
-i"mruby/class.h"
-
-N/Users/cmauceri/Documents/IOS/mruby/src/ascii.c
-c00000000509E98DB0000000000000F33
-t1352571099
-s3891
-
-N/Users/cmauceri/Documents/IOS/mruby/src/cdump.c
-c00000000509E98DB00000000000018F7
-t1352571099
-s6391
-
-N/Users/cmauceri/Documents/IOS/mruby/src/class.c
-c00000000509E98DB0000000000008573
-t1352571099
-s34163
-
-N/Users/cmauceri/Documents/IOS/mruby/src/codegen.c
-c0000000050A17AA4000000000000E11A
-t1352759972
-s57626
-
-N/Users/cmauceri/Documents/IOS/mruby/src/compar.c
-c00000000509E98DB00000000000000B6
-t1352571099
-s182
-
-N/Users/cmauceri/Documents/IOS/mruby/src/crc.c
-c00000000509E98DB0000000000000304
-t1352571099
-s772
-
-N/Users/cmauceri/Documents/IOS/mruby/src/dump.c
-c0000000050A2454A0000000000004DD3
-t1352811850
-s19923
-
-N/Users/cmauceri/Documents/IOS/mruby/src/encoding.c
-c0000000050A02198000000000000B350
-t1352671640
-s45904
-
-N/Users/cmauceri/Documents/IOS/mruby/src/encoding.h
-c00000000509E98DB00000000000039D9
-t1352571099
-s14809
-
-N/Users/cmauceri/Documents/IOS/mruby/src/enum.c
-c00000000509E98DB00000000000000B5
-t1352571099
-s181
-
-N/Users/cmauceri/Documents/IOS/mruby/src/error.c
-c00000000509E98DB0000000000001F66
-t1352571099
-s8038
-
-N/Users/cmauceri/Documents/IOS/mruby/src/error.h
-c00000000509E98DB00000000000002F0
-t1352571099
-s752
-
-N/Users/cmauceri/Documents/IOS/mruby/src/etc.c
-c00000000509E98DB0000000000000F46
-t1352571099
-s3910
-
-N/Users/cmauceri/Documents/IOS/mruby/src/gc.c
-c0000000050A0FE000000000000006FCB
-t1352728064
-s28619
-
-N/Users/cmauceri/Documents/IOS/mruby/src/hash.c
-c0000000050A0005E0000000000008EC3
-t1352663134
-s36547
-
-N/Users/cmauceri/Documents/IOS/mruby/src/init.c
-c00000000509E98DB0000000000000650
-t1352571099
-s1616
-
-N/Users/cmauceri/Documents/IOS/mruby/src/init_ext.c
-c00000000509E98DB00000000000000F7
-t1352571099
-s247
-
-N/Users/cmauceri/Documents/IOS/mruby/src/kernel.c
-c0000000050A130E40000000000008E64
-t1352741092
-s36452
-
-N/Users/cmauceri/Documents/IOS/mruby/src/lex.def
-c00000000509E98DB0000000000001F72
-t1352571099
-s8050
-
-N/Users/cmauceri/Documents/IOS/mruby/src/load.c
-c00000000509E98DB0000000000004AD3
-t1352571099
-s19155
-
-N/Users/cmauceri/Documents/IOS/mruby/src/math.c
-c00000000509E98DB000000000000369A
-t1352571099
-s13978
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/libmruby_object.a
-t1352728286
-s2051624
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/array.o
-t1352728209
-s55636
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/ascii.o
-t1352728208
-s5208
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/cdump.o
-t1352728209
-s18424
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/class.o
-t1352728209
-s78264
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/codegen.o
-t1352728286
-s83992
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/compar.o
-t1352728209
-s7316
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/crc.o
-t1352660961
-s3292
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/dump.o
-t1352728209
-s33812
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/encoding.o
-t1352728209
-s87552
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/enum.o
-t1352728209
-s7308
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/error.o
-t1352728209
-s27176
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/etc.o
-t1352728209
-s13312
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/gc.o
-t1352728209
-s42904
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/hash.o
-t1352728209
-s52596
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init.o
-t1352728209
-s8228
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init_ext.o
-t1352728209
-s7100
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/kernel.o
-t1352728209
-s50324
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/load.o
-t1352728209
-s33268
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/math.o
-t1352728209
-s23412
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/mruby_object.LinkFileList
-c0000000050A044C80000000000001205
-t1352680648
-s4613
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/numeric.o
-t1352728210
-s52800
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/object.o
-t1352728210
-s31032
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/parse.o
-t1352671506
-s255796
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/pool.o
-t1352728209
-s11836
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/print.o
-t1352728210
-s10432
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/proc.o
-t1352728210
-s17412
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/range.o
-t1352728210
-s25468
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/re.o
-t1352728210
-s105336
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regcomp.o
-t1352728210
-s141472
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regenc.o
-t1352728210
-s34688
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regerror.o
-t1352728210
-s20216
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regexec.o
-t1352728210
-s83724
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regparse.o
-t1352728210
-s150944
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/sprintf.o
-t1352728210
-s51256
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/st.o
-t1352660963
-s19912
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/state.o
-t1352728248
-s11636
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/string.o
-t1352728211
-s111812
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/struct.o
-t1352728211
-s44308
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/symbol.o
-t1352728211
-s32240
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/time.o
-t1352728211
-s42748
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/unicode.o
-t1352728211
-s246484
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/us_ascii.o
-t1352728211
-s5908
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/utf_8.o
-t1352728211
-s15220
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/variable.o
-t1352728211
-s47248
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/vm.o
-t1352728286
-s77320
-
-N/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Script-939F3FC2608A416781EE452A.sh
-c00000000509FF7E000000000000000C8
-t1352660960
-s200
-
-N/Users/cmauceri/Documents/IOS/mruby/src/name2ctype.h
-c00000000509E98DB0000000000075932
-t1352571099
-s481586
-
-N/Users/cmauceri/Documents/IOS/mruby/src/node.h
-c00000000509E98DB0000000000000690
-t1352571099
-s1680
-
-N/Users/cmauceri/Documents/IOS/mruby/src/numeric.c
-c00000000509E98DB000000000000781F
-t1352571099
-s30751
-
-N/Users/cmauceri/Documents/IOS/mruby/src/object.c
-c0000000050A2419B0000000000003ADA
-t1352810907
-s15066
-
-N/Users/cmauceri/Documents/IOS/mruby/src/oniguruma.h
-c00000000509E98DB000000000000864F
-t1352571099
-s34383
-
-N/Users/cmauceri/Documents/IOS/mruby/src/opcode.h
-c00000000509E98DB00000000000020A2
-t1352571099
-s8354
-
-N/Users/cmauceri/Documents/IOS/mruby/src/parse.c
-c00000000509FF7E1000000000005FF42
-t1352660961
-s393026
-
-N/Users/cmauceri/Documents/IOS/mruby/src/pool.c
-c00000000509E98DB0000000000000DEF
-t1352571099
-s3567
-
-N/Users/cmauceri/Documents/IOS/mruby/src/print.c
-c00000000509E98DB00000000000004F3
-t1352571099
-s1267
-
-N/Users/cmauceri/Documents/IOS/mruby/src/proc.c
-c00000000509E98DB000000000000100A
-t1352571099
-s4106
-
-N/Users/cmauceri/Documents/IOS/mruby/src/range.c
-c00000000509E98DB0000000000002CD4
-t1352571099
-s11476
-
-N/Users/cmauceri/Documents/IOS/mruby/src/re.c
-c0000000050A23FFD000000000001491A
-t1352810493
-s84250
-
-N/Users/cmauceri/Documents/IOS/mruby/src/re.h
-c00000000509E98DB0000000000000AEC
-t1352571099
-s2796
-
-N/Users/cmauceri/Documents/IOS/mruby/src/regcomp.c
-c00000000509E98DB00000000000254D4
-t1352571099
-s152788
-
-N/Users/cmauceri/Documents/IOS/mruby/src/regenc.c
-c00000000509E98DB00000000000071CF
-t1352571099
-s29135
-
-N/Users/cmauceri/Documents/IOS/mruby/src/regenc.h
-c00000000509E98DB0000000000002844
-t1352571099
-s10308
-
-N/Users/cmauceri/Documents/IOS/mruby/src/regerror.c
-c00000000509E98DB000000000000302C
-t1352571099
-s12332
-
-N/Users/cmauceri/Documents/IOS/mruby/src/regex.h
-c00000000509E98DB000000000000018E
-t1352571099
-s398
-
-N/Users/cmauceri/Documents/IOS/mruby/src/regexec.c
-c00000000509E98DB0000000000017CD2
-t1352571099
-s97490
-
-N/Users/cmauceri/Documents/IOS/mruby/src/regint.h
-c00000000509E98DB0000000000007725
-t1352571099
-s30501
-
-N/Users/cmauceri/Documents/IOS/mruby/src/regparse.c
-c00000000509E98DB0000000000020A1A
-t1352571099
-s133658
-
-N/Users/cmauceri/Documents/IOS/mruby/src/regparse.h
-c00000000509E98DB0000000000002F7B
-t1352571099
-s12155
-
-N/Users/cmauceri/Documents/IOS/mruby/src/sprintf.c
-c00000000509E98DB0000000000007E00
-t1352571099
-s32256
-
-N/Users/cmauceri/Documents/IOS/mruby/src/st.c
-c00000000509E98DB00000000000038B0
-t1352571099
-s14512
-
-N/Users/cmauceri/Documents/IOS/mruby/src/st.h
-c00000000509E98DB0000000000000A3B
-t1352571099
-s2619
-
-N/Users/cmauceri/Documents/IOS/mruby/src/state.c
-c0000000050A0FEB60000000000000811
-t1352728246
-s2065
-
-N/Users/cmauceri/Documents/IOS/mruby/src/string.c
-c0000000050A242BA000000000001510A
-t1352811194
-s86282
-
-N/Users/cmauceri/Documents/IOS/mruby/src/struct.c
-c00000000509E98DB0000000000005A5A
-t1352571099
-s23130
-
-N/Users/cmauceri/Documents/IOS/mruby/src/symbol.c
-c00000000509E98DB000000000000253D
-t1352571099
-s9533
-
-N/Users/cmauceri/Documents/IOS/mruby/src/time.c
-c00000000509E98DB00000000000055BE
-t1352571099
-s21950
-
-N/Users/cmauceri/Documents/IOS/mruby/src/unicode.c
-c00000000509E98DB0000000000012434
-t1352571099
-s74804
-
-N/Users/cmauceri/Documents/IOS/mruby/src/us_ascii.c
-c00000000509E98DB0000000000000401
-t1352571099
-s1025
-
-N/Users/cmauceri/Documents/IOS/mruby/src/utf_8.c
-c00000000509E98DB00000000000044E7
-t1352571099
-s17639
-
-N/Users/cmauceri/Documents/IOS/mruby/src/variable.c
-c00000000509E98DB00000000000041C3
-t1352571099
-s16835
-
-N/Users/cmauceri/Documents/IOS/mruby/src/vm.c
-c0000000050A17302000000000000AFB9
-t1352758018
-s44985
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/array.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/ascii.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/cdump.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/class.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/codegen.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/compar.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/crc.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/dump.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/encoding.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/enum.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/error.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/etc.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/gc.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/hash.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/init.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/init_ext.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/kernel.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/load.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/math.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/numeric.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/object.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/parse.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/pool.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/print.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/proc.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/range.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/re.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/regcomp.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/regenc.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/regerror.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/regexec.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/regparse.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/sprintf.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/st.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/state.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/string.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/struct.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/symbol.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/time.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/unicode.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/us_ascii.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/utf_8.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/variable.c
-r0
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/src/vm.c
-r0
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies381327df7c52b641^7f1346df7c52b641^-103"warning: no rule to process file '$(PROJECT_DIR)/src/parse.c.old' of type text for architecture x86_641(21%IDEActivityLogMessage2@102"Warning: no rule to process file '$(PROJECT_DIR)/src/parse.c.old' of type text for architecture x86_64-374504671#18446744073709551615#0#-1#27"com.apple.dt.IDE.LogMessage-27"Dependency Analysis Warning--0#1#0#--18"Check dependencies36"392548FA-230A-4087-8948-09D93D358EA2-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/array.o /Users/cmauceri/Documents/IOS/mruby/src/array.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421008.889160
-e374421009.202729
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/array.o
-x/Users/cmauceri/Documents/IOS/mruby/src/array.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Compile /Users/cmauceri/Documents/IOS/mruby/src/array.c6ccce3103651b641^9cfb33113651b641^---0#0#0#-19%DVTDocumentLocation2@63"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/array.c0000000000000000^1996"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/array.o src/array.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/array.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/array.dia -c /Users/cmauceri/Documents/IOS/mruby/src/array.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/array.o36"D3B23D2B-A25D-421B-A87F-C6FC7E050DD4-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/ascii.o /Users/cmauceri/Documents/IOS/mruby/src/ascii.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421008.889150
-e374421009.033880
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/ascii.o
-x/Users/cmauceri/Documents/IOS/mruby/src/ascii.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Compile /Users/cmauceri/Documents/IOS/mruby/src/ascii.c08cce3103651b641^b74115113651b641^---0#0#0#-19%DVTDocumentLocation2@63"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/ascii.c0000000000000000^1996"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/ascii.o src/ascii.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/ascii.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/ascii.dia -c /Users/cmauceri/Documents/IOS/mruby/src/ascii.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/ascii.o36"12B0879C-5AF3-4C8A-967D-83CBC4104E2F-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/cdump.o /Users/cmauceri/Documents/IOS/mruby/src/cdump.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421008.889174
-e374421009.033382
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/cdump.o
-x/Users/cmauceri/Documents/IOS/mruby/src/cdump.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Compile /Users/cmauceri/Documents/IOS/mruby/src/cdump.c92cbe3103651b641^513215113651b641^---0#0#0#-19%DVTDocumentLocation2@63"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/cdump.c0000000000000000^1996"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/cdump.o src/cdump.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/cdump.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/cdump.dia -c /Users/cmauceri/Documents/IOS/mruby/src/cdump.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/cdump.o36"595DEB09-DA7C-44E8-ACA7-FBE2F1650204-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/class.o /Users/cmauceri/Documents/IOS/mruby/src/class.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421008.902077
-e374421009.369618
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/class.o
-x/Users/cmauceri/Documents/IOS/mruby/src/class.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Compile /Users/cmauceri/Documents/IOS/mruby/src/class.c8f1df4103651b641^70b55e113651b641^---0#0#0#-19%DVTDocumentLocation2@63"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/class.c0000000000000000^1996"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/class.o src/class.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/class.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/class.dia -c /Users/cmauceri/Documents/IOS/mruby/src/class.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/class.o36"0DC90DD5-840D-4D25-B484-7426A290E22F-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/codegen.o /Users/cmauceri/Documents/IOS/mruby/src/codegen.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374504671.584781
-e374504672.318723
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/codegen.o
-x/Users/cmauceri/Documents/IOS/mruby/src/codegen.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Compile /Users/cmauceri/Documents/IOS/mruby/src/codegen.c32e395df7c52b641^399851e07c52b641^---0#0#0#-19%DVTDocumentLocation2@65"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/codegen.c0000000000000000^2008"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/codegen.o src/codegen.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/codegen.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/codegen.dia -c /Users/cmauceri/Documents/IOS/mruby/src/codegen.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/codegen.o36"7CDEEB37-7B58-42A9-98ED-A0A754BAE0B4-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/compar.o /Users/cmauceri/Documents/IOS/mruby/src/compar.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.037715
-e374421009.114279
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/compar.o
-x/Users/cmauceri/Documents/IOS/mruby/src/compar.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Compile /Users/cmauceri/Documents/IOS/mruby/src/compar.ccbd709113651b641^f04f1d113651b641^---0#0#0#-19%DVTDocumentLocation2@64"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/compar.c0000000000000000^2002"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/compar.o src/compar.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/compar.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/compar.dia -c /Users/cmauceri/Documents/IOS/mruby/src/compar.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/compar.o36"908BC591-7546-44B6-A014-05459A04D3AC-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/crc.o /Users/cmauceri/Documents/IOS/mruby/src/crc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374353761.686621
-e374353761.719379
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/crc.o
-x/Users/cmauceri/Documents/IOS/mruby/src/crc.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Compile /Users/cmauceri/Documents/IOS/mruby/src/crc.c63f1af612f50b641^643eb8612f50b641^---0#0#0#-19%DVTDocumentLocation2@61"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/crc.c0000000000000000^1984"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/crc.o src/crc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/crc.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/crc.dia -c /Users/cmauceri/Documents/IOS/mruby/src/crc.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/crc.o36"C17D335B-AFF2-4055-A8D3-DA16D211AA8B-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/dump.o /Users/cmauceri/Documents/IOS/mruby/src/dump.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374504671.584966
-e374504672.260016
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/dump.o
-x/Users/cmauceri/Documents/IOS/mruby/src/dump.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Compile /Users/cmauceri/Documents/IOS/mruby/src/dump.cace295df7c52b641^c49642e07c52b641^---0#0#0#-19%DVTDocumentLocation2@62"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/dump.c0000000000000000^1990"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/dump.o src/dump.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/dump.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/dump.dia -c /Users/cmauceri/Documents/IOS/mruby/src/dump.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/dump.o36"CB1B5DED-9F06-430E-B1C0-0E5D0E5432F9-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/encoding.o /Users/cmauceri/Documents/IOS/mruby/src/encoding.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.204212
-e374421009.559194
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/encoding.o
-x/Users/cmauceri/Documents/IOS/mruby/src/encoding.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Compile /Users/cmauceri/Documents/IOS/mruby/src/encoding.ca37534113651b641^6728aa113651b641^---0#0#0#-19%DVTDocumentLocation2@66"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/encoding.c0000000000000000^2014"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/encoding.o src/encoding.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/encoding.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/encoding.dia -c /Users/cmauceri/Documents/IOS/mruby/src/encoding.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/encoding.o36"CA47B62C-4AAD-45C1-8D77-3265117BFE58-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/enum.o /Users/cmauceri/Documents/IOS/mruby/src/enum.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.300217
-e374421009.359346
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/enum.o
-x/Users/cmauceri/Documents/IOS/mruby/src/enum.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Compile /Users/cmauceri/Documents/IOS/mruby/src/enum.c5a0d4d113651b641^b70c5c113651b641^---0#0#0#-19%DVTDocumentLocation2@62"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/enum.c0000000000000000^1990"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/enum.o src/enum.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/enum.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/enum.dia -c /Users/cmauceri/Documents/IOS/mruby/src/enum.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/enum.o36"5D1E8850-B8A4-4F91-B5CE-B7977200C7AB-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/error.o /Users/cmauceri/Documents/IOS/mruby/src/error.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.360681
-e374421009.497108
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/error.o
-x/Users/cmauceri/Documents/IOS/mruby/src/error.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Compile /Users/cmauceri/Documents/IOS/mruby/src/error.cf5815c113651b641^1ac380113651b641^---0#0#0#-19%DVTDocumentLocation2@63"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/error.c0000000000000000^1996"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/error.o src/error.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/error.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/error.dia -c /Users/cmauceri/Documents/IOS/mruby/src/error.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/error.o36"8E002B05-E4D5-45CD-A574-6CEE63428084-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/etc.o /Users/cmauceri/Documents/IOS/mruby/src/etc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.370962
-e374421009.451879
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/etc.o
-x/Users/cmauceri/Documents/IOS/mruby/src/etc.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Compile /Users/cmauceri/Documents/IOS/mruby/src/etc.c492a5f113651b641^527f75113651b641^---0#0#0#-19%DVTDocumentLocation2@61"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/etc.c0000000000000000^1984"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/etc.o src/etc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/etc.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/etc.dia -c /Users/cmauceri/Documents/IOS/mruby/src/etc.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/etc.o36"D986D9F2-28CC-4DA5-9A43-CF56F40B2ED6-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/gc.o /Users/cmauceri/Documents/IOS/mruby/src/gc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.385938
-e374421009.571490
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/gc.o
-x/Users/cmauceri/Documents/IOS/mruby/src/gc.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"Compile /Users/cmauceri/Documents/IOS/mruby/src/gc.c121463113651b641^2b32aa113651b641^---0#0#0#-19%DVTDocumentLocation2@60"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/gc.c0000000000000000^1978"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/gc.o src/gc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/gc.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/gc.dia -c /Users/cmauceri/Documents/IOS/mruby/src/gc.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/gc.o36"6E9153EF-1888-4ABC-931D-D615B99B14E4-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/hash.o /Users/cmauceri/Documents/IOS/mruby/src/hash.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.509158
-e374421009.939353
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/hash.o
-x/Users/cmauceri/Documents/IOS/mruby/src/hash.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Compile /Users/cmauceri/Documents/IOS/mruby/src/hash.cc79d82113651b641^ea78f0113651b641^---0#0#0#-19%DVTDocumentLocation2@62"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/hash.c0000000000000000^1990"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/hash.o src/hash.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/hash.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/hash.dia -c /Users/cmauceri/Documents/IOS/mruby/src/hash.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/hash.o36"2A5B02A7-F944-43F9-86E5-B9E42A0229F5-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init.o /Users/cmauceri/Documents/IOS/mruby/src/init.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.503551
-e374421009.628871
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init.o
-x/Users/cmauceri/Documents/IOS/mruby/src/init.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Compile /Users/cmauceri/Documents/IOS/mruby/src/init.c9e5d82113651b641^753caa113651b641^---0#0#0#-19%DVTDocumentLocation2@62"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/init.c0000000000000000^1990"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init.o src/init.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init.dia -c /Users/cmauceri/Documents/IOS/mruby/src/init.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init.o36"1461C962-ED72-4950-BF9B-F50C01A002AF-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init_ext.o /Users/cmauceri/Documents/IOS/mruby/src/init_ext.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.560543
-e374421009.620146
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init_ext.o
-x/Users/cmauceri/Documents/IOS/mruby/src/init_ext.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Compile /Users/cmauceri/Documents/IOS/mruby/src/init_ext.cb9ab8f113651b641^6937aa113651b641^---0#0#0#-19%DVTDocumentLocation2@66"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/init_ext.c0000000000000000^2014"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init_ext.o src/init_ext.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init_ext.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init_ext.dia -c /Users/cmauceri/Documents/IOS/mruby/src/init_ext.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/init_ext.o36"6D9A0DB1-F423-4C16-B412-F20D075AA83F-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/kernel.o /Users/cmauceri/Documents/IOS/mruby/src/kernel.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374504671.591586
-e374504672.271500
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/kernel.o
-x/Users/cmauceri/Documents/IOS/mruby/src/kernel.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Compile /Users/cmauceri/Documents/IOS/mruby/src/kernel.caf9697df7c52b641^f58045e07c52b641^---0#0#0#-19%DVTDocumentLocation2@64"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/kernel.c0000000000000000^2002"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/kernel.o src/kernel.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/kernel.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/kernel.dia -c /Users/cmauceri/Documents/IOS/mruby/src/kernel.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/kernel.o36"16D703BD-CCA1-426E-B751-21C44D469C56-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/load.o /Users/cmauceri/Documents/IOS/mruby/src/load.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.621524
-e374421009.790811
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/load.o
-x/Users/cmauceri/Documents/IOS/mruby/src/load.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Compile /Users/cmauceri/Documents/IOS/mruby/src/load.cbf499f113651b641^fcfbcc113651b641^---0#0#0#-19%DVTDocumentLocation2@62"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/load.c0000000000000000^1990"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/load.o src/load.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/load.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/load.dia -c /Users/cmauceri/Documents/IOS/mruby/src/load.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/load.o36"27ACC57D-C796-4864-9C31-BEAF8C41099E-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/math.o /Users/cmauceri/Documents/IOS/mruby/src/math.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.630270
-e374421009.763934
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/math.o
-x/Users/cmauceri/Documents/IOS/mruby/src/math.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Compile /Users/cmauceri/Documents/IOS/mruby/src/math.c8786a1113651b641^80f1cc113651b641^---0#0#0#-19%DVTDocumentLocation2@62"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/math.c0000000000000000^1990"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/math.o src/math.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/math.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/math.dia -c /Users/cmauceri/Documents/IOS/mruby/src/math.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/math.o36"0D8717FD-13F2-491B-8DF3-2CF511E12700-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/numeric.o /Users/cmauceri/Documents/IOS/mruby/src/numeric.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.765303
-e374421010.210061
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/numeric.o
-x/Users/cmauceri/Documents/IOS/mruby/src/numeric.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Compile /Users/cmauceri/Documents/IOS/mruby/src/numeric.c9318c4113651b641^5cca35123651b641^---0#0#0#-19%DVTDocumentLocation2@65"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/numeric.c0000000000000000^2008"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/numeric.o src/numeric.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/numeric.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/numeric.dia -c /Users/cmauceri/Documents/IOS/mruby/src/numeric.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/numeric.o36"3AEE75AE-0820-4356-8987-3D48E067B600-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/object.o /Users/cmauceri/Documents/IOS/mruby/src/object.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374504671.595814
-e374504672.259858
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/object.o
-x/Users/cmauceri/Documents/IOS/mruby/src/object.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Compile /Users/cmauceri/Documents/IOS/mruby/src/object.cccb598df7c52b641^be8842e07c52b641^---0#0#0#-19%DVTDocumentLocation2@64"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/object.c0000000000000000^2002"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/object.o src/object.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/object.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/object.dia -c /Users/cmauceri/Documents/IOS/mruby/src/object.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/object.o36"B76AD49B-75CF-492A-8CBF-36D7F8B86068-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/parse.o /Users/cmauceri/Documents/IOS/mruby/src/parse.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374364305.962603
-e374364306.437519
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/parse.o
-x/Users/cmauceri/Documents/IOS/mruby/src/parse.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-oparse.y:753:1: warning: unused function 'match_op' [-Wunused-function]
-omatch_op(parser_state *p, node *a, node *b)
-o^
-o1 warning generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Compile /Users/cmauceri/Documents/IOS/mruby/src/parse.c0f99f6915850b641^efff6f925850b641^-138"parse.y:753:1: warning: unused function 'match_op' [-Wunused-function]match_op(parser_state *p, node *a, node *b)^1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@26"Unused function 'match_op'-374364306#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@59"file://localhost/Users/cmauceri/Documents/IOS/mruby/parse.y0000000000000000^752#0#752#0#16527#0#19"Unused Entity Issue--0#0#0#-19%DVTDocumentLocation4@63"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/parse.c0000000000000000^1996"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/parse.o src/parse.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/parse.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/parse.dia -c /Users/cmauceri/Documents/IOS/mruby/src/parse.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/parse.o36"CD2B5158-6C00-4B35-A71D-BC4707F768CD-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/pool.o /Users/cmauceri/Documents/IOS/mruby/src/pool.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.833471
-e374421009.911365
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/pool.o
-x/Users/cmauceri/Documents/IOS/mruby/src/pool.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Compile /Users/cmauceri/Documents/IOS/mruby/src/pool.cd68bd5113651b641^82ffe9113651b641^---0#0#0#-19%DVTDocumentLocation2@62"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/pool.c0000000000000000^1990"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/pool.o src/pool.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/pool.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/pool.dia -c /Users/cmauceri/Documents/IOS/mruby/src/pool.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/pool.o36"C5F42400-65B9-45AF-A37F-33708142BAA9-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/print.o /Users/cmauceri/Documents/IOS/mruby/src/print.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.912768
-e374421010.102011
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/print.o
-x/Users/cmauceri/Documents/IOS/mruby/src/print.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Compile /Users/cmauceri/Documents/IOS/mruby/src/print.cb6d8e9113651b641^1d221a123651b641^---0#0#0#-19%DVTDocumentLocation2@63"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/print.c0000000000000000^1996"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/print.o src/print.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/print.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/print.dia -c /Users/cmauceri/Documents/IOS/mruby/src/print.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/print.o36"73F1EA31-D586-4B72-B5ED-4E5652A9ECE5-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/proc.o /Users/cmauceri/Documents/IOS/mruby/src/proc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421009.941440
-e374421010.102301
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/proc.o
-x/Users/cmauceri/Documents/IOS/mruby/src/proc.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Compile /Users/cmauceri/Documents/IOS/mruby/src/proc.c9831f1113651b641^28271a123651b641^---0#0#0#-19%DVTDocumentLocation2@62"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/proc.c0000000000000000^1990"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/proc.o src/proc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/proc.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/proc.dia -c /Users/cmauceri/Documents/IOS/mruby/src/proc.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/proc.o36"73054308-2F44-4452-986D-D5962E3883E2-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/range.o /Users/cmauceri/Documents/IOS/mruby/src/range.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421010.097695
-e374421010.295547
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/range.o
-x/Users/cmauceri/Documents/IOS/mruby/src/range.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Compile /Users/cmauceri/Documents/IOS/mruby/src/range.ca85419123651b641^78b64b123651b641^---0#0#0#-19%DVTDocumentLocation2@63"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/range.c0000000000000000^1996"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/range.o src/range.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/range.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/range.dia -c /Users/cmauceri/Documents/IOS/mruby/src/range.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/range.o36"C24E32C3-4793-457E-B45D-D26E48873001-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/re.o /Users/cmauceri/Documents/IOS/mruby/src/re.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374504672.264176
-e374504672.575187
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/re.o
-x/Users/cmauceri/Documents/IOS/mruby/src/re.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-o/Users/cmauceri/Documents/IOS/mruby/src/re.c:2148:15: warning: unused variable 'embeddable' [-Wunused-variable]
-o    const int embeddable = ONIG_OPTION_MULTILINE|ONIG_OPTION_IGNORECASE|ONIG_OPTION_EXTEND;
-o              ^
-o1 warning generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"Compile /Users/cmauceri/Documents/IOS/mruby/src/re.c4fcb43e07c52b641^253e93e07c52b641^-241"/Users/cmauceri/Documents/IOS/mruby/src/re.c:2148:15: warning: unused variable 'embeddable' [-Wunused-variable]    const int embeddable = ONIG_OPTION_MULTILINE|ONIG_OPTION_IGNORECASE|ONIG_OPTION_EXTEND;              ^1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@28"Unused variable 'embeddable'-374504672#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@60"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/re.c0000000000000000^2147#14#2147#14#57830#0#19"Unused Entity Issue--0#0#0#-19%DVTDocumentLocation4@60"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/re.c0000000000000000^1978"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/re.o src/re.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/re.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/re.dia -c /Users/cmauceri/Documents/IOS/mruby/src/re.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/re.o36"9D8AF145-EC26-455E-A340-E76D934355AB-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regcomp.o /Users/cmauceri/Documents/IOS/mruby/src/regcomp.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421010.103539
-e374421010.759670
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regcomp.o
-x/Users/cmauceri/Documents/IOS/mruby/src/regcomp.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Compile /Users/cmauceri/Documents/IOS/mruby/src/regcomp.c50a91a123651b641^6e87c2123651b641^---0#0#0#-19%DVTDocumentLocation2@65"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/regcomp.c0000000000000000^2008"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regcomp.o src/regcomp.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regcomp.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regcomp.dia -c /Users/cmauceri/Documents/IOS/mruby/src/regcomp.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regcomp.o36"D0A1DB7B-91EC-4791-9C55-A189570F5941-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regenc.o /Users/cmauceri/Documents/IOS/mruby/src/regenc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421010.211665
-e374421010.376693
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regenc.o
-x/Users/cmauceri/Documents/IOS/mruby/src/regenc.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Compile /Users/cmauceri/Documents/IOS/mruby/src/regenc.c076136123651b641^aa7f60123651b641^---0#0#0#-19%DVTDocumentLocation2@64"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/regenc.c0000000000000000^2002"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regenc.o src/regenc.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regenc.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regenc.dia -c /Users/cmauceri/Documents/IOS/mruby/src/regenc.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regenc.o36"213891CB-C98D-4D36-8DE1-4B0DD16E2303-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regerror.o /Users/cmauceri/Documents/IOS/mruby/src/regerror.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421010.296888
-e374421010.404434
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regerror.o
-x/Users/cmauceri/Documents/IOS/mruby/src/regerror.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Compile /Users/cmauceri/Documents/IOS/mruby/src/regerror.cb9364c123651b641^209867123651b641^---0#0#0#-19%DVTDocumentLocation2@66"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/regerror.c0000000000000000^2014"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regerror.o src/regerror.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regerror.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regerror.dia -c /Users/cmauceri/Documents/IOS/mruby/src/regerror.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regerror.o36"465CAFB0-3328-40F7-8E29-F06C1229445D-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regexec.o /Users/cmauceri/Documents/IOS/mruby/src/regexec.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421010.378046
-e374421010.785134
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regexec.o
-x/Users/cmauceri/Documents/IOS/mruby/src/regexec.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Compile /Users/cmauceri/Documents/IOS/mruby/src/regexec.ce4f560123651b641^6e4ec9123651b641^---0#0#0#-19%DVTDocumentLocation2@65"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/regexec.c0000000000000000^2008"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regexec.o src/regexec.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regexec.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regexec.dia -c /Users/cmauceri/Documents/IOS/mruby/src/regexec.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regexec.o36"9BCA16EE-D936-436E-BF53-043C6CD85CAC-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regparse.o /Users/cmauceri/Documents/IOS/mruby/src/regparse.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421010.406009
-e374421010.952788
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regparse.o
-x/Users/cmauceri/Documents/IOS/mruby/src/regparse.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Compile /Users/cmauceri/Documents/IOS/mruby/src/regparse.cc02168123651b641^eae9f3123651b641^---0#0#0#-19%DVTDocumentLocation2@66"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/regparse.c0000000000000000^2014"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regparse.o src/regparse.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regparse.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regparse.dia -c /Users/cmauceri/Documents/IOS/mruby/src/regparse.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/regparse.o36"CE329CB7-B36D-4A15-971A-2D42D881EE6D-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/sprintf.o /Users/cmauceri/Documents/IOS/mruby/src/sprintf.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421010.622464
-e374421010.870582
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/sprintf.o
-x/Users/cmauceri/Documents/IOS/mruby/src/sprintf.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Compile /Users/cmauceri/Documents/IOS/mruby/src/sprintf.c0891a0123651b641^aef4de123651b641^---0#0#0#-19%DVTDocumentLocation2@65"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/sprintf.c0000000000000000^2008"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/sprintf.o src/sprintf.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/sprintf.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/sprintf.dia -c /Users/cmauceri/Documents/IOS/mruby/src/sprintf.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/sprintf.o36"36ED29B0-37A3-463F-9891-B4EA93EFEFE6-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/st.o /Users/cmauceri/Documents/IOS/mruby/src/st.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374353763.270599
-e374353763.363501
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/st.o
-x/Users/cmauceri/Documents/IOS/mruby/src/st.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"Compile /Users/cmauceri/Documents/IOS/mruby/src/st.cda7345632f50b641^20d06d632f50b641^---0#0#0#-19%DVTDocumentLocation2@60"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/st.c0000000000000000^1978"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/st.o src/st.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/st.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/st.dia -c /Users/cmauceri/Documents/IOS/mruby/src/st.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/st.o36"C0A6EA38-CF8E-4970-A525-F17DC2BB2854-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/state.o /Users/cmauceri/Documents/IOS/mruby/src/state.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421048.633144
-e374421048.675327
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/state.o
-x/Users/cmauceri/Documents/IOS/mruby/src/state.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Compile /Users/cmauceri/Documents/IOS/mruby/src/state.cbc3ba2383651b641^3be2ac383651b641^---0#0#0#-19%DVTDocumentLocation2@63"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/state.c0000000000000000^1996"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/state.o src/state.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/state.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/state.dia -c /Users/cmauceri/Documents/IOS/mruby/src/state.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/state.o36"83AB0019-7E7D-4C0A-B995-56BC71A57BA6-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/string.o /Users/cmauceri/Documents/IOS/mruby/src/string.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374504672.273344
-e374504672.592244
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/string.o
-x/Users/cmauceri/Documents/IOS/mruby/src/string.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Compile /Users/cmauceri/Documents/IOS/mruby/src/string.cb32646e07c52b641^b79c97e07c52b641^---0#0#0#-19%DVTDocumentLocation2@64"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/string.c0000000000000000^2002"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/string.o src/string.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/string.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/string.dia -c /Users/cmauceri/Documents/IOS/mruby/src/string.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/string.o36"0EE41CD5-58D2-4704-9583-6A1E3880ED23-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/struct.o /Users/cmauceri/Documents/IOS/mruby/src/struct.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421010.826758
-e374421011.031236
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/struct.o
-x/Users/cmauceri/Documents/IOS/mruby/src/struct.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Compile /Users/cmauceri/Documents/IOS/mruby/src/struct.cf9dad3123651b641^d5ae0d133651b641^---0#0#0#-19%DVTDocumentLocation2@64"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/struct.c0000000000000000^2002"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/struct.o src/struct.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/struct.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/struct.dia -c /Users/cmauceri/Documents/IOS/mruby/src/struct.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/struct.o36"05AF8293-AC71-4C40-B7F2-2D787C956C98-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/symbol.o /Users/cmauceri/Documents/IOS/mruby/src/symbol.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421010.871907
-e374421011.062575
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/symbol.o
-x/Users/cmauceri/Documents/IOS/mruby/src/symbol.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection56"Compile /Users/cmauceri/Documents/IOS/mruby/src/symbol.ca263df123651b641^ddef14133651b641^---0#0#0#-19%DVTDocumentLocation2@64"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/symbol.c0000000000000000^2002"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/symbol.o src/symbol.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/symbol.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/symbol.dia -c /Users/cmauceri/Documents/IOS/mruby/src/symbol.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/symbol.o36"F2659142-BAE2-4A9B-807D-F44586E6FD71-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/time.o /Users/cmauceri/Documents/IOS/mruby/src/time.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421010.955428
-e374421011.138806
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/time.o
-x/Users/cmauceri/Documents/IOS/mruby/src/time.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Compile /Users/cmauceri/Documents/IOS/mruby/src/time.c47e7f4123651b641^4a7b27133651b641^---0#0#0#-19%DVTDocumentLocation2@62"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/time.c0000000000000000^1990"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/time.o src/time.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/time.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/time.dia -c /Users/cmauceri/Documents/IOS/mruby/src/time.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/time.o36"7B4A9B47-60C0-4D23-A26A-D433C8D7EDFC-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/unicode.o /Users/cmauceri/Documents/IOS/mruby/src/unicode.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421011.032627
-e374421011.767665
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/unicode.o
-x/Users/cmauceri/Documents/IOS/mruby/src/unicode.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Compile /Users/cmauceri/Documents/IOS/mruby/src/unicode.c1a8908133651b641^ed63c5133651b641^---0#0#0#-19%DVTDocumentLocation2@65"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/unicode.c0000000000000000^2008"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/unicode.o src/unicode.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/unicode.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/unicode.dia -c /Users/cmauceri/Documents/IOS/mruby/src/unicode.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/unicode.o36"6755C760-A093-4FDC-871A-DB7120438937-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/us_ascii.o /Users/cmauceri/Documents/IOS/mruby/src/us_ascii.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421011.063934
-e374421011.131333
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/us_ascii.o
-x/Users/cmauceri/Documents/IOS/mruby/src/us_ascii.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Compile /Users/cmauceri/Documents/IOS/mruby/src/us_ascii.c089110133651b641^c76627133651b641^---0#0#0#-19%DVTDocumentLocation2@66"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/us_ascii.c0000000000000000^2014"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/us_ascii.o src/us_ascii.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/us_ascii.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/us_ascii.dia -c /Users/cmauceri/Documents/IOS/mruby/src/us_ascii.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/us_ascii.o36"25D614A2-4738-42B9-B422-0947D282FFEC-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/utf_8.o /Users/cmauceri/Documents/IOS/mruby/src/utf_8.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421011.132738
-e374421011.319594
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/utf_8.o
-x/Users/cmauceri/Documents/IOS/mruby/src/utf_8.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection55"Compile /Users/cmauceri/Documents/IOS/mruby/src/utf_8.ca72522133651b641^93e051133651b641^---0#0#0#-19%DVTDocumentLocation2@63"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/utf_8.c0000000000000000^1996"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/utf_8.o src/utf_8.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/utf_8.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/utf_8.dia -c /Users/cmauceri/Documents/IOS/mruby/src/utf_8.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/utf_8.o36"E6FE458B-81E6-4F78-A126-75CC60FB9171-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/variable.o /Users/cmauceri/Documents/IOS/mruby/src/variable.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421011.146952
-e374421011.529052
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/variable.o
-x/Users/cmauceri/Documents/IOS/mruby/src/variable.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Compile /Users/cmauceri/Documents/IOS/mruby/src/variable.c5e2c28133651b641^726d88133651b641^---0#0#0#-19%DVTDocumentLocation2@66"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/variable.c0000000000000000^2014"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/variable.o src/variable.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/variable.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/variable.dia -c /Users/cmauceri/Documents/IOS/mruby/src/variable.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/variable.o36"6ED990A0-C58F-40DE-A36E-342E32B52C2F-
-
-CCompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/vm.o /Users/cmauceri/Documents/IOS/mruby/src/vm.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374504672.285122
-e374504672.592613
-r1
-xCompileC
-xsrc/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/vm.o
-x/Users/cmauceri/Documents/IOS/mruby/src/vm.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-o/Users/cmauceri/Documents/IOS/mruby/src/vm.c:510:18: warning: unused variable 'soptables' [-Wunused-variable]
-o    static char *soptables[] = {
-o                 ^
-o1 warning generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection52"Compile /Users/cmauceri/Documents/IOS/mruby/src/vm.c732a49e07c52b641^e5b497e07c52b641^-183"/Users/cmauceri/Documents/IOS/mruby/src/vm.c:510:18: warning: unused variable 'soptables' [-Wunused-variable]    static char *soptables[] = {                 ^1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@27"Unused variable 'soptables'-374504672#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@60"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/vm.c0000000000000000^509#17#509#17#12662#0#19"Unused Entity Issue--0#0#0#-19%DVTDocumentLocation4@60"file://localhost/Users/cmauceri/Documents/IOS/mruby/src/vm.c0000000000000000^1978"CompileC src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/vm.o src/vm.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/vm.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/vm.dia -c /Users/cmauceri/Documents/IOS/mruby/src/vm.c -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/vm.o36"F2AC08EA-D0E6-48FB-B8CE-0D950325FCA9-
-
-CLibtool /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/libmruby_object.a normal x86_64
-s374504672.599013
-e374504672.695648
-r1
-xLibtool
-x/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/libmruby_object.a
-xnormal
-xx86_64
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Libtool src/mruby.build/Debug/mruby_object.build/Objects-normal/libmruby_object.a normal x86_640f7b99e07c52b641^1a17b2e07c52b641^---0#0#0#--758"Libtool src/mruby.build/Debug/mruby_object.build/Objects-normal/libmruby_object.a normal x86_64    cd /Users/cmauceri/Documents/IOS/mruby    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only x86_64 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal -filelist /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/x86_64/mruby_object.LinkFileList -o /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Objects-normal/libmruby_object.a36"9372A2C0-7D3D-40F1-82A8-A9518E549E64-
-
-CPhaseScriptExecution "CMake Rules" /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Script-939F3FC2608A416781EE452A.sh
-s374504671.281649
-e374504671.574661
-r1
-xPhaseScriptExecution
-xCMake Rules
-x/Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Script-939F3FC2608A416781EE452A.sh
-oecho "[BISON][mruby] Building parser with bison 2.6"
-o[BISON][mruby] Building parser with bison 2.6
-ocd /Users/cmauceri/Documents/IOS/mruby/src && /opt/local/bin/bison -d -o /Users/cmauceri/Documents/IOS/mruby/src/parse.c parse.y
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'39b448df7c52b641^3f1d93df7c52b641^-228"echo "[BISON][mruby] Building parser with bison 2.6"[BISON][mruby] Building parser with bison 2.6cd /Users/cmauceri/Documents/IOS/mruby/src && /opt/local/bin/bison -d -o /Users/cmauceri/Documents/IOS/mruby/src/parse.c parse.y3(21%IDEActivityLogMessage2@53"echo "[BISON][mruby] Building parser with bison 2.6"-374504671#0#53#-0#-----2@46"[BISON][mruby] Building parser with bison 2.6-374504671#53#46#-0#-----2@129"cd /Users/cmauceri/Documents/IOS/mruby/src && /opt/local/bin/bison -d -o /Users/cmauceri/Documents/IOS/mruby/src/parse.c parse.y-374504671#99#129#-0#-----0#0#0#--281"PhaseScriptExecution "CMake Rules" src/mruby.build/Debug/mruby_object.build/Script-939F3FC2608A416781EE452A.sh    cd /Users/cmauceri/Documents/IOS/mruby    /bin/sh -c /Users/cmauceri/Documents/IOS/mruby/src/mruby.build/Debug/mruby_object.build/Script-939F3FC2608A416781EE452A.sh36"641AF93D-CD97-47D7-8447-634F07AD6004-
-

@@ -28,7 +28,6 @@
  */
 
 #include "mruby.h"
-
 #ifdef ENABLE_REGEXP
 #include <string.h>
 #include "regint.h"

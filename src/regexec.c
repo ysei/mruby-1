@@ -32,12 +32,11 @@
 #include <string.h>
 #include "regint.h"
 
+/* #define USE_MATCH_RANGE_MUST_BE_INSIDE_OF_SPECIFIED_RANGE */
 /* temporary definition */
 #define xmalloc  malloc
 #define xrealloc realloc
 #define xfree    free
-
-/* #define USE_MATCH_RANGE_MUST_BE_INSIDE_OF_SPECIFIED_RANGE */
 
 #ifdef USE_CRNL_AS_LINE_TERMINATOR
 #define ONIGENC_IS_MBC_CRNL(enc,p,end) \

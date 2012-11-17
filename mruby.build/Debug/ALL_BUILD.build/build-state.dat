@@ -1,28 +1,0 @@
-TALL_BUILD
-v5
-r1
-cCheck dependencies
-cPhaseScriptExecution "CMake Rules" /Users/cmauceri/Documents/IOS/mruby/mruby.build/Debug/ALL_BUILD.build/Script-C5D5E7B1C7454F7DB312F8FA.sh
-
-N/Users/cmauceri/Documents/IOS/mruby/mruby.build/Debug/ALL_BUILD.build/Script-C5D5E7B1C7454F7DB312F8FA.sh
-c00000000509FF7E500000000000000A0
-t1352660965
-s160
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies59a667e27c52b641^140768e27c52b641^---0#1#0#--18"Check dependencies36"7433F2C6-F888-48F7-B6E1-50CF9278FA72-
-
-CPhaseScriptExecution "CMake Rules" /Users/cmauceri/Documents/IOS/mruby/mruby.build/Debug/ALL_BUILD.build/Script-C5D5E7B1C7454F7DB312F8FA.sh
-s374504674.407913
-e374504674.443532
-r1
-xPhaseScriptExecution
-xCMake Rules
-x/Users/cmauceri/Documents/IOS/mruby/mruby.build/Debug/ALL_BUILD.build/Script-C5D5E7B1C7454F7DB312F8FA.sh
-oecho ""
-o
-oecho Build\ all\ projects
-oBuild all projects
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'f60869e27c52b641^db8a71e27c52b641^-54"echo ""echo Build\ all\ projectsBuild all projects3(21%IDEActivityLogMessage2@8"echo ""-374504674#0#8#-0#-----2@26"echo Build\ all\ projects-374504674#9#26#-0#-----2@19"Build all projects-374504674#35#19#-0#-----0#0#0#--267"PhaseScriptExecution "CMake Rules" mruby.build/Debug/ALL_BUILD.build/Script-C5D5E7B1C7454F7DB312F8FA.sh    cd /Users/cmauceri/Documents/IOS/mruby    /bin/sh -c /Users/cmauceri/Documents/IOS/mruby/mruby.build/Debug/ALL_BUILD.build/Script-C5D5E7B1C7454F7DB312F8FA.sh36"AC66233D-41AB-4005-B173-D8471D4EE360-
-

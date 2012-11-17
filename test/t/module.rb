@@ -31,6 +31,18 @@ assert('Module#append_features', '15.2.2.4.10') do
   Test4AppendFeatures2.const_get(:Const4AppendFeatures2) == Test4AppendFeatures2
 end
 
+assert('Module#class_variables', '15.2.2.4.19') do
+  class Test4ClassVariables1
+    @@var1 = 1
+  end
+  class Test4ClassVariables2 < Test4ClassVariables1
+    @@var2 = 2
+  end
+
+  Test4ClassVariables1.class_variables == [:@@var1] &&
+  Test4ClassVariables2.class_variables == [:@@var2]
+end
+
 assert('Module#const_defined?', '15.2.2.4.20') do
   module Test4ConstDefined
     Const4Test4ConstDefined = true
@@ -104,4 +116,20 @@ assert('Module#included_modules', '15.2.2.4.30') do
 
   r = Test4includedModules2.included_modules
   r.class == Array and r.include?(Test4includedModules)
+end
+
+# Not ISO specified
+
+assert('Module#to_s') do
+  module Test4to_sModules
+  end
+
+  Test4to_sModules.to_s == 'Test4to_sModules'
+end
+
+assert('Module#inspect') do
+  module Test4to_sModules
+  end
+
+  Test4to_sModules.inspect == 'Test4to_sModules'
 end

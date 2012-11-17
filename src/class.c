@@ -171,11 +171,11 @@ mrb_vm_define_class(mrb_state *mrb, mrb_value outer, mrb_value super, mrb_sym id
     c = mrb_class_ptr(v);
     if (!mrb_nil_p(super)) {
       if (mrb_type(super) != MRB_TT_CLASS) {
-        mrb_raise(mrb, E_TYPE_ERROR, "superclass must be a Class (%s given)", mrb_obj_classname(mrb, super));
+        mrb_raisef(mrb, E_TYPE_ERROR, "superclass must be a Class (%s given)", mrb_obj_classname(mrb, super));
       }
 
       if (!c->super || mrb_class_ptr(super) != mrb_class_real(c->super)) {
-        mrb_raise(mrb, E_TYPE_ERROR, "superclass mismatch for class %s", mrb_sym2name(mrb, id));
+        mrb_raisef(mrb, E_TYPE_ERROR, "superclass mismatch for class %s", mrb_sym2name(mrb, id));
       }
     }
 
@@ -184,7 +184,7 @@ mrb_vm_define_class(mrb_state *mrb, mrb_value outer, mrb_value super, mrb_sym id
 
   if (!mrb_nil_p(super)) {
     if (mrb_type(super) != MRB_TT_CLASS) {
-      mrb_raise(mrb, E_TYPE_ERROR, "superclass must be a Class (%s given)", mrb_obj_classname(mrb, super));
+      mrb_raisef(mrb, E_TYPE_ERROR, "superclass must be a Class (%s given)", mrb_obj_classname(mrb, super));
     }
     s = mrb_class_ptr(super);
   }
@@ -205,7 +205,7 @@ class_from_sym(mrb_state *mrb, struct RClass *klass, mrb_sym id)
   mrb_value c = mrb_const_get(mrb, mrb_obj_value(klass), id);
 
   if (mrb_type(c) != MRB_TT_MODULE && mrb_type(c) != MRB_TT_CLASS) {
-    mrb_raise(mrb, E_TYPE_ERROR, "%s is not a class/module", mrb_sym2name(mrb, id));
+    mrb_raisef(mrb, E_TYPE_ERROR, "%s is not a class/module", mrb_sym2name(mrb, id));
   }
   return mrb_class_ptr(c);
 }
@@ -318,7 +318,7 @@ check_type(mrb_state *mrb, mrb_value val, enum mrb_vtype t, const char *c, const
 
   tmp = mrb_check_convert_type(mrb, val, t, c, m);
   if (mrb_nil_p(tmp)) {
-    mrb_raise(mrb, E_TYPE_ERROR, "expected %s", c);
+    mrb_raisef(mrb, E_TYPE_ERROR, "expected %s", c);
   }
   return tmp;
 }
@@ -503,8 +503,8 @@ mrb_get_args(mrb_state *mrb, const char *format, ...)
 	  case MRB_TT_FIXNUM:
 	    *p = (mrb_float)mrb_fixnum(*sp);
 	    break;
-	  case MRB_TT_FALSE:
-	    *p = 0.0;
+	  case MRB_TT_STRING:
+	    mrb_raise(mrb, E_TYPE_ERROR, "String can't be coerced into Float");
 	    break;
 	  default:
 	    {
@@ -618,7 +618,7 @@ mrb_get_args(mrb_state *mrb, const char *format, ...)
       }
       break;
     default:
-      mrb_raise(mrb, E_ARGUMENT_ERROR, "invalide argument specifier %c", c);
+      mrb_raisef(mrb, E_ARGUMENT_ERROR, "invalide argument specifier %c", c);
       break;
     }
   }
@@ -786,6 +786,8 @@ mrb_singleton_class(mrb_state *mrb, mrb_value v)
     return mrb_obj_value(mrb->false_class);
   case MRB_TT_TRUE:
     return mrb_obj_value(mrb->true_class);
+  case MRB_TT_MAIN:
+    return mrb_obj_value(mrb->object_class);
   case MRB_TT_SYMBOL:
   case MRB_TT_FIXNUM:
   case MRB_TT_FLOAT:
@@ -850,7 +852,12 @@ mrb_method_search(mrb_state *mrb, struct RClass* c, mrb_sym mid)
 
   m = mrb_method_search_vm(mrb, &c, mid);
   if (!m) {
-    mrb_raise(mrb, E_NOMETHOD_ERROR, "no method named %s\n", mrb_sym2name(mrb, mid));
+    mrb_value inspect = mrb_funcall(mrb, mrb_obj_value(c), "inspect", 0);
+    if (RSTRING_LEN(inspect) > 64) {
+      inspect = mrb_any_to_s(mrb, mrb_obj_value(c));
+    }
+    mrb_raisef(mrb, E_NAME_ERROR, "undefined method '%s' for class %s",
+        mrb_sym2name(mrb, mid), RSTRING_PTR(inspect));
   }
   return m;
 }
@@ -1001,12 +1008,20 @@ mrb_bob_missing(mrb_state *mrb, mrb_value mod)
 {
   mrb_value name, *a;
   int alen;
+  mrb_value inspect;
 
   mrb_get_args(mrb, "o*", &name, &a, &alen);
-  if (!SYMBOL_P(name)) {
+  if (mrb_type(name) != MRB_TT_SYMBOL) {
     mrb_raise(mrb, E_TYPE_ERROR, "name should be a symbol");
   }
-  mrb_raise(mrb, E_NOMETHOD_ERROR, "no method named %s", mrb_sym2name(mrb, mrb_symbol(name)));
+
+  inspect = mrb_funcall(mrb, mod, "inspect", 0);
+  if (RSTRING_LEN(inspect) > 64) {
+    inspect = mrb_any_to_s(mrb, mod);
+  }
+
+  mrb_raisef(mrb, E_NOMETHOD_ERROR, "undefined method '%s' for %s",
+      mrb_sym2name(mrb, mrb_symbol(name)), RSTRING_PTR(inspect));
   /* not reached */
   return mrb_nil_value();
 }
@@ -1090,7 +1105,7 @@ mrb_class_name(mrb_state *mrb, struct RClass* c)
 const char*
 mrb_obj_classname(mrb_state *mrb, mrb_value obj)
 {
-  return mrb_class_name(mrb, mrb_class(mrb, obj));
+  return mrb_class_name(mrb, mrb_obj_class(mrb, obj));
 }
 
 /*!
@@ -1103,7 +1118,7 @@ void
 mrb_check_inheritable(mrb_state *mrb, struct RClass *super)
 {
   if (super->tt != MRB_TT_CLASS) {
-    mrb_raise(mrb, E_TYPE_ERROR, "superclass must be a Class (%s given)",
+    mrb_raisef(mrb, E_TYPE_ERROR, "superclass must be a Class (%s given)",
            mrb_obj_classname(mrb, mrb_obj_value(super)));
   }
   if (super->tt == MRB_TT_SCLASS) {
@@ -1316,12 +1331,12 @@ mod_define_method(mrb_state *mrb, mrb_value self)
 static mrb_sym
 mrb_sym_value(mrb_state *mrb, mrb_value val)
 {
-  if(mrb_type(val) == MRB_TT_STRING) {
+  if (mrb_string_p(val)) {
     return mrb_intern_str(mrb, val);
   }
-  else if(mrb_type(val) != MRB_TT_SYMBOL) {
+  else if(!mrb_symbol_p(val)) {
     mrb_value obj = mrb_funcall(mrb, val, "inspect", 0);
-    mrb_raise(mrb, E_TYPE_ERROR, "%s is not a symbol",
+    mrb_raisef(mrb, E_TYPE_ERROR, "%s is not a symbol",
          mrb_string_value_ptr(mrb, obj));
   }
   return mrb_symbol(val);
@@ -1417,6 +1432,7 @@ mrb_init_class(mrb_state *mrb)
   mrb_define_method(mrb, mod, "included_modules", mrb_mod_included_modules, ARGS_NONE()); /* 15.2.2.4.30 */
 
   mrb_define_method(mrb, mod, "to_s", mrb_mod_to_s, ARGS_NONE());
+  mrb_define_method(mrb, mod, "inspect", mrb_mod_to_s, ARGS_NONE());
   mrb_define_method(mrb, mod, "alias_method", mrb_mod_alias, ARGS_ANY());            /* 15.2.2.4.8 */
   mrb_define_method(mrb, mod, "ancestors", mrb_mod_ancestors, ARGS_NONE());          /* 15.2.2.4.9 */
   mrb_define_method(mrb, mod, "undef_method", mrb_mod_undef, ARGS_ANY());            /* 15.2.2.4.41 */
@@ -1424,6 +1440,7 @@ mrb_init_class(mrb_state *mrb)
   mrb_define_method(mrb, mod, "const_get", mrb_mod_const_get, ARGS_REQ(1));          /* 15.2.2.4.21 */
   mrb_define_method(mrb, mod, "const_set", mrb_mod_const_set, ARGS_REQ(2));          /* 15.2.2.4.23 */
   mrb_define_method(mrb, mod, "define_method", mod_define_method, ARGS_REQ(1));
+  mrb_define_method(mrb, mod, "class_variables", mrb_mod_class_variables, ARGS_NONE()); /* 15.2.2.4.19 */
 
   mrb_define_method(mrb, mod, "===", mrb_mod_eqq, ARGS_REQ(1));
   mrb_undef_method(mrb, cls, "append_features");

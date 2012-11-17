@@ -14,48 +14,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88760AE415759EFE00113BFB"
-               BuildableName = "libmruby_core.a"
-               BlueprintName = "mruby_core"
-               ReferencedContainer = "container:mruby.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88760AA115759B4F00113BFB"
-               BuildableName = "libmruby.a"
-               BlueprintName = "ruby_lib"
-               ReferencedContainer = "container:mruby.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88760B3215769F3000113BFB"
-               BuildableName = "mirb"
-               BlueprintName = "mirb"
-               ReferencedContainer = "container:mruby.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "88760A8A157590F000113BFB"
                BuildableName = "mrbc"
                BlueprintName = "mrbc"
@@ -84,9 +42,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8844358E1577301B007F95A4"
-               BuildableName = "mrbtest"
-               BlueprintName = "mrbtest"
+               BlueprintIdentifier = "88760AE415759EFE00113BFB"
+               BuildableName = "libmruby_core.a"
+               BlueprintName = "mruby_core"
+               ReferencedContainer = "container:mruby.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "88760AA115759B4F00113BFB"
+               BuildableName = "libmruby.a"
+               BlueprintName = "ruby_lib"
                ReferencedContainer = "container:mruby.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -99,15 +71,6 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "88760A8A157590F000113BFB"
-            BuildableName = "mrbc"
-            BlueprintName = "mrbc"
-            ReferencedContainer = "container:mruby.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -122,34 +85,19 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "88760A8A157590F000113BFB"
-            BuildableName = "mrbc"
-            BlueprintName = "mrbc"
+            BlueprintIdentifier = "88760B2315769E6100113BFB"
+            BuildableName = "mruby"
+            BlueprintName = "mruby"
             ReferencedContainer = "container:mruby.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "./mrbtest.rb"
+            argument = "-v ./urlu.rb"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
-         <AdditionalOption
-            key = "MallocScribble"
-            value = ""
-            isEnabled = "YES">
-         </AdditionalOption>
-         <AdditionalOption
-            key = "DYLD_INSERT_LIBRARIES"
-            value = "/usr/lib/libgmalloc.dylib"
-            isEnabled = "YES">
-         </AdditionalOption>
-         <AdditionalOption
-            key = "MallocStackLogging"
-            value = ""
-            isEnabled = "YES">
-         </AdditionalOption>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
@@ -158,15 +106,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "88760B2315769E6100113BFB"
-            BuildableName = "mruby"
-            BlueprintName = "mruby"
-            ReferencedContainer = "container:mruby.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

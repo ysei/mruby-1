@@ -17,8 +17,6 @@ extern "C" {
 
 int mrb_tolower(int c);
 int mrb_toupper(int c);
-#define TOUPPER(c) mrb_toupper((unsigned char)(c))
-#define TOLOWER(c) mrb_tolower((unsigned char)(c))
 
 #define FL_USHIFT    12
 
@@ -34,23 +32,37 @@ int mrb_toupper(int c);
 #define FL_USER9     (((int)1)<<(FL_USHIFT+9))
 
 #define ENCODING_INLINE_MAX 1023
+    /* 1023 = 0x03FF */
+    /*#define ENCODING_SHIFT (FL_USHIFT+10)*/
+#define ENCODING_SHIFT (10)
+#define ENCODING_MASK (((unsigned int)ENCODING_INLINE_MAX)<<ENCODING_SHIFT)
+    
+#define ENCODING_SET_INLINED(obj,i) do {\
+RDATA(obj)->flags &= ~ENCODING_MASK;\
+RDATA(obj)->flags |= (unsigned int)(i) << ENCODING_SHIFT;\
+} while (0)
+
+#define ENCODING_SET(mrb, obj,i) do {\
+mrb_value mrb_encoding_set_obj = (obj); \
+int encoding_set_enc_index = (i); \
+if (encoding_set_enc_index < ENCODING_INLINE_MAX) \
+ENCODING_SET_INLINED(mrb_encoding_set_obj, encoding_set_enc_index); \
+else \
+mrb_enc_set_index(mrb, mrb_encoding_set_obj, encoding_set_enc_index); \
+} while (0)
+    
+#define ENCODING_GET_INLINED(obj) (unsigned int)((RSTRING(obj)->flags & ENCODING_MASK)>>ENCODING_SHIFT)
+#define ENCODING_GET(mrb, obj) \
+(ENCODING_GET_INLINED(obj) != ENCODING_INLINE_MAX ? \
+ENCODING_GET_INLINED(obj) : \
+mrb_enc_get_index(mrb, obj))
+
+#define ENCODING_INLINE_MAX 1023
 /* 1023 = 0x03FF */
 /*#define ENCODING_SHIFT (FL_USHIFT+10)*/
 #define ENCODING_SHIFT (10)
 #define ENCODING_MASK (((unsigned int)ENCODING_INLINE_MAX)<<ENCODING_SHIFT)
 
-#define ENCODING_SET_INLINED(obj,i) do {\
-    RBASIC(obj)->flags &= ~ENCODING_MASK;\
-    RBASIC(obj)->flags |= (unsigned int)(i) << ENCODING_SHIFT;\
-} while (0)
-#define ENCODING_SET(mrb, obj,i) do {\
-    mrb_value mrb_encoding_set_obj = (obj); \
-    int encoding_set_enc_index = (i); \
-    if (encoding_set_enc_index < ENCODING_INLINE_MAX) \
-        ENCODING_SET_INLINED(mrb_encoding_set_obj, encoding_set_enc_index); \
-    else \
-        mrb_enc_set_index(mrb, mrb_encoding_set_obj, encoding_set_enc_index); \
-} while (0)
 
 #define ENCODING_GET_INLINED(obj) (unsigned int)((RSTRING(obj)->flags & ENCODING_MASK)>>ENCODING_SHIFT)
 #define ENCODING_GET(mrb, obj) \

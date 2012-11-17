@@ -1,140 +1,0 @@
-Tmirb
-v5
-r1
-cCheck dependencies
-cCompileC tools/mirb/mruby.build/Debug/mirb.build/Objects-normal/x86_64/mirb.o /Users/cmauceri/Documents/IOS/mruby/tools/mirb/mirb.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug/mirb normal x86_64
-cPhaseScriptExecution "CMake PostBuild Rules" /Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/Script-066847D3B86644EBA4FE827E.sh
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
-c000000005096731500000000000000AA
-t1352037141
-s170
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/string.h
-c00000000505F5ADF0000000000001A3A
-t1348426463
-s6714
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mrbconf.h
-c00000000509E98DB0000000000000908
-t1352571099
-s2312
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby.h
-c0000000050A0FE8E0000000000003588
-t1352728206
-s13704
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/compile.h
-c00000000509E98DB0000000000000D9B
-t1352571099
-s3483
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/data.h
-c00000000509E98DB00000000000004E9
-t1352571099
-s1257
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/irep.h
-c00000000509E98DB0000000000000209
-t1352571099
-s521
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/khash.h
-c00000000509E98DB0000000000003577
-t1352571099
-s13687
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/object.h
-c00000000509E98DB000000000000068F
-t1352571099
-s1679
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/proc.h
-c00000000509E98DB000000000000057B
-t1352571099
-s1403
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/string.h
-c00000000509E98DB0000000000000CB9
-t1352571099
-s3257
-
-N/Users/cmauceri/Documents/IOS/mruby/include/mruby/value.h
-c00000000509FFC110000000000001437
-t1352662033
-s5175
-
-N/Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug/mirb
-t2
-s0
-
-N/Users/cmauceri/Documents/IOS/mruby/tools/mirb/mirb.c
-c00000000509E98DB00000000000017C3
-t1352571099
-s6083
-i<string.h>
-i<mruby.h>
-i<mruby/proc.h>
-i<mruby/data.h>
-i<mruby/compile.h>
-i<mruby/string.h>
-
-N/Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/Objects-normal/x86_64/mirb.LinkFileList
-c00000000509FF7E50000000000000069
-t1352660965
-s105
-
-N/Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/Objects-normal/x86_64/mirb.o
-t1352728212
-s16996
-
-N/Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/Script-066847D3B86644EBA4FE827E.sh
-c00000000509FF7E500000000000000AB
-t1352660965
-s171
-
-CBuild AST from /Users/cmauceri/Documents/IOS/mruby/tools/mirb/mirb.c
-r0
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesa2ee2be27c52b641^80f12ce27c52b641^---0#1#0#--18"Check dependencies36"CCDC05EF-9F43-43AB-AC09-A8CA65496EE9-
-
-CCompileC tools/mirb/mruby.build/Debug/mirb.build/Objects-normal/x86_64/mirb.o /Users/cmauceri/Documents/IOS/mruby/tools/mirb/mirb.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
-s374421012.280136
-e374421012.348530
-r1
-xCompileC
-xtools/mirb/mruby.build/Debug/mirb.build/Objects-normal/x86_64/mirb.o
-x/Users/cmauceri/Documents/IOS/mruby/tools/mirb/mirb.c
-xnormal
-xx86_64
-xc
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Compile /Users/cmauceri/Documents/IOS/mruby/tools/mirb/mirb.ce2e747143651b641^732b60143651b641^---0#0#0#-19%DVTDocumentLocation2@69"file://localhost/Users/cmauceri/Documents/IOS/mruby/tools/mirb/mirb.c0000000000000000^1920"CompileC tools/mirb/mruby.build/Debug/mirb.build/Objects-normal/x86_64/mirb.o tools/mirb/mirb.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/cmauceri/Documents/IOS/mruby    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof "-DCMAKE_INTDIR=\"Debug\"" -DHAVE_STRING_H -DHAVE_FLOAT_H -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug/include -I/Users/cmauceri/Documents/IOS/mruby/include -I/Users/cmauceri/Documents/IOS/mruby/src -I/Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/DerivedSources/x86_64 -I/Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug -MMD -MT dependencies -MF /Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/Objects-normal/x86_64/mirb.d --serialize-diagnostics /Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/Objects-normal/x86_64/mirb.dia -c /Users/cmauceri/Documents/IOS/mruby/tools/mirb/mirb.c -o /Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/Objects-normal/x86_64/mirb.o36"27C907AC-C0E1-41C2-87BC-86D177C063F9-
-
-CLd /Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug/mirb normal x86_64
-s374504674.183549
-e374504674.307129
-r1
-xLd
-x/Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug/mirb
-xnormal
-xx86_64
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection62"Link /Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug/mirb601d2fe27c52b641^cba04ee27c52b641^---0#0#0#--782"Ld tools/mirb/Debug/mirb normal x86_64    cd /Users/cmauceri/Documents/IOS/mruby    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug -F/Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug -filelist /Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/Objects-normal/x86_64/mirb.LinkFileList -mmacosx-version-min=10.8 -Wl,-search_paths_first -Wl,-headerpad_max_install_names /Users/cmauceri/Documents/IOS/mruby/mrblib/Debug/libmruby.a -o /Users/cmauceri/Documents/IOS/mruby/tools/mirb/Debug/mirb36"04DFC595-E2A2-46A7-A629-340F7AEAC1A5-
-
-CPhaseScriptExecution "CMake PostBuild Rules" /Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/Script-066847D3B86644EBA4FE827E.sh
-s374504674.315562
-e374504674.369825
-r1
-xPhaseScriptExecution
-xCMake PostBuild Rules
-x/Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/Script-066847D3B86644EBA4FE827E.sh
-oecho "Depend check for xcode"
-oDepend check for xcode
-ocd /Users/cmauceri/Documents/IOS/mruby && make -C /Users/cmauceri/Documents/IOS/mruby -f /Users/cmauceri/Documents/IOS/mruby/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.mirb.Debug
-omake[1]: Nothing to be done for `PostBuild.mirb.Debug'.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Run custom shell script 'CMake PostBuild Rules'75b151e27c52b641^31b45ee27c52b641^-293"echo "Depend check for xcode"Depend check for xcodecd /Users/cmauceri/Documents/IOS/mruby && make -C /Users/cmauceri/Documents/IOS/mruby -f /Users/cmauceri/Documents/IOS/mruby/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.mirb.Debugmake[1]: Nothing to be done for `PostBuild.mirb.Debug'.4(21%IDEActivityLogMessage2@30"echo "Depend check for xcode"-374504674#0#30#-0#-----2@23"Depend check for xcode-374504674#30#23#-0#-----2@184"cd /Users/cmauceri/Documents/IOS/mruby && make -C /Users/cmauceri/Documents/IOS/mruby -f /Users/cmauceri/Documents/IOS/mruby/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.mirb.Debug-374504674#53#184#-0#-----2@56"make[1]: Nothing to be done for `PostBuild.mirb.Debug'.-374504674#237#56#-0#-----0#0#0#--289"PhaseScriptExecution "CMake PostBuild Rules" tools/mirb/mruby.build/Debug/mirb.build/Script-066847D3B86644EBA4FE827E.sh    cd /Users/cmauceri/Documents/IOS/mruby    /bin/sh -c /Users/cmauceri/Documents/IOS/mruby/tools/mirb/mruby.build/Debug/mirb.build/Script-066847D3B86644EBA4FE827E.sh36"FB739ED9-9422-466C-880C-1DADBC6B345B-
-
