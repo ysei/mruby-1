@@ -1855,7 +1855,6 @@ codegen(codegen_scope *s, node *tree, int val)
         char *p = (char*)tree->car->cdr->car;
         size_t len = (intptr_t)tree->car->cdr->cdr;
         int opts = (int)tree->cdr;
-        fprintf(stderr,"regexp = %s\n",p);
         int off = new_lit(s, mrb_reg_new_str(s->mrb, mrb_str_new(s->mrb, p, len), opts));
               
         genop(s, MKOP_ABx(OP_LOADL, cursp(), off));

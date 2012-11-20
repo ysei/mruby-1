@@ -76,6 +76,7 @@
 		88760B9D1576A37600113BFB /* mruby.h in Headers */ = {isa = PBXBuildFile; fileRef = 88BF356A156C99B200F12AC7 /* mruby.h */; };
 		88760B9F1576A4A200113BFB /* mrblib.c in Sources */ = {isa = PBXBuildFile; fileRef = 88760B1C15769CEE00113BFB /* mrblib.c */; };
 		88760BA01576A4A700113BFB /* libmruby_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88760B1715769BE400113BFB /* libmruby_core.a */; };
+		A5A01495165BF247000CAFED /* gvar.c in Sources */ = {isa = PBXBuildFile; fileRef = A5A01494165BF247000CAFED /* gvar.c */; };
 		A5B75CCD16563FB400000282 /* ascii.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B75CC816563FB300000282 /* ascii.c */; };
 		A5B75CCE16563FB400000282 /* encoding.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B75CC916563FB300000282 /* encoding.c */; };
 		A5B75CCF16563FB400000282 /* unicode.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B75CCA16563FB300000282 /* unicode.c */; };
@@ -272,6 +273,8 @@
 		88BF358A156C99C200F12AC7 /* string.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = string.rb; sourceTree = "<group>"; };
 		88BF358B156C99C200F12AC7 /* struct.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = struct.rb; sourceTree = "<group>"; };
 		88EDC30215757CB40098CF0D /* y.tab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = y.tab.c; sourceTree = "<group>"; };
+		A5A01494165BF247000CAFED /* gvar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gvar.c; sourceTree = "<group>"; };
+		A5A01497165BF272000CAFED /* gvar.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = gvar.rb; sourceTree = "<group>"; };
 		A5B75CC816563FB300000282 /* ascii.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ascii.c; sourceTree = "<group>"; };
 		A5B75CC916563FB300000282 /* encoding.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = encoding.c; sourceTree = "<group>"; };
 		A5B75CCA16563FB300000282 /* unicode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unicode.c; sourceTree = "<group>"; };
@@ -488,6 +491,7 @@
 		88BF34D3156C998200F12AC7 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				A5A01494165BF247000CAFED /* gvar.c */,
 				A5B75CC816563FB300000282 /* ascii.c */,
 				A5B75CC916563FB300000282 /* encoding.c */,
 				A5B75CCA16563FB300000282 /* unicode.c */,
@@ -590,6 +594,7 @@
 		88BF357D156C99C200F12AC7 /* mrblib */ = {
 			isa = PBXGroup;
 			children = (
+				A5A01497165BF272000CAFED /* gvar.rb */,
 				88BF357E156C99C200F12AC7 /* array.rb */,
 				88BF3580156C99C200F12AC7 /* compar.rb */,
 				88BF3581156C99C200F12AC7 /* enum.rb */,
@@ -951,6 +956,7 @@
 				A5B75CCF16563FB400000282 /* unicode.c in Sources */,
 				A5B75CD016563FB400000282 /* us_ascii.c in Sources */,
 				A5B75CD116563FB400000282 /* utf_8.c in Sources */,
+				A5A01495165BF247000CAFED /* gvar.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1066,7 +1066,6 @@ mrb_obj_singleton_methods_m(mrb_state *mrb, mrb_value self)
 
 mrb_value mrb_f_sprintf(mrb_state *mrb, mrb_value obj); /* in sprintf.c */
 
-
 static void
 load_file(mrb_state *mrb, mrb_value filename)
 {
@@ -1101,6 +1100,18 @@ load_file(mrb_state *mrb, mrb_value filename)
     }
 }
 
+
+
+mrb_value
+mrb_f_load(mrb_state *mrb, mrb_value self)
+{
+    mrb_value filename;
+    
+    mrb_get_args(mrb, "S", &filename);
+    load_file(mrb, filename);
+    return mrb_true_value();
+}
+
 mrb_value
 mrb_f_require(mrb_state *mrb, mrb_value self)
 {
@@ -1109,11 +1120,21 @@ mrb_f_require(mrb_state *mrb, mrb_value self)
     mrb_sym sym_loaded_features, sym_loading_features;
     jmp_buf c_jmp;
     jmp_buf *prev_jmp;
+    mrb_value gv,path;
+    
     mrb_get_args(mrb, "S", &filename);
-    
     /* If filename should be expanded to absolute path, modify it here. */
+   mrb_value argv[1];
     
-    /* Check LOADED_FEATURES */
+    
+    gv = mrb_class_new_instance(mrb, 1, argv, mrb_class_get(mrb, "GlobalVars"));
+    
+    argv[0] = mrb_str_new2(mrb, "path");
+    path = mrb_funcall_argv(mrb, gv, mrb_intern(mrb, "get"), 1,argv);
+    
+    filename = mrb_str_append(mrb, path, filename);
+    
+        /* Check LOADED_FEATURES */
     sym_loaded_features = mrb_intern(mrb, "$LOADED_FEATURES");
     loaded_features = mrb_gv_get(mrb, sym_loaded_features);
     if (mrb_nil_p(loaded_features)) {
@@ -1121,6 +1142,7 @@ mrb_f_require(mrb_state *mrb, mrb_value self)
         mrb_gv_set(mrb, sym_loaded_features, loaded_features);
     }
     len = RARRAY_LEN(loaded_features);
+
     for (i=0; i<len; i++) {
         if (mrb_str_cmp(mrb, RARRAY_PTR(loaded_features)[i], filename) == 0) break;
     }
@@ -1153,17 +1175,6 @@ mrb_f_require(mrb_state *mrb, mrb_value self)
     
     return mrb_true_value();
 }
-
-mrb_value
-mrb_f_load(mrb_state *mrb, mrb_value self)
-{
-    mrb_value filename;
-    
-    mrb_get_args(mrb, "S", &filename);
-    load_file(mrb, filename);
-    return mrb_true_value();
-}
-
 
 void
 mrb_init_kernel(mrb_state *mrb)
@@ -1217,13 +1228,12 @@ mrb_init_kernel(mrb_state *mrb)
   mrb_define_method(mrb, krn, "__send__",                   mrb_f_send,                      ARGS_ANY());     /* 15.3.1.3.4 */
   mrb_define_method(mrb, krn, "singleton_methods",          mrb_obj_singleton_methods_m,     ARGS_ANY());     /* 15.3.1.3.45 */
   mrb_define_method(mrb, krn, "to_s",                       mrb_any_to_s,                    ARGS_NONE());    /* 15.3.1.3.46 */
-  mrb_define_method(mrb, krn, "require",                    mrb_f_require,                   ARGS_REQ(1));
-  mrb_define_method(mrb, krn, "load",                       mrb_f_load,                      ARGS_REQ(1));
-
 #ifdef ENABLE_SPRINTF
   mrb_define_method(mrb, krn, "sprintf",                    mrb_f_sprintf,                   ARGS_ANY());     /* in sprintf.c */
   mrb_define_method(mrb, krn, "format",                     mrb_f_sprintf,                   ARGS_ANY());     /* in sprintf.c */
 #endif
+    mrb_define_method(mrb, krn, "require",                    mrb_f_require,                   ARGS_REQ(1));
+    mrb_define_method(mrb, krn, "load",                       mrb_f_load,                      ARGS_REQ(1));
 
   mrb_include_module(mrb, mrb->object_class, mrb->kernel_module);
   mrb_alias_method(mrb, mrb->module_class, mrb_intern(mrb, "dup"), mrb_intern(mrb, "clone"));
