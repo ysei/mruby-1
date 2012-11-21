@@ -151,6 +151,31 @@ uvset(mrb_state *mrb, int up, int idx, mrb_value v)
   mrb_write_barrier(mrb, (struct RBasic*)e);
 }
 
+static inline int
+is_strict(mrb_state *mrb, struct REnv *e)
+{
+  int cioff = e->cioff;
+
+  if (cioff >= 0 && mrb->cibase[cioff].proc &&
+      MRB_PROC_STRICT_P(mrb->cibase[cioff].proc)) {
+    return 1;
+  }
+  return 0;
+}
+
+struct REnv*
+top_env(mrb_state *mrb, struct RProc *proc)
+{
+  struct REnv *e = proc->env;
+
+  if (is_strict(mrb, e)) return e;
+  while (e->c) {
+    e = (struct REnv*)e->c;
+    if (is_strict(mrb, e)) return e;
+  }
+  return e;
+}
+
 static mrb_callinfo*
 cipush(mrb_state *mrb)
 {
@@ -215,6 +240,7 @@ ecall(mrb_state *mrb, int i)
 #define MRB_FUNCALL_ARGC_MAX 16
 #endif
 
+//these two next functions should not be there
 static void
 replace_stop_with_return(mrb_state *mrb, mrb_irep *irep)
 {
@@ -793,6 +819,7 @@ mrb_run(mrb_state *mrb, struct RProc *proc, mrb_value self)
       mrb_callinfo *ci;
       mrb_value recv, result;
       mrb_sym mid = syms[GETARG_B(i)];
+
       recv = regs[a];
       if (GET_OPCODE(i) != OP_SENDB) {
 	if (n == CALL_MAXARGS) {
@@ -806,7 +833,7 @@ mrb_run(mrb_state *mrb, struct RProc *proc, mrb_value self)
       m = mrb_method_search_vm(mrb, &c, mid);
       if (!m) {
         mrb_value sym = mrb_symbol_value(mid);
-          fprintf(stderr,"method not found\n");
+
         mid = mrb_intern(mrb, "method_missing");
         m = mrb_method_search_vm(mrb, &c, mid);
         if (n == CALL_MAXARGS) {
@@ -818,6 +845,7 @@ mrb_run(mrb_state *mrb, struct RProc *proc, mrb_value self)
           n++;
         }
       }
+
       /* push callinfo */
       ci = cipush(mrb);
       ci->mid = mid;
@@ -831,7 +859,8 @@ mrb_run(mrb_state *mrb, struct RProc *proc, mrb_value self)
 
       /* prepare stack */
       mrb->stack += a;
-       if (MRB_PROC_CFUNC_P(m)) {
+
+      if (MRB_PROC_CFUNC_P(m)) {
         if (n == CALL_MAXARGS) {
           ci->nregs = 3;
         }
@@ -1192,11 +1221,16 @@ mrb_run(mrb_state *mrb, struct RProc *proc, mrb_value self)
           break;
         case OP_R_RETURN:
 	  if (!proc->env) goto NORMAL_RETURN;
-          if (proc->env->cioff < 0) {
-            localjump_error(mrb, "return");
-            goto L_RAISE;
-          }
-          ci = mrb->ci = mrb->cibase + proc->env->cioff;
+	  if (MRB_PROC_STRICT_P(proc)) goto NORMAL_RETURN;
+	  else {
+	    struct REnv *e = top_env(mrb, proc);
+
+	    if (e->cioff < 0) {
+	      localjump_error(mrb, "return");
+	      goto L_RAISE;
+	    }
+	    ci = mrb->ci = mrb->cibase + e->cioff;
+	  }
           break;
         default:
           /* cannot happen */

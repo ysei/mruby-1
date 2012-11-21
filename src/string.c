@@ -1307,6 +1307,7 @@ str_gsub(mrb_state *mrb, mrb_value str, mrb_int bang)
     if (len) {
       mrb_str_buf_cat(mrb, dest, cp, len);
     }
+
     mrb_str_buf_append(mrb, dest, val);
 
     last = offset;

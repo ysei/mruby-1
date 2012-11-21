@@ -27,6 +27,7 @@ void mrb_init_print(mrb_state*);
 void mrb_init_time(mrb_state*);
 void mrb_init_math(mrb_state*);
 void mrb_init_mrblib(mrb_state*);
+void mrb_init_require(mrb_state*);
 
 
 void
@@ -65,7 +66,8 @@ mrb_init_core(mrb_state *mrb)
   mrb_init_math(mrb);
 #endif
 
-  mrb_init_mrblib(mrb);
+    mrb_init_mrblib(mrb);
+    mrb_init_require(mrb);
 
   mrb_gc_arena_restore(mrb, 0);
 }

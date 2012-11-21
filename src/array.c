@@ -294,7 +294,7 @@ mrb_ary_cmp(mrb_state *mrb, mrb_value ary1)
   int i, len;
 
   mrb_get_args(mrb, "o", &ary2);
-  if (mrb_type(ary2) != MRB_TT_ARRAY) return mrb_nil_value();
+  if (!mrb_array_p(ary2)) return mrb_nil_value();
   a1 = RARRAY(ary1); a2 = RARRAY(ary2);
   if (a1->len == a2->len && a1->ptr == a2->ptr) return mrb_fixnum_value(0);
   else {
@@ -616,7 +616,7 @@ mrb_ary_splice(mrb_state *mrb, mrb_value ary, mrb_int head, mrb_int len, mrb_val
   tail = head + len;
 
   /* size check */
-  if (mrb_type(rpl) == MRB_TT_ARRAY) {
+  if (mrb_array_p(rpl)) {
     argc = RARRAY_LEN(rpl);
     argv = RARRAY_PTR(rpl);
   }
@@ -772,7 +772,7 @@ mrb_value
 mrb_ary_first(mrb_state *mrb, mrb_value self)
 {
   struct RArray *a = mrb_ary_ptr(self);
-  int size;
+  mrb_int size;
 
   if (mrb_get_args(mrb, "|i", &size) == 0) {
     return (a->len > 0)? a->ptr[0]: mrb_nil_value();
