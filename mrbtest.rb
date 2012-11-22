@@ -126,17 +126,7 @@ assert('Array.[]', '15.2.12.4.1') do
 end
 
 assert('Array#*', '15.2.12.5.1') do
-  e2 = nil
-  begin
-    # this will cause an exception due to the wrong argument
-    [1].*(-1)
-  rescue => e1
-    e2 = e1
-  end
-  a = [1].*(3)
-  b = [1].*(0)
-  a == [1, 1, 1] and b == [] and
-    e2.class == ArgumentError
+  [1].*(3) == [1, 1, 1]
 end
 
 assert('Array#+', '15.2.12.5.2') do
@@ -378,10 +368,8 @@ end
 assert('Array#unshift', '15.2.12.5.30') do
   a = [2,3]
   b = a.unshift(1)
-  c = [2,3]
-  d = c.unshift(0, 1)
 
-  a == [1,2,3] and b == [1,2,3] and c == [0,1,2,3] and d == [0,1,2,3] 
+  a == [1,2,3] and b == [1,2,3]
 end
 
 assert('Array#to_s', '15.2.12.5.31') do
@@ -403,9 +391,8 @@ end
 assert('Array#<=>', '15.2.12.5.36') do
   r1 = [ "a", "a", "c" ]    <=> [ "a", "b", "c" ]   #=> -1
   r2 = [ 1, 2, 3, 4, 5, 6 ] <=> [ 1, 2 ]            #=> +1
-  r3 = [ "a", "b", "c" ]    <=> [ "a", "b", "c" ]   #=> 0
 
-  r1 == -1 and r2 == +1 and r3 == 0
+  r1 == -1 and r2 == +1
 end
 
 # Not ISO specified
@@ -817,20 +804,6 @@ assert('BS Block [ruby-core:14395]') do
   end
   t = Controller.new
   t.test_for_bug
-end
-
-assert("BS Block 32") do
-  module TestReturnFromNestedBlock
-    def self.test
-      1.times do
-        1.times do
-          return :ok
-        end
-      end
-      :bad
-    end
-  end
-  TestReturnFromNestedBlock.test == :ok
 end
 ##
 # Bootstrap test for literals
@@ -1272,7 +1245,7 @@ end
 
 assert('Exception#to_s', '15.2.22.5.3') do
   e = Exception.exception('a')
-
+  
   e.to_s == 'a'
 end
 
@@ -1511,27 +1484,6 @@ assert('Exception 14') do
   a == :ok
 end
 
-assert('Exception 15') do
-  a = begin
-        :ok
-      rescue
-        :ng
-      end
-  a == :ok
-end
-
-assert('Exception 16') do
-  begin
-    raise "foo"
-    false
-  rescue => e
-    e.message == "foo"
-  end
-end
-
-assert('Exception#inspect without message') do
-  Exception.new.inspect
-end
 ##
 # FalseClass ISO Test
 
@@ -1669,7 +1621,7 @@ assert('Float#round', '15.2.9.3.12') do
   i = 3.423456789.round(3)
 
   a == 3 and b == 4 and c == 3 and d == -3 and e == -4 and
-    f == 12350 and g == 3 and check_float(h, 3.4) and check_float(i, 3.423)
+    f == 12350 and g == 3 and h == 3.4 and i == 3.423
 end
 
 assert('Float#to_f', '15.2.9.3.13') do
@@ -2139,22 +2091,6 @@ assert('Integer#upto', '15.2.8.3.27') do
   end
   a == 6
 end
-
-# Not ISO specified
-
-assert('Integer#step') do
-  a = []
-  b = []
-  1.step(3) do |i|
-    a << i
-  end
-  1.step(6, 2) do |i|
-    b << i
-  end
-
-  a == [1, 2, 3] and
-    b == [1, 3, 5]
-end
 ##
 # Kernel ISO Test
 
@@ -2361,16 +2297,6 @@ assert('Kernel#extend', '15.3.1.3.13') do
   a.respond_to?(:test_method) == true && b.respond_to?(:test_method) == false
 end
 
-assert('Kernel#extend works on toplevel', '15.3.1.3.13') do
-  module Test4ExtendModule
-    def test_method; end
-  end
-  # This would crash... 
-  extend(Test4ExtendModule)
-
-  respond_to?(:test_method) == true
-end
-
 assert('Kernel#global_variables', '15.3.1.3.14') do
   global_variables.class == Array
 end
@@ -2380,8 +2306,8 @@ assert('Kernel#hash', '15.3.1.3.15') do
 end
 
 assert('Kernel#inspect', '15.3.1.3.17') do
-  s = inspect
-  s.class == String and s == "main"
+  s = nil.inspect
+  s.class == String and s == "nil"
 end
 
 assert('Kernel#instance_variables', '15.3.1.3.23') do
@@ -2437,7 +2363,7 @@ assert('Kernel#methods', '15.3.1.3.31') do
 end
 
 assert('Kernel#nil?', '15.3.1.3.32') do
-  nil? == false
+  nil.nil? == true
 end
 
 assert('Kernel#object_id', '15.3.1.3.33') do
@@ -2504,7 +2430,8 @@ assert('Kernel#singleton_methods', '15.3.1.3.45') do
 end
 
 assert('Kernel#to_s', '15.3.1.3.46') do
-  to_s.class == String
+  # TODO looks strange..
+  to_s == ''
 end
 ##
 # Literals ISO Test
@@ -2577,12 +2504,7 @@ end
 # LocalJumpError ISO Test
 
 assert('LocalJumoError', '15.2.25') do
-  begin
-    # this will cause an exception due to the wrong location
-    retry
-  rescue => e1
-  end
-  LocalJumpError.class == Class and e1.class == LocalJumpError
+  LocalJumpError.class == Class
 end
 
 # TODO 15.2.25.2.1 LocalJumpError#exit_value
@@ -2702,14 +2624,6 @@ if Object.const_defined?(:Math)
   assert('Math.erfc 1') do
     check_float(Math.erfc(1), 0.157299207050285)
   end
-
-  assert('Math.erf -1') do
-    check_float(Math.erf(-1), -0.8427007929497148)
-  end
-
-  assert('Math.erfc -1') do
-    check_float(Math.erfc(-1), 1.8427007929497148)
-  end
 end
 
 ##
@@ -2743,18 +2657,6 @@ assert('Module#append_features', '15.2.2.4.10') do
   end
 
   Test4AppendFeatures2.const_get(:Const4AppendFeatures2) == Test4AppendFeatures2
-end
-
-assert('Module#class_variables', '15.2.2.4.19') do
-  class Test4ClassVariables1
-    @@var1 = 1
-  end
-  class Test4ClassVariables2 < Test4ClassVariables1
-    @@var2 = 2
-  end
-
-  Test4ClassVariables1.class_variables == [:@@var1] &&
-  Test4ClassVariables2.class_variables == [:@@var2]
 end
 
 assert('Module#const_defined?', '15.2.2.4.20') do
@@ -2830,22 +2732,6 @@ assert('Module#included_modules', '15.2.2.4.30') do
 
   r = Test4includedModules2.included_modules
   r.class == Array and r.include?(Test4includedModules)
-end
-
-# Not ISO specified
-
-assert('Module#to_s') do
-  module Test4to_sModules
-  end
-
-  Test4to_sModules.to_s == 'Test4to_sModules'
-end
-
-assert('Module#inspect') do
-  module Test4to_sModules
-  end
-
-  Test4to_sModules.inspect == 'Test4to_sModules'
 end
 ##
 # NameError ISO Test
@@ -3083,7 +2969,15 @@ end
 # RuntimeError ISO Test
 
 assert('RuntimeError', '15.2.28') do
-  RuntimeError.class == Class
+  e2 = nil
+  begin
+    # this will cause an exception due to the wrong location
+    retry
+  rescue => e1
+    e2 = e1
+  end
+
+  RuntimeError.class == Class and e2.class == RuntimeError
 end
 ##
 # StandardError ISO Test
@@ -3157,32 +3051,6 @@ assert('String#[]', '15.2.10.5.6') do
     a1 == nil and b1 == nil and c1 == nil and d1 == '' and
     e1 == 'bc' and
     a3 == 'bc' and b3 == nil
-end
-
-assert('String#[] with Range') do
-  a1 = 'abc'[1..0]
-  b1 = 'abc'[1..1]
-  c1 = 'abc'[1..2]
-  d1 = 'abc'[1..3]
-  e1 = 'abc'[1..4]
-  f1 = 'abc'[0..-2]
-  g1 = 'abc'[-2..3]
-  h1 = 'abc'[3..4]
-  i1 = 'abc'[4..5]
-  a2 = 'abc'[1...0]
-  b2 = 'abc'[1...1]
-  c2 = 'abc'[1...2]
-  d2 = 'abc'[1...3]
-  e2 = 'abc'[1...4]
-  f2 = 'abc'[0...-2]
-  g2 = 'abc'[-2...3]
-  h2 = 'abc'[3...4]
-  i2 = 'abc'[4...5]
-
-  a1 == ''   and b1 == 'b'  and c1 == 'bc' and d1 == 'bc' and e1 == 'bc' and
-  f1 == 'ab' and g1 == 'bc' and h1 == ''   and i2 == nil  and
-  a2 == ''   and b2 == ''   and c2 == 'b'  and d2 == 'bc' and e2 == 'bc' and
-  f2 == 'a'  and g2 == 'bc' and h2 == ''   and i2 == nil
 end
 
 assert('String#capitalize', '15.2.10.5.7') do
@@ -3397,13 +3265,13 @@ assert('String#slice', '15.2.10.5.34') do
 end
 
 # TODO Broken ATM
-#assert('String#split', '15.2.10.5.35') do
-#  # without RegExp behavior is actually unspecified
-#  'abc abc abc'.split == ['abc', 'abc', 'abc'] and
-#    'a,b,c,,d'.split(',') == ["a", "b", "c", "", "d"] and
-#    'abc abc abc'.split(nil) == ['abc', 'abc', 'abc'] and
-#    'abc'.split("") == ['a', 'b', 'c']
-#end
+assert('String#split', '15.2.10.5.35') do
+  # without RegExp behavior is actually unspecified
+  'abc abc abc'.split == ['abc', 'abc', 'abc'] and
+    'a,b,c,,d'.split(',') == ["a", "b", "c", "", "d"] and
+    'abc abc abc'.split(nil) == ['abc', 'abc', 'abc'] and
+    'abc'.split("") == ['a', 'b', 'c']
+end
 
 # TODO ATM broken assert('String#sub', '15.2.10.5.36') do
 
@@ -3457,27 +3325,6 @@ end
 assert('String interpolation (mrb_str_concat for shared strings)') do
   a = "A" * 32
   "#{a}:" == "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA:"
-end
-
-assert('Check the usage of a NUL character') do
-  "qqq\0ppp"
-end
-
-assert('String#bytes') do
-  str1 = "hello"
-  bytes1 = [104, 101, 108, 108, 111]
-
-  str1.bytes == bytes1
-end
-
-assert('String#each_byte') do
-  str1 = "hello"
-  bytes1 = [104, 101, 108, 108, 111]
-  bytes2 = []
-
-  str1.each_byte {|b| bytes2 << b }
-
-  bytes1 == bytes2
 end
 
 ##
@@ -3629,19 +3476,6 @@ assert('Abbreviated variable assignment', '11.4.2.3.2') do
   c = 1
   c += 2
   a == 1 and b == nil and c == 3
-end
-
-assert('Nested const reference') do
-  module Syntax4Const
-    CONST1 = "hello world"
-    class Const2
-      def const1
-        CONST1
-      end
-    end
-  end
-  Syntax4Const::CONST1 == "hello world" and
-  Syntax4Const::Const2.new.const1 == "hello world"
 end
 ##
 # Time ISO Test
@@ -3832,16 +3666,6 @@ if Object.const_defined?(:Time)
   assert('Time#zone', '15.2.19.7.33') do
     Time.at(1300000000.0).utc.zone == 'UTC'
   end
-
-  # Not ISO specified
-
-  assert('Time#to_s') do
-    Time.at(1300000000.0).utc.to_s == "Sun Mar 13 07:06:40 UTC 2011"
-  end
-
-  assert('Time#inspect') do
-    Time.at(1300000000.0).utc.inspect == "Sun Mar 13 07:06:40 UTC 2011"
-  end
 end
 
 ##
@@ -3885,7 +3709,3 @@ assert('TypeError superclass', '15.2.29.2') do
   TypeError.superclass == StandardError
 end
 
-report
-if $ko_test > 0 or $kill_test > 0
-  raise "mrbtest failed (KO:#{$ko_test}, Crash:#{$kill_test})"
-end
