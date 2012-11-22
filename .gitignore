@@ -24,3 +24,9 @@ cscope.out
 /test/*.*tmp
 CMakeFiles
 CMakeCache.txt
+/mrbgems/generator
+/mrbgems/gem_init.c
+/mrbgems/g/Makefile
+/mrbgems/g/MakefileGemList
+/mrbgems/g/mrbgemtest.ctmp
+/mrbgems/g/mrbgemtest.rbtmp
