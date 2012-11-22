@@ -66,8 +66,7 @@ mrb_init_core(mrb_state *mrb)
   mrb_init_math(mrb);
 #endif
 
-    mrb_init_mrblib(mrb);
-    mrb_init_require(mrb);
+  mrb_init_mrblib(mrb);
 
   mrb_gc_arena_restore(mrb, 0);
 }

@@ -123,11 +123,10 @@ mrb_f_require(mrb_state *mrb, mrb_value self)
 }
 
 void
-mrb_init_require(mrb_state *mrb)
+mrb_init_require(mrb_state *mrb,struct RClass *krn)
 {
-    struct RClass *krn;
+   fprintf(stderr,"mrb_init_require\n");
     
-    krn = mrb->kernel_module = mrb_define_module(mrb, "Kernel");
     mrb_define_method(mrb, krn, "require",                    mrb_f_require,                   ARGS_REQ(1));
     mrb_define_method(mrb, krn, "load",                       mrb_f_load,                      ARGS_REQ(1));
 }
