@@ -3,6 +3,20 @@
 mrbgems is a library manager to integrate C and Ruby extension in an easy and
 standardised way into mruby.
 
+## Usage
+
+By default mrbgems is currently deactivated. As long as mrbgems is deactivated
+there is no overhead inside of the mruby interpreter.
+
+To activate you have to make the following changes:
+* set *ENABLE_GEMS* to *true* in *$(MRUBY_ROOT)/Makefile*
+* define *ENABLE_GEMS* in *$(MRUBY_ROOT)/include/mrbconf.h*
+* activate GEMs in *$(MRUBY_ROOT)/mrbgems/GEMS.active*
+
+Every activated GEM has to be listed with his absolute path in *GEMS.active*. It
+is possible to point to an alternative activate file:
+* set *ACTIVE_GEMS* to your customized GEM list in *$(MRUBY_ROOT)/Makefile*
+
 ## GEM Structure
 
 The maximal GEM structure looks like this:
@@ -28,13 +42,11 @@ rules to build a *gem.a* file inside of the GEM directory. Which will be used
 for integration into the normal mruby build process. *README.md* is a short 
 description of your GEM.
 
-All GEMs have to be located under *$(MRUBY_ROOT)/mrbgems/g/*.
-
 ## Build process
 
 mrbgems will call *make* to build and *make clean* to clean your GEM. You
-have to build a *gem.a* file during this build process. How you are going
-to do this is up to you.
+have to build a *mrb-GEMNAME-gem.a* file during this build process. How you
+are going to do this is up to you.
 
 To make your build process more easier and more standardized we suggest
 to include *mrbgems/Makefile4gem* which defines some helper rules. In
@@ -52,8 +64,8 @@ The *Makefile* is used for building a C extension. You should
 define *GEM* (GEM name), *GEM_C_FILES* (all C files) and
 *GEM_OBJECTS* (all Object files). Pay also attention that your
 *Makefile* has to build the object files. You can use
-*gem-c-files* to build a *gem.a* out of your Object code and use
-*gem-clean-c-files* to clean the object files.
+*gem-c-files* to build a *mrb-GEMNAME-gem.a* out of your
+Object code and use *gem-clean-c-files* to clean the object files.
 
 ### Pre-Conditions
 
@@ -100,7 +112,7 @@ folder.
 
 The *Makefile* is used for building a Ruby extension. You should  define
 *GEM* (GEM name) and *GEM_RB_FILES* (all Ruby files). You can use
-*gem-rb-files* to build a *gem.a* out of your Ruby code and use
+*gem-rb-files* to build a *mrb-GEMNAME-gem.a* out of your Ruby code and use
 *gem-clean-rb-files* to clean the generated C files.
 
 ### Pre-Conditions
@@ -137,8 +149,9 @@ into the *mrblib* folder and all C files into the *src* folder.
 The *Makefile* is used for building a C and Ruby extension. You should
 define *GEM* (GEM name), *GEM_C_FILES* (all C files), *GEM_OBJECTS*
 (all Object files) and *GEM_RB_FILES* (all Ruby files). You can use
-*gem-c-and-rb-files* to build a *gem.a* out of your Object and Ruby code
-and use *gem-clean-c-and-rb-files* to clean the generated C files.
+*gem-c-and-rb-files* to build a *mrb-GEMNAME-gem.a* out of your Object
+and Ruby code. Use *gem-clean-c-and-rb-files* to clean the generated
+C files. 
 
 ### Pre-Conditions
 

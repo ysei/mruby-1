@@ -7,9 +7,16 @@ export LL = gcc
 export AR = ar
 export YACC = bison
 
+MRUBY_ROOT := $(realpath .)
+
 ifeq ($(strip $(ENABLE_GEMS)),)
   # by default GEMs are deactivated
   ENABLE_GEMS = false
+endif
+
+ifeq ($(strip $(ACTIVE_GEMS)),)
+  # the default file which contains the active GEMs
+  ACTIVE_GEMS = GEMS.active
 endif
 
 ifeq ($(strip $(COMPILE_MODE)),)
@@ -27,9 +34,9 @@ endif
 
 ALL_CFLAGS = -Wall -Werror-implicit-function-declaration $(CFLAGS)
 ifeq ($(OS),Windows_NT)
-  MAKE_FLAGS = --no-print-directory CC=$(CC) LL=$(LL) ALL_CFLAGS='$(ALL_CFLAGS)' ENABLE_GEMS='$(ENABLE_GEMS)'
+  MAKE_FLAGS = --no-print-directory CC=$(CC) LL=$(LL) ALL_CFLAGS='$(ALL_CFLAGS)' ENABLE_GEMS='$(ENABLE_GEMS)' ACTIVE_GEMS='$(ACTIVE_GEMS)' MRUBY_ROOT='$(MRUBY_ROOT)'
 else
-  MAKE_FLAGS = --no-print-directory CC='$(CC)' LL='$(LL)' ALL_CFLAGS='$(ALL_CFLAGS)' ENABLE_GEMS='$(ENABLE_GEMS)'
+  MAKE_FLAGS = --no-print-directory CC='$(CC)' LL='$(LL)' ALL_CFLAGS='$(ALL_CFLAGS)' ENABLE_GEMS='$(ENABLE_GEMS)' ACTIVE_GEMS='$(ACTIVE_GEMS)' MRUBY_ROOT='$(MRUBY_ROOT)'
 endif
 
 ##############################
