@@ -1,0 +1,15 @@
+# First steps with mruby
+
+Mruby is a lightweight implementation of Ruby written by Matz the inventor of the language. A small but quite active community is working on the project. Mruby is open source under the MIT license and the main repository is hosted on [GitHub](https://github.com/mruby/mruby ). Several clones exist implementing still missing functionalities, in particular an implementation of  [regular expressions](https://github.com/junjis0203/mruby/tree/workspace_for_regexp "Regexp") and a [gem mechanism](https://github.com/mruby/mruby/pull/479 "Gem"), a JNI bridge  is also proposed in [Jamruby](https://github.com/jamruby/jamruby "Jamruby"), showing how to use Mruby on Android. 
+
+My first aim has been to merge these ongoing developments in my own clone, trying to keep in line with the main repository. I also used the very good examples given by  [Carson McDonald](https://github.com/carsonmcdonald/MRubyiOSExample "Carson McDonald"). My clone is available [here](https://github.com/mauceri/mruby "My clone"), it should change  quite a lot according to the main repository and the adjunction of gems implemented thanks to the mechanism provided by Daniel Bovensiepen cited above.
+
+Mruby is built on a virtual machine called [Rite](http://www.slideshare.net/yukihiro_matz/rubyconf-2010-keynote-by-matz/64 "Rite") written in C. The main difficulty when starting with Mruby is the scarcity of the documentation, almost everything must be deduced from the code even if some very good examples are given in the links found in the Wiki and in the Carlson McDonald site, Jamruby can also gives some very good insights for those coming from Java. 
+
+# Mrbgems
+
+As it is quite difficult to deal with the virtual machine by itself I decided to focus mainly on writing gems using Daniel's mechanism, my first aim (quite ambitious) is to port the [ruby-git](https://github.com/schacon/ruby-git "ruby-git") library and then [Jekyll](https://github.com/mojombo/jekyll "Jekyll") or at least a subset of it.
+
+I'll try to report here on a regular basis the progress I'll make to achieve this goal.
+
+
