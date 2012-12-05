@@ -11,7 +11,7 @@ MRUBY_ROOT := $(realpath .)
 
 ifeq ($(strip $(ENABLE_GEMS)),)
   # by default GEMs are deactivated
-  ENABLE_GEMS = false
+  ENABLE_GEMS = true
 endif
 
 ifeq ($(strip $(ACTIVE_GEMS)),)

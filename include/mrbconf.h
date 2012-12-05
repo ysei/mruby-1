@@ -50,7 +50,7 @@
 //#define DISABLE_TIME		/* Time class */
 //#define DISABLE_STRUCT	/* Struct class */
 //#define DISABLE_STDIO		/* use of stdio */
-#define DISABLE_GEMS		/* Package Manager mrbgems */
+//#define DISABLE_GEMS		/* Package Manager mrbgems */
 
 #undef  HAVE_UNISTD_H /* WINDOWS */
 #define HAVE_UNISTD_H /* LINUX */
@@ -113,6 +113,9 @@ typedef short mrb_sym;
 #endif
 #ifndef DISABLE_STDIO
 #define ENABLE_STDIO
+#endif
+#ifndef DISABLE_GEMS
+#define ENABLE_GEMS
 #endif
 
 #ifndef FALSE

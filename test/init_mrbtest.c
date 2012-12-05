@@ -10,8 +10,10 @@ extern const char mrbgemtest_irep[];
 void
 mrb_init_mrbtest(mrb_state *mrb)
 {
-  int n = mrb_read_irep(mrb, mrbtest_irep);
   mrb_load_irep(mrb, mrbtest_irep);
+#ifdef ENABLE_GEMS
+  mrb_load_irep(mrb, mrbgemtest_irep);
+#endif
   if (mrb->exc) {
     mrb_p(mrb, mrb_obj_value(mrb->exc));
     exit(0);

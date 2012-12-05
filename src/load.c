@@ -673,24 +673,13 @@ irep_error(mrb_state *mrb, int n)
 mrb_value
 mrb_load_irep_file(mrb_state *mrb, FILE* fp)
 {
-  int n = mrb_read_irep_file(mrb, fp);
-    mrb_value res;
-#ifdef ENABLE_GEMS
-    int m = mrb_read_irep(mrb, mrbgemtest_irep);
-#endif
-
+    int n = mrb_read_irep_file(mrb, fp);
+    
     if (n < 0) {
         irep_error(mrb, n);
         return mrb_nil_value();
     }
-    
-    res = mrb_run(mrb, mrb_proc_new(mrb, mrb->irep[n]), mrb_top_self(mrb));
-#ifdef ENABLE_GEMS
-    res = mrb_run(mrb, mrb_proc_new(mrb, mrb->irep[m]), mrb_top_self(mrb));
-#endif
-
-    return res;
-//  return mrb_run(mrb, mrb_proc_new(mrb, mrb->irep[n]), mrb_top_self(mrb));
+    return mrb_run(mrb, mrb_proc_new(mrb, mrb->irep[n]), mrb_top_self(mrb));
 }
 
 mrb_value
