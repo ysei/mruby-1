@@ -1124,8 +1124,6 @@ mrb_init_kernel(mrb_state *mrb)
   mrb_define_method(mrb, krn, "sprintf",                    mrb_f_sprintf,                   ARGS_ANY());     /* in sprintf.c */
   mrb_define_method(mrb, krn, "format",                     mrb_f_sprintf,                   ARGS_ANY());     /* in sprintf.c */
 #endif
-    void mrb_init_require(mrb_state *mrb,struct RClass *krn);
-    mrb_init_require(mrb,krn);
   mrb_include_module(mrb, mrb->object_class, mrb->kernel_module);
   mrb_alias_method(mrb, mrb->module_class, mrb_intern(mrb, "dup"), mrb_intern(mrb, "clone"));
 }

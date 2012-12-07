@@ -2,6 +2,7 @@
 #include "mruby/string.h"
 
 #include "mruby/array.h"
+#include "mruby/class.h"
 #include "mruby/variable.h"
 #include "mruby/compile.h"
 #include "mruby/hash.h"
@@ -123,10 +124,11 @@ mrb_f_require(mrb_state *mrb, mrb_value self)
 }
 
 void
-mrb_init_require(mrb_state *mrb,struct RClass *krn)
+mrb_require_gem_init(mrb_state *mrb)
 {
+    struct RClass *k = mrb->kernel_module;
    fprintf(stderr,"mrb_init_require\n");
     
-    mrb_define_method(mrb, krn, "require",                    mrb_f_require,                   ARGS_REQ(1));
-    mrb_define_method(mrb, krn, "load",                       mrb_f_load,                      ARGS_REQ(1));
+    mrb_define_method(mrb, k, "require",                    mrb_f_require,                   ARGS_REQ(1));
+    mrb_define_method(mrb, k, "load",                       mrb_f_load,                      ARGS_REQ(1));
 }

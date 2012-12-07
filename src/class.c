@@ -114,7 +114,7 @@ mrb_define_module_id(mrb_state *mrb, mrb_sym name)
 struct RClass*
 mrb_define_module(mrb_state *mrb, const char *name)
 {
-  return mrb_define_module_id(mrb, mrb_intern(mrb, name));
+    return mrb_define_module_id(mrb, mrb_intern(mrb, name));
 }
 
 static void
