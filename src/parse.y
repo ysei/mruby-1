@@ -3328,7 +3328,7 @@ read_escape(parser_state *p, int regexp)
 	   break;
 	 }
        }
-       c = scan_oct(buf, i+1, &i);
+       c = scan_oct(buf, i, &i);
     }
     return c;
 
