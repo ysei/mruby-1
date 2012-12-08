@@ -1759,7 +1759,7 @@
 		A5D4F9DF16726119007B9C7C /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		A5D4F9E016726119007B9C7C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A5D4F9E216726119007B9C7C /* require.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = require.c; sourceTree = "<group>"; };
-		A5D4F9E416726119007B9C7C /* example.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = example.rb; sourceTree = "<group>"; };
+		A5D4F9E416726119007B9C7C /* require.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = require.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -6467,7 +6467,7 @@
 		A5D4F9E316726119007B9C7C /* test */ = {
 			isa = PBXGroup;
 			children = (
-				A5D4F9E416726119007B9C7C /* example.rb */,
+				A5D4F9E416726119007B9C7C /* require.rb */,
 			);
 			path = test;
 			sourceTree = "<group>";
