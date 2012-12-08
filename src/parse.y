@@ -3522,22 +3522,22 @@ qstring_node(parser_state *p, int term)
       c = nextc(p);
       switch (c) {
       case '\n':
-	p->lineno++;
-	p->column = 0;
-	continue;
+          p->lineno++;
+          p->column = 0;
+          continue;
 
       case '\\':
-	c = '\\';
-	break;
+          c = '\\';
+          break;
 
       case '\'':
-	if (term == '\'') {
-	  c = '\'';
-	  break;
-	}
-	/* fall through */
+          if (term == '\'') {
+              c = '\'';
+              break;
+          }
+          /* fall through */
       default:
-	tokadd(p, '\\');
+          tokadd(p, '\\');
       }
     }
     tokadd(p, c);
@@ -3602,14 +3602,14 @@ parser_yylex(parser_state *p)
     skip(p, '\n');
     /* fall through */
   case '\n':
-    p->lineno++;
-    p->column = 0;
     switch (p->lstate) {
     case EXPR_BEG:
     case EXPR_FNAME:
     case EXPR_DOT:
     case EXPR_CLASS:
     case EXPR_VALUE:
+        p->lineno++;
+        p->column = 0;
        goto retry;
     default:
       break;
