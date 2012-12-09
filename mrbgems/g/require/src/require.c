@@ -20,7 +20,6 @@ mrb_value eval_string(mrb_state *mrb, mrb_value mod, char* str)
     struct mrb_parser_state *parser;
     mrbc_context *cxt;
     int n;
-    mrb_value result;
     int arena_idx;
     
     arena_idx = mrb_gc_arena_save(mrb);
@@ -37,25 +36,16 @@ mrb_value eval_string(mrb_state *mrb, mrb_value mod, char* str)
     } else {
         /* generate bytecode */
         n = mrb_generate_code(mrb, parser);
-        
-        /* evaluate the bytecode */
-        result = mrb_run(mrb, mrb_proc_new(mrb, mrb->irep[n]), mrb_top_self(mrb));
-        //mrb_top_self(mrb));
         mrb_parser_free(parser);
         mrbc_context_free(mrb, cxt);
         mrb_gc_arena_restore(mrb, arena_idx);
-        
-        if (FIXNUM_P(result)) {
-            mrb_run_irep_as_proc(mrb, mrb->irep[mrb_fixnum(result)]);
-        }
-        else if (mrb->exc) {
-            // fail to load.
-            longjmp(*(jmp_buf*)mrb->jmp, 1);
-        }
+        /* evaluate the bytecode */
+        return mrb_run_irep_as_proc(mrb, mrb->irep[n]);
     }
-    mrb_raise(mrb, E_NOTIMP_ERROR, "module_eval/class_eval with string not implemented");
+    mrb_raise(mrb, E_RUNTIME_ERROR, "Unexpected error in eval_string");
     return mrb_nil_value();
 }
+
 /* 15.2.2.4.35 */
 /*
  *  call-seq:
@@ -72,14 +62,11 @@ mrb_mod_module_eval(mrb_state *mrb, mrb_value mod)
 {
     mrb_value a, b;
     struct RClass *c;
-    mrb_value result;
     
     if (mrb_get_args(mrb, "|S&", &a, &b) == 1) {
         char *str = mrb_string_value_ptr(mrb,a);
-        fprintf(stderr,"%s\n",str);
         
-        result = eval_string(mrb, mod, str);
-        return result;
+        return eval_string(mrb, mod, str);
     }
     c = mrb_class_ptr(mod);
     return mrb_yield_internal(mrb, b, 0, 0, mod, c);

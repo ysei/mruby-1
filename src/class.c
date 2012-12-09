@@ -873,8 +873,6 @@ mrb_mod_module_eval(mrb_state *mrb, mrb_value mod)
     
     if (mrb_get_args(mrb, "|S&", &a, &b) == 1) {
         char *str = mrb_string_value_ptr(mrb,a);
-        fprintf(stderr,"%s\n",str);
-        
         mrb_raise(mrb, E_NOTIMP_ERROR, "module_eval/class_eval with string not implemented");
         return result;
     }

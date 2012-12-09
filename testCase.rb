@@ -32,25 +32,18 @@
 
 p descendant_diretory? "aaa:cccbbb", "..."
 
-urlu = 1
 class Thing
 end
-a = "def hello()  p \"Hello Thing! #{urlu}\" end "
-#class Thing 
-#  def hello() 
-#    urlu = 1 
-#    p "Hello there!" 
-#  end 
-#end
-Thing.module_eval(a)  
-p "back from eval"
 
-Thing.new.hello()
+a = "def hello()  \"Hello Thing!\" end"
+
+Thing.module_eval(a)
+
+p Thing.new.hello() == "Hello Thing!"
 
 module Berlu
-  
 end
-a = "def self.hello()  p \"Hello Berlu! #{urlu}\" end "
+a = "def self.hello()  p \"Hello Berlu!\" end "
 Berlu.module_eval(a)  
 Berlu.hello()
 
