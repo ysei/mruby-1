@@ -8,10 +8,82 @@
 #include "mruby/hash.h"
 #include "mruby/irep.h"
 #include "mruby/proc.h"
+#include "mruby/compile.h"
 
 #include "opcode.h"
 
 #include <stdio.h>
+mrb_value mrb_yield_internal(mrb_state *mrb, mrb_value b, int argc, mrb_value *argv, mrb_value self, struct RClass *c);
+
+mrb_value eval_string(mrb_state *mrb, mrb_value mod, char* str)
+{
+    struct mrb_parser_state *parser;
+    mrbc_context *cxt;
+    int n;
+    mrb_value result;
+    int arena_idx;
+    
+    arena_idx = mrb_gc_arena_save(mrb);
+    cxt = mrbc_context_new(mrb);
+    parser = mrb_parser_new(mrb);
+    parser->s = str;
+    parser->send = str + strlen(str);
+    parser->lineno = 1;
+    mrb_parser_parse(parser, cxt);
+    
+    if (0 < parser->nerr) {
+        /* syntax error */
+        mrb_raise(mrb, E_SYNTAX_ERROR, str);
+    } else {
+        /* generate bytecode */
+        n = mrb_generate_code(mrb, parser);
+        
+        /* evaluate the bytecode */
+        result = mrb_run(mrb, mrb_proc_new(mrb, mrb->irep[n]), mrb_top_self(mrb));
+        //mrb_top_self(mrb));
+        mrb_parser_free(parser);
+        mrbc_context_free(mrb, cxt);
+        mrb_gc_arena_restore(mrb, arena_idx);
+        
+        if (FIXNUM_P(result)) {
+            mrb_run_irep_as_proc(mrb, mrb->irep[mrb_fixnum(result)]);
+        }
+        else if (mrb->exc) {
+            // fail to load.
+            longjmp(*(jmp_buf*)mrb->jmp, 1);
+        }
+    }
+    mrb_raise(mrb, E_NOTIMP_ERROR, "module_eval/class_eval with string not implemented");
+    return mrb_nil_value();
+}
+/* 15.2.2.4.35 */
+/*
+ *  call-seq:
+ *     mod.class_eval {| | block }  -> obj
+ *     mod.module_eval {| | block } -> obj
+ *
+ *  Evaluates block in the context of _mod_. This can
+ *  be used to add methods to a class. <code>module_eval</code> returns
+ *  the result of evaluating its argument.
+ */
+
+mrb_value
+mrb_mod_module_eval(mrb_state *mrb, mrb_value mod)
+{
+    mrb_value a, b;
+    struct RClass *c;
+    mrb_value result;
+    
+    if (mrb_get_args(mrb, "|S&", &a, &b) == 1) {
+        char *str = mrb_string_value_ptr(mrb,a);
+        fprintf(stderr,"%s\n",str);
+        
+        result = eval_string(mrb, mod, str);
+        return result;
+    }
+    c = mrb_class_ptr(mod);
+    return mrb_yield_internal(mrb, b, 0, 0, mod, c);
+}
 
 static void
 load_file(mrb_state *mrb, mrb_value filename)
@@ -127,8 +199,11 @@ void
 mrb_require_gem_init(mrb_state *mrb)
 {
     struct RClass *k = mrb->kernel_module;
+    struct RClass *m = mrb->module_class;
    fprintf(stderr,"mrb_init_require\n");
     
     mrb_define_method(mrb, k, "require",                    mrb_f_require,                   ARGS_REQ(1));
     mrb_define_method(mrb, k, "load",                       mrb_f_load,                      ARGS_REQ(1));
+    mrb_define_method(mrb, m, "module_eval",                mrb_mod_module_eval, ARGS_ANY());            /* 15.2.2.4.35 */
+    mrb_define_method(mrb, m, "class_eval",                mrb_mod_module_eval, ARGS_ANY());            /* 15.2.2.4.35 */
 }

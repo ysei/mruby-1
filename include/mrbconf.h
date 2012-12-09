@@ -51,6 +51,7 @@
 //#define DISABLE_STRUCT	/* Struct class */
 //#define DISABLE_STDIO		/* use of stdio */
 //#define DISABLE_GEMS		/* Package Manager mrbgems */
+//#define DISABLE_REQUIRE		/* Package Manager mrbgems */
 
 #undef  HAVE_UNISTD_H /* WINDOWS */
 #define HAVE_UNISTD_H /* LINUX */
