@@ -85,6 +85,9 @@
 		A5B75CD61656439600000282 /* value.h in Headers */ = {isa = PBXBuildFile; fileRef = A5B75CD51656439500000282 /* value.h */; };
 		A5B75CE0165661C200000282 /* libmruby_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8844353B1576F1A3007F95A4 /* libmruby_core.a */; };
 		A5B75CE1165661DD00000282 /* libmruby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8844353E1576F1A3007F95A4 /* libmruby.a */; };
+		A5C7968C1675F6E0006D7717 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A5C796791675F6E0006D7717 /* Makefile */; };
+		A5C7968E1675F6E0006D7717 /* mrb_uv.c in Sources */ = {isa = PBXBuildFile; fileRef = A5C7967D1675F6E0006D7717 /* mrb_uv.c */; };
+		A5C7968F1675F6E0006D7717 /* mrb_uv.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C7967E1675F6E0006D7717 /* mrb_uv.h */; };
 		A5D472B7165F663F00CAE96A /* generator.c in Sources */ = {isa = PBXBuildFile; fileRef = A5D472B4165F663F00CAE96A /* generator.c */; };
 		A5D472B8165F663F00CAE96A /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A5D472B5165F663F00CAE96A /* Makefile */; };
 		A5D472D5165FFBD100CAE96A /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A5D472BE165FFBD100CAE96A /* Makefile */; };
@@ -298,6 +301,22 @@
 		A5B75CCB16563FB300000282 /* us_ascii.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = us_ascii.c; sourceTree = "<group>"; };
 		A5B75CCC16563FB400000282 /* utf_8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utf_8.c; sourceTree = "<group>"; };
 		A5B75CD51656439500000282 /* value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = value.h; path = mruby/value.h; sourceTree = "<group>"; };
+		A5C796791675F6E0006D7717 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		A5C7967A1675F6E0006D7717 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		A5C7967D1675F6E0006D7717 /* mrb_uv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mrb_uv.c; sourceTree = "<group>"; };
+		A5C7967E1675F6E0006D7717 /* mrb_uv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mrb_uv.h; sourceTree = "<group>"; };
+		A5C796801675F6E0006D7717 /* async.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = async.rb; sourceTree = "<group>"; };
+		A5C796811675F6E0006D7717 /* idle.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = idle.rb; sourceTree = "<group>"; };
+		A5C796821675F6E0006D7717 /* loop.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = loop.rb; sourceTree = "<group>"; };
+		A5C796831675F6E0006D7717 /* pipe-client-win.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "pipe-client-win.rb"; sourceTree = "<group>"; };
+		A5C796841675F6E0006D7717 /* pipe-client.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "pipe-client.rb"; sourceTree = "<group>"; };
+		A5C796851675F6E0006D7717 /* pipe-server-win.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "pipe-server-win.rb"; sourceTree = "<group>"; };
+		A5C796861675F6E0006D7717 /* pipe-server.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "pipe-server.rb"; sourceTree = "<group>"; };
+		A5C796871675F6E0006D7717 /* tcp-client.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "tcp-client.rb"; sourceTree = "<group>"; };
+		A5C796881675F6E0006D7717 /* tcp-server.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "tcp-server.rb"; sourceTree = "<group>"; };
+		A5C796891675F6E0006D7717 /* timer.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = timer.rb; sourceTree = "<group>"; };
+		A5C7968A1675F6E0006D7717 /* udp-reader.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "udp-reader.rb"; sourceTree = "<group>"; };
+		A5C7968B1675F6E0006D7717 /* udp-sender.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "udp-sender.rb"; sourceTree = "<group>"; };
 		A5D472B2165F663F00CAE96A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A5D472B3165F663F00CAE96A /* GEMS.active */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GEMS.active; sourceTree = "<group>"; };
 		A5D472B4165F663F00CAE96A /* generator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = generator.c; sourceTree = "<group>"; };
@@ -675,6 +694,45 @@
 			path = ../mrblib;
 			sourceTree = "<group>";
 		};
+		A5C796781675F6E0006D7717 /* libuv */ = {
+			isa = PBXGroup;
+			children = (
+				A5C796791675F6E0006D7717 /* Makefile */,
+				A5C7967A1675F6E0006D7717 /* README.md */,
+				A5C7967C1675F6E0006D7717 /* src */,
+				A5C7967F1675F6E0006D7717 /* test */,
+			);
+			path = libuv;
+			sourceTree = "<group>";
+		};
+		A5C7967C1675F6E0006D7717 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A5C7967D1675F6E0006D7717 /* mrb_uv.c */,
+				A5C7967E1675F6E0006D7717 /* mrb_uv.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A5C7967F1675F6E0006D7717 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				A5C796801675F6E0006D7717 /* async.rb */,
+				A5C796811675F6E0006D7717 /* idle.rb */,
+				A5C796821675F6E0006D7717 /* loop.rb */,
+				A5C796831675F6E0006D7717 /* pipe-client-win.rb */,
+				A5C796841675F6E0006D7717 /* pipe-client.rb */,
+				A5C796851675F6E0006D7717 /* pipe-server-win.rb */,
+				A5C796861675F6E0006D7717 /* pipe-server.rb */,
+				A5C796871675F6E0006D7717 /* tcp-client.rb */,
+				A5C796881675F6E0006D7717 /* tcp-server.rb */,
+				A5C796891675F6E0006D7717 /* timer.rb */,
+				A5C7968A1675F6E0006D7717 /* udp-reader.rb */,
+				A5C7968B1675F6E0006D7717 /* udp-sender.rb */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 		A5D472B0165F663F00CAE96A /* mrbgems */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,6 +749,7 @@
 		A5D472B1165F663F00CAE96A /* g */ = {
 			isa = PBXGroup;
 			children = (
+				A5C796781675F6E0006D7717 /* libuv */,
 				A5D4F9DC16726119007B9C7C /* require */,
 				A5D4F2DE16725BA0007B9C7C /* c_and_ruby_extension_example */,
 				A5D472B2165F663F00CAE96A /* .gitignore */,
@@ -897,6 +956,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5B75CD61656439600000282 /* value.h in Headers */,
+				A5C7968F1675F6E0006D7717 /* mrb_uv.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1239,6 +1299,8 @@
 				A5D4F9E516726119007B9C7C /* gem_srclib.c in Sources */,
 				A5D4F9E716726119007B9C7C /* Makefile in Sources */,
 				A5D4F9E816726119007B9C7C /* require.c in Sources */,
+				A5C7968C1675F6E0006D7717 /* Makefile in Sources */,
+				A5C7968E1675F6E0006D7717 /* mrb_uv.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

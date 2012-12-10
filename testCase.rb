@@ -47,3 +47,10 @@ a = "def self.hello()  p \"Hello Berlu!\" end "
 Berlu.module_eval(a)  
 Berlu.hello()
 
+def fu_have_symlink?   #:nodoc:
+    File.symlink nil, nil
+  rescue NotImplementedError
+    return false
+  rescue
+    return true
+end

@@ -1,0 +1,12 @@
+
+void mrb_c_and_ruby_extension_example_gem_init(mrb_state*);
+
+void
+GENERATED_TMP_mrb_c_and_ruby_extension_example_gem_init(mrb_state *mrb) {
+  mrb_c_and_ruby_extension_example_gem_init(mrb);
+  mrb_load_irep(mrb, gem_mrblib_irep_c_and_ruby_extension_example);
+  if (mrb->exc) {
+    mrb_p(mrb, mrb_obj_value(mrb->exc));
+    exit(0);
+  }
+}
