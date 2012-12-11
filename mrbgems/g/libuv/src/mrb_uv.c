@@ -7,7 +7,7 @@
 #include <mruby/array.h>
 #include <mruby/class.h>
 #include <mruby/variable.h>
-#include "include/uv.h"
+#include "../libuv/include/uv.h"
 #include <stdio.h>
 
 typedef struct {
