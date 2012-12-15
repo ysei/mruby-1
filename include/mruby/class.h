@@ -48,6 +48,11 @@ mrb_class(mrb_state *mrb, mrb_value v)
   case MRB_TT_MATCH:
     return mrb->match_class;
 #endif
+#ifdef ENABLE_BIGNUM
+  case MRB_TT_BIGNUM:
+    return mrb->bignum_class;
+#endif
+          
   default:
     return mrb_object(v)->c;
   }

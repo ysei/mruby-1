@@ -112,6 +112,9 @@ typedef struct mrb_state {
     struct RClass *regex_class;
     struct RClass *match_class;
 #endif
+#ifdef ENABLE_BIGNUM
+    struct RClass *bignum_class;
+#endif
     
 
   struct heap_page *heaps;
@@ -328,9 +331,6 @@ typedef enum call_type {
     CALL_TYPE_MAX
 } call_type;
 
-/* compar.c */
-void mrb_cmperr(mrb_state *mrb, mrb_value x, mrb_value y);
-int mrb_cmpint(mrb_state *mrb, mrb_value val, mrb_value a, mrb_value b);
 
 #ifndef ANYARGS
 # ifdef __cplusplus
@@ -357,6 +357,7 @@ void* mrb_pool_alloc(struct mrb_pool*, size_t);
 void* mrb_pool_realloc(struct mrb_pool*, void*, size_t oldlen, size_t newlen);
 int mrb_pool_can_realloc(struct mrb_pool*, void*, size_t);
 void* mrb_alloca(mrb_state *mrb, size_t);
+
 
 #if defined(__cplusplus)
 }  /* extern "C" { */

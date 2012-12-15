@@ -385,7 +385,7 @@ static const struct types {
   {MRB_TT_DATA,   "Data"},  /* internal use: wrapped C pointers */
   {MRB_TT_MATCH,  "MatchData"},  /* data of $~ */
 //    {MRB_TT_VARMAP,  "Varmap"},  /* internal use: dynamic variables */
-//    {MRB_TT_NODE,  "Node"},  /* internal use: syntax tree node */
+    {MRB_TT_NODE,  "Node"},  /* internal use: syntax tree node */
 //    {MRB_TT_UNDEF,  "undef"},  /* internal use: #undef; should not happen */
     {-1,  0}
 };

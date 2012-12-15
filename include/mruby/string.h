@@ -62,7 +62,7 @@ mrb_value mrb_str_buf_new(mrb_state *mrb, int capa);
 mrb_value mrb_str_buf_cat(mrb_state *mrb, mrb_value str, const char *ptr, int len);
 
 mrb_value mrb_str_subseq(mrb_state *mrb, mrb_value str, int beg, int len);
-    mrb_value mrb_str_size(mrb_state *mrb, mrb_value self);
+mrb_value mrb_str_size(mrb_state *mrb, mrb_value self);
     
 char *mrb_string_value_cstr(mrb_state *mrb, mrb_value *ptr);
 char *mrb_string_value_ptr(mrb_state *mrb, mrb_value ptr);

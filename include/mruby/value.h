@@ -35,7 +35,9 @@ enum mrb_vtype {
   MRB_TT_FILE,        /*  22 */
   MRB_TT_ENV,         /*  23 */
   MRB_TT_DATA,        /*  24 */
-  MRB_TT_MAXDEFINE    /*  25 */
+    MRB_TT_MAXDEFINE,    /*  25 */
+    MRB_TT_NODE,    /*  26 */
+    MRB_TT_BIGNUM    /*  27 */
 };
 
 typedef struct mrb_value {
@@ -136,6 +138,7 @@ mrb_float_value(mrb_float f)
 {
   mrb_value v;
 
+    //NaN
   if (f != f) {
     v.ttt = 0x7ff80000;
     v.value.i = 0;

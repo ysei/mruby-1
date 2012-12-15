@@ -85,12 +85,11 @@
 		A5B75CD61656439600000282 /* value.h in Headers */ = {isa = PBXBuildFile; fileRef = A5B75CD51656439500000282 /* value.h */; };
 		A5B75CE0165661C200000282 /* libmruby_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8844353B1576F1A3007F95A4 /* libmruby_core.a */; };
 		A5B75CE1165661DD00000282 /* libmruby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8844353E1576F1A3007F95A4 /* libmruby.a */; };
-		A5B83F1C16765DED00FAE4D4 /* gem_mixlib.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B83F0C16765DED00FAE4D4 /* gem_mixlib.c */; };
-		A5B83F1D16765DED00FAE4D4 /* gem_mixlib.o in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B83F0D16765DED00FAE4D4 /* gem_mixlib.o */; };
-		A5B83F1E16765DED00FAE4D4 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A5B83F1216765DED00FAE4D4 /* Makefile */; };
-		A5B83F1F16765DED00FAE4D4 /* mrb-c_and_ruby_extension_example-gem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B83F1316765DED00FAE4D4 /* mrb-c_and_ruby_extension_example-gem.a */; };
-		A5B83F2016765DED00FAE4D4 /* example.o in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B83F1816765DED00FAE4D4 /* example.o */; };
-		A5B83F2116765DED00FAE4D4 /* file.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B83F1916765DED00FAE4D4 /* file.c */; };
+		A5B83F3216775C6600FAE4D4 /* mruby.h in Sources */ = {isa = PBXBuildFile; fileRef = 88BF356A156C99B200F12AC7 /* mruby.h */; };
+		A5B83F4116785DA800FAE4D4 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A5B83F3916785DA800FAE4D4 /* Makefile */; };
+		A5B83F4216785DA800FAE4D4 /* bignum.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B83F3E16785DA800FAE4D4 /* bignum.c */; };
+		A5B83F441678645600FAE4D4 /* mriruby.h in Headers */ = {isa = PBXBuildFile; fileRef = A5B83F431678645600FAE4D4 /* mriruby.h */; };
+		A5B83F47167B021800FAE4D4 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B83F46167B021800FAE4D4 /* util.c */; };
 		A5D472B7165F663F00CAE96A /* generator.c in Sources */ = {isa = PBXBuildFile; fileRef = A5D472B4165F663F00CAE96A /* generator.c */; };
 		A5D472B8165F663F00CAE96A /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A5D472B5165F663F00CAE96A /* Makefile */; };
 		A5D472D5165FFBD100CAE96A /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A5D472BE165FFBD100CAE96A /* Makefile */; };
@@ -304,19 +303,16 @@
 		A5B75CCB16563FB300000282 /* us_ascii.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = us_ascii.c; sourceTree = "<group>"; };
 		A5B75CCC16563FB400000282 /* utf_8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utf_8.c; sourceTree = "<group>"; };
 		A5B75CD51656439500000282 /* value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = value.h; path = mruby/value.h; sourceTree = "<group>"; };
-		A5B83F0C16765DED00FAE4D4 /* gem_mixlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gem_mixlib.c; sourceTree = "<group>"; };
-		A5B83F0D16765DED00FAE4D4 /* gem_mixlib.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = gem_mixlib.o; sourceTree = "<group>"; };
-		A5B83F0E16765DED00FAE4D4 /* gem_mixlib_init.ctmp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gem_mixlib_init.ctmp; sourceTree = "<group>"; };
-		A5B83F0F16765DED00FAE4D4 /* gem_mrblib.rbtmp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gem_mrblib.rbtmp; sourceTree = "<group>"; };
-		A5B83F1016765DED00FAE4D4 /* gem_mrblib_header.ctmp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gem_mrblib_header.ctmp; sourceTree = "<group>"; };
-		A5B83F1116765DED00FAE4D4 /* gem_mrblib_irep.ctmp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gem_mrblib_irep.ctmp; sourceTree = "<group>"; };
-		A5B83F1216765DED00FAE4D4 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		A5B83F1316765DED00FAE4D4 /* mrb-c_and_ruby_extension_example-gem.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "mrb-c_and_ruby_extension_example-gem.a"; sourceTree = "<group>"; };
-		A5B83F1516765DED00FAE4D4 /* example.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = example.rb; sourceTree = "<group>"; };
-		A5B83F1616765DED00FAE4D4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		A5B83F1816765DED00FAE4D4 /* example.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = example.o; sourceTree = "<group>"; };
-		A5B83F1916765DED00FAE4D4 /* file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = file.c; sourceTree = "<group>"; };
-		A5B83F1B16765DED00FAE4D4 /* example.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = example.rb; sourceTree = "<group>"; };
+		A5B83F2A16775BEC00FAE4D4 /* libfile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libfile.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5B83F3916785DA800FAE4D4 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		A5B83F3B16785DA800FAE4D4 /* example.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = example.rb; sourceTree = "<group>"; };
+		A5B83F3C16785DA800FAE4D4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		A5B83F3E16785DA800FAE4D4 /* bignum.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bignum.c; sourceTree = "<group>"; };
+		A5B83F4016785DA800FAE4D4 /* example.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = example.rb; sourceTree = "<group>"; };
+		A5B83F431678645600FAE4D4 /* mriruby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mriruby.h; sourceTree = "<group>"; };
+		A5B83F451678F1FD00FAE4D4 /* bignum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bignum.h; sourceTree = "<group>"; };
+		A5B83F46167B021800FAE4D4 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		A5B83F48167B032B00FAE4D4 /* util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		A5D472B2165F663F00CAE96A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A5D472B3165F663F00CAE96A /* GEMS.active */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GEMS.active; sourceTree = "<group>"; };
 		A5D472B4165F663F00CAE96A /* generator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = generator.c; sourceTree = "<group>"; };
@@ -391,9 +387,6 @@
 				A5D4F9D816725BA3007B9C7C /* mrb-c_and_ruby_extension_example-gem.a in Frameworks */,
 				A5D4F9DA16725BA3007B9C7C /* example.o in Frameworks */,
 				A5D4F9E616726119007B9C7C /* gem_srclib.o in Frameworks */,
-				A5B83F1D16765DED00FAE4D4 /* gem_mixlib.o in Frameworks */,
-				A5B83F1F16765DED00FAE4D4 /* mrb-c_and_ruby_extension_example-gem.a in Frameworks */,
-				A5B83F2016765DED00FAE4D4 /* example.o in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +411,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				88760BA01576A4A700113BFB /* libmruby_core.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B83F2716775BEC00FAE4D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +525,7 @@
 				8844358F1577301B007F95A4 /* mrbtest */,
 				8844353E1576F1A3007F95A4 /* libmruby.a */,
 				8844353F1576F1A3007F95A4 /* mruby.framework */,
+				A5B83F2A16775BEC00FAE4D4 /* libfile.a */,
 			);
 			sourceTree = "<group>";
 		};
@@ -575,6 +576,7 @@
 		88BF34D3156C998200F12AC7 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				A5B83F46167B021800FAE4D4 /* util.c */,
 				A5A01494165BF247000CAFED /* gvar.c */,
 				A5B75CC816563FB300000282 /* ascii.c */,
 				A5B75CC916563FB300000282 /* encoding.c */,
@@ -635,6 +637,7 @@
 				88BF350F156C998200F12AC7 /* time.c */,
 				88BF3515156C998200F12AC7 /* variable.c */,
 				88BF3518156C998200F12AC7 /* vm.c */,
+				A5B83F48167B032B00FAE4D4 /* util.h */,
 			);
 			name = src;
 			path = ../src;
@@ -655,6 +658,7 @@
 		88BF3559156C99B200F12AC7 /* mruby */ = {
 			isa = PBXGroup;
 			children = (
+				A5B83F431678645600FAE4D4 /* mriruby.h */,
 				88BF355A156C99B200F12AC7 /* array.h */,
 				88BF355B156C99B200F12AC7 /* cdump.h */,
 				88BF355C156C99B200F12AC7 /* class.h */,
@@ -697,46 +701,39 @@
 			path = ../mrblib;
 			sourceTree = "<group>";
 		};
-		A5B83F0B16765DED00FAE4D4 /* file */ = {
+		A5B83F3816785DA800FAE4D4 /* bignum */ = {
 			isa = PBXGroup;
 			children = (
-				A5B83F0C16765DED00FAE4D4 /* gem_mixlib.c */,
-				A5B83F0D16765DED00FAE4D4 /* gem_mixlib.o */,
-				A5B83F0E16765DED00FAE4D4 /* gem_mixlib_init.ctmp */,
-				A5B83F0F16765DED00FAE4D4 /* gem_mrblib.rbtmp */,
-				A5B83F1016765DED00FAE4D4 /* gem_mrblib_header.ctmp */,
-				A5B83F1116765DED00FAE4D4 /* gem_mrblib_irep.ctmp */,
-				A5B83F1216765DED00FAE4D4 /* Makefile */,
-				A5B83F1316765DED00FAE4D4 /* mrb-c_and_ruby_extension_example-gem.a */,
-				A5B83F1416765DED00FAE4D4 /* mrblib */,
-				A5B83F1616765DED00FAE4D4 /* README.md */,
-				A5B83F1716765DED00FAE4D4 /* src */,
-				A5B83F1A16765DED00FAE4D4 /* test */,
+				A5B83F3916785DA800FAE4D4 /* Makefile */,
+				A5B83F3A16785DA800FAE4D4 /* mrblib */,
+				A5B83F3C16785DA800FAE4D4 /* README.md */,
+				A5B83F3D16785DA800FAE4D4 /* src */,
+				A5B83F3F16785DA800FAE4D4 /* test */,
 			);
-			path = file;
+			path = bignum;
 			sourceTree = "<group>";
 		};
-		A5B83F1416765DED00FAE4D4 /* mrblib */ = {
+		A5B83F3A16785DA800FAE4D4 /* mrblib */ = {
 			isa = PBXGroup;
 			children = (
-				A5B83F1516765DED00FAE4D4 /* example.rb */,
+				A5B83F3B16785DA800FAE4D4 /* example.rb */,
 			);
 			path = mrblib;
 			sourceTree = "<group>";
 		};
-		A5B83F1716765DED00FAE4D4 /* src */ = {
+		A5B83F3D16785DA800FAE4D4 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				A5B83F1816765DED00FAE4D4 /* example.o */,
-				A5B83F1916765DED00FAE4D4 /* file.c */,
+				A5B83F3E16785DA800FAE4D4 /* bignum.c */,
+				A5B83F451678F1FD00FAE4D4 /* bignum.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
 		};
-		A5B83F1A16765DED00FAE4D4 /* test */ = {
+		A5B83F3F16785DA800FAE4D4 /* test */ = {
 			isa = PBXGroup;
 			children = (
-				A5B83F1B16765DED00FAE4D4 /* example.rb */,
+				A5B83F4016785DA800FAE4D4 /* example.rb */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -757,7 +754,7 @@
 		A5D472B1165F663F00CAE96A /* g */ = {
 			isa = PBXGroup;
 			children = (
-				A5B83F0B16765DED00FAE4D4 /* file */,
+				A5B83F3816785DA800FAE4D4 /* bignum */,
 				A5D4F9DC16726119007B9C7C /* require */,
 				A5D4F2DE16725BA0007B9C7C /* c_and_ruby_extension_example */,
 				A5D472B2165F663F00CAE96A /* .gitignore */,
@@ -964,6 +961,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5B75CD61656439600000282 /* value.h in Headers */,
+				A5B83F441678645600FAE4D4 /* mriruby.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,6 +987,13 @@
 				88760B9B1576A37600113BFB /* struct.h in Headers */,
 				88760B9C1576A37600113BFB /* variable.h in Headers */,
 				88760B9D1576A37600113BFB /* mruby.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B83F2816775BEC00FAE4D4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1121,6 +1126,23 @@
 			productReference = 8844353F1576F1A3007F95A4 /* mruby.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		A5B83F2916775BEC00FAE4D4 /* file */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5B83F2B16775BED00FAE4D4 /* Build configuration list for PBXNativeTarget "file" */;
+			buildPhases = (
+				A5B83F2616775BEC00FAE4D4 /* Sources */,
+				A5B83F2716775BEC00FAE4D4 /* Frameworks */,
+				A5B83F2816775BEC00FAE4D4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = file;
+			productName = file;
+			productReference = A5B83F2A16775BEC00FAE4D4 /* libfile.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1148,6 +1170,7 @@
 				88760B3215769F3000113BFB /* mirb */,
 				8844358E1577301B007F95A4 /* mrbtest */,
 				88760B731576A33100113BFB /* mruby_fw */,
+				A5B83F2916775BEC00FAE4D4 /* file */,
 			);
 		};
 /* End PBXProject section */
@@ -1306,9 +1329,9 @@
 				A5D4F9E516726119007B9C7C /* gem_srclib.c in Sources */,
 				A5D4F9E716726119007B9C7C /* Makefile in Sources */,
 				A5D4F9E816726119007B9C7C /* require.c in Sources */,
-				A5B83F1C16765DED00FAE4D4 /* gem_mixlib.c in Sources */,
-				A5B83F1E16765DED00FAE4D4 /* Makefile in Sources */,
-				A5B83F2116765DED00FAE4D4 /* file.c in Sources */,
+				A5B83F4116785DA800FAE4D4 /* Makefile in Sources */,
+				A5B83F4216785DA800FAE4D4 /* bignum.c in Sources */,
+				A5B83F47167B021800FAE4D4 /* util.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1333,6 +1356,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				88760B9F1576A4A200113BFB /* mrblib.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B83F2616775BEC00FAE4D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5B83F3216775C6600FAE4D4 /* mruby.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1699,6 +1730,71 @@
 			};
 			name = Release;
 		};
+		A5B83F2C16775BED00FAE4D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A5B83F2D16775BED00FAE4D4 /* CLANGDebug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = CLANGDebug;
+		};
+		A5B83F2E16775BED00FAE4D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1781,6 +1877,15 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A5B83F2B16775BED00FAE4D4 /* Build configuration list for PBXNativeTarget "file" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5B83F2C16775BED00FAE4D4 /* Debug */,
+				A5B83F2D16775BED00FAE4D4 /* CLANGDebug */,
+				A5B83F2E16775BED00FAE4D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

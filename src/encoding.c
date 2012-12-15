@@ -32,6 +32,10 @@
 #include "mruby/hash.h"
 #include "mruby/value.h"
 
+
+
+#define OBJ_FROZEN(x) (!!FL_TEST((x), FL_FREEZE))
+
 #define pprintf printf
 #define mrb_warning printf
 #define mrb_bug printf
