@@ -17,27 +17,28 @@ enum mrb_vtype {
   MRB_TT_SYMBOL,      /*   4 */
   MRB_TT_UNDEF,       /*   5 */
   MRB_TT_FLOAT,       /*   6 */
-  MRB_TT_MAIN,        /*   7 */
-  MRB_TT_OBJECT,      /*   8 */
-  MRB_TT_CLASS,       /*   9 */
-  MRB_TT_MODULE,      /*  10 */
-  MRB_TT_ICLASS,      /*  11 */
-  MRB_TT_SCLASS,      /*  12 */
-  MRB_TT_PROC,        /*  13 */
-  MRB_TT_ARRAY,       /*  14 */
-  MRB_TT_HASH,        /*  15 */
-  MRB_TT_STRING,      /*  16 */
-  MRB_TT_RANGE,       /*  17 */
-  MRB_TT_REGEX,       /*  18 */
-  MRB_TT_STRUCT,      /*  19 */
-  MRB_TT_EXCEPTION,   /*  20 */
-  MRB_TT_MATCH,       /*  21 */
-  MRB_TT_FILE,        /*  22 */
-  MRB_TT_ENV,         /*  23 */
-  MRB_TT_DATA,        /*  24 */
-    MRB_TT_MAXDEFINE,    /*  25 */
-    MRB_TT_NODE,    /*  26 */
-    MRB_TT_BIGNUM    /*  27 */
+  MRB_TT_VOIDP,       /*   7 */
+  MRB_TT_MAIN,        /*   8 */
+  MRB_TT_OBJECT,      /*   9 */
+  MRB_TT_CLASS,       /*  10 */
+  MRB_TT_MODULE,      /*  11 */
+  MRB_TT_ICLASS,      /*  12 */
+  MRB_TT_SCLASS,      /*  13 */
+  MRB_TT_PROC,        /*  14 */
+  MRB_TT_ARRAY,       /*  15 */
+  MRB_TT_HASH,        /*  16 */
+  MRB_TT_STRING,      /*  17 */
+  MRB_TT_RANGE,       /*  18 */
+  MRB_TT_REGEX,       /*  19 */
+  MRB_TT_STRUCT,      /*  20 */
+  MRB_TT_EXCEPTION,   /*  21 */
+  MRB_TT_MATCH,       /*  22 */
+  MRB_TT_FILE,        /*  23 */
+  MRB_TT_ENV,         /*  24 */
+  MRB_TT_DATA,        /*  25 */
+    MRB_TT_BIGNUM,      /*  26 */
+    MRB_TT_NODE,      /*  26 */
+  MRB_TT_MAXDEFINE    /*  27 */
 };
 
 typedef struct mrb_value {
@@ -80,24 +81,25 @@ enum mrb_vtype {
   MRB_TT_SYMBOL,      /*   5 */
   MRB_TT_UNDEF,       /*   6 */
   MRB_TT_FLOAT,       /*   7 */
-  MRB_TT_MAIN,        /*   8 */
-  MRB_TT_OBJECT,      /*   9 */
-  MRB_TT_CLASS,       /*  10 */
-  MRB_TT_MODULE,      /*  11 */
-  MRB_TT_ICLASS,      /*  12 */
-  MRB_TT_SCLASS,      /*  13 */
-  MRB_TT_PROC,        /*  14 */
-  MRB_TT_ARRAY,       /*  15 */
-  MRB_TT_HASH,        /*  16 */
-  MRB_TT_STRING,      /*  17 */
-  MRB_TT_RANGE,       /*  18 */
-  MRB_TT_REGEX,       /*  19 */
-  MRB_TT_STRUCT,      /*  20 */
-  MRB_TT_EXCEPTION,   /*  21 */
-  MRB_TT_MATCH,       /*  22 */
-  MRB_TT_FILE,        /*  23 */
-  MRB_TT_ENV,         /*  24 */
-  MRB_TT_DATA,        /*  25 */
+  MRB_TT_VOIDP,       /*   8 */
+  MRB_TT_MAIN,        /*   9 */
+  MRB_TT_OBJECT,      /*  10 */
+  MRB_TT_CLASS,       /*  11 */
+  MRB_TT_MODULE,      /*  12 */
+  MRB_TT_ICLASS,      /*  13 */
+  MRB_TT_SCLASS,      /*  14 */
+  MRB_TT_PROC,        /*  15 */
+  MRB_TT_ARRAY,       /*  16 */
+  MRB_TT_HASH,        /*  17 */
+  MRB_TT_STRING,      /*  18 */
+  MRB_TT_RANGE,       /*  19 */
+  MRB_TT_REGEX,       /*  20 */
+  MRB_TT_STRUCT,      /*  21 */
+  MRB_TT_EXCEPTION,   /*  22 */
+  MRB_TT_MATCH,       /*  23 */
+  MRB_TT_FILE,        /*  24 */
+  MRB_TT_ENV,         /*  25 */
+  MRB_TT_DATA,        /*  26 */
   MRB_TT_MAXDEFINE    /*  27 */
 };
 
@@ -152,7 +154,7 @@ mrb_float_value(mrb_float f)
 #define mrb_fixnum(o) (o).value.i
 #define mrb_symbol(o) (o).value.sym
 #define mrb_object(o) ((struct RBasic *) (o).value.p)
-#define FIXNUM_P(o)   (mrb_type(o) == MRB_TT_FIXNUM)
+#define mrb_voidp(o) (o).value.p
 #define mrb_fixnum_p(o) (mrb_type(o) == MRB_TT_FIXNUM)
 #define mrb_float_p(o) (mrb_type(o) == MRB_TT_FLOAT)
 #define mrb_undef_p(o) (mrb_type(o) == MRB_TT_UNDEF)
@@ -161,6 +163,7 @@ mrb_float_value(mrb_float f)
 #define mrb_array_p(o) (mrb_type(o) == MRB_TT_ARRAY)
 #define mrb_string_p(o) (mrb_type(o) == MRB_TT_STRING)
 #define mrb_hash_p(o) (mrb_type(o) == MRB_TT_HASH)
+#define mrb_voidp_p(o) (mrb_type(o) == MRB_TT_VOIDP)
 #define mrb_test(o)   (mrb_type(o) != MRB_TT_FALSE)
 
 #define MRB_OBJECT_HEADER \
@@ -233,6 +236,15 @@ mrb_obj_value(void *p)
 }
 
 static inline mrb_value
+mrb_voidp_value(void *p)
+{
+  mrb_value v;
+
+  MRB_SET_VALUE(v, MRB_TT_VOIDP, value.p, p);
+  return v;
+}
+
+static inline mrb_value
 mrb_false_value(void)
 {
   mrb_value v;
@@ -267,20 +279,5 @@ mrb_undef_value(void)
   MRB_SET_VALUE(v, MRB_TT_UNDEF, value.i, 0);
   return v;
 }
-
-
-#define IMMEDIATE_P(x) (mrb_type(x) <= MRB_TT_FLOAT)
-#define SPECIAL_CONST_P(x) IMMEDIATE_P(x)
-#define SYMBOL_P(o) (mrb_type(o) == MRB_TT_SYMBOL)
-#define RTEST(o) mrb_test(o)
-
-#define FL_ABLE(x) (!SPECIAL_CONST_P(x))
-#define FL_TEST(x,f) (FL_ABLE(x)?(RBASIC(x)->flags&(f)):0)
-#define FL_ANY(x,f) FL_TEST(x,f)
-#define FL_ALL(x,f) (FL_TEST(x,f) == (f))
-#define FL_SET(x,f) do {if (FL_ABLE(x)) RBASIC(x)->flags |= (f);} while (0)
-#define FL_UNSET(x,f) do {if (FL_ABLE(x)) RBASIC(x)->flags &= ~(f);} while (0)
-
-#define SYM2ID(x) ((x).value.sym)
 
 #endif  /* MRUBY_OBJECT_H */

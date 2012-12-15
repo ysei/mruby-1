@@ -97,9 +97,9 @@ static const struct mrb_data_type encoding_data_type = {
 #define is_data_encoding(obj) (DATA_TYPE(obj) == &encoding_data_type)
 
 //    RUBY_IMMEDIATE_MASK = 0x03,
-//#define IMMEDIATE_MASK RUBY_IMMEDIATE_MASK
-//#define IMMEDIATE_P(x) ((VALUE)(x) & IMMEDIATE_MASK)
-//#define SPECIAL_CONST_P(x) (IMMEDIATE_P(x) || !RTEST(x))
+#define IMMEDIATE_MASK RUBY_IMMEDIATE_MASK
+#define IMMEDIATE_P(x) ((VALUE)(x) & IMMEDIATE_MASK)
+#define SPECIAL_CONST_P(x) (IMMEDIATE_P(x) || !RTEST(x))
 
 static mrb_value
 enc_new(mrb_state *mrb, mrb_encoding *encoding)
@@ -657,7 +657,7 @@ mrb_enc_find(mrb_state *mrb, const char *name)
 static inline int
 enc_capable(mrb_value obj)
 {
-  if (SPECIAL_CONST_P(obj)) return (mrb_type(obj) == MRB_TT_SYMBOL);
+  if (mrb_special_const_p(obj)) return (mrb_type(obj) == MRB_TT_SYMBOL);
   switch (mrb_type(obj)/*BUILTIN_TYPE(obj)*/) {
     case MRB_TT_STRING:
     case MRB_TT_REGEX:
@@ -685,10 +685,10 @@ mrb_enc_get_index(mrb_state *mrb, mrb_value obj)
   mrb_value tmp;
   struct RString *ps;
 
-  if (SPECIAL_CONST_P(obj)) {
+  if (mrb_special_const_p(obj)) {
     if (mrb_type(obj) != MRB_TT_SYMBOL) return -1;
     //obj = mrb_id2str(SYM2ID(obj));
-    obj = mrb_str_new_cstr(mrb, mrb_sym2name(mrb, SYM2ID(obj)));
+    obj = mrb_str_new_cstr(mrb, mrb_sym2name(mrb, mrb_symbol(obj)));
   }
   switch (mrb_type(obj)/*BUILTIN_TYPE(obj)*/) {
     as_default:
@@ -747,7 +747,7 @@ mrb_enc_associate_index(mrb_state *mrb, mrb_value obj, int idx)
 /*    enc_check_capable(obj);*/
   if (mrb_enc_get_index(mrb, obj) == idx)
     return obj;
-  if (SPECIAL_CONST_P(obj)) {
+  if (mrb_special_const_p(obj)) {
     mrb_raise(mrb, E_ARGUMENT_ERROR, "cannot set encoding");
   }
   if (!ENC_CODERANGE_ASCIIONLY(obj) ||

@@ -97,7 +97,7 @@ load_file(mrb_state *mrb, mrb_value filename)
     mrbc_context_free(mrb, c);
     mrb_gc_arena_restore(mrb, arena_idx);
     
-    if (FIXNUM_P(ret)) {
+    if (mrb_fixnum_p(ret)) {
         mrb_run_irep_as_proc(mrb, mrb->irep[mrb_fixnum(ret)]);
     }
     else if (mrb->exc) {
