@@ -362,7 +362,7 @@ static const struct types {
     unsigned char type;
     const char *name;
 } builtin_types[] = {
-//    {MRB_TT_NIL,  "nil"},
+  {MRB_TT_NIL,  "nil"},
   {MRB_TT_FALSE,  "false"},
   {MRB_TT_TRUE,   "true"},
   {MRB_TT_FIXNUM, "Fixnum"},

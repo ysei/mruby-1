@@ -49,12 +49,11 @@ unsigned long ruby_strtoul(const char *str, char **endptr, int base);
 
 #define FIX2LONG(x) (long)((SIGNED_VALUE)(x) >> 1)
 #define FIX2ULONG(x) ((((VALUE)(x))>>1)&LONG_MAX)
-#define POSFIXABLE(f) ((f) < FIXNUM_MAX+1)
-#define NEGFIXABLE(f) ((f) >= FIXNUM_MIN)
 #define FIXABLE(f) (POSFIXABLE(f) && NEGFIXABLE(f))
 #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
 #define LONG2FIX(i) INT2FIX(i)
-
+VALUE mrb_dbl_cmp(double a, double b);
+mrb_value mrb_float_new(mrb_state *mrb, double d);
 
 
 #define MEMZERO(p,type,n) memset((p), 0, sizeof(type)*(n))
@@ -63,6 +62,7 @@ unsigned long ruby_strtoul(const char *str, char **endptr, int base);
 #define MEMCMP(p1,p2,type,n) memcmp((p1), (p2), sizeof(type)*(n))
 #define STRTOUL(str, endptr, base) (ruby_strtoul((str), (endptr), (base)))
 
+/*
 enum ruby_special_consts {
     RUBY_Qfalse = 0,
     RUBY_Qtrue  = 2,
@@ -74,17 +74,11 @@ enum ruby_special_consts {
     RUBY_SPECIAL_SHIFT  = 8
 };
 
-#define Qfalse ((VALUE)RUBY_Qfalse)
-#define Qtrue  ((VALUE)RUBY_Qtrue)
-#define Qnil   ((VALUE)RUBY_Qnil)
-#define Qundef ((VALUE)RUBY_Qundef) /* undefined value for placeholder */
-#define IMMEDIATE_MASK RUBY_IMMEDIATE_MASK
-#define FIXNUM_FLAG RUBY_FIXNUM_FLAG
-#define SYMBOL_FLAG RUBY_SYMBOL_FLAG
-#define NIL_P(v) ((VALUE)(v) == Qnil)
-
-
-
+*/
+#define IMMEDIATE_MASK 0x03
+#define FIXNUM_FLAG 0x01
+#define SYMBOL_FLAG 0x0e
+/*
 #define ALLOC_N(mrb,type,n) ((type*)malloc((n)*sizeof(type)))
 #define ALLOC(type) ((type*)xmalloc(sizeof(type)))
 #define REALLOC_N(var,type,n) ((var)=(type*)realloc((char*)(var),(n)*sizeof(type)))
@@ -98,5 +92,6 @@ enum ruby_special_consts {
 #define ALLOCV_N(type, v, n) ((type*)ALLOCV((v), sizeof(type)*(n)))
 #define ALLOCV_END(v) rb_free_tmp_buffer(&(v))
 VALUE mrb_dbl_cmp(double a, double b);
+*/
 
 #endif

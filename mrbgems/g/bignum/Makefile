@@ -1,4 +1,4 @@
-GEM := c_and_ruby_extension_example
+GEM := bignum
 
 include $(MAKEFILE_4_GEM)
 

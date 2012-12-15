@@ -25,36 +25,8 @@
 
 #include "ruby/util.h"
 
-unsigned long
-ruby_scan_oct(const char *start, size_t len, size_t *retlen)
-{
-    register const char *s = start;
-    register unsigned long retval = 0;
 
-    while (len-- && *s >= '0' && *s <= '7') {
-	retval <<= 3;
-	retval |= *s++ - '0';
-    }
-    *retlen = (int)(s - start);	/* less than len */
-    return retval;
-}
 
-unsigned long
-ruby_scan_hex(const char *start, size_t len, size_t *retlen)
-{
-    static const char hexdigit[] = "0123456789abcdef0123456789ABCDEF";
-    register const char *s = start;
-    register unsigned long retval = 0;
-    const char *tmp;
-
-    while (len-- && *s && (tmp = strchr(hexdigit, *s))) {
-	retval <<= 4;
-	retval |= (tmp - hexdigit) & 15;
-	s++;
-    }
-    *retlen = (int)(s - start);	
- return retval;
-}
 
 static unsigned long
 scan_digits(const char *str, int base, size_t *retlen, int *overflow)
@@ -1008,13 +980,23 @@ ruby_each_words(const char *str, void (*func)(const char*, int, void*), void *ar
 VALUE
 mrb_dbl_cmp(double a, double b)
 {
-    if (isnan(a) || isnan(b)) return Qnil;
+    if (isnan(a) || isnan(b)) return MRB_TT_NIL;
     if (a == b) return INT2FIX(0);
     if (a > b) return INT2FIX(1);
     if (a < b) return INT2FIX(-1);
-    return Qnil;
+    return MRB_TT_NIL;
 }
 
+mrb_value
+mrb_float_new(mrb_state *mrb, double d)
+{
+    mrb_value flt;
+    struct RBasic *base = mrb_obj_alloc(mrb, MRB_TT_FLOAT, mrb->float_class);
+    
+    flt = mrb_obj_value(base);
+    flt.value.f = d;
+    return flt;
+}
 /*
 static mrb_value
 nurat_coerce(mrb_state *mrb, mrb_value self, mrb_value other)

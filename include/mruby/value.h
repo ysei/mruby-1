@@ -38,7 +38,8 @@ enum mrb_vtype {
   MRB_TT_DATA,        /*  25 */
     MRB_TT_BIGNUM,      /*  26 */
     MRB_TT_NODE,      /*  26 */
-  MRB_TT_MAXDEFINE    /*  27 */
+    MRB_TT_MAXDEFINE,    /*  27 */
+    MRB_TT_NIL    /*  28 */
 };
 
 typedef struct mrb_value {

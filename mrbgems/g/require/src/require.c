@@ -187,10 +187,9 @@ mrb_require_gem_init(mrb_state *mrb)
 {
     struct RClass *k = mrb->kernel_module;
     struct RClass *m = mrb->module_class;
-   fprintf(stderr,"mrb_init_require\n");
-    
-    mrb_define_method(mrb, k, "require",                    mrb_f_require,                   ARGS_REQ(1));
-    mrb_define_method(mrb, k, "load",                       mrb_f_load,                      ARGS_REQ(1));
-    mrb_define_method(mrb, m, "module_eval",                mrb_mod_module_eval, ARGS_ANY());            /* 15.2.2.4.35 */
-    mrb_define_method(mrb, m, "class_eval",                mrb_mod_module_eval, ARGS_ANY());            /* 15.2.2.4.35 */
+
+    mrb_define_method(mrb, k, "require",        mrb_f_require,          ARGS_REQ(1));
+    mrb_define_method(mrb, k, "load",           mrb_f_load,             ARGS_REQ(1));
+    mrb_define_method(mrb, m, "module_eval",    mrb_mod_module_eval,    ARGS_ANY());            /* 15.2.2.4.35 */
+    mrb_define_method(mrb, m, "class_eval",     mrb_mod_module_eval,    ARGS_ANY());            /* 15.2.2.4.35 */
 }
