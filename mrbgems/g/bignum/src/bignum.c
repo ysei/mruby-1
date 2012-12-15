@@ -246,6 +246,17 @@ rb_big_norm(mrb_state *mrb, mrb_value x)
     return bignorm(mrb,x);
 }
 
+void myint2bin(long a) {
+    int i;
+    for (i = sizeof(a)*8; i >= 0; i--) {
+        fprintf(stderr,"%ld", a&1);
+        a >>= 1;
+    }
+    fprintf(stderr,"\n");
+}
+
+#define BUF_SIZE 33
+
 mrb_value
 mrb_uint2big(mrb_state *mrb, mrb_value n)
 {
@@ -273,7 +284,7 @@ mrb_int2big(mrb_state *mrb, mrb_value n)
     mrb_value num = n;
     long neg = 0;
     mrb_value big;
-    
+    fprintf(stderr,"n = %d\n",n.value.i);
     if (num.value.i < 0) {
         num.value.i = -num.value.i;
         neg = 1;
@@ -284,6 +295,18 @@ mrb_int2big(mrb_state *mrb, mrb_value n)
     }
     return big;
 }
+
+mrb_value
+n_mrb_int2big(mrb_state *mrb, mrb_value x)
+{
+    mrb_value y;
+    
+    mrb_get_args(mrb, "i", &y);
+    
+    x = mrb_uint2big(mrb, y);
+    return x;
+}
+
 
 mrb_value
 mrb_uint2inum(mrb_state *mrb, mrb_value n)
@@ -1697,9 +1720,10 @@ bigadd_int(mrb_state *mrb, mrb_value x, long y)
     BDIGIT_DBL num;
     long i;
     
+    fprintf(stderr,"y = %ld\n", y);
     xds = mrb_bignum_digits(x);
     xn = mrb_bignum_len(x);
-    
+    fprintf(stderr,"I'm here baby 1 %d %ld  xn = %ld\n",x.value.i, y,xn);
     if (xn < 2) {
         zn = 3;
     }
@@ -1708,21 +1732,28 @@ bigadd_int(mrb_state *mrb, mrb_value x, long y)
     }
     z = mrb_bignum_new(mrb,zn, mrb_bignum_sign(x));
     zds = mrb_bignum_digits(z);
+    fprintf(stderr,"I'm here baby 2 %ld\n",y);
     
-#if SIZEOF_mrb_bignum_digits == SIZEOF_LONG
+#if SIZEOF_BDIGITS == SIZEOF_LONG
+    fprintf(stderr,"Case 1\n");
     num = (BDIGIT_DBL)xds[0] + y;
     zds[0] = BIGLO(num);
     num = BIGDN(num);
     i = 1;
 #else
+    fprintf(stderr,"Case 2\n");
     num = 0;
     for (i=0; i<(int)(sizeof(y)/sizeof(BDIGIT)); i++) {
+        fprintf(stderr,"xds[%d] = %d\n",i,xds[i]);
         num += (BDIGIT_DBL)xds[i] + BIGLO(y);
+        fprintf(stderr,"zds[%d] = %d\n",i,num);
         zds[i] = BIGLO(num);
+        fprintf(stderr,"zds[%d] = %d\n",i,zds[i]);
         num = BIGDN(num);
         y = BIGDN(y);
     }
 #endif
+    fprintf(stderr,"I'm here baby 3 %ld\n",y);
     while (num && i < xn) {
         num += xds[i];
         zds[i++] = BIGLO(num);
@@ -1733,10 +1764,14 @@ bigadd_int(mrb_state *mrb, mrb_value x, long y)
         zds[i] = xds[i];
         i++;
     }
+    fprintf(stderr,"I'm here baby 4 %ld\n",y);
+
     assert(i <= zn);
     while (i < zn) {
         zds[i++] = 0;
     }
+    fprintf(stderr,"I'm here baby 5 %ld\n",y);
+
     mrb_gc_mark(mrb, mrb_basic(x));
     return bignorm(mrb,z);
 }
@@ -1816,7 +1851,7 @@ mrb_big_plus(mrb_state *mrb, mrb_value x, mrb_value y)
     
     switch (mrb_type(y)) {
         case MRB_TT_FIXNUM:
-            n = FIX2LONG(y.value.i);
+            n = y.value.i;
             if ((n > 0) != mrb_bignum_sign(x)) {
                 if (n < 0) {
                     n = -n;
@@ -1829,10 +1864,12 @@ mrb_big_plus(mrb_state *mrb, mrb_value x, mrb_value y)
             return bigadd_int(mrb,x, n);
             
         case MRB_TT_BIGNUM:
+            fprintf(stderr,"bigadd\n");
             return bignorm(mrb,bigadd(mrb,x, y, 1));
             
         case MRB_TT_FLOAT:
-            return mrb_fixnum_value(mrb_big2dbl(mrb,x) + y.value.f);
+            fprintf(stderr,"bigadd float\n");
+            return bigadd(mrb,x, dbl2big(mrb,y.value.f),1);
             
         default:
             return mrb_funcall(mrb, x, "+",1,y);
@@ -1845,7 +1882,7 @@ n_mrb_big_plus(mrb_state *mrb, mrb_value x)
     mrb_value y;
     
     mrb_get_args(mrb, "o", &y);
-    
+    fprintf(stderr,"y = %d\n",y.value.i);
     return mrb_big_plus(mrb, x, y);
 }
 
@@ -3860,6 +3897,7 @@ mrb_bignum_gem_init(mrb_state* mrb)
 {
     mrb->bignum_class = mrb_define_class(mrb, "Bignum", mrb->object_class);
     
+    mrb_define_method(mrb,mrb->bignum_class, "int_to_big", n_mrb_int2big,ARGS_REQ(1));
     mrb_define_method(mrb,mrb->bignum_class, "to_s", n_mrb_big_to_s, ARGS_NONE());
     mrb_define_method(mrb,mrb->bignum_class, "coerce", n_mrb_big_coerce, ARGS_REQ(1));
     mrb_define_method(mrb,mrb->bignum_class, "-@", mrb_big_uminus, ARGS_NONE());
