@@ -864,24 +864,18 @@ big2str_orig(mrb_state *mrb, mrb_value x, int base, char* ptr, long len, long hb
     long i = mrb_bignum_len(x), j = len;
     BDIGIT* ds = mrb_bignum_digits(x);
     
-    
-    fprintf(stderr,"***************   big2str_orig   ******************\n");
     dump_bignum2c(mrb,stderr, x);
-    fprintf(stderr," base %ld\n",hbase);
     while (i && j > 0) {
-        fprintf(stderr,"***************  %ld %ld %d\n",i,j,SIZEOF_BDIGITS);
         long k = i;
         BDIGIT_DBL num = 0;
         
         while (k--) {               /* x / hbase */
             num = BIGUP(num) + ds[k];
-            fprintf(stderr,"ds[%ld] = %lu, num = %ld, ds[%ld] = %lu\n",
-                    k,(unsigned long)ds[k],num,k,(unsigned long)(num / hbase));
             ds[k] = (BDIGIT)(num / hbase);
             num %= hbase;
         }
         if (trim && ds[i-1] == 0) i--;
-        k = SIZEOF_BDIGITS;
+        k = DIGSPERLONG;
         while (k--) {
             ptr[--j] = ruby_digitmap[num % base];
             num /= base;
@@ -894,7 +888,6 @@ big2str_orig(mrb_state *mrb, mrb_value x, int base, char* ptr, long len, long hb
         MEMMOVE(ptr, ptr + j, char, len - j);
         len -= j;
     }
-    fprintf(stderr,"****************************************************\n");
     return len;
 }
 
@@ -953,7 +946,7 @@ mrb_big2str0(mrb_state *mrb, mrb_value x, int base, int trim)
     n2 = big2str_find_n1(mrb,x, base);
     n1 = (n2 + 1) / 2;
     char *str = mrb_alloca(mrb, n2 + 1);
-    ss = mrb_usascii_str_new_cstr(mrb, str);
+    //ss = mrb_usascii_str_new_cstr(mrb, str);
     str[0] = mrb_bignum_sign(x) ? '+' : '-';
     
     hbase = base*base;
@@ -969,11 +962,10 @@ mrb_big2str0(mrb_state *mrb, mrb_value x, int base, int trim)
     else {
         len = off + big2str_karatsuba(mrb,xx, base, str + off, n1, n2, hbase, trim);
     }
-    mrb_big_resize(mrb,xx, 0);
-    
     str[len] = '\0';
+    ss = mrb_str_new_cstr(mrb, str);
     mrb_str_resize(mrb,ss, len);
-    
+
     return ss;
 }
 
@@ -1138,7 +1130,6 @@ dbl2big(mrb_state *mrb, double d)
     BDIGIT *digits;
     mrb_value z;
     double u = (d < 0)?-d:d;
-    fprintf(stderr,"dbl2big\n");
     if (isinf(d)) {
         mrb_raise(mrb,mrb->bignum_class, d < 0 ? "-Infinity" : "Infinity");
     }
@@ -1148,19 +1139,15 @@ dbl2big(mrb_state *mrb, double d)
     
     while (!POSFIXABLE(u) || 0 != (long)u) {
         u /= (double)(BIGRAD);
-        fprintf(stderr,"%f %ld\n",u,i);
         i++;
     }
     z = mrb_bignum_new(mrb,i, d>=0);
     digits = mrb_bignum_digits(z);
-     fprintf(stderr,"%f %f %ld\n",u,d,BIGRAD);
     while (i--) {
         u *= BIGRAD;
-        fprintf(stderr,"%f\n",u);
         c = (BDIGIT)u;
         u -= c;
         digits[i] = c;
-        fprintf(stderr,"%f %lu\n",u,(unsigned long)c);
     }
     
     return z;
@@ -1769,7 +1756,6 @@ bigadd_int(mrb_state *mrb, mrb_value x, long y)
     BDIGIT_DBL num;
     long i;
     
-    fprintf(stderr,"y = %ld\n", y);
     xds = mrb_bignum_digits(x);
     xn = mrb_bignum_len(x);
     if (xn < 2) {
@@ -1780,23 +1766,17 @@ bigadd_int(mrb_state *mrb, mrb_value x, long y)
     }
     z = mrb_bignum_new(mrb,zn, mrb_bignum_sign(x));
     zds = mrb_bignum_digits(z);
-    fprintf(stderr,"I'm here baby 2 %ld\n",y);
     
 #if SIZEOF_BDIGITS == SIZEOF_LONG
-    fprintf(stderr,"Case 1\n");
     num = (BDIGIT_DBL)xds[0] + y;
     zds[0] = BIGLO(num);
     num = BIGDN(num);
     i = 1;
 #else
-    fprintf(stderr,"Case 2\n");
     num = 0;
     for (i=0; i<(int)(sizeof(y)/sizeof(BDIGIT)); i++) {
-        fprintf(stderr,"xds[%ld] = %d\n",i,xds[i]);
         num += (BDIGIT_DBL)xds[i] + BIGLO(y);
-        fprintf(stderr,"zds[%ld] = %ld\n",i,num);
         zds[i] = BIGLO(num);
-        fprintf(stderr,"zds[%ld] = %d\n",i,zds[i]);
         num = BIGDN(num);
         y = BIGDN(y);
     }
@@ -1927,7 +1907,6 @@ n_mrb_big_plus(mrb_state *mrb, mrb_value x)
     mrb_value y;
     
     mrb_get_args(mrb, "o", &y);
-    fprintf(stderr,"y = %d\n",y.value.i);
     return mrb_big_plus(mrb, x, y);
 }
 
