@@ -68,22 +68,69 @@ mrb_bignum_new(mrb_state *mrb, long len, int sign)
     return big;
 }
 
+void myint2bin(FILE *fd,long a) {
+    int i;
+    for (i = sizeof(a)*8; i >= 0; i--) {
+        fprintf(fd,"%ld", a&1);
+        a >>= 1;
+    }
+}
+
+void myint2binc(FILE *fd,long a,int p) {
+    int i;
+    int len = SIZEOF_BDIGITS *8;
+    
+    for (i = len; i >= 0; i--) {
+        if(a&1) {
+            fprintf(fd,"2^%d ", len-i+p*len);
+        }
+        a >>= 1;
+    }
+}
+
 static void
-dump_bignum(mrb_state *mrb, mrb_value x)
+dump_bignum2c(mrb_state *mrb, FILE* fd,mrb_value x)
 {
     long i;
-    printf("%c0x0", mrb_bignum_len(x) ? '+' : '-');
+    fprintf(fd,"%c", mrb_bignum_len(x) ? '+' : '-');
     for (i = mrb_bignum_len(x); i--; ) {
-        printf("_%08""x", mrb_bignum_digits(x)[i]);
+        myint2binc(fd,mrb_bignum_digits(x)[i],i);
     }
-    printf(", len=%lu", mrb_bignum_len(x));
+    fprintf(fd,", len=%lu", mrb_bignum_len(x));
+    puts("");
+}
+
+
+#define BUF_SIZE 33
+
+static void
+dump_bignum(mrb_state *mrb, FILE* fd,mrb_value x)
+{
+    long i;
+    fprintf(fd,"%c0x0", mrb_bignum_len(x) ? '+' : '-');
+    for (i = mrb_bignum_len(x); i--; ) {
+        fprintf(fd,"_%08""x", mrb_bignum_digits(x)[i]);
+    }
+    fprintf(fd,", len=%lu", mrb_bignum_len(x));
+    puts("");
+}
+
+static void
+dump_bignum2(mrb_state *mrb, FILE* fd,mrb_value x)
+{
+    long i;
+    fprintf(fd,"%c", mrb_bignum_len(x) ? '+' : '-');
+    for (i = mrb_bignum_len(x); i--; ) {
+        myint2bin(fd,mrb_bignum_digits(x)[i]);
+    }
+    fprintf(fd,", len=%lu", mrb_bignum_len(x));
     puts("");
 }
 
 static mrb_value
 mrb_big_dump(mrb_state *mrb, mrb_value x)
 {
-    dump_bignum(mrb, x);
+    dump_bignum(mrb,stdout, x);
     return x;
 }
 
@@ -246,16 +293,6 @@ rb_big_norm(mrb_state *mrb, mrb_value x)
     return bignorm(mrb,x);
 }
 
-void myint2bin(long a) {
-    int i;
-    for (i = sizeof(a)*8; i >= 0; i--) {
-        fprintf(stderr,"%ld", a&1);
-        a >>= 1;
-    }
-    fprintf(stderr,"\n");
-}
-
-#define BUF_SIZE 33
 
 mrb_value
 mrb_uint2big(mrb_state *mrb, mrb_value n)
@@ -284,7 +321,7 @@ mrb_int2big(mrb_state *mrb, mrb_value n)
     mrb_value num = n;
     long neg = 0;
     mrb_value big;
-    fprintf(stderr,"n = %d\n",n.value.i);
+    fprintf(stderr,"%d to big DIGSPERLONG %d\n",n.value.i,DIGSPERLONG);
     if (num.value.i < 0) {
         num.value.i = -num.value.i;
         neg = 1;
@@ -827,12 +864,19 @@ big2str_orig(mrb_state *mrb, mrb_value x, int base, char* ptr, long len, long hb
     long i = mrb_bignum_len(x), j = len;
     BDIGIT* ds = mrb_bignum_digits(x);
     
+    
+    fprintf(stderr,"***************   big2str_orig   ******************\n");
+    dump_bignum2c(mrb,stderr, x);
+    fprintf(stderr," base %ld\n",hbase);
     while (i && j > 0) {
+        fprintf(stderr,"***************  %ld %ld %d\n",i,j,SIZEOF_BDIGITS);
         long k = i;
         BDIGIT_DBL num = 0;
         
         while (k--) {               /* x / hbase */
             num = BIGUP(num) + ds[k];
+            fprintf(stderr,"ds[%ld] = %lu, num = %ld, ds[%ld] = %lu\n",
+                    k,(unsigned long)ds[k],num,k,(unsigned long)(num / hbase));
             ds[k] = (BDIGIT)(num / hbase);
             num %= hbase;
         }
@@ -850,6 +894,7 @@ big2str_orig(mrb_state *mrb, mrb_value x, int base, char* ptr, long len, long hb
         MEMMOVE(ptr, ptr + j, char, len - j);
         len -= j;
     }
+    fprintf(stderr,"****************************************************\n");
     return len;
 }
 
@@ -1093,7 +1138,7 @@ dbl2big(mrb_state *mrb, double d)
     BDIGIT *digits;
     mrb_value z;
     double u = (d < 0)?-d:d;
-    
+    fprintf(stderr,"dbl2big\n");
     if (isinf(d)) {
         mrb_raise(mrb,mrb->bignum_class, d < 0 ? "-Infinity" : "Infinity");
     }
@@ -1103,15 +1148,19 @@ dbl2big(mrb_state *mrb, double d)
     
     while (!POSFIXABLE(u) || 0 != (long)u) {
         u /= (double)(BIGRAD);
+        fprintf(stderr,"%f %ld\n",u,i);
         i++;
     }
     z = mrb_bignum_new(mrb,i, d>=0);
     digits = mrb_bignum_digits(z);
+     fprintf(stderr,"%f %f %ld\n",u,d,BIGRAD);
     while (i--) {
         u *= BIGRAD;
+        fprintf(stderr,"%f\n",u);
         c = (BDIGIT)u;
         u -= c;
         digits[i] = c;
+        fprintf(stderr,"%f %lu\n",u,(unsigned long)c);
     }
     
     return z;
@@ -1723,7 +1772,6 @@ bigadd_int(mrb_state *mrb, mrb_value x, long y)
     fprintf(stderr,"y = %ld\n", y);
     xds = mrb_bignum_digits(x);
     xn = mrb_bignum_len(x);
-    fprintf(stderr,"I'm here baby 1 %d %ld  xn = %ld\n",x.value.i, y,xn);
     if (xn < 2) {
         zn = 3;
     }
@@ -1744,16 +1792,15 @@ bigadd_int(mrb_state *mrb, mrb_value x, long y)
     fprintf(stderr,"Case 2\n");
     num = 0;
     for (i=0; i<(int)(sizeof(y)/sizeof(BDIGIT)); i++) {
-        fprintf(stderr,"xds[%d] = %d\n",i,xds[i]);
+        fprintf(stderr,"xds[%ld] = %d\n",i,xds[i]);
         num += (BDIGIT_DBL)xds[i] + BIGLO(y);
-        fprintf(stderr,"zds[%d] = %d\n",i,num);
+        fprintf(stderr,"zds[%ld] = %ld\n",i,num);
         zds[i] = BIGLO(num);
-        fprintf(stderr,"zds[%d] = %d\n",i,zds[i]);
+        fprintf(stderr,"zds[%ld] = %d\n",i,zds[i]);
         num = BIGDN(num);
         y = BIGDN(y);
     }
 #endif
-    fprintf(stderr,"I'm here baby 3 %ld\n",y);
     while (num && i < xn) {
         num += xds[i];
         zds[i++] = BIGLO(num);
@@ -1764,13 +1811,11 @@ bigadd_int(mrb_state *mrb, mrb_value x, long y)
         zds[i] = xds[i];
         i++;
     }
-    fprintf(stderr,"I'm here baby 4 %ld\n",y);
 
     assert(i <= zn);
     while (i < zn) {
         zds[i++] = 0;
     }
-    fprintf(stderr,"I'm here baby 5 %ld\n",y);
 
     mrb_gc_mark(mrb, mrb_basic(x));
     return bignorm(mrb,z);
@@ -1869,7 +1914,7 @@ mrb_big_plus(mrb_state *mrb, mrb_value x, mrb_value y)
             
         case MRB_TT_FLOAT:
             fprintf(stderr,"bigadd float\n");
-            return bigadd(mrb,x, dbl2big(mrb,y.value.f),1);
+            return bigadd(mrb,x, bignorm(mrb,dbl2big(mrb,y.value.f)),1);
             
         default:
             return mrb_funcall(mrb, x, "+",1,y);
