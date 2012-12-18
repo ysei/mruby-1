@@ -3067,34 +3067,34 @@ static int skips(parser_state *p, const char *s);
 static inline int
 nextc(parser_state *p)
 {
-    int c;
-    
-    if (p->pb) {
-        node *tmp;
-        
-        c = (int)(intptr_t)p->pb->car;
-        tmp = p->pb;
-        p->pb = p->pb->cdr;
-        cons_free(tmp);
+  int c;
+
+  if (p->pb) {
+    node *tmp;
+
+    c = (int)(intptr_t)p->pb->car;
+    tmp = p->pb;
+    p->pb = p->pb->cdr;
+    cons_free(tmp);
+  }
+  else {
+    if (p->f) {
+      if (feof(p->f)) return -1;
+      c = fgetc(p->f);
+      if (c == EOF) return -1;
+    }
+    else if (!p->s || p->s >= p->send) {
+      return -1;
     }
     else {
-        if (p->f) {
-            if (feof(p->f)) return -1;
-            c = fgetc(p->f);
-            if (c == EOF) return -1;
-        }
-        else if (!p->s || p->s >= p->send) {
-            return -1;
-        }
-        else {
-            c = *p->s++;
-        }
-        if (c == '\n') {
-            // must understand heredoc
-        }
+      c = (unsigned char)*p->s++;
     }
-    p->column++;
-    return c;
+    if (c == '\n') {
+      // must understand heredoc
+    }
+  }
+  p->column++;
+  return c;
 }
 
 static void

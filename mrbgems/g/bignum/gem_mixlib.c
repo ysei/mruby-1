@@ -6,7 +6,6 @@
  *   This file was generated!
  *   All manual changes will get lost.
  */
-
 #include "mruby.h"
 #include "mruby/irep.h"
 #include "mruby/dump.h"
@@ -32,11 +31,11 @@ const char gem_mrblib_irep_bignum[] = {
 0x45,0x78,0x74,0x65,0x6e,0x73,0x69,0x6f,0x6e,0x46,0x79,0x00,0x00,0x00,0x01,0x00,
 0x04,0x70,0x75,0x74,0x73,0x24,0x89,0x00,0x00,0x00,0x00,
 };
-
 void mrb_bignum_gem_init(mrb_state*);
 
 void
-GENERATED_TMP_mrb_bignum_gem_init(mrb_state *mrb) {
+GENERATED_TMP_mrb_bignum_gem_init(mrb_state *mrb)
+{
   mrb_bignum_gem_init(mrb);
   mrb_load_irep(mrb, gem_mrblib_irep_bignum);
   if (mrb->exc) {

@@ -1,4 +1,6 @@
-GEM_LIST :=  /Users/cmauceri/Documents/IOS/mruby/mrbgems/g/bignum/mrb-bignum-gem.a /Users/cmauceri/Documents/IOS/mruby/mrbgems/g/require/mrb-require-gem.a /Users/cmauceri/Documents/IOS/mruby/mrbgems/g/c_and_ruby_extension_example/mrb-c_and_ruby_extension_example-gem.a
-GEM_ARCHIVE_FILES := $(MRUBY_ROOT)/mrbgems/gem_init.a
+GEM_LIST := /Users/cmauceri/Documents/IOS/mruby/mrbgems/g/bignum/mrb-bignum-gem.a /Users/cmauceri/Documents/IOS/mruby/mrbgems/g/require/mrb-require-gem.a /Users/cmauceri/Documents/IOS/mruby/mrbgems/g/c_and_ruby_extension_example/mrb-c_and_ruby_extension_example-gem.a 
+
+GEM_ARCHIVE_FILES := /Users/cmauceri/Documents/IOS/mruby/mrbgems/gem_init.a
 GEM_ARCHIVE_FILES += $(GEM_LIST)
 
+GEM_INCLUDE_LIST := -I/Users/cmauceri/Documents/IOS/mruby/mrbgems/g/bignum/include -I/Users/cmauceri/Documents/IOS/mruby/mrbgems/g/require/include -I/Users/cmauceri/Documents/IOS/mruby/mrbgems/g/c_and_ruby_extension_example/include 

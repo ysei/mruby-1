@@ -1,3 +1,6 @@
+#!/usr/bin/env ruby
+
+puts <<__EOF__
 /*
  * This file is loading the irep
  * Ruby GEM code.
@@ -12,3 +15,4 @@
 #include "mruby/string.h"
 #include "mruby/proc.h"
 
+__EOF__
