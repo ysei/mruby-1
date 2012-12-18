@@ -56,17 +56,24 @@ mrb_bignum_new(mrb_state *mrb, long len, int sign)
 {
     mrb_value big = mrb_bignum_alloc(mrb);
     
+    
     mrb_bignum_set_sign(big, sign?1:0);
-    if (len <= RBIGNUM_EMBED_LEN_MAX) {
-        mrb_basic(big)->flags |= RBIGNUM_EMBED_FLAG;
-        mrb_bignum_set_len(big, len);
-    }
-    else {
-        mrb_bignum(big)->as.heap.digits = mrb_alloca(mrb, len);
-        mrb_bignum(big)->as.heap.len = len;
-    }
+    mrb_bignum(big)->digits = mrb_alloca(mrb, len*sizeof(BDIGIT));
+    mrb_bignum(big)->len = len;
     return big;
 }
+
+
+static void
+mrb_big_realloc(mrb_state *mrb, mrb_value big, long len)
+{
+    if (mrb_bignum_len(big) == 0) {
+        mrb_bignum(big)->digits = mrb_alloca(mrb, len*sizeof(BDIGIT));
+    }else if(len > mrb_bignum_len(big)){
+        mrb_realloc(mrb,mrb_bignum(big)->digits, len*sizeof(BDIGIT));
+    }
+}
+
 
 void myint2bin(FILE *fd,long a) {
     int i;
@@ -134,6 +141,13 @@ mrb_big_dump(mrb_state *mrb, mrb_value x)
     return x;
 }
 
+static void prnum(char *mess,long value)
+{
+    fprintf(stderr,"%s ",mess);
+    myint2bin(stderr,value);
+    fprintf(stderr,"\n");
+}
+              
 static int
 bigzero_p(mrb_value x)
 {
@@ -151,41 +165,6 @@ int
 mrb_bigzero_p(mrb_state *mrb, mrb_value x)
 {
     return bigzero_p(x);
-}
-
-
-static void
-mrb_big_realloc(mrb_state *mrb, mrb_value big, long len)
-{
-    unsigned int *ds;
-    if (mrb_basic(big)->flags & RBIGNUM_EMBED_FLAG) {
-        if (RBIGNUM_EMBED_LEN_MAX < len) {
-            ds = mrb_alloca(mrb, len);
-            mrb_bignum_moveout(ds, big, RBIGNUM_EMBED_LEN_MAX);
-            mrb_bignum_set_len(big, mrb_bignum_len(big));
-            mrb_bignum_set_digits(big,ds);
-            mrb_basic(big)->flags &= ~RBIGNUM_EMBED_FLAG;
-        }
-    }
-    else {
-        if (len <= RBIGNUM_EMBED_LEN_MAX) {
-            ds = mrb_bignum(big)->as.heap.digits;
-            mrb_basic(big)->flags |= RBIGNUM_EMBED_FLAG;
-            mrb_bignum_set_len(big, len);
-            if (ds) {
-                mrb_bignum_movein(big, ds, len);
-                free(ds);
-            }
-        }
-        else {
-            if (mrb_bignum_len(big) == 0) {
-                mrb_bignum(big)->as.heap.digits = mrb_alloca(mrb, len);
-            }
-            else {
-                mrb_realloc(mrb,mrb_bignum(big)->as.heap.digits, len);
-            }
-        }
-    }
 }
 
 void
@@ -255,9 +234,8 @@ bigfixize(mrb_state *mrb, mrb_value x)
 {
     long len = mrb_bignum_len(x);
     BDIGIT *ds = mrb_bignum_digits(x);
-    
     if (len == 0) return INT2FIX(0);
-    if ((size_t)(len*SIZEOF_BDIGITS) <= sizeof(long)) {
+    if ((size_t)(len) <= sizeof(long)) {
         long num = 0;
 #if 2*SIZEOF_mrb_bignum_digits > SIZEOF_LONG
         num = (long)ds[0];
@@ -281,9 +259,9 @@ bigfixize(mrb_state *mrb, mrb_value x)
 static mrb_value
 bignorm(mrb_state *mrb, mrb_value x)
 {
-    if (!mrb_fixnum_p(x) && mrb_type(x) == MRB_TT_BIGNUM) {
-        x.value.i = bigfixize(mrb,x);
-    }
+    /*if (!mrb_fixnum_p(x) && mrb_type(x) == MRB_TT_BIGNUM) {
+        x = mrb_fixnum_value(bigfixize(mrb,x));
+    }*/
     return x;
 }
 
@@ -303,7 +281,7 @@ mrb_uint2big(mrb_state *mrb, mrb_value n)
     mrb_value big;
     
     big = mrb_bignum_new(mrb,DIGSPERLONG, 1);
-    digits = mrb_bignum_digits(big);
+   digits = mrb_bignum_digits(big);
     while (i < DIGSPERLONG) {
         digits[i++] = BIGLO(num);
         num = BIGDN(num);
@@ -321,7 +299,6 @@ mrb_int2big(mrb_state *mrb, mrb_value n)
     mrb_value num = n;
     long neg = 0;
     mrb_value big;
-    fprintf(stderr,"%d to big DIGSPERLONG %d\n",n.value.i,DIGSPERLONG);
     if (num.value.i < 0) {
         num.value.i = -num.value.i;
         neg = 1;
@@ -864,7 +841,6 @@ big2str_orig(mrb_state *mrb, mrb_value x, int base, char* ptr, long len, long hb
     long i = mrb_bignum_len(x), j = len;
     BDIGIT* ds = mrb_bignum_digits(x);
     
-    dump_bignum2c(mrb,stderr, x);
     while (i && j > 0) {
         long k = i;
         BDIGIT_DBL num = 0;
@@ -928,7 +904,7 @@ mrb_big2str0(mrb_state *mrb, mrb_value x, int base, int trim)
     int off;
     mrb_value ss, xx;
     long n1, n2, len, hbase;
-    
+
     if (mrb_fixnum_p(x)) {
         mrb_value res;
         res.value.i = base;
@@ -990,6 +966,8 @@ mrb_big2str(mrb_state *mrb, mrb_value x, int base)
  */
 //
 #define NUM2INT(x) (mrb_fixnum_p(x) ? FIX2LONG(x) : (int)rb_num2int(x))
+static double
+big2dbl(mrb_state *mrb, mrb_value x);
 
 
 static mrb_value
@@ -1149,7 +1127,6 @@ dbl2big(mrb_state *mrb, double d)
         u -= c;
         digits[i] = c;
     }
-    
     return z;
 }
 
@@ -1889,11 +1866,9 @@ mrb_big_plus(mrb_state *mrb, mrb_value x, mrb_value y)
             return bigadd_int(mrb,x, n);
             
         case MRB_TT_BIGNUM:
-            fprintf(stderr,"bigadd\n");
             return bignorm(mrb,bigadd(mrb,x, y, 1));
-            
+            //return bigadd(mrb,x, y, 1);
         case MRB_TT_FLOAT:
-            fprintf(stderr,"bigadd float\n");
             return bigadd(mrb,x, bignorm(mrb,dbl2big(mrb,y.value.f)),1);
             
         default:
@@ -2788,13 +2763,14 @@ mrb_big_divide(mrb_state *mrb, mrb_value x, mrb_value y, char *op)
             
         case MRB_TT_FLOAT:
         {
-            double div = mrb_big2dbl(mrb,x) / y.value.f;
+            y =  mrb_dbl2big(mrb,y.value.f);
+            /*double div = mrb_big2dbl(mrb,x) / y.value.f;
             if (op[0] == '/') {
                 return mrb_float_new(mrb, div);
             }
             else {
                 return mrb_dbl2big(mrb,div);
-            }
+            }*/
         }
             
         default:

@@ -10,7 +10,7 @@
 
 #include "mruby.h"
 #include "util.h"
-#include "encoding.h"
+//#include "encoding.h"
 #include "mruby/string.h"
 #ifdef HAVE_STRINGS_H
 #include <strings.h>
@@ -28,6 +28,19 @@
 //a = (struct RArray*)mrb_obj_alloc(mrb, MRB_TT_ARRAY, mrb->array_class);
 //a->ptr = (mrb_value *)mrb_malloc(mrb, blen);
 
+#define FL_USHIFT    12
+
+#define FL_USER0     (((int)1)<<(FL_USHIFT+0))
+#define FL_USER1     (((int)1)<<(FL_USHIFT+1))
+#define FL_USER2     (((int)1)<<(FL_USHIFT+2))
+#define FL_USER3     (((int)1)<<(FL_USHIFT+3))
+#define FL_USER4     (((int)1)<<(FL_USHIFT+4))
+#define FL_USER5     (((int)1)<<(FL_USHIFT+5))
+#define FL_USER6     (((int)1)<<(FL_USHIFT+6))
+#define FL_USER7     (((int)1)<<(FL_USHIFT+7))
+#define FL_USER8     (((int)1)<<(FL_USHIFT+8))
+#define FL_USER9     (((int)1)<<(FL_USHIFT+9))
+
 
 static mrb_value bigsqr(mrb_state *mrb, mrb_value x);
 static void bigdivmod(mrb_state *mrb, mrb_value x, mrb_value y, volatile mrb_value *divp, volatile mrb_value *modp);
@@ -38,33 +51,22 @@ static mrb_value mrb_big_pow(mrb_state *mrb, mrb_value x, mrb_value y);
 #define BDIGIT unsigned int
 #define BDIGIT_DBL_SIGNED long
 
-#define RBIGNUM_EMBED_LEN_MAX (int)((sizeof(mrb_value)*3)/sizeof(unsigned int))
+#define RBIGNUM_EMBED_LEN_MAX (int)((sizeof(VALUE)*3)/sizeof(BDIGIT))
 #define RBIGNUM_EMBED_LEN_SHIFT (FL_USHIFT+3)
 struct RBignum {
     MRB_OBJECT_HEADER;
-    union {
-        struct {
-            long len;
-            BDIGIT *digits;
-        } heap;
-        BDIGIT ary[RBIGNUM_EMBED_LEN_MAX];
-    } as;
+    long len;
+    BDIGIT *digits;
 };
 
 #define mrb_bignum_obj_alloc(mrb) ((struct RBignum*)mrb_obj_alloc((mrb), MRB_TT_BIGNUM, (mrb)->bignum_class))
-#define bignum_realloc(mrb,big, len) mrb_realloc(mrb,mrb_bignum(big)->as.heap.digits, len);
 #define mrb_bignum(b) ((struct RBignum *)((b).value.p))
 static mrb_value mrb_bignum_alloc(mrb_state *mrb);
 
 
 
 
-#define mrb_bignum_digits(b) \
-     (((mrb_basic(b))->flags & RBIGNUM_EMBED_FLAG) ? \
-        mrb_bignum(b)->as.ary : \
-        mrb_bignum(b)->as.heap.digits)
-
-#define mrb_digits(x) (mrb_bignum_digits(x))
+#define mrb_bignum_digits(b) mrb_bignum(b)->digits
 
 #define RBIGNUM_SIGN_BIT FL_USER1
 #define mrb_bignum_sign(b) ((mrb_basic(b)->flags & RBIGNUM_SIGN_BIT) != 0)
@@ -76,27 +78,18 @@ static mrb_value mrb_bignum_alloc(mrb_state *mrb);
 #define mrb_bignum_positive(b) mrb_bignum_sign(b)
 #define mrb_bignum_negative(b) (!mrb_bignum_sign(b))
 
-
 #define RBIGNUM_EMBED_FLAG FL_USER2
 #define RBIGNUM_EMBED_LEN_MASK (FL_USER5|FL_USER4|FL_USER3)
 #define RBIGNUM_EMBED_LEN_SHIFT (FL_USHIFT+3)
-#define mrb_bignum_len(b) \
-    ((mrb_basic(b)->flags & RBIGNUM_EMBED_FLAG) ? \
-        (long)((mrb_basic(b)->flags >> RBIGNUM_EMBED_LEN_SHIFT) & \
-        (RBIGNUM_EMBED_LEN_MASK >> RBIGNUM_EMBED_LEN_SHIFT)) : \
-        mrb_bignum(b)->as.heap.len)
 
-#define mrb_bignum_set_len(b,l) \
-    (mrb_basic(b)->flags & RBIGNUM_EMBED_FLAG) ? \
-        (void)(mrb_basic(b)->flags = \
-        (mrb_basic(b)->flags & ~RBIGNUM_EMBED_LEN_MASK) | \
-        ((l) << RBIGNUM_EMBED_LEN_SHIFT)) : \
-        (void)(mrb_bignum(b)->as.heap.len = (l))
 
-#define mrb_bignum_set_digits(b,d) (mrb_bignum(b)->as.heap.digits = (d))
+#define mrb_bignum_len(b) mrb_bignum(b)->len
 
-#define mrb_bignum_movein(b,v,n) memcpy(mrb_bignum(b)->as.ary, v, sizeof(unsigned int)*(n))
-#define mrb_bignum_moveout(v,b,n) memcpy(v,mrb_bignum(b)->as.ary, sizeof(unsigned int)*(n))
+#define mrb_bignum_set_len(b,l) ((void)(mrb_bignum(b)->len = (l)))
+#define mrb_bignum_set_digits(b,d) (mrb_bignum(b)->digits = (d))
+
+#define mrb_bignum_movein(b,v,n) memcpy(mrb_bignum(b)->digits, v, sizeof(unsigned int)*(n))
+#define mrb_bignum_moveout(v,b,n) memcpy(v,mrb_bignum(b)->digits, sizeof(unsigned int)*(n))
 
 
 #define BITSPERDIG (SIZEOF_BDIGITS*CHAR_BIT)

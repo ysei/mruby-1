@@ -1,0 +1,1748 @@
+From 06d242ae430ad37fd88fe6490980121ee26a1283 Mon Sep 17 00:00:00 2001
+From: Yuichiro MASUI <masui@masuidrive.jp>
+Date: Sun, 16 Dec 2012 01:56:03 +0900
+Subject: [PATCH 1/2] Moved some building script from GNU make to Ruby script
+ Added minirake what's Rake subset
+
+---
+ .gitignore                                         |    2 +
+ .travis.yml                                        |    2 +-
+ Makefile                                           |  107 -----
+ Rakefile                                           |  101 +++++
+ .../c_and_ruby_extension_example/.gitignore        |    3 +
+ doc/mrbgems/c_extension_example/.gitignore         |    3 +
+ doc/mrbgems/ruby_extension_example/.gitignore      |    3 +
+ minirake                                           |  409 ++++++++++++++++++++
+ mrbgems/Makefile                                   |   76 ----
+ mrbgems/build_tasks.rb                             |   78 ++++
+ test/Makefile                                      |    4 +-
+ 11 files changed, 603 insertions(+), 185 deletions(-)
+ delete mode 100644 Makefile
+ create mode 100644 Rakefile
+ create mode 100644 doc/mrbgems/c_and_ruby_extension_example/.gitignore
+ create mode 100644 doc/mrbgems/c_extension_example/.gitignore
+ create mode 100644 doc/mrbgems/ruby_extension_example/.gitignore
+ create mode 100755 minirake
+ delete mode 100644 mrbgems/Makefile
+ create mode 100644 mrbgems/build_tasks.rb
+
+diff --git a/.gitignore b/.gitignore
+index ccc701b..7b983f9 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -19,10 +19,12 @@ cscope.out
+ /bin
+ /mrblib/mrblib.c
+ /mrblib/*.*tmp
++/mrblib/mrblib.mrb
+ /test/mrbtest
+ /test/mrbtest.c
+ /test/*.*tmp
+ /test/mrubytest.*
++tools/mrbc/mrbc.mrb
+ CMakeFiles
+ CMakeCache.txt
+ /mrbgems/generator
+diff --git a/.travis.yml b/.travis.yml
+index cea38b1..109013b 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -1,3 +1,3 @@
+ # no installation...
+ 
+-script: "make all test"
++script: "./minirake all test"
+diff --git a/Makefile b/Makefile
+deleted file mode 100644
+index a709383..0000000
+--- a/Makefile
++++ /dev/null
+@@ -1,107 +0,0 @@
+-# Makefile description.
+-# basic build file for mruby
+-
+-# compiler, linker (gcc), archiver, parser generator
+-export CC = gcc
+-export LL = gcc
+-export AR = ar
+-export YACC = bison
+-
+-MRUBY_ROOT := $(realpath .)
+-
+-ifeq ($(strip $(ENABLE_GEMS)),)
+-  # by default GEMs are deactivated
+-  ENABLE_GEMS = false
+-endif
+-
+-ifeq ($(strip $(ACTIVE_GEMS)),)
+-  # the default file which contains the active GEMs
+-  ACTIVE_GEMS = GEMS.active
+-endif
+-
+-ifeq ($(strip $(COMPILE_MODE)),)
+-  # default compile option
+-  COMPILE_MODE = debug
+-endif
+-
+-ifeq ($(COMPILE_MODE),debug)
+-  CFLAGS = -g -O3
+-else ifeq ($(COMPILE_MODE),release)
+-  CFLAGS = -O3
+-else ifeq ($(COMPILE_MODE),small)
+-  CFLAGS = -Os
+-endif
+-
+-ALL_CFLAGS = -Wall -Werror-implicit-function-declaration $(CFLAGS)
+-ifeq ($(OS),Windows_NT)
+-  MAKE_FLAGS = --no-print-directory CC=$(CC) LL=$(LL) ALL_CFLAGS='$(ALL_CFLAGS)' LDFLAGS='$(LDFLAGS)' ENABLE_GEMS='$(ENABLE_GEMS)' ACTIVE_GEMS='$(ACTIVE_GEMS)' MRUBY_ROOT='$(MRUBY_ROOT)'
+-else
+-  MAKE_FLAGS = --no-print-directory CC='$(CC)' LL='$(LL)' ALL_CFLAGS='$(ALL_CFLAGS)' LDFLAGS='$(LDFLAGS)' ENABLE_GEMS='$(ENABLE_GEMS)' ACTIVE_GEMS='$(ACTIVE_GEMS)' MRUBY_ROOT='$(MRUBY_ROOT)'
+-endif
+-
+-##############################
+-# internal variables
+-
+-export MSG_BEGIN = @for line in
+-export MSG_END = ; do echo "$$line"; done
+-
+-export CP := cp
+-export RM_F := rm -f
+-export CAT := cat
+-
+-##############################
+-# generic build targets, rules
+-
+-.PHONY : all
+-all :
+-	@$(MAKE) -C src $(MAKE_FLAGS)
+-	@$(MAKE) -C mrblib $(MAKE_FLAGS)
+-ifeq ($(ENABLE_GEMS),true)
+-	@echo "-- MAKE mrbgems --"
+-	@$(MAKE) -C mrbgems $(MAKE_FLAGS)
+-endif
+-	$(MAKE) -C tools/mruby $(MAKE_FLAGS)
+-	@$(MAKE) -C tools/mirb $(MAKE_FLAGS)
+-
+-# mruby test
+-.PHONY : test
+-test : all
+-	@$(MAKE) -C test $(MAKE_FLAGS)
+-
+-# clean up
+-.PHONY : clean
+-clean :
+-	@$(MAKE) clean -C src $(MAKE_FLAGS)
+-ifeq ($(ENABLE_GEMS),true)
+-	@echo "-- CLEAN mrbgems --"
+-	@$(MAKE) clean -C mrbgems $(MAKE_FLAGS)
+-endif
+-	@$(MAKE) clean -C tools/mruby $(MAKE_FLAGS)
+-	@$(MAKE) clean -C tools/mirb $(MAKE_FLAGS)
+-	@$(MAKE) clean -C test $(MAKE_FLAGS)
+-
+-# display help for build configuration and interesting targets
+-.PHONY : showconfig
+-showconfig :
+-	$(MSG_BEGIN) \
+-	"" \
+-	"  CC = $(CC)" \
+-	"  LL = $(LL)" \
+-	"  MAKE = $(MAKE)" \
+-	"" \
+-	"  CFLAGS = $(CFLAGS)" \
+-	"  ALL_CFLAGS = $(ALL_CFLAGS)" \
+-	$(MSG_END)
+-
+-.PHONY : help
+-help :
+-	$(MSG_BEGIN) \
+-	"" \
+-	"            Basic mruby Makefile" \
+-	"" \
+-	"targets:" \
+-	"  all (default):  build all targets, install (locally) in-repo" \
+-	"  clean:          clean all built and in-repo installed artifacts" \
+-	"  showconfig:     show build config summary" \
+-	"  test:           run all mruby tests" \
+-	$(MSG_END)
+diff --git a/Rakefile b/Rakefile
+new file mode 100644
+index 0000000..ba24cde
+--- /dev/null
++++ b/Rakefile
+@@ -0,0 +1,101 @@
++# Build description.
++# basic build file for mruby
++
++# compiler, linker (gcc), archiver, parser generator
++CC = ENV['CC'] || 'gcc'
++LL = ENV['LL'] || 'gcc'
++AR = ENV['AR'] || 'ar'
++YACC = ENV['YACC'] || 'bison'
++MAKE = ENV['MAKE'] || 'make'
++
++# mruby source root path
++MRUBY_ROOT = ENV['MRUBY_ROOT'] || File.expand_path(File.dirname(__FILE__))
++
++# by default GEMs are deactivated
++ENABLE_GEMS = false
++
++# the default file which contains the active GEMs
++ACTIVE_GEMS = File.join(File.dirname(__FILE__), 'mrbgems', 'GEMS.active')
++
++# default compile option
++COMPILE_MODE = :debug
++
++
++##############################
++# compile flags
++
++case COMPILE_MODE.to_s
++when 'debug'
++  CFLAGS = ['-g', '-O3']
++when 'release'
++  CFLAGS = ['-O3']
++when 'small'
++  CFLAGS = ['-Os']
++else
++  CFLAGS = [ENV['CFLAGS']]
++end
++LDFLAGS = [ENV['LDFLAGS']]
++
++CFLAGS << "-Wall" << "-Werror-implicit-function-declaration" << "-I#{MRUBY_ROOT}/include"
++if ENV['OS'] == 'Windows_NT'
++  MAKE_FLAGS = "--no-print-directory CC=#{CC} LL=#{LL} CFLAGS='#{CFLAGS.join(' ')}' LDFLAGS='#{LDFLAGS.join(' ')}' ENABLE_GEMS='#{ENABLE_GEMS}' MRUBY_ROOT='#{MRUBY_ROOT}'"
++else
++  MAKE_FLAGS = "--no-print-directory CC='#{CC}' LL='#{LL}' CFLAGS='#{CFLAGS.join(' ')}' LDFLAGS='#{LDFLAGS.join(' ')}' ENABLE_GEMS='#{ENABLE_GEMS}' MRUBY_ROOT='#{MRUBY_ROOT}'"
++end
++
++
++
++##############################
++# internal variables
++
++CP = ENV['CP'] ||= 'cp'
++RM_F = ENV['RM_F'] ||= 'rm -f'
++CAT = ENV['CAT'] ||= 'cat'
++
++
++##############################
++# generic build targets, rules
++if ENABLE_GEMS
++  require './mrbgems/build_tasks'
++end
++
++task :default => :all
++
++desc "build all targets, install (locally) in-repo"
++task :all do
++  sh "#{MAKE} -C src #{MAKE_FLAGS}"
++  sh "#{MAKE} -C mrblib #{MAKE_FLAGS}"
++  if ENABLE_GEMS
++    puts "-- MAKE mrbgems --"
++    Rake::Task['mrbgems_all'].invoke
++  end
++  sh "#{MAKE} -C tools/mruby #{MAKE_FLAGS}"
++  sh "#{MAKE} -C tools/mirb #{MAKE_FLAGS}"
++end
++
++desc "sh all mruby tests"
++task :test => [:all] do
++  sh "#{MAKE} -C test #{MAKE_FLAGS}"
++end
++
++desc "clean all built and in-repo installed artifacts"
++task :clean do
++  sh "#{MAKE} clean -C src #{MAKE_FLAGS}"
++  sh "#{MAKE} clean -C mrblib #{MAKE_FLAGS}"
++  if ENABLE_GEMS
++    puts "-- MAKE mrbgems --"
++    Rake::Task['mrbgems_clean'].invoke
++  end
++  sh "#{MAKE} clean -C tools/mruby #{MAKE_FLAGS}"
++  sh "#{MAKE} clean -C tools/mirb #{MAKE_FLAGS}"
++end
++
++desc "show build config summary"
++task :showconfig do
++  puts "  CC = #{CC}"
++  puts "  LL = #{LL}"
++  puts "  MAKE = #{MAKE}"
++  puts ""
++  puts "  CFLAGS = #{CFLAGS.join(' ')}"
++  puts "  LDFLAGS = #{LDFLAGS.join(' ')}"
++end
+diff --git a/doc/mrbgems/c_and_ruby_extension_example/.gitignore b/doc/mrbgems/c_and_ruby_extension_example/.gitignore
+new file mode 100644
+index 0000000..e6ad3b5
+--- /dev/null
++++ b/doc/mrbgems/c_and_ruby_extension_example/.gitignore
+@@ -0,0 +1,3 @@
++gem_mixlib.c
++*.ctmp
++*.rbtmp
+diff --git a/doc/mrbgems/c_extension_example/.gitignore b/doc/mrbgems/c_extension_example/.gitignore
+new file mode 100644
+index 0000000..e1ef5dc
+--- /dev/null
++++ b/doc/mrbgems/c_extension_example/.gitignore
+@@ -0,0 +1,3 @@
++gem_srclib.c
++*.ctmp
++*.rbtmp
+diff --git a/doc/mrbgems/ruby_extension_example/.gitignore b/doc/mrbgems/ruby_extension_example/.gitignore
+new file mode 100644
+index 0000000..0e23b7a
+--- /dev/null
++++ b/doc/mrbgems/ruby_extension_example/.gitignore
+@@ -0,0 +1,3 @@
++gem_mrblib.c
++*.ctmp
++*.rbtmp
+diff --git a/minirake b/minirake
+new file mode 100755
+index 0000000..5ad05b9
+--- /dev/null
++++ b/minirake
+@@ -0,0 +1,409 @@
++#!/usr/bin/env ruby
++
++# Original is https://github.com/jimweirich/rake/
++# Copyright (c) 2003 Jim Weirich
++# License: MIT-LICENSE
++
++require 'getoptlong'
++
++module MiniRake
++  class Task
++    TASKS = Hash.new
++    RULES = Array.new
++
++    # List of prerequisites for a task.
++    attr_reader :prerequisites
++
++    # Source dependency for rule synthesized tasks.  Nil if task was not
++    # sythesized from a rule.
++    attr_accessor :source
++
++    # Create a task named +task_name+ with no actions or prerequisites..
++    # use +enhance+ to add actions and prerequisites.
++    def initialize(task_name)
++      @name = task_name
++      @prerequisites = []
++      @actions = []
++    end
++
++    # Enhance a task with prerequisites or actions.  Returns self.
++    def enhance(deps=nil, &block)
++      @prerequisites |= deps if deps
++      @actions << block if block_given?
++      self
++    end
++
++    # Name of the task.
++    def name
++      @name.to_s
++    end
++
++    # Invoke the task if it is needed.  Prerequites are invoked first.
++    def invoke
++      puts "Invoke #{name} (already=[#{@already_invoked}], needed=[#{needed?}])" if $trace
++      return if @already_invoked
++      @already_invoked = true
++      @prerequisites.each { |n| Task[n].invoke }
++      execute if needed?
++    end
++
++    # Execute the actions associated with this task.
++    def execute
++      puts "Execute #{name}" if $trace
++      self.class.enhance_with_matching_rule(name) if @actions.empty?
++      unless $dryrun
++        @actions.each { |act| result = act.call(self) }
++      end
++    end
++
++    # Is this task needed?
++    def needed?
++      true
++    end
++
++    # Timestamp for this task.  Basic tasks return the current time for
++    # their time stamp.  Other tasks can be more sophisticated.
++    def timestamp
++      @prerequisites.collect { |p| Task[p].timestamp }.max || Time.now
++    end
++
++    # Class Methods ----------------------------------------------------
++
++    class << self
++
++      # Clear the task list.  This cause rake to immediately forget all
++      # the tasks that have been assigned.  (Normally used in the unit
++      # tests.)
++      def clear
++        TASKS.clear
++        RULES.clear
++      end
++
++      # List of all defined tasks.
++      def tasks
++        TASKS.keys.sort.collect { |tn| Task[tn] }
++      end
++
++      # Return a task with the given name.  If the task is not currently
++      # known, try to synthesize one from the defined rules.  If no
++      # rules are found, but an existing file matches the task name,
++      # assume it is a file task with no dependencies or actions.
++      def [](task_name)
++        task_name = task_name.to_s
++        if task = TASKS[task_name]
++          return task
++        end
++        if task = enhance_with_matching_rule(task_name)
++          return task
++        end
++        if File.exist?(task_name)
++          return FileTask.define_task(task_name)
++        end
++        fail "Don't know how to rake #{task_name}"
++      end
++
++      # Define a task given +args+ and an option block.  If a rule with
++      # the given name already exists, the prerequisites and actions are
++      # added to the existing task.
++      def define_task(args, &block)
++        task_name, deps = resolve_args(args)
++        deps = [deps] if (Symbol === deps) || (String === deps)
++        deps = deps.collect {|d| d.to_s }
++        lookup(task_name).enhance(deps, &block)
++      end
++
++      # Define a rule for synthesizing tasks.  
++      def create_rule(args, &block)
++        pattern, deps = resolve_args(args)
++        fail "Too many dependents specified in rule #{pattern}: #{deps.inspect}" if deps.size > 1
++        pattern = Regexp.new(Regexp.quote(pattern) + '$') if String === pattern
++        RULES << [pattern, deps, block]
++      end
++
++      
++      # Lookup a task.  Return an existing task if found, otherwise
++      # create a task of the current type.
++      def lookup(task_name)
++        name = task_name.to_s
++        TASKS[name] ||= self.new(name)
++      end
++
++      # If a rule can be found that matches the task name, enhance the
++      # task with the prerequisites and actions from the rule.  Set the
++      # source attribute of the task appropriately for the rule.  Return
++      # the enhanced task or nil of no rule was found.
++      def enhance_with_matching_rule(task_name)
++        RULES.each do |pattern, extensions, block|
++          if md = pattern.match(task_name)
++            ext = extensions.first
++            case ext
++            when String
++              source = task_name.sub(/\.[^.]*$/, ext)
++            when Proc
++              source = ext.call(task_name)
++            else
++              fail "Don't know how to handle rule dependent: #{ext.inspect}"
++            end
++            if File.exist?(source)
++              task = FileTask.define_task({task_name => [source]}, &block)
++              task.source = source
++              return task
++            end
++          end
++        end
++        nil
++      end
++      
++      private 
++
++      # Resolve the arguments for a task/rule.
++      def resolve_args(args)
++        case args
++        when Hash
++          fail "Too Many Task Names: #{args.keys.join(' ')}" if args.size > 1
++          fail "No Task Name Given" if args.size < 1
++          task_name = args.keys[0]
++          deps = args[task_name]
++          deps = [deps] if (String===deps) || (Regexp===deps) || (Proc===deps)
++        else
++          task_name = args
++          deps = []
++        end
++        [task_name, deps]
++      end
++    end
++  end
++
++
++  ######################################################################
++  class FileTask < Task
++    # Is this file task needed?  Yes if it doesn't exist, or if its time
++    # stamp is out of date.
++    def needed?
++      return true unless File.exist?(name)
++      latest_prereq = @prerequisites.collect{|n| Task[n].timestamp}.max
++      return false if latest_prereq.nil?
++      timestamp < latest_prereq
++    end
++
++    # Time stamp for file task.
++    def timestamp
++      File.new(name.to_s).mtime
++    end
++  end
++end
++
++Rake = MiniRake
++
++
++######################################################################
++# Task Definition Functions ...
++
++# Declare a basic task.
++def task(args, &block)
++  MiniRake::Task.define_task(args, &block)
++end
++
++# Declare a file task.
++def file(args, &block)
++  MiniRake::FileTask.define_task(args, &block)
++end
++
++# Declare a set of files tasks to create the given directories on
++# demand.
++def directory(dir)
++  path = []
++  Sys.split_all(dir).each do |p| 
++    path << p
++    FileTask.define_task(File.join(path)) do |t|
++      Sys.makedirs(t.name)
++    end
++  end
++end
++
++# Declare a rule for auto-tasks.
++def rule(args, &block)
++  MiniRake::Task.create_rule(args, &block)
++end
++
++# Write a message to standard out if $verbose is enabled.
++def log(msg)
++  print "  " if $trace && $verbose
++  puts msg if $verbose
++end
++
++# Run the system command +cmd+.
++def sh(cmd)
++  log cmd
++  system(cmd) or fail "Command Failed: [#{cmd}]"
++end
++
++def desc(text)
++end
++
++######################################################################
++# Rake main application object.  When invoking +rake+ from the command
++# line, a RakeApp object is created and run.
++#
++class RakeApp
++  RAKEFILES = ['rakefile', 'Rakefile']
++
++  OPTIONS = [
++    ['--dry-run',  '-n', GetoptLong::NO_ARGUMENT,
++      "Do a dry run without executing actions."],
++    ['--help',     '-H', GetoptLong::NO_ARGUMENT,
++      "Display this help message."],
++    ['--libdir',   '-I', GetoptLong::REQUIRED_ARGUMENT,
++      "Include LIBDIR in the search path for required modules."],
++    ['--nosearch', '-N', GetoptLong::NO_ARGUMENT,
++      "Do not search parent directories for the Rakefile."],
++    ['--quiet',    '-q', GetoptLong::NO_ARGUMENT,
++      "Do not log messages to standard output."],
++    ['--rakefile', '-f', GetoptLong::REQUIRED_ARGUMENT,
++      "Use FILE as the rakefile."],
++    ['--require',  '-r', GetoptLong::REQUIRED_ARGUMENT,
++      "Require MODULE before executing rakefile."],
++    ['--tasks',    '-T', GetoptLong::NO_ARGUMENT,
++      "Display the tasks and dependencies, then exit."],
++    ['--trace',    '-t', GetoptLong::NO_ARGUMENT,
++      "Turn on invoke/execute tracing."],
++    ['--usage',    '-h', GetoptLong::NO_ARGUMENT,
++      "Display usage."],
++    ['--verbose',  '-v', GetoptLong::NO_ARGUMENT,
++      "Log message to standard output (default)."],
++  ]
++
++  # Create a RakeApp object.
++  def initialize
++    @rakefile = nil
++    @nosearch = false
++  end
++
++  # True if one of the files in RAKEFILES is in the current directory.
++  # If a match is found, it is copied into @rakefile.
++  def have_rakefile
++    RAKEFILES.each do |fn|
++      if File.exist?(fn)
++        @rakefile = fn
++        return true
++      end
++    end
++    return false
++  end
++
++  # Display the program usage line.
++  def usage
++      puts "rake [-f rakefile] {options} targets..."
++  end
++
++  # Display the rake command line help.
++  def help
++    usage
++    puts
++    puts "Options are ..."
++    puts
++    OPTIONS.sort.each do |long, short, mode, desc|
++      if mode == GetoptLong::REQUIRED_ARGUMENT
++        if desc =~ /\b([A-Z]{2,})\b/
++          long = long + "=#{$1}"
++        end
++      end
++      printf "  %-20s (%s)\n", long, short
++      printf "      %s\n", desc
++    end
++  end
++
++  # Display the tasks and dependencies.
++  def display_tasks
++    Task.tasks.each do |t|
++      puts "#{t.class} #{t.name}"
++      t.prerequisites.each { |pre| puts "    #{pre}" }
++    end
++  end
++
++  # Return a list of the command line options supported by the
++  # program.
++  def command_line_options
++    OPTIONS.collect { |lst| lst[0..-2] }
++  end
++
++  # Do the option defined by +opt+ and +value+.
++  def do_option(opt, value)
++    case opt
++    when '--dry-run'
++      $dryrun = true
++      $trace = true
++    when '--help'
++      help
++      exit
++    when '--libdir'
++      $:.push(value)
++    when '--nosearch'
++      @nosearch = true
++    when '--quiet'
++      $verbose = false
++    when '--rakefile'
++      RAKEFILES.clear
++      RAKEFILES << value
++    when '--require'
++      require value
++    when '--tasks'
++      $show_tasks = true
++    when '--trace'
++      $trace = true
++    when '--usage'
++      usage
++      exit
++    when '--verbose'
++      $verbose = true
++    when '--version'
++      puts "rake, version #{RAKEVERSION}"
++      exit
++    else
++      fail "Unknown option: #{opt}"
++    end
++  end
++  
++  # Read and handle the command line options.
++  def handle_options
++    $verbose = true
++    opts = GetoptLong.new(*command_line_options)
++    opts.each { |opt, value| do_option(opt, value) }
++  end
++
++  # Run the +rake+ application.
++  def run
++    handle_options
++    begin
++      here = Dir.pwd
++      while ! have_rakefile
++        Dir.chdir("..")
++        if Dir.pwd == here || @nosearch
++          fail "No Rakefile found (looking for: #{RAKEFILES.join(', ')})"
++        end
++        here = Dir.pwd
++      end
++      puts "(in #{Dir.pwd})"
++      $rakefile = @rakefile
++      load @rakefile
++      if $show_tasks
++        display_tasks
++      else
++        ARGV.push("default") if ARGV.size == 0
++        ARGV.each { |task_name| MiniRake::Task[task_name].invoke }
++      end
++    rescue Exception => ex
++      puts "rake aborted!"
++      puts ex.message
++      if $trace
++        puts ex.backtrace.join("\n")
++      else
++        puts ex.backtrace.find {|str| str =~ /#{@rakefile}/ } || ""
++      end
++    end    
++  end
++end
++
++if __FILE__ == $0 then
++  RakeApp.new.run
++end
+\ No newline at end of file
+diff --git a/mrbgems/Makefile b/mrbgems/Makefile
+deleted file mode 100644
+index 2c0a096..0000000
+--- a/mrbgems/Makefile
++++ /dev/null
+@@ -1,76 +0,0 @@
+-# makefile description.
+-# add gems to the ruby library
+-
+-ifeq ($(strip $(MRUBY_ROOT)),)
+-  MRUBY_ROOT := $(realpath ..)
+-endif
+-
+-LIBR := ../lib/libmruby.a
+-RM_F := rm -f
+-CC_FLAGS := -Wall -Werror-implicit-function-declaration -g -O3 -MMD -I. -I./../include
+-
+-export CC = gcc
+-export LL = gcc
+-export AR = ar
+-
+-GENERATOR := $(MRUBY_ROOT)/mrbgems/generator
+-ifeq ($(OS),Windows_NT)
+-  GENERATOR_BIN := $(GENERATOR).exe
+-else
+-  GENERATOR_BIN := $(GENERATOR)
+-endif
+-GEM_INIT := gem_init
+-GEM_MAKEFILE := g/Makefile
+-GEM_MAKEFILE_LIST := g/MakefileGemList
+-GEMDLIB := g/mrbgemtest.ctmp
+-
+-ifeq ($(strip $(ACTIVE_GEMS)),)
+-  # the default file which contains the active GEMs
+-  ACTIVE_GEMS = GEMS.active
+-endif
+-
+-##############################
+-# generic build targets, rules
+-
+-.PHONY : all
+-all : all_gems $(GEM_INIT).a
+-
+-$(GEM_INIT).a : $(GEM_INIT).o
+-	$(AR) rs gem_init.a $(GEM_INIT).o
+-
+-all_gems : $(GENERATOR_BIN)
+-	@echo "Generate Gem List Makefile"
+-	$(GENERATOR_BIN) makefile_list $(ACTIVE_GEMS) > $(GEM_MAKEFILE_LIST)
+-	@echo "Generate Gem Makefile"
+-	$(GENERATOR_BIN) makefile $(ACTIVE_GEMS) "$(MRUBY_ROOT)" > $(GEM_MAKEFILE)
+-	@echo "Build all gems"
+-	$(MAKE) -C g MRUBY_ROOT='$(MRUBY_ROOT)' ACTIVE_GEMS="$(ACTIVE_GEMS)"
+-
+-$(GEM_INIT).c : $(GENERATOR_BIN)
+-	@echo "Generate Gem driver"
+-	$(GENERATOR_BIN) $(GEM_INIT) $(ACTIVE_GEMS) > $@
+-
+-$(GEM_INIT).o : $(GEM_INIT).c
+-	@echo "Build the driver which initializes all gems"
+-	$(CC) $(CC_FLAGS) -MMD -c $< -o $@
+-
+-# Generator
+-
+-$(GENERATOR_BIN) : $(GENERATOR).o
+-	@echo "Build the generator which creates the driver and Gem Makefile"
+-	$(LL) -o $@ $(CC_FLAGS) $<
+-
+-$(GENERATOR).o : $(GENERATOR).c
+-	$(CC) $(CC_FLAGS) -MMD -c $< -o $@
+-
+-.PHONY : prepare-test
+-prepare-test :
+-	@$(MAKE) prepare-test -C g ACTIVE_GEMS="$(ACTIVE_GEMS)" MRUBY_ROOT='$(MRUBY_ROOT)'
+-
+-# clean driver and all gems
+-.PHONY : clean
+-clean : $(GENERATOR_BIN)
+-	@echo "Cleanup Gems"
+-	$(GENERATOR_BIN) makefile $(ACTIVE_GEMS) "$(MRUBY_ROOT)" > $(GEM_MAKEFILE)
+-	$(MAKE) clean -C g ACTIVE_GEMS="$(ACTIVE_GEMS)" MRUBY_ROOT='$(MRUBY_ROOT)'
+-	-$(RM_F) $(GEM_INIT).c *.o *.d $(GENERATOR_BIN) $(GEM_MAKEFILE) $(GEM_MAKEFILE_LIST) gem_init.a
+diff --git a/mrbgems/build_tasks.rb b/mrbgems/build_tasks.rb
+new file mode 100644
+index 0000000..f7accdf
+--- /dev/null
++++ b/mrbgems/build_tasks.rb
+@@ -0,0 +1,78 @@
++MRBGEMS_PATH = File.dirname(__FILE__)
++
++GEM_INIT = "#{MRBGEMS_PATH}/gem_init"
++GEM_MAKEFILE = "#{MRBGEMS_PATH}/g/Makefile"
++GEM_MAKEFILE_LIST = "#{MRBGEMS_PATH}/g/MakefileGemList"
++MAKEFILE_4_GEM = "#{MRUBY_ROOT}/mrbgems/Makefile4gem"
++
++GEM_MAKE_FLAGS = "#{MAKE_FLAGS} MAKEFILE_4_GEM='#{MAKEFILE_4_GEM}'"
++
++task :mrbgems_all => ["#{GEM_INIT}.a"] do
++  for_each_gem do |f|
++    sh "#{MAKE} -C #{f} #{GEM_MAKE_FLAGS}"
++  end
++end
++
++task :mrbgems_clean do
++  sh "cd #{MRUBY_ROOT}/mrbgems/g && #{RM_F} *.c *.d *.rbtmp *.ctmp *.o mrbtest"
++  for_each_gem do |f|
++    sh "#{MAKE} clean -C #{f} #{GEM_MAKE_FLAGS}"
++  end
++end
++
++task :mrbgems_prepare_test do
++  sh "#{CAT} #{for_each_gem{|f| "#{f}/test/*.rb "}} > #{MRUBY_ROOT}/mrbgems/g/mrbgemtest.rbtmp"
++  sh "#{MRUBY_ROOT}/bin/mrbc -Bmrbgemtest_irep -o#{MRUBY_ROOT}/mrbgems/g/mrbgemtest.ctmp #{MRUBY_ROOT}/mrbgems/g/mrbgemtest.rbtmp"
++end
++
++file "#{GEM_INIT}.a" => ["#{GEM_INIT}.c", "#{GEM_INIT}.o"] do |t|
++  sh "#{AR} rs #{t.name} #{t.prerequisites.join(' ')}"
++end
++
++rule ".o" => [".c"] do |t|
++  puts "Build the driver which initializes all gems"
++  sh "#{CC} #{CFLAGS.join(' ')} -I #{MRUBY_ROOT}/include -MMD -c #{t.source} -o #{t.name}"
++end
++
++file "#{GEM_INIT}.c" do |t|
++  puts "Generate Gem driver: #{t.name}"
++  open(t.name, 'w') do |f|
++    f.puts <<__EOF__
++/*
++ * This file contains a list of all
++ * initializing methods which are
++ * necessary to bootstrap all gems.
++ *
++ * IMPORTANT:
++ *   This file was generated!
++ *   All manual changes will get lost.
++ */
++
++#include "mruby.h"
++
++#{for_each_gem{|f| "void GENERATED_TMP_mrb_%s_gem_init(mrb_state*);\n" % [File.basename(f)]}}
++
++void
++mrb_init_mrbgems(mrb_state *mrb) {
++#{for_each_gem{|f| "  GENERATED_TMP_mrb_%s_gem_init(mrb);\n" % [File.basename(f)]}}
++}
++__EOF__
++  end
++end
++
++def for_each_gem(&block)
++  IO.readlines(ACTIVE_GEMS).map { |line|
++    block.call(line.chomp)
++  }.join('')
++end
++
++task :mrbgems_generate_gem_makefile_list do
++  open(GEM_MAKEFILE_LIST, 'w') do |f|
++    f.puts <<__EOF__
++GEM_LIST := #{for_each_gem{|f| "#{f}/mrb-#{File.basename(f)}-gem.a"}}
++
++GEM_ARCHIVE_FILES := #{MRUBY_ROOT}/mrbgems/gem_init.a
++GEM_ARCHIVE_FILES += $(GEM_LIST)
++__EOF__
++  end
++end
+diff --git a/test/Makefile b/test/Makefile
+index 844f8cc..4a20599 100644
+--- a/test/Makefile
++++ b/test/Makefile
+@@ -78,6 +78,8 @@ MRUBY= ../bin/mruby
+ EXE := $(TARGET)
+ endif
+ 
++RAKE  = ../minirake
++
+ ##############################
+ # generic build targets, rules
+ 
+@@ -106,7 +108,7 @@ $(OBJS) : %.o : %.c
+ # Compile C source from merged mruby source
+ $(CLIB) : $(DLIB) $(INIT)
+ ifeq ($(ENABLE_GEMS),true)
+-	@$(MAKE) prepare-test -C $(GEMDIR)
++	@$(RAKE) mrbgems_prepare_test
+ endif
+ 	$(CAT) $(INIT) $(DLIB) $(GEMDLIB) > $@
+ 
+-- 
+1.7.10
+
+
+From 8f9105d21a3039641e6c1f700adafd1d75e6b255 Mon Sep 17 00:00:00 2001
+From: Yuichiro MASUI <masui@masuidrive.jp>
+Date: Mon, 17 Dec 2012 02:19:46 +0900
+Subject: [PATCH 2/2] Moved some building script from GNU make to Ruby script
+ Added minirake what's Rake subset
+
+---
+ Rakefile                              |    1 +
+ minirake                              |   13 +-
+ mrbgems/Makefile4gem                  |   14 +-
+ mrbgems/build_tasks.rb                |   30 +-
+ mrbgems/generate_gem_mixlib.rb        |   18 ++
+ mrbgems/generate_gem_mrblib.rb        |   15 +
+ mrbgems/generate_gem_mrblib_header.rb |   18 ++
+ mrbgems/generate_gem_srclib.rb        |   23 ++
+ mrbgems/generator.c                   |  519 ---------------------------------
+ test/Makefile                         |    3 +-
+ 10 files changed, 117 insertions(+), 537 deletions(-)
+ create mode 100644 mrbgems/generate_gem_mixlib.rb
+ create mode 100644 mrbgems/generate_gem_mrblib.rb
+ create mode 100644 mrbgems/generate_gem_mrblib_header.rb
+ create mode 100644 mrbgems/generate_gem_srclib.rb
+ delete mode 100644 mrbgems/generator.c
+
+diff --git a/Rakefile b/Rakefile
+index ba24cde..14ff807 100644
+--- a/Rakefile
++++ b/Rakefile
+@@ -88,6 +88,7 @@ task :clean do
+   end
+   sh "#{MAKE} clean -C tools/mruby #{MAKE_FLAGS}"
+   sh "#{MAKE} clean -C tools/mirb #{MAKE_FLAGS}"
++  sh "#{MAKE} clean -C test #{MAKE_FLAGS}"
+ end
+ 
+ desc "show build config summary"
+diff --git a/minirake b/minirake
+index 5ad05b9..989af40 100755
+--- a/minirake
++++ b/minirake
+@@ -390,7 +390,18 @@ class RakeApp
+         display_tasks
+       else
+         ARGV.push("default") if ARGV.size == 0
+-        ARGV.each { |task_name| MiniRake::Task[task_name].invoke }
++        p ARGV
++        tasks = []
++        ARGV.each do |task_name|
++          if /^(\w+)=(.*)/.match(task_name)
++            ENV[$1] = $2
++          else
++            tasks << task_name
++          end
++        end
++        tasks.each do |task_name|
++          MiniRake::Task[task_name].invoke
++        end
+       end
+     rescue Exception => ex
+       puts "rake aborted!"
+diff --git a/mrbgems/Makefile4gem b/mrbgems/Makefile4gem
+index 4e6af4f..cd3151b 100644
+--- a/mrbgems/Makefile4gem
++++ b/mrbgems/Makefile4gem
+@@ -28,6 +28,9 @@ ifeq ($(strip $(ACTIVE_GEMS)),)
+   ACTIVE_GEMS = GEMS.active
+ endif
+ 
++MAKEFILE_GEM_LIST := $(MRUBY_ROOT)/mrbgems/g/MakefileGemList
++include $(MAKEFILE_GEM_LIST)
++
+ # Default rules which are calling the
+ # gem specific gem-all and gem-clean
+ # implementations of a gem
+@@ -46,14 +49,14 @@ gem_mixlib.c : gem_mrblib_header.ctmp gem_mrblib_irep.ctmp gem_mixlib_init.ctmp
+ 	cat $^ > $@
+ 
+ gem_mixlib_init.ctmp :
+-	$(MRUBY_ROOT)/mrbgems/generator gem_mixlib $(GEM) > $@
++	ruby $(MRUBY_ROOT)/mrbgems/generate_gem_mixlib.rb '$(GEM)' > $@
+ 
+ # Building target for C files
+ gem-c-files : gem_srclib.o
+ 	$(AR) rs $(GEM_PACKAGE) $(GEM_OBJECTS) $<
+ 
+ gem_srclib.c :
+-	$(MRUBY_ROOT)/mrbgems/generator gem_srclib $(GEM) > $@
++	ruby $(MRUBY_ROOT)/mrbgems/generate_gem_srclib.rb '$(GEM)' > $@
+ 
+ # Building target for Ruby Files
+ gem-rb-files : gem_mrblib.o
+@@ -63,10 +66,10 @@ gem_mrblib.c : gem_mrblib_header.ctmp gem_mrblib_irep.ctmp gem_mrblib_init.ctmp
+ 	cat $^ > $@
+ 
+ gem_mrblib_header.ctmp :
+-	$(MRUBY_ROOT)/mrbgems/generator gem_mrblib > $@
++	ruby $(MRUBY_ROOT)/mrbgems/generate_gem_mrblib_header.rb '$(GEM)' > $@
+ 
+ gem_mrblib_init.ctmp :
+-	$(MRUBY_ROOT)/mrbgems/generator gem_mrblib $(GEM) > $@
++	ruby $(MRUBY_ROOT)/mrbgems/generate_gem_mrblib.rb '$(GEM)' > $@
+ 
+ gem_mrblib_irep.ctmp : gem_mrblib.rbtmp
+ 	$(MRUBY_ROOT)/bin/mrbc -Bgem_mrblib_irep_$(subst -,_,$(GEM)) -o$@ $<
+@@ -84,6 +87,9 @@ gem-clean-c-files :
+ gem-clean-rb-files :
+ 	-$(RM) $(GEM_PACKAGE) gem_mrblib.o gem_mrblib.c gem_mrblib_header.ctmp gem_mrblib_init.ctmp gem_mrblib_irep.ctmp gem_mrblib.rbtmp
+ 
++%.o : %.c
++	$(CC) -c $(CFLAGS) $(CPPFLAGS) $(GEM_INCLUDE_LIST) $< -o $@
++
+ .PHONY : clean
+ clean : gem-clean
+ 	@echo "Gem '$(GEM)' is clean"
+diff --git a/mrbgems/build_tasks.rb b/mrbgems/build_tasks.rb
+index f7accdf..0e2d24a 100644
+--- a/mrbgems/build_tasks.rb
++++ b/mrbgems/build_tasks.rb
+@@ -7,31 +7,32 @@
+ 
+ GEM_MAKE_FLAGS = "#{MAKE_FLAGS} MAKEFILE_4_GEM='#{MAKEFILE_4_GEM}'"
+ 
+-task :mrbgems_all => ["#{GEM_INIT}.a"] do
+-  for_each_gem do |f|
+-    sh "#{MAKE} -C #{f} #{GEM_MAKE_FLAGS}"
++task :mrbgems_all => ["#{GEM_INIT}.a", :mrbgems_generate_gem_makefile_list] do
++  for_each_gem do |path, gemname|
++    sh "#{MAKE} -C #{path} #{GEM_MAKE_FLAGS}"
+   end
+ end
+ 
+ task :mrbgems_clean do
++  sh "cd #{MRUBY_ROOT}/mrbgems && #{RM_F} *.c *.d *.a *.o"
+   sh "cd #{MRUBY_ROOT}/mrbgems/g && #{RM_F} *.c *.d *.rbtmp *.ctmp *.o mrbtest"
+-  for_each_gem do |f|
+-    sh "#{MAKE} clean -C #{f} #{GEM_MAKE_FLAGS}"
++  for_each_gem do |path, gemname|
++    sh "#{MAKE} clean -C #{path} #{GEM_MAKE_FLAGS}"
+   end
+ end
+ 
+ task :mrbgems_prepare_test do
+-  sh "#{CAT} #{for_each_gem{|f| "#{f}/test/*.rb "}} > #{MRUBY_ROOT}/mrbgems/g/mrbgemtest.rbtmp"
++  sh "#{CAT} #{for_each_gem{|path, gemname| "#{path}/test/*.rb "}} > #{MRUBY_ROOT}/mrbgems/g/mrbgemtest.rbtmp"
+   sh "#{MRUBY_ROOT}/bin/mrbc -Bmrbgemtest_irep -o#{MRUBY_ROOT}/mrbgems/g/mrbgemtest.ctmp #{MRUBY_ROOT}/mrbgems/g/mrbgemtest.rbtmp"
+ end
+ 
+ file "#{GEM_INIT}.a" => ["#{GEM_INIT}.c", "#{GEM_INIT}.o"] do |t|
+-  sh "#{AR} rs #{t.name} #{t.prerequisites.join(' ')}"
++  sh "#{AR} rs #{t.name} #{GEM_INIT}.o"
+ end
+ 
+ rule ".o" => [".c"] do |t|
+   puts "Build the driver which initializes all gems"
+-  sh "#{CC} #{CFLAGS.join(' ')} -I #{MRUBY_ROOT}/include -MMD -c #{t.source} -o #{t.name}"
++  sh "#{CC} #{CFLAGS.join(' ')} -I#{MRUBY_ROOT}/include -MMD -c #{t.source} -o #{t.name}"
+ end
+ 
+ file "#{GEM_INIT}.c" do |t|
+@@ -50,11 +51,11 @@
+ 
+ #include "mruby.h"
+ 
+-#{for_each_gem{|f| "void GENERATED_TMP_mrb_%s_gem_init(mrb_state*);\n" % [File.basename(f)]}}
++#{for_each_gem{|path, gemname, escaped_gemname| "void GENERATED_TMP_mrb_%s_gem_init(mrb_state*);" % [escaped_gemname]}}
+ 
+ void
+ mrb_init_mrbgems(mrb_state *mrb) {
+-#{for_each_gem{|f| "  GENERATED_TMP_mrb_%s_gem_init(mrb);\n" % [File.basename(f)]}}
++#{for_each_gem{|path, gemname, escaped_gemname| "  GENERATED_TMP_mrb_%s_gem_init(mrb);" % [escaped_gemname]}}
+ }
+ __EOF__
+   end
+@@ -62,17 +63,22 @@
+ 
+ def for_each_gem(&block)
+   IO.readlines(ACTIVE_GEMS).map { |line|
+-    block.call(line.chomp)
++    path = line.chomp
++    gemname = File.basename(path)
++    escaped_gemname = gemname.gsub(/-/, '_')
++    block.call(path, gemname, escaped_gemname)
+   }.join('')
+ end
+ 
+ task :mrbgems_generate_gem_makefile_list do
+   open(GEM_MAKEFILE_LIST, 'w') do |f|
+     f.puts <<__EOF__
+-GEM_LIST := #{for_each_gem{|f| "#{f}/mrb-#{File.basename(f)}-gem.a"}}
++GEM_LIST := #{for_each_gem{|path, gemname| "#{path}/mrb-#{gemname}-gem.a "}}
+ 
+ GEM_ARCHIVE_FILES := #{MRUBY_ROOT}/mrbgems/gem_init.a
+ GEM_ARCHIVE_FILES += $(GEM_LIST)
++
++GEM_INCLUDE_LIST := #{for_each_gem{|path, gemname| "-I#{path}/include "}}
+ __EOF__
+   end
+ end
+diff --git a/mrbgems/generate_gem_mixlib.rb b/mrbgems/generate_gem_mixlib.rb
+new file mode 100644
+index 0000000..39bc7b7
+--- /dev/null
++++ b/mrbgems/generate_gem_mixlib.rb
+@@ -0,0 +1,18 @@
++#!/usr/bin/env ruby
++
++gemname = ARGV.shift.gsub('-', '_')
++
++puts <<__EOF__
++void mrb_#{gemname}_gem_init(mrb_state*);
++
++void
++GENERATED_TMP_mrb_#{gemname}_gem_init(mrb_state *mrb)
++{
++  mrb_#{gemname}_gem_init(mrb);
++  mrb_load_irep(mrb, gem_mrblib_irep_#{gemname});
++  if (mrb->exc) {
++    mrb_p(mrb, mrb_obj_value(mrb->exc));
++    exit(0);
++  }
++}
++__EOF__
+diff --git a/mrbgems/generate_gem_mrblib.rb b/mrbgems/generate_gem_mrblib.rb
+new file mode 100644
+index 0000000..6d610d8
+--- /dev/null
++++ b/mrbgems/generate_gem_mrblib.rb
+@@ -0,0 +1,15 @@
++#!/usr/bin/env ruby
++
++gemname = ARGV.shift.gsub('-', '_')
++
++puts <<__EOF__
++void
++GENERATED_TMP_mrb_#{gemname}_gem_init(mrb_state *mrb)
++{
++  mrb_load_irep(mrb, gem_mrblib_irep_#{gemname});
++  if (mrb->exc) {
++    mrb_p(mrb, mrb_obj_value(mrb->exc));
++    exit(0);
++  }
++}
++__EOF__
+diff --git a/mrbgems/generate_gem_mrblib_header.rb b/mrbgems/generate_gem_mrblib_header.rb
+new file mode 100644
+index 0000000..74008a3
+--- /dev/null
++++ b/mrbgems/generate_gem_mrblib_header.rb
+@@ -0,0 +1,18 @@
++#!/usr/bin/env ruby
++
++puts <<__EOF__
++/*
++ * This file is loading the irep
++ * Ruby GEM code.
++ *
++ * IMPORTANT:
++ *   This file was generated!
++ *   All manual changes will get lost.
++ */
++#include "mruby.h"
++#include "mruby/irep.h"
++#include "mruby/dump.h"
++#include "mruby/string.h"
++#include "mruby/proc.h"
++
++__EOF__
+\ No newline at end of file
+diff --git a/mrbgems/generate_gem_srclib.rb b/mrbgems/generate_gem_srclib.rb
+new file mode 100644
+index 0000000..7a0d437
+--- /dev/null
++++ b/mrbgems/generate_gem_srclib.rb
+@@ -0,0 +1,23 @@
++#!/usr/bin/env ruby
++
++gemname = ARGV.shift.gsub('-', '_')
++
++puts <<__EOF__
++/*
++ * This file is loading the irep
++ * Ruby GEM code.
++ *
++ * IMPORTANT:
++ *   This file was generated!
++ *   All manual changes will get lost.
++ */
++#include "mruby.h"
++
++void mrb_#{gemname}_gem_init(mrb_state*);
++
++void
++GENERATED_TMP_mrb_#{gemname}_gem_init(mrb_state *mrb)
++{
++  mrb_#{gemname}_gem_init(mrb);
++}
++__EOF__
+\ No newline at end of file
+diff --git a/mrbgems/generator.c b/mrbgems/generator.c
+deleted file mode 100644
+index 542ba0a..0000000
+--- a/mrbgems/generator.c
++++ /dev/null
+@@ -1,519 +0,0 @@
+-/*
+-** generator.c - Generator for mrbgems
+-**
+-** See Copyright Notice in mruby.h
+-*/
+-
+-#include <string.h>
+-#include <stdio.h>
+-#include <stdlib.h>
+-#include <errno.h>
+-#include <mrbconf.h>
+-
+-/*
+- * Get the file name part of *path*
+- *
+- * Arguments:
+- *   path:
+- *     String which represents the path
+- *
+- */ 
+-static char
+-*get_file_name(char *path)
+-{
+-    char *base = strrchr(path, '/');
+-    return base ? base+1 : path;
+-}
+-
+-static char
+-*get_full_path(char *path, char *mruby_root)
+-{
+-  static char full_path[1024] = { 0 };
+-  if (path[0] == '/') {
+-    /* An absolute UNIX path starts with a slash */
+-    strcpy(full_path, path);
+-  }
+-  else if (path[1] == ':') {
+-    /* An absolute path on WIN32 starts
+-     * with a drive like "c://path/to/somewhere"
+-     */
+-    strcpy(full_path, path);
+-  }
+-  else {
+-    strcpy(full_path, mruby_root);
+-    strcat(full_path, "/mrbgems/g/");
+-    strcat(full_path, path);
+-  }
+-
+-  return full_path;
+-}
+-
+-/*
+- * Search in *s* for *old* and replace with *new*.
+- *
+- * Arguments:
+- *   s:
+- *     String in which the the replacement will be done
+- *   old:
+- *     String which will be replaced
+- *   new:
+- *     String which will be the replacement
+- *
+- */
+-
+-static char *
+-replace(const char *s, const char *old, const char *new)
+-{
+-  char *ret;
+-  int i, count = 0;
+-  size_t newlen = strlen(new);
+-  size_t oldlen = strlen(old);
+-
+-  for (i = 0; s[i] != '\0'; i++) {
+-    if (strstr(&s[i], old) == &s[i]) {
+-      count++;
+-      i += oldlen - 1;
+-    }
+-  }
+-
+-  ret = malloc(i + count * (newlen - oldlen) + 1);
+-  if (ret == NULL)
+-    exit(EXIT_FAILURE);
+-
+-  i = 0;
+-  while (*s) {
+-    if (strstr(s, old) == s) {
+-      strcpy(&ret[i], new);
+-      i += newlen;
+-      s += oldlen;
+-    }
+-    else
+-      ret[i++] = *s++;
+-  }
+-  ret[i] = '\0';
+-
+-  return ret;
+-}
+-
+-/*
+- * Escape GEM Name for integration into source code.
+- *
+- * Due to the reason that the GEM Name is used for
+- * directory names, files and C functions, some safety
+- * replacements have to be applied. I.e. a directory
+- * can contain a dash "-" but a C function can't.
+- *
+- */
+-static char
+-*escape_gem_name(const char *s)
+-{
+-  return replace(s, "-", "_");
+-}
+-
+-/*
+- * Template generator for each active GEM
+- *
+- * Arguments:
+- *   before:
+- *     String before each GEM template
+- *   after:
+- *     String after each GEM template
+- *   start: 
+- *     String at the start of the template
+- *   end:
+- *     String at the end of the template
+- *   full_path:
+- *     Should the full path of the GEM be used?
+- *   active_gems:
+- *     GEMS.active file location
+- *   escape:
+- *     Should the gem name be escaped?
+- *   check_suffix:
+- *     If not empty it will be added to the GEM
+- *     path and a check will be performed if this
+- *     full path is a directory. Every GEM which
+- *     doesn't contain this path will be skipped
+- *     in the iteration.
+- *
+- */
+-static char*
+-for_each_gem (char before[1024], char after[1024],
+-               char start[1024], char end[1024],
+-               int full_path, char active_gems[1024],
+-               int escape, char check_suffix[1024],
+-               char mruby_root[1024])
+-{
+-  /* active GEM check */
+-  FILE *active_gem_file;
+-  int gem_char;
+-  char gem_name[1024] = { 0 };
+-  int char_index;
+-  char gem_list[1024][1024] = { { 0 }, { 0 } };
+-  int gem_index = 0;
+-  int i;
+-  int skip;
+-  FILE *check;
+-  char check_name[1024] = { 0 };
+-
+-  /* return value */
+-  char* complete_line = malloc(4096 + sizeof(char));
+-  strcpy(complete_line, "");
+-  strcat(complete_line, start);
+-
+-  /* Read out the active GEMs */
+-  active_gem_file = fopen(active_gems, "r+");
+-  if (active_gem_file != NULL) {
+-    char_index = 0;
+-    gem_index = 0;
+-    skip = FALSE;
+-    while ((gem_char = fgetc(active_gem_file)) != EOF) {
+-      if (gem_char == '\n') {
+-        /* Every line contains one active GEM */
+-        gem_name[char_index++] = '\0';
+-
+-        if (escape == TRUE)
+-          strcpy(gem_name, escape_gem_name(gem_name));
+-
+-        if (strcmp(check_suffix, "") == 0) { /* No suffix passed */ }
+-        else {
+-          /* Check the path with suffix if it is a directory */
+-
+-          strcpy(check_name, get_full_path(gem_name, mruby_root));
+-          strcat(check_name, check_suffix);
+-          check = fopen(check_name, "r+");
+-          if (errno == EISDIR)
+-            skip = FALSE;
+-          else
+-            skip = TRUE;
+-          if (check)
+-            fclose(check);
+-        }
+-
+-        if (skip == FALSE)
+-          strcpy(gem_list[gem_index++], gem_name);
+-
+-        gem_name[0] = '\0';
+-        char_index = 0;
+-      }
+-      else
+-        gem_name[char_index++] = gem_char;
+-    }
+-
+-    fclose(active_gem_file);
+-  }
+-  else { /* Error: Active GEM list couldn't be loaded */ }
+-
+-  for(i = 0; i < gem_index; i++) {
+-    strcat(complete_line, before);
+-    if (full_path == TRUE) {
+-      if (strcmp(mruby_root, "") == 0)
+-        strcat(complete_line, get_full_path(gem_list[i], "$(MRUBY_ROOT)"));
+-      else
+-        strcat(complete_line, get_full_path(gem_list[i], mruby_root));
+-    }
+-    else
+-      strcat(complete_line, get_file_name(gem_list[i]));
+-    strcat(complete_line, replace(after, "#GEMNAME#", get_file_name(gem_list[i])));
+-  }
+-
+-  strcat(complete_line, end);
+-  return complete_line;
+-}
+-
+-/*
+- * Gem Makefile Generator
+- *
+- * Global Makefile which starts the build process
+- * for every active GEM.
+- *
+- */
+-static void
+-make_gem_makefile(char active_gems[1024], char mruby_root[1024])
+-{
+-  char *gem_check = { 0 };
+-  int gem_empty;
+-
+-  printf("ifeq ($(strip $(MRUBY_ROOT)),)\n"
+-         "  MRUBY_ROOT := $(realpath ../../..)\n"
+-         "endif\n\n"
+-
+-         "MAKEFILE_4_GEM := $(MRUBY_ROOT)/mrbgems/Makefile4gem\n\n"
+-
+-         "INCLUDE := ");
+-
+-  /* collect all GEM include directories if they exist */
+-  printf("%s\n",
+-           for_each_gem("-I", "/include ", "", "", TRUE, active_gems, FALSE, "/include", mruby_root)
+-          );
+-
+-  printf("CFLAGS := -I. -I$(MRUBY_ROOT)/include -I$(MRUBY_ROOT)/src $(INCLUDE)\n\n"
+-
+-         "ifeq ($(OS),Windows_NT)\n"
+-         "  MAKE_FLAGS = --no-print-directory CC=$(CC) LL=$(LL) LDFLAGS='$(LDFLAGS)' CFLAGS='$(CFLAGS)' MRUBY_ROOT='$(MRUBY_ROOT)' MAKEFILE_4_GEM='$(MAKEFILE_4_GEM)'\n"
+-         "else\n"
+-         "  MAKE_FLAGS = --no-print-directory CC='$(CC)' LL='$(LL)' LDFLAGS='$(LDFLAGS)' CFLAGS='$(CFLAGS)' MRUBY_ROOT='$(MRUBY_ROOT)' MAKEFILE_4_GEM='$(MAKEFILE_4_GEM)'\n"
+-         "endif\n\n");
+-
+-  /* is there any GEM available? */
+-  gem_check = for_each_gem("", "", "", "", TRUE, active_gems, FALSE, "", "");
+-  if (strcmp(gem_check, "") == 0)
+-    gem_empty = TRUE;
+-  else
+-    gem_empty = FALSE;
+-
+-  /* Makefile Rules to build every single GEM */
+-
+-  printf(".PHONY : all\n");
+-  if (gem_empty)
+-    printf("all :\n\n");
+-  else {
+-    printf("all : all_gems\n\n");
+-
+-    /* Call make for every GEM */
+-    printf("all_gems :\n%s\n", 
+-            for_each_gem("\t$(MAKE) -C ", " $(MAKE_FLAGS)\n", "", "", TRUE, active_gems, FALSE, "", "")
+-          );
+-    printf("\n");
+-  }
+-
+-  /* Makefile Rules to Test GEMs */
+-
+-  printf(".PHONY : prepare-test\n"
+-         "prepare-test :\n"
+-        );
+-  if (!gem_empty)
+-    printf("%s",
+-           for_each_gem(" ", "/test/*.rb ", "\tcat", " > mrbgemtest.rbtmp", TRUE, active_gems, FALSE, "", "")
+-          );
+-  else
+-    printf("\t$(MRUBY_ROOT)/mrbgems/generator rbtmp> mrbgemtest.rbtmp");
+-
+-  printf("\n\t$(MRUBY_ROOT)/bin/mrbc -Bmrbgemtest_irep -omrbgemtest.ctmp mrbgemtest.rbtmp\n\n");
+-
+-  /* Makefile Rules to Clean GEMs */
+-
+-  printf(".PHONY : clean\n"
+-         "clean :\n"
+-         "\t$(RM) *.c *.d *.rbtmp *.ctmp *.o mrbtest\n");
+-  if (!gem_empty)
+-    printf("%s",
+-           for_each_gem("\t@$(MAKE) clean -C ", " $(MAKE_FLAGS)\n", "", "", TRUE, active_gems, FALSE, "", "")
+-          );
+-}
+-
+-/*
+- * Gem Makefile List Generator
+- *
+- * Creates a Makefile which will be included by other Makefiles
+- * which need to know which GEMs are active.
+- *
+- */
+-static void
+-make_gem_makefile_list(char active_gems[1024])
+-{
+-  printf("%s",
+-         for_each_gem(" ", "/mrb-#GEMNAME#-gem.a", "GEM_LIST := ", "\n", TRUE, active_gems, FALSE, "", "")
+-        );
+-
+-  printf("GEM_ARCHIVE_FILES := $(MRUBY_ROOT)/mrbgems/gem_init.a\n"
+-         "GEM_ARCHIVE_FILES += $(GEM_LIST)\n\n");
+-}
+-
+-/*
+- * gem_init.c Generator
+- *
+- */
+-static void
+-make_gem_init(char active_gems[1024])
+-{
+-  printf("/*\n"
+-         " * This file contains a list of all\n"
+-         " * initializing methods which are\n"
+-         " * necessary to bootstrap all gems.\n"
+-         " *\n"
+-         " * IMPORTANT:\n"
+-         " *   This file was generated!\n"
+-         " *   All manual changes will get lost.\n"
+-         " */\n\n"
+-         "#include \"mruby.h\"\n");
+-
+-  /* Protoype definition of all initialization methods */
+-  printf("\n%s",
+-         for_each_gem("void GENERATED_TMP_mrb_", "_gem_init(mrb_state*);\n", "", "", FALSE, active_gems, TRUE, "", "")
+-        );
+-  printf("\n");
+-
+-  /* mrb_init_mrbgems(mrb) method for initialization of all GEMs */
+-  printf("void\n"
+-         "mrb_init_mrbgems(mrb_state *mrb) {\n");
+-  printf(   "%s",
+-            for_each_gem("  GENERATED_TMP_mrb_", "_gem_init(mrb);\n", "", "", FALSE, active_gems, TRUE, "", "")
+-        );
+-  printf("}");
+-}
+-
+-/*
+- * Empty Generator
+- *
+- * Generates a clean file with one new line.
+- *
+- */
+-static void
+-make_rbtmp()
+-{
+-  printf("\n");
+-}
+-
+-/*
+- * Header Generator
+- *
+- * Head of the C Code for loading the GEMs into the interpreter.
+- *
+- */
+-static void
+-make_gem_mrblib_header()
+-{
+-  printf("/*\n"
+-         " * This file is loading the irep\n"
+-         " * Ruby GEM code.\n"
+-         " *\n"
+-         " * IMPORTANT:\n"
+-         " *   This file was generated!\n"
+-         " *   All manual changes will get lost.\n"
+-         " */\n\n"
+-         "#include \"mruby.h\"\n"
+-         "#include \"mruby/irep.h\"\n"
+-         "#include \"mruby/dump.h\"\n"
+-         "#include \"mruby/string.h\"\n"
+-         "#include \"mruby/proc.h\"\n\n");
+-}
+-
+-/*
+- * mrblib Generator
+- *
+- * Generates the C Code for loading
+- * the pure Ruby GEMs into the interpreter.
+- *
+- */
+-static void
+-make_gem_mrblib(char gem_name[1024])
+-{
+-  printf("\n"
+-         "void\n"
+-         "GENERATED_TMP_mrb_%s_gem_init(mrb_state *mrb) {\n"
+-         "  mrb_load_irep(mrb, gem_mrblib_irep_%s);\n"
+-         "  if (mrb->exc) {\n"
+-         "    mrb_p(mrb, mrb_obj_value(mrb->exc));\n"
+-         "    exit(0);\n"
+-         "  }\n"
+-         "}", gem_name, gem_name);
+-}
+-
+-/*
+- * srclib Generator
+- *
+- * Generates the C Code for loading
+- * the pure C GEMs into the interpreter.
+- *
+- */
+-static void
+-make_gem_srclib(char gem_name[1024])
+-{
+-  printf("/*\n"
+-         " * This file is loading the irep\n"
+-         " * Ruby GEM code.\n"
+-         " *\n"
+-         " * IMPORTANT:\n"
+-         " *   This file was generated!\n"
+-         " *   All manual changes will get lost.\n"
+-         " */\n\n"
+-         "#include \"mruby.h\"\n");
+-
+-  /* Prototype method for GEM initialization */
+-  printf("\n"
+-         "void mrb_%s_gem_init(mrb_state*);\n", gem_name);
+-
+-  printf("\n"
+-         "void\n"
+-         "GENERATED_TMP_mrb_%s_gem_init(mrb_state *mrb) {\n"
+-         "  mrb_%s_gem_init(mrb);\n"
+-         "}", gem_name, gem_name);
+-}
+-
+-/*
+- * mixlib Generator
+- *
+- * Generates the C Code for loading
+- * the mixed Ruby and C GEMs
+- * into the interpreter.
+- *
+- */
+-static void
+-make_gem_mixlib(char gem_name[1024])
+-{
+-  /* Prototype method for GEM initialization */
+-  printf("\n"
+-         "void mrb_%s_gem_init(mrb_state*);\n", gem_name);
+-
+-  printf("\n"
+-         "void\n"
+-         "GENERATED_TMP_mrb_%s_gem_init(mrb_state *mrb) {\n"
+-         "  mrb_%s_gem_init(mrb);\n"
+-         "  mrb_load_irep(mrb, gem_mrblib_irep_%s);\n"
+-         "  if (mrb->exc) {\n"
+-         "    mrb_p(mrb, mrb_obj_value(mrb->exc));\n"
+-         "    exit(0);\n"
+-         "  }\n"
+-         "}", gem_name, gem_name, gem_name);
+-}
+-
+-/*
+- * Start the generator and decide what to generate. 
+- *
+- */
+-int
+-main (int argc, char *argv[])
+-{
+-  const char * argument_info = "Wrong argument! Options: 'makefile', 'gem_init', 'rbtmp', 'gem_mrblib', gem_srclib\n";
+-
+-  if (argc == 2) {
+-    if (strcmp(argv[1], "rbtmp") == 0)
+-      make_rbtmp();
+-    else if (strcmp(argv[1], "gem_mrblib") == 0)
+-      make_gem_mrblib_header();
+-    else {
+-      printf("%s", argument_info);
+-      return 1;
+-    }
+-  }
+-  else if (argc == 3) {
+-    if (strcmp(argv[1], "makefile_list") == 0)
+-      make_gem_makefile_list(argv[2]);
+-    else if (strcmp(argv[1], "gem_init") == 0)
+-      make_gem_init(argv[2]);
+-    else if (strcmp(argv[1], "gem_mrblib") == 0)
+-      make_gem_mrblib(escape_gem_name(argv[2]));
+-    else if (strcmp(argv[1], "gem_srclib") == 0)
+-      make_gem_srclib(escape_gem_name(argv[2]));
+-    else if (strcmp(argv[1], "gem_mixlib") == 0)
+-      make_gem_mixlib(escape_gem_name(argv[2]));
+-    else {
+-      printf("%s", argument_info);
+-      return 1;
+-    }
+-  }
+-  else if (argc == 4) {
+-    if (strcmp(argv[1], "makefile") == 0)
+-      make_gem_makefile(argv[2], argv[3]);
+-    else {
+-      printf("%s", argument_info);
+-      return 1;
+-    }
+-  }
+-  else {
+-    printf("%s", argument_info);
+-    return 1;
+-  }
+-
+-  return 0;
+-}
+diff --git a/test/Makefile b/test/Makefile
+index 7f6607e..f918d67 100644
+--- a/test/Makefile
++++ b/test/Makefile
+@@ -78,7 +78,8 @@ MRUBY= ../bin/mruby
+ EXE := $(TARGET)
+ endif
+ 
+-RAKE  = ../minirake
++RAKE = ../minirake
++
+ 
+ ##############################
+ # generic build targets, rules
+-- 
+1.7.10
