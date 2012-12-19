@@ -225,19 +225,19 @@ typedef unsigned int BDIGIT;
 
 #define INT2FIX(i) ((VALUE)(((SIGNED_VALUE)(i))<<1 | FIXNUM_FLAG))
 #define LONG2FIX(i) INT2FIX(i)
-#define rb_fix_new(v) INT2FIX(v)
-VALUE rb_int2inum(SIGNED_VALUE);
+#define mrb_fix_new(v) INT2FIX(v)
+VALUE mrb_int2inum(SIGNED_VALUE);
 
-#define rb_int_new(v) rb_int2inum(v)
-VALUE rb_uint2inum(VALUE);
+#define mrb_int_new(v) mrb_int2inum(v)
+VALUE mrb_uint2inum(VALUE);
 
-#define rb_uint_new(v) rb_uint2inum(v)
+#define mrb_uint_new(v) mrb_uint2inum(v)
 
 #ifdef HAVE_LONG_LONG
-VALUE rb_ll2inum(LONG_LONG);
-#define LL2NUM(v) rb_ll2inum(v)
-VALUE rb_ull2inum(unsigned LONG_LONG);
-#define ULL2NUM(v) rb_ull2inum(v)
+VALUE mrb_ll2inum(LONG_LONG);
+#define LL2NUM(v) mrb_ll2inum(v)
+VALUE mrb_ull2inum(unsigned LONG_LONG);
+#define ULL2NUM(v) mrb_ull2inum(v)
 #endif
 
 #if SIZEOF_OFF_T > SIZEOF_LONG && defined(HAVE_LONG_LONG)
@@ -292,21 +292,21 @@ VALUE rb_ull2inum(unsigned LONG_LONG);
 #endif
 
 #if SIZEOF_INT < SIZEOF_VALUE
-NORETURN(void rb_out_of_int(SIGNED_VALUE num));
+NORETURN(void mrb_out_of_int(SIGNED_VALUE num));
 #endif
 
 #if SIZEOF_INT < SIZEOF_LONG
-#define rb_long2int_internal(n, i) \
+#define mrb_long2int_internal(n, i) \
     int (i) = (int)(n); \
-    if ((long)(i) != (n)) rb_out_of_int(n)
+    if ((long)(i) != (n)) mrb_out_of_int(n)
 #ifdef __GNUC__
-#define rb_long2int(n) __extension__ ({long i2l_n = (n); rb_long2int_internal(i2l_n, i2l_i); i2l_i;})
+#define mrb_long2int(n) __extension__ ({long i2l_n = (n); mrb_long2int_internal(i2l_n, i2l_i); i2l_i;})
 #else
 static inline int
 rb_long2int(long n) {rb_long2int_internal(n, i); return i;}
 #endif
 #else
-#define rb_long2int(n) ((int)(n))
+#define mrb_long2int(n) ((int)(n))
 #endif
 
 #ifndef PIDT2NUM
@@ -370,7 +370,7 @@ enum ruby_special_consts {
 
 #define NIL_P(v) ((v).p.value == NULL)
 
-//#define CLASS_OF(v) rb_class_of(mrb_value(v))
+//#define CLASS_OF(v) mrb_class_of(mrb_value(v))
 
 enum ruby_value_type {
     MRB_T_NONE   = 0x00,
@@ -434,12 +434,12 @@ enum ruby_value_type {
 
 #define BUILTIN_TYPE(x) (int)(((struct mrb_basic*)(x))->flags & T_MASK)
 
-static inline int rb_type(VALUE obj);
-#define TYPE(x) rb_type((VALUE)(x))
+static inline int mrb_type(VALUE obj);
+#define TYPE(x) mrb_type((VALUE)(x))
 
 #ifdef __GNUC__
-#define RB_GC_GUARD_PTR(ptr) \
-    __extension__ ({volatile VALUE *rb_gc_guarded_ptr = (ptr); rb_gc_guarded_ptr;})
+#define mrb_GC_GUARD_PTR(ptr) \
+    __extension__ ({volatile VALUE *rb_gc_guarded_ptr = (ptr); mrb_gc_guarded_ptr;})
 #else
 #ifdef _MSC_VER
 #pragma optimize("", off)
@@ -448,57 +448,57 @@ static inline volatile VALUE *rb_gc_guarded_ptr(volatile VALUE *ptr) {return ptr
 #ifdef _MSC_VER
 #pragma optimize("", on)
 #endif
-#define RB_GC_GUARD_PTR(ptr) rb_gc_guarded_ptr(ptr)
+#define mrb_GC_GUARD_PTR(ptr) mrb_gc_guarded_ptr(ptr)
 #endif
-#define RB_GC_GUARD(v) (*RB_GC_GUARD_PTR(&(v)))
+#define mrb_GC_GUARD(v) (*RB_GC_GUARD_PTR(&(v)))
 
-void rb_check_type(VALUE,int);
-#define Check_Type(v,t) rb_check_type((VALUE)(v),(t))
+void mrb_check_type(VALUE,int);
+#define Check_Type(v,t) mrb_check_type((VALUE)(v),(t))
 
-VALUE rb_str_to_str(VALUE);
-VALUE rb_string_value(volatile VALUE*);
+VALUE mrb_str_to_str(VALUE);
+VALUE mrb_string_value(volatile VALUE*);
 char *rb_string_value_ptr(volatile VALUE*);
 char *rb_string_value_cstr(volatile VALUE*);
 
-#define StringValue(v) rb_string_value(&(v))
-#define StringValuePtr(v) rb_string_value_ptr(&(v))
-#define StringValueCStr(v) rb_string_value_cstr(&(v))
+#define StringValue(v) mrb_string_value(&(v))
+#define StringValuePtr(v) mrb_string_value_ptr(&(v))
+#define StringValueCStr(v) mrb_string_value_cstr(&(v))
 
-void rb_check_safe_obj(VALUE);
-DEPRECATED(void rb_check_safe_str(VALUE));
+void mrb_check_safe_obj(VALUE);
+DEPRECATED(void mrb_check_safe_str(VALUE));
 #define SafeStringValue(v) do {\
     StringValue(v);\
-    rb_check_safe_obj(v);\
+    mrb_check_safe_obj(v);\
 } while (0)
 /* obsolete macro - use SafeStringValue(v) */
-#define Check_SafeStr(v) rb_check_safe_str((VALUE)(v))
+#define Check_SafeStr(v) mrb_check_safe_str((VALUE)(v))
 
-VALUE rb_str_export(VALUE);
+VALUE mrb_str_export(VALUE);
 #define ExportStringValue(v) do {\
     SafeStringValue(v);\
-   (v) = rb_str_export(v);\
+   (v) = mrb_str_export(v);\
 } while (0)
-VALUE rb_str_export_locale(VALUE);
+VALUE mrb_str_export_locale(VALUE);
 
-VALUE rb_get_path(VALUE);
-#define FilePathValue(v) (RB_GC_GUARD(v) = rb_get_path(v))
+VALUE mrb_get_path(VALUE);
+#define FilePathValue(v) (RB_GC_GUARD(v) = mrb_get_path(v))
 
-VALUE rb_get_path_no_checksafe(VALUE);
-#define FilePathStringValue(v) ((v) = rb_get_path_no_checksafe(v))
+VALUE mrb_get_path_no_checksafe(VALUE);
+#define FilePathStringValue(v) ((v) = mrb_get_path_no_checksafe(v))
 
-void rb_secure(int);
-int rb_safe_level(void);
-void rb_set_safe_level(int);
-void rb_set_safe_level_force(int);
-void rb_secure_update(VALUE);
-NORETURN(void rb_insecure_operation(void));
+void mrb_secure(int);
+int mrb_safe_level(void);
+void mrb_set_safe_level(int);
+void mrb_set_safe_level_force(int);
+void mrb_secure_update(VALUE);
+NORETURN(void mrb_insecure_operation(void));
 
-VALUE rb_errinfo(void);
-void rb_set_errinfo(VALUE);
+VALUE mrb_errinfo(void);
+void mrb_set_errinfo(VALUE);
 
-SIGNED_VALUE rb_num2long(VALUE);
-VALUE rb_num2ulong(VALUE);
-#define NUM2LONG_internal(x) ((long)(FIXNUM_P(x) ? FIX2LONG(x) : rb_num2long(x)))
+SIGNED_VALUE mrb_num2long(VALUE);
+VALUE mrb_num2ulong(VALUE);
+#define NUM2LONG_internal(x) ((long)(FIXNUM_P(x) ? FIX2LONG(x) : mrb_num2long(x)))
 #ifdef __GNUC__
 #define NUM2LONG(x) \
     __extension__ ({VALUE num2long_x = (x); NUM2LONG_internal(num2long_x);})
@@ -509,10 +509,10 @@ NUM2LONG(VALUE x)
     return NUM2LONG_internal(x);
 }
 #endif
-#define NUM2ULONG(x) rb_num2ulong((VALUE)(x))
+#define NUM2ULONG(x) mrb_num2ulong((VALUE)(x))
 #if SIZEOF_INT < SIZEOF_LONG
-long rb_num2int(VALUE);
-long rb_fix2int(VALUE);
+long mrb_num2int(VALUE);
+long mrb_fix2int(VALUE);
 #define FIX2INT(x) ((int)rb_fix2int((VALUE)(x)))
 #define NUM2INT_internal(x) (FIXNUM_P(x) ? FIX2INT(x) : (int)rb_num2int(x))
 #ifdef __GNUC__
@@ -525,9 +525,9 @@ NUM2INT(VALUE x)
     return NUM2INT_internal(x);
 }
 #endif
-unsigned long rb_num2uint(VALUE);
+unsigned long mrb_num2uint(VALUE);
 #define NUM2UINT(x) ((unsigned int)rb_num2uint(x))
-unsigned long rb_fix2uint(VALUE);
+unsigned long mrb_fix2uint(VALUE);
 #define FIX2UINT(x) ((unsigned int)rb_fix2uint(x))
 #else
 #define NUM2INT(x) ((int)NUM2LONG(x))
@@ -537,9 +537,9 @@ unsigned long rb_fix2uint(VALUE);
 #endif
 
 #ifdef HAVE_LONG_LONG
-LONG_LONG rb_num2ll(VALUE);
-unsigned LONG_LONG rb_num2ull(VALUE);
-# define NUM2LL_internal(x) (FIXNUM_P(x) ? FIX2LONG(x) : rb_num2ll(x))
+LONG_LONG mrb_num2ll(VALUE);
+unsigned LONG_LONG mrb_num2ull(VALUE);
+# define NUM2LL_internal(x) (FIXNUM_P(x) ? FIX2LONG(x) : mrb_num2ll(x))
 # ifdef __GNUC__
 #   define NUM2LL(x) \
     __extension__ ({VALUE num2ll_x = (x); NUM2LL_internal(num2ll_x);})
@@ -550,7 +550,7 @@ NUM2LL(VALUE x)
     return NUM2LL_internal(x);
 }
 # endif
-# define NUM2ULL(x) rb_num2ull((VALUE)(x))
+# define NUM2ULL(x) mrb_num2ull((VALUE)(x))
 #endif
 
 #if defined(HAVE_LONG_LONG) && SIZEOF_OFF_T > SIZEOF_LONG
@@ -567,13 +567,13 @@ NUM2LL(VALUE x)
 # define NUM2SSIZET(x) NUM2LONG(x)
 #endif
 
-double rb_num2dbl(VALUE);
-#define NUM2DBL(x) rb_num2dbl((VALUE)(x))
+double mrb_num2dbl(VALUE);
+#define NUM2DBL(x) mrb_num2dbl((VALUE)(x))
 
-VALUE rb_uint2big(VALUE);
-VALUE rb_int2big(SIGNED_VALUE);
+VALUE mrb_uint2big(VALUE);
+VALUE mrb_int2big(SIGNED_VALUE);
 
-VALUE rb_newobj(void);
+VALUE mrb_newobj(void);
 #define NEWOBJ(obj,type) type *(obj) = (type*)rb_newobj()
 #define OBJSETUP(obj,c,t) do {\
     mrb_basic(obj)->flags = (t);\
@@ -582,12 +582,12 @@ VALUE rb_newobj(void);
 } while (0)
 #define CLONESETUP(clone,obj) do {\
     OBJSETUP((clone),rb_singleton_class_clone((VALUE)(obj)),mrb_basic(obj)->flags);\
-    rb_singleton_class_attached(mrb_basic(clone)->klass, (VALUE)(clone));\
-    if (FL_TEST((obj), FL_EXIVAR)) rb_copy_generic_ivar((VALUE)(clone),(VALUE)(obj));\
+    mrb_singleton_class_attached(mrb_basic(clone)->klass, (VALUE)(clone));\
+    if (FL_TEST((obj), FL_EXIVAR)) mrb_copy_generic_ivar((VALUE)(clone),(VALUE)(obj));\
 } while (0)
 #define DUPSETUP(dup,obj) do {\
     OBJSETUP((dup),rb_obj_class(obj), (mrb_basic(obj)->flags)&(T_MASK|FL_EXIVAR|FL_TAINT|FL_UNTRUSTED)); \
-    if (FL_TEST((obj), FL_EXIVAR)) rb_copy_generic_ivar((VALUE)(dup),(VALUE)(obj));\
+    if (FL_TEST((obj), FL_EXIVAR)) mrb_copy_generic_ivar((VALUE)(dup),(VALUE)(obj));\
 } while (0)
 
 #define ROBJECT_EMBED_LEN_MAX 3
@@ -606,15 +606,15 @@ VALUE rb_newobj(void);
      ROBJECT(o)->as.heap.iv_index_tbl)
 
 /** @internal */
-typedef struct rb_classext_struct rb_classext_t;
+typedef struct mrb_classext_struct mrb_classext_t;
 
 struct RClass {
     struct RBasic* basic;
-    rb_classext_t *ptr;
+    mrb_classext_t *ptr;
     struct st_table *m_tbl;
     struct st_table *iv_index_tbl;
 };
-#define RCLASS_SUPER(c) rb_class_get_superclass(c)
+#define RCLASS_SUPER(c) mrb_class_get_superclass(c)
 #define RMODULE_IV_TBL(m) RCLASS_IV_TBL(m)
 #define RMODULE_CONST_TBL(m) RCLASS_CONST_TBL(m)
 #define RMODULE_M_TBL(m) RCLASS_M_TBL(m)
@@ -625,7 +625,7 @@ struct RFloat {
     double float_value;
 };
 #define RFLOAT_VALUE(v) (RFLOAT(v)->float_value)
-#define DBL2NUM(dbl)  rb_float_new(dbl)
+#define DBL2NUM(dbl)  mrb_float_new(dbl)
 
 #define ELTS_SHARED FL_USER2
 
@@ -662,7 +662,7 @@ struct RString {
     (!(mrb_basic(str)->flags & RSTRING_NOEMBED) ? \
      (RSTRING(str)->as.ary + RSTRING_EMBED_LEN(str)) : \
      (RSTRING(str)->as.heap.ptr + RSTRING(str)->as.heap.len))
-#define RSTRING_LENINT(str) rb_long2int(RSTRING_LEN(str))
+#define RSTRING_LENINT(str) mrb_long2int(RSTRING_LEN(str))
 #define RSTRING_GETMEM(str, ptrvar, lenvar) \
     (!(mrb_basic(str)->flags & RSTRING_NOEMBED) ? \
      ((ptrvar) = RSTRING(str)->as.ary, (lenvar) = RSTRING_EMBED_LEN(str)) : \
@@ -696,12 +696,12 @@ struct RArray {
     ((mrb_basic(a)->flags & RARRAY_EMBED_FLAG) ? \
      RARRAY(a)->as.ary : \
      RARRAY(a)->as.heap.ptr)
-#define RARRAY_LENINT(ary) rb_long2int(RARRAY_LEN(ary))
+#define RARRAY_LENINT(ary) mrb_long2int(RARRAY_LEN(ary))
 
 
 struct RFile {
     struct RBasic*basic;
-    struct rb_io_t *fptr;
+    struct mrb_io_t *fptr;
 };
 
 struct RRational {
@@ -723,9 +723,9 @@ struct RData {
     void *data;
 };
 
-typedef struct rb_data_type_struct rb_data_type_t;
+typedef struct mrb_data_type_struct mrb_data_type_t;
 
-struct rb_data_type_struct {
+struct mrb_data_type_struct {
     const char *wrap_struct_name;
     struct {
 	void (*dmark)(void*);
@@ -734,7 +734,7 @@ struct rb_data_type_struct {
 	void *reserved[2]; /* For future extension.
 			      This array *must* be filled with ZERO. */
     } function;
-    const rb_data_type_t *parent;
+    const mrb_data_type_t *parent;
     void *data;        /* This area can be used for any purpose
                           by a programmer who define the type. */
 };
@@ -745,7 +745,7 @@ struct rb_data_type_struct {
 
 struct RTypedData {
     struct RBasic* basic;
-    const rb_data_type_t *type;
+    const mrb_data_type_t *type;
     VALUE typed_flag; /* 1 or not */
     void *data;
 };
@@ -761,19 +761,19 @@ struct RTypedData {
 */
 typedef void (*RUBY_DATA_FUNC)(void*);
 
-VALUE rb_data_object_alloc(VALUE,void*,RUBY_DATA_FUNC,RUBY_DATA_FUNC);
-VALUE rb_data_typed_object_alloc(VALUE klass, void *datap, const rb_data_type_t *);
-int rb_typeddata_inherited_p(const rb_data_type_t *child, const rb_data_type_t *parent);
-int rb_typeddata_is_kind_of(VALUE, const rb_data_type_t *);
-void *rb_check_typeddata(VALUE, const rb_data_type_t *);
-#define Check_TypedStruct(v,t) rb_check_typeddata((VALUE)(v),(t))
+VALUE mrb_data_object_alloc(VALUE,void*,RUBY_DATA_FUNC,RUBY_DATA_FUNC);
+VALUE mrb_data_typed_object_alloc(VALUE klass, void *datap, const mrb_data_type_t *);
+int mrb_typeddata_inherited_p(const mrb_data_type_t *child, const mrb_data_type_t *parent);
+int mrb_typeddata_is_kind_of(VALUE, const mrb_data_type_t *);
+void *rb_check_typeddata(VALUE, const mrb_data_type_t *);
+#define Check_TypedStruct(v,t) mrb_check_typeddata((VALUE)(v),(t))
 #define RUBY_DEFAULT_FREE ((RUBY_DATA_FUNC)-1)
 #define RUBY_NEVER_FREE   ((RUBY_DATA_FUNC)0)
 #define RUBY_TYPED_DEFAULT_FREE RUBY_DEFAULT_FREE
 #define RUBY_TYPED_NEVER_FREE   RUBY_NEVER_FREE
 
 #define Data_Wrap_Struct(klass,mark,free,sval)\
-    rb_data_object_alloc((klass),(sval),(RUBY_DATA_FUNC)(mark),(RUBY_DATA_FUNC)(free))
+    mrb_data_object_alloc((klass),(sval),(RUBY_DATA_FUNC)(mark),(RUBY_DATA_FUNC)(free))
 
 #define Data_Make_Struct(klass,type,mark,free,sval) (\
     (sval) = ALLOC(type),\
@@ -782,7 +782,7 @@ void *rb_check_typeddata(VALUE, const rb_data_type_t *);
 )
 
 #define TypedData_Wrap_Struct(klass,data_type,sval)\
-  rb_data_typed_object_alloc((klass),(sval),(data_type))
+  mrb_data_typed_object_alloc((klass),(sval),(data_type))
 
 #define TypedData_Make_Struct(klass, type, data_type, sval) (\
     (sval) = ALLOC(type),\
@@ -821,7 +821,7 @@ struct RStruct {
     ((mrb_basic(st)->flags & RSTRUCT_EMBED_LEN_MASK) ? \
      RSTRUCT(st)->as.ary : \
      RSTRUCT(st)->as.heap.ptr)
-#define RSTRUCT_LENINT(st) rb_long2int(RSTRUCT_LEN(st))
+#define RSTRUCT_LENINT(st) mrb_long2int(RSTRUCT_LEN(st))
 
 #define RBIGNUM_EMBED_LEN_MAX ((int)((sizeof(VALUE)*3)/sizeof(BDIGIT)))
 struct RBignum {
@@ -857,7 +857,7 @@ mrb_value
     ((mrb_basic(b)->flags & RBIGNUM_EMBED_FLAG) ? \
      RBIGNUM(b.value.p)->as.ary : \
      RBIGNUM(b.value.p)->as.heap.digits)
-#define RBIGNUM_LENINT(b) rb_long2int(RBIGNUM_LEN(b))
+#define RBIGNUM_LENINT(b) mrb_long2int(RBIGNUM_LEN(b))
 
 #define R_CAST(st)   (struct st*)
 #define ROBJECT(obj) (R_CAST(RObject)(obj))
@@ -923,7 +923,7 @@ mrb_value
 # define INT2NUM(v) INT2FIX((int)(v))
 # define UINT2NUM(v) LONG2FIX((unsigned int)(v))
 #else
-# define INT2NUM_internal(v) (FIXABLE(v) ? INT2FIX(v) : rb_int2big(v))
+# define INT2NUM_internal(v) (FIXABLE(v) ? INT2FIX(v) : mrb_int2big(v))
 # ifdef __GNUC__
 #   define INT2NUM(v) __extension__ ({int int2num_v = (v); INT2NUM_internal(int2num_v);})
 # else
@@ -934,7 +934,7 @@ INT2NUM(int v)
 }
 # endif
 
-# define UINT2NUM_internal(v) (POSFIXABLE(v) ? LONG2FIX(v) : rb_uint2big(v))
+# define UINT2NUM_internal(v) (POSFIXABLE(v) ? LONG2FIX(v) : mrb_uint2big(v))
 # ifdef __GNUC__
 #   define UINT2NUM(v) __extension__ ({unsigned int uint2num_v = (v); UINT2NUM_internal(uint2num_v);})
 # else
@@ -946,7 +946,7 @@ UINT2NUM(unsigned int v)
 # endif
 #endif
 
-#define LONG2NUM_internal(v) (FIXABLE(v) ? LONG2FIX(v) : rb_int2big(v))
+#define LONG2NUM_internal(v) (FIXABLE(v) ? LONG2FIX(v) : mrb_int2big(v))
 #ifdef __GNUC__
 # define LONG2NUM(v) __extension__ ({long long2num_v = (v); LONG2NUM_internal(long2num_v);})
 #else
@@ -957,7 +957,7 @@ LONG2NUM(long v)
 }
 #endif
 
-#define ULONG2NUM_internal(v) (POSFIXABLE(v) ? LONG2FIX(v) : rb_uint2big(v))
+#define ULONG2NUM_internal(v) (POSFIXABLE(v) ? LONG2FIX(v) : mrb_uint2big(v))
 #ifdef __GNUC__
 # define ULONG2NUM(v) __extension__ ({unsigned long ulong2num_v = (v); ULONG2NUM_internal(ulong2num_v);})
 #else
@@ -988,186 +988,186 @@ NUM2CHR(VALUE x)
 #define ALLOCA_N(type,n) ((type*)alloca(sizeof(type)*(n)))
 
 //void *rb_alloc_tmp_buffer(volatile VALUE *store, long len);
-//void rb_free_tmp_buffer(volatile VALUE *store);
+//void mrb_free_tmp_buffer(volatile VALUE *store);
 /* allocates _n_ bytes temporary buffer and stores VALUE including it
  * in _v_.  _n_ may be evaluated twice. */
 #ifdef C_ALLOCA
-# define ALLOCV(v, n) rb_alloc_tmp_buffer(&(v), (n))
+# define ALLOCV(v, n) mrb_alloc_tmp_buffer(&(v), (n))
 #else
-# define ALLOCV(v, n) ((n) < 1024 ? (RB_GC_GUARD(v) = 0, alloca(n)) : rb_alloc_tmp_buffer(&(v), (n)))
+# define ALLOCV(v, n) ((n) < 1024 ? (RB_GC_GUARD(v) = 0, alloca(n)) : mrb_alloc_tmp_buffer(&(v), (n)))
 #endif
 #define ALLOCV_N(type, v, n) ((type*)ALLOCV((v), sizeof(type)*(n)))
-#define ALLOCV_END(v) rb_free_tmp_buffer(&(v))
+#define ALLOCV_END(v) mrb_free_tmp_buffer(&(v))
 
 #define MEMZERO(p,type,n) memset((p), 0, sizeof(type)*(n))
 #define MEMCPY(p1,p2,type,n) memcpy((p1), (p2), sizeof(type)*(n))
 #define MEMMOVE(p1,p2,type,n) memmove((p1), (p2), sizeof(type)*(n))
 #define MEMCMP(p1,p2,type,n) memcmp((p1), (p2), sizeof(type)*(n))
 
-//void rb_obj_infect(VALUE,VALUE);
+//void mrb_obj_infect(VALUE,VALUE);
 
 typedef int ruby_glob_func(const char*,VALUE, void*);
-void rb_glob(const char*,void(*)(const char*,VALUE,void*),VALUE);
+void mrb_glob(const char*,void(*)(const char*,VALUE,void*),VALUE);
 int ruby_glob(const char*,int,ruby_glob_func*,VALUE);
 int ruby_brace_glob(const char*,int,ruby_glob_func*,VALUE);
 
-VALUE rb_define_class(const char*,VALUE);
-VALUE rb_define_module(const char*);
-VALUE rb_define_class_under(VALUE, const char*, VALUE);
-VALUE rb_define_module_under(VALUE, const char*);
+VALUE mrb_define_class(const char*,VALUE);
+VALUE mrb_define_module(const char*);
+VALUE mrb_define_class_under(VALUE, const char*, VALUE);
+VALUE mrb_define_module_under(VALUE, const char*);
 
-void rb_include_module(VALUE,VALUE);
-void rb_extend_object(VALUE,VALUE);
+void mrb_include_module(VALUE,VALUE);
+void mrb_extend_object(VALUE,VALUE);
 
-struct rb_global_variable;
+struct mrb_global_variable;
 
-typedef VALUE rb_gvar_getter_t(ID id, void *data, struct rb_global_variable *gvar);
-typedef void  rb_gvar_setter_t(VALUE val, ID id, void *data, struct rb_global_variable *gvar);
-typedef void  rb_gvar_marker_t(VALUE *var);
+typedef VALUE mrb_gvar_getter_t(ID id, void *data, struct mrb_global_variable *gvar);
+typedef void  mrb_gvar_setter_t(VALUE val, ID id, void *data, struct mrb_global_variable *gvar);
+typedef void  mrb_gvar_marker_t(VALUE *var);
 
-VALUE rb_gvar_undef_getter(ID id, void *data, struct rb_global_variable *gvar);
-void  rb_gvar_undef_setter(VALUE val, ID id, void *data, struct rb_global_variable *gvar);
-void  rb_gvar_undef_marker(VALUE *var);
+VALUE mrb_gvar_undef_getter(ID id, void *data, struct mrb_global_variable *gvar);
+void  mrb_gvar_undef_setter(VALUE val, ID id, void *data, struct mrb_global_variable *gvar);
+void  mrb_gvar_undef_marker(VALUE *var);
 
-VALUE rb_gvar_val_getter(ID id, void *data, struct rb_global_variable *gvar);
-void  rb_gvar_val_setter(VALUE val, ID id, void *data, struct rb_global_variable *gvar);
-void  rb_gvar_val_marker(VALUE *var);
+VALUE mrb_gvar_val_getter(ID id, void *data, struct mrb_global_variable *gvar);
+void  mrb_gvar_val_setter(VALUE val, ID id, void *data, struct mrb_global_variable *gvar);
+void  mrb_gvar_val_marker(VALUE *var);
 
-VALUE rb_gvar_var_getter(ID id, void *data, struct rb_global_variable *gvar);
-void  rb_gvar_var_setter(VALUE val, ID id, void *data, struct rb_global_variable *gvar);
-void  rb_gvar_var_marker(VALUE *var);
+VALUE mrb_gvar_var_getter(ID id, void *data, struct mrb_global_variable *gvar);
+void  mrb_gvar_var_setter(VALUE val, ID id, void *data, struct mrb_global_variable *gvar);
+void  mrb_gvar_var_marker(VALUE *var);
 
-void  rb_gvar_readonly_setter(VALUE val, ID id, void *data, struct rb_global_variable *gvar);
+void  mrb_gvar_readonly_setter(VALUE val, ID id, void *data, struct mrb_global_variable *gvar);
 
-void rb_define_variable(const char*,VALUE*);
-void rb_define_virtual_variable(const char*,VALUE(*)(ANYARGS),void(*)(ANYARGS));
-void rb_define_hooked_variable(const char*,VALUE*,VALUE(*)(ANYARGS),void(*)(ANYARGS));
-void rb_define_readonly_variable(const char*,VALUE*);
-void rb_define_const(VALUE,const char*,VALUE);
-void rb_define_global_const(const char*,VALUE);
+void mrb_define_variable(const char*,VALUE*);
+void mrb_define_virtual_variable(const char*,VALUE(*)(ANYARGS),void(*)(ANYARGS));
+void mrb_define_hooked_variable(const char*,VALUE*,VALUE(*)(ANYARGS),void(*)(ANYARGS));
+void mrb_define_readonly_variable(const char*,VALUE*);
+void mrb_define_const(VALUE,const char*,VALUE);
+void mrb_define_global_const(const char*,VALUE);
 
 #define RUBY_METHOD_FUNC(func) ((VALUE (*)(ANYARGS))(func))
-void rb_define_method(VALUE,const char*,VALUE(*)(ANYARGS),int);
-void rb_define_module_function(VALUE,const char*,VALUE(*)(ANYARGS),int);
-void rb_define_global_function(const char*,VALUE(*)(ANYARGS),int);
+void mrb_define_method(VALUE,const char*,VALUE(*)(ANYARGS),int);
+void mrb_define_module_function(VALUE,const char*,VALUE(*)(ANYARGS),int);
+void mrb_define_global_function(const char*,VALUE(*)(ANYARGS),int);
 
-void rb_undef_method(VALUE,const char*);
-void rb_define_alias(VALUE,const char*,const char*);
-void rb_define_attr(VALUE,const char*,int,int);
+void mrb_undef_method(VALUE,const char*);
+void mrb_define_alias(VALUE,const char*,const char*);
+void mrb_define_attr(VALUE,const char*,int,int);
 
-void rb_global_variable(VALUE*);
-void rb_gc_register_mark_object(VALUE);
-void rb_gc_register_address(VALUE*);
-void rb_gc_unregister_address(VALUE*);
+void mrb_global_variable(VALUE*);
+void mrb_gc_register_mark_object(VALUE);
+void mrb_gc_register_address(VALUE*);
+void mrb_gc_unregister_address(VALUE*);
 
-ID rb_intern(const char*);
-ID rb_intern2(const char*, long);
-ID rb_intern_str(VALUE str);
+ID mrb_intern(const char*);
+ID mrb_intern2(const char*, long);
+ID mrb_intern_str(VALUE str);
 const char *rb_id2name(ID);
-ID rb_to_id(VALUE);
-VALUE rb_id2str(ID);
+ID mrb_to_id(VALUE);
+VALUE mrb_id2str(ID);
 
 #define CONST_ID_CACHE(result, str)			\
     {							\
-	static ID rb_intern_id_cache;			\
+	static ID mrb_intern_id_cache;			\
 	if (!rb_intern_id_cache)			\
-	    rb_intern_id_cache = rb_intern2((str), (long)strlen(str)); \
-	result rb_intern_id_cache;			\
+	    mrb_intern_id_cache = mrb_intern2((str), (long)strlen(str)); \
+	result mrb_intern_id_cache;			\
     }
 #define CONST_ID(var, str) \
     do CONST_ID_CACHE((var) =, (str)) while (0)
 #ifdef __GNUC__
 /* __builtin_constant_p and statement expression is available
  * since gcc-2.7.2.3 at least. */
-#define rb_intern(str) \
+#define mrb_intern(str) \
     (__builtin_constant_p(str) ? \
         __extension__ (CONST_ID_CACHE((ID), (str))) : \
-        rb_intern(str))
-#define rb_intern_const(str) \
+        mrb_intern(str))
+#define mrb_intern_const(str) \
     (__builtin_constant_p(str) ? \
      __extension__ (rb_intern2((str), (long)strlen(str))) : \
      (rb_intern)(str))
 #else
-#define rb_intern_const(str) rb_intern2((str), (long)strlen(str))
+#define mrb_intern_const(str) mrb_intern2((str), (long)strlen(str))
 #endif
 
 const char *rb_class2name(VALUE);
 const char *rb_obj_classname(VALUE);
 
-void rb_p(VALUE);
+void mrb_p(VALUE);
 
-VALUE rb_eval_string(const char*);
-VALUE rb_eval_string_protect(const char*, int*);
-VALUE rb_eval_string_wrap(const char*, int*);
-VALUE rb_funcall(VALUE, ID, int, ...);
-VALUE rb_funcall2(VALUE, ID, int, const VALUE*);
-VALUE rb_funcall3(VALUE, ID, int, const VALUE*);
-VALUE rb_funcall_passing_block(VALUE, ID, int, const VALUE*);
-int rb_scan_args(int, const VALUE*, const char*, ...);
-VALUE rb_call_super(int, const VALUE*);
+VALUE mrb_eval_string(const char*);
+VALUE mrb_eval_string_protect(const char*, int*);
+VALUE mrb_eval_string_wrap(const char*, int*);
+VALUE mrb_funcall(VALUE, ID, int, ...);
+VALUE mrb_funcall2(VALUE, ID, int, const VALUE*);
+VALUE mrb_funcall3(VALUE, ID, int, const VALUE*);
+VALUE mrb_funcall_passing_block(VALUE, ID, int, const VALUE*);
+int mrb_scan_args(int, const VALUE*, const char*, ...);
+VALUE mrb_call_super(int, const VALUE*);
 
-VALUE rb_gv_set(const char*, VALUE);
-VALUE rb_gv_get(const char*);
-VALUE rb_iv_get(VALUE, const char*);
-VALUE rb_iv_set(VALUE, const char*, VALUE);
+VALUE mrb_gv_set(const char*, VALUE);
+VALUE mrb_gv_get(const char*);
+VALUE mrb_iv_get(VALUE, const char*);
+VALUE mrb_iv_set(VALUE, const char*, VALUE);
 
-VALUE rb_equal(VALUE,VALUE);
+VALUE mrb_equal(VALUE,VALUE);
 
 VALUE *rb_ruby_verbose_ptr(void);
 VALUE *rb_ruby_debug_ptr(void);
 #define ruby_verbose (*rb_ruby_verbose_ptr())
 #define ruby_debug   (*rb_ruby_debug_ptr())
 
-PRINTF_ARGS(NORETURN(void rb_raise(VALUE, const char*, ...)), 2, 3);
-PRINTF_ARGS(NORETURN(void rb_fatal(const char*, ...)), 1, 2);
-PRINTF_ARGS(NORETURN(void rb_bug(const char*, ...)), 1, 2);
-NORETURN(void rb_bug_errno(const char*, int));
-NORETURN(void rb_sys_fail(const char*));
-NORETURN(void rb_sys_fail_str(VALUE));
-NORETURN(void rb_mod_sys_fail(VALUE, const char*));
-NORETURN(void rb_mod_sys_fail_str(VALUE, VALUE));
-NORETURN(void rb_iter_break(void));
-NORETURN(void rb_exit(int));
-NORETURN(void rb_notimplement(void));
-VALUE rb_syserr_new(int, const char *);
-VALUE rb_syserr_new_str(int n, VALUE arg);
-NORETURN(void rb_syserr_fail(int, const char*));
-NORETURN(void rb_syserr_fail_str(int, VALUE));
-NORETURN(void rb_mod_syserr_fail(VALUE, int, const char*));
-NORETURN(void rb_mod_syserr_fail_str(VALUE, int, VALUE));
+PRINTF_ARGS(NORETURN(void mrb_raise(VALUE, const char*, ...)), 2, 3);
+PRINTF_ARGS(NORETURN(void mrb_fatal(const char*, ...)), 1, 2);
+PRINTF_ARGS(NORETURN(void mrb_bug(const char*, ...)), 1, 2);
+NORETURN(void mrb_bug_errno(const char*, int));
+NORETURN(void mrb_sys_fail(const char*));
+NORETURN(void mrb_sys_fail_str(VALUE));
+NORETURN(void mrb_mod_sys_fail(VALUE, const char*));
+NORETURN(void mrb_mod_sys_fail_str(VALUE, VALUE));
+NORETURN(void mrb_iter_break(void));
+NORETURN(void mrb_exit(int));
+NORETURN(void mrb_notimplement(void));
+VALUE mrb_syserr_new(int, const char *);
+VALUE mrb_syserr_new_str(int n, VALUE arg);
+NORETURN(void mrb_syserr_fail(int, const char*));
+NORETURN(void mrb_syserr_fail_str(int, VALUE));
+NORETURN(void mrb_mod_syserr_fail(VALUE, int, const char*));
+NORETURN(void mrb_mod_syserr_fail_str(VALUE, int, VALUE));
 
 /* reports if `-W' specified */
-PRINTF_ARGS(void rb_warning(const char*, ...), 1, 2);
-PRINTF_ARGS(void rb_compile_warning(const char *, int, const char*, ...), 3, 4);
-PRINTF_ARGS(void rb_sys_warning(const char*, ...), 1, 2);
+PRINTF_ARGS(void mrb_warning(const char*, ...), 1, 2);
+PRINTF_ARGS(void mrb_compile_warning(const char *, int, const char*, ...), 3, 4);
+PRINTF_ARGS(void mrb_sys_warning(const char*, ...), 1, 2);
 /* reports always */
-PRINTF_ARGS(void rb_warn(const char*, ...), 1, 2);
-PRINTF_ARGS(void rb_compile_warn(const char *, int, const char*, ...), 3, 4);
+PRINTF_ARGS(void mrb_warn(const char*, ...), 1, 2);
+PRINTF_ARGS(void mrb_compile_warn(const char *, int, const char*, ...), 3, 4);
 
-typedef VALUE rb_block_call_func(VALUE, VALUE, int, VALUE*);
+typedef VALUE mrb_block_call_func(VALUE, VALUE, int, VALUE*);
 
-VALUE rb_each(VALUE);
-VALUE rb_yield(VALUE);
-VALUE rb_yield_values(int n, ...);
-VALUE rb_yield_values2(int n, const VALUE *argv);
-VALUE rb_yield_splat(VALUE);
-int rb_block_given_p(void);
-void rb_need_block(void);
-VALUE rb_iterate(VALUE(*)(VALUE),VALUE,VALUE(*)(ANYARGS),VALUE);
-VALUE rb_block_call(VALUE,ID,int,VALUE*,VALUE(*)(ANYARGS),VALUE);
-VALUE rb_rescue(VALUE(*)(ANYARGS),VALUE,VALUE(*)(ANYARGS),VALUE);
-VALUE rb_rescue2(VALUE(*)(ANYARGS),VALUE,VALUE(*)(ANYARGS),VALUE,...);
-VALUE rb_ensure(VALUE(*)(ANYARGS),VALUE,VALUE(*)(ANYARGS),VALUE);
-VALUE rb_catch(const char*,VALUE(*)(ANYARGS),VALUE);
-VALUE rb_catch_obj(VALUE,VALUE(*)(ANYARGS),VALUE);
-NORETURN(void rb_throw(const char*,VALUE));
-NORETURN(void rb_throw_obj(VALUE,VALUE));
+VALUE mrb_each(VALUE);
+VALUE mrb_yield(VALUE);
+VALUE mrb_yield_values(int n, ...);
+VALUE mrb_yield_values2(int n, const VALUE *argv);
+VALUE mrb_yield_splat(VALUE);
+int mrb_block_given_p(void);
+void mrb_need_block(void);
+VALUE mrb_iterate(VALUE(*)(VALUE),VALUE,VALUE(*)(ANYARGS),VALUE);
+VALUE mrb_block_call(VALUE,ID,int,VALUE*,VALUE(*)(ANYARGS),VALUE);
+VALUE mrb_rescue(VALUE(*)(ANYARGS),VALUE,VALUE(*)(ANYARGS),VALUE);
+VALUE mrb_rescue2(VALUE(*)(ANYARGS),VALUE,VALUE(*)(ANYARGS),VALUE,...);
+VALUE mrb_ensure(VALUE(*)(ANYARGS),VALUE,VALUE(*)(ANYARGS),VALUE);
+VALUE mrb_catch(const char*,VALUE(*)(ANYARGS),VALUE);
+VALUE mrb_catch_obj(VALUE,VALUE(*)(ANYARGS),VALUE);
+NORETURN(void mrb_throw(const char*,VALUE));
+NORETURN(void mrb_throw_obj(VALUE,VALUE));
 
-VALUE rb_require(const char*);
+VALUE mrb_require(const char*);
 
 #ifdef __ia64
 void ruby_init_stack(volatile VALUE*, void*);
-#define ruby_init_stack(addr) ruby_init_stack((addr), rb_ia64_bsp())
+#define ruby_init_stack(addr) ruby_init_stack((addr), mrb_ia64_bsp())
 #else
 void ruby_init_stack(volatile VALUE*);
 #endif
@@ -1181,105 +1181,105 @@ int ruby_exec_node(void *);
 int ruby_executable_node(void *n, int *status);
 
 /*
-RUBY_EXTERN VALUE rb_mKernel;
-RUBY_EXTERN VALUE rb_mComparable;
-RUBY_EXTERN VALUE rb_mEnumerable;
-RUBY_EXTERN VALUE rb_mErrno;
-RUBY_EXTERN VALUE rb_mFileTest;
-RUBY_EXTERN VALUE rb_mGC;
-RUBY_EXTERN VALUE rb_mMath;
-RUBY_EXTERN VALUE rb_mProcess;
-RUBY_EXTERN VALUE rb_mWaitReadable;
-RUBY_EXTERN VALUE rb_mWaitWritable;
+RUBY_EXTERN VALUE mrb_mKernel;
+RUBY_EXTERN VALUE mrb_mComparable;
+RUBY_EXTERN VALUE mrb_mEnumerable;
+RUBY_EXTERN VALUE mrb_mErrno;
+RUBY_EXTERN VALUE mrb_mFileTest;
+RUBY_EXTERN VALUE mrb_mGC;
+RUBY_EXTERN VALUE mrb_mMath;
+RUBY_EXTERN VALUE mrb_mProcess;
+RUBY_EXTERN VALUE mrb_mWaitReadable;
+RUBY_EXTERN VALUE mrb_mWaitWritable;
 
-RUBY_EXTERN VALUE rb_cBasicObject;
-RUBY_EXTERN VALUE rb_cObject;
-RUBY_EXTERN VALUE rb_cArray;
-RUBY_EXTERN VALUE rb_cBignum;
-RUBY_EXTERN VALUE rb_cBinding;
-RUBY_EXTERN VALUE rb_cClass;
-RUBY_EXTERN VALUE rb_cCont;
-RUBY_EXTERN VALUE rb_cDir;
-RUBY_EXTERN VALUE rb_cData;
-RUBY_EXTERN VALUE rb_cFalseClass;
-RUBY_EXTERN VALUE rb_cEncoding;
-RUBY_EXTERN VALUE rb_cEnumerator;
-RUBY_EXTERN VALUE rb_cFile;
-RUBY_EXTERN VALUE rb_cFixnum;
-RUBY_EXTERN VALUE rb_cFloat;
-RUBY_EXTERN VALUE rb_cHash;
-RUBY_EXTERN VALUE rb_cInteger;
-RUBY_EXTERN VALUE rb_cIO;
-RUBY_EXTERN VALUE rb_cMatch;
-RUBY_EXTERN VALUE rb_cMethod;
-RUBY_EXTERN VALUE rb_cModule;
-RUBY_EXTERN VALUE rb_cNameErrorMesg;
-RUBY_EXTERN VALUE rb_cNilClass;
-RUBY_EXTERN VALUE rb_cNumeric;
-RUBY_EXTERN VALUE rb_cProc;
-RUBY_EXTERN VALUE rb_cRandom;
-RUBY_EXTERN VALUE rb_cRange;
-RUBY_EXTERN VALUE rb_cRational;
-RUBY_EXTERN VALUE rb_cComplex;
-RUBY_EXTERN VALUE rb_cRegexp;
-RUBY_EXTERN VALUE rb_cStat;
-RUBY_EXTERN VALUE rb_cString;
-RUBY_EXTERN VALUE rb_cStruct;
-RUBY_EXTERN VALUE rb_cSymbol;
-RUBY_EXTERN VALUE rb_cThread;
-RUBY_EXTERN VALUE rb_cTime;
-RUBY_EXTERN VALUE rb_cTrueClass;
-RUBY_EXTERN VALUE rb_cUnboundMethod;
+RUBY_EXTERN VALUE mrb_cBasicObject;
+RUBY_EXTERN VALUE mrb_cObject;
+RUBY_EXTERN VALUE mrb_cArray;
+RUBY_EXTERN VALUE mrb_cBignum;
+RUBY_EXTERN VALUE mrb_cBinding;
+RUBY_EXTERN VALUE mrb_cClass;
+RUBY_EXTERN VALUE mrb_cCont;
+RUBY_EXTERN VALUE mrb_cDir;
+RUBY_EXTERN VALUE mrb_cData;
+RUBY_EXTERN VALUE mrb_cFalseClass;
+RUBY_EXTERN VALUE mrb_cEncoding;
+RUBY_EXTERN VALUE mrb_cEnumerator;
+RUBY_EXTERN VALUE mrb_cFile;
+RUBY_EXTERN VALUE mrb_cFixnum;
+RUBY_EXTERN VALUE mrb_cFloat;
+RUBY_EXTERN VALUE mrb_cHash;
+RUBY_EXTERN VALUE mrb_cInteger;
+RUBY_EXTERN VALUE mrb_cIO;
+RUBY_EXTERN VALUE mrb_cMatch;
+RUBY_EXTERN VALUE mrb_cMethod;
+RUBY_EXTERN VALUE mrb_cModule;
+RUBY_EXTERN VALUE mrb_cNameErrorMesg;
+RUBY_EXTERN VALUE mrb_cNilClass;
+RUBY_EXTERN VALUE mrb_cNumeric;
+RUBY_EXTERN VALUE mrb_cProc;
+RUBY_EXTERN VALUE mrb_cRandom;
+RUBY_EXTERN VALUE mrb_cRange;
+RUBY_EXTERN VALUE mrb_cRational;
+RUBY_EXTERN VALUE mrb_cComplex;
+RUBY_EXTERN VALUE mrb_cRegexp;
+RUBY_EXTERN VALUE mrb_cStat;
+RUBY_EXTERN VALUE mrb_cString;
+RUBY_EXTERN VALUE mrb_cStruct;
+RUBY_EXTERN VALUE mrb_cSymbol;
+RUBY_EXTERN VALUE mrb_cThread;
+RUBY_EXTERN VALUE mrb_cTime;
+RUBY_EXTERN VALUE mrb_cTrueClass;
+RUBY_EXTERN VALUE mrb_cUnboundMethod;
 
-RUBY_EXTERN VALUE rb_eException;
-RUBY_EXTERN VALUE rb_eStandardError;
-RUBY_EXTERN VALUE rb_eSystemExit;
-RUBY_EXTERN VALUE rb_eInterrupt;
-RUBY_EXTERN VALUE rb_eSignal;
-RUBY_EXTERN VALUE rb_eFatal;
-RUBY_EXTERN VALUE rb_eArgError;
-RUBY_EXTERN VALUE rb_eEOFError;
-RUBY_EXTERN VALUE rb_eIndexError;
-RUBY_EXTERN VALUE rb_eStopIteration;
-RUBY_EXTERN VALUE rb_eKeyError;
-RUBY_EXTERN VALUE rb_eRangeError;
-RUBY_EXTERN VALUE rb_eIOError;
-RUBY_EXTERN VALUE rb_eRuntimeError;
-RUBY_EXTERN VALUE rb_eSecurityError;
-RUBY_EXTERN VALUE rb_eSystemCallError;
-RUBY_EXTERN VALUE rb_eThreadError;
-RUBY_EXTERN VALUE rb_eTypeError;
-RUBY_EXTERN VALUE rb_eZeroDivError;
-RUBY_EXTERN VALUE rb_eNotImpError;
-RUBY_EXTERN VALUE rb_eNoMemError;
-RUBY_EXTERN VALUE rb_eNoMethodError;
-RUBY_EXTERN VALUE rb_eFloatDomainError;
-RUBY_EXTERN VALUE rb_eLocalJumpError;
-RUBY_EXTERN VALUE rb_eSysStackError;
-RUBY_EXTERN VALUE rb_eRegexpError;
-RUBY_EXTERN VALUE rb_eEncodingError;
-RUBY_EXTERN VALUE rb_eEncCompatError;
+RUBY_EXTERN VALUE mrb_eException;
+RUBY_EXTERN VALUE mrb_eStandardError;
+RUBY_EXTERN VALUE mrb_eSystemExit;
+RUBY_EXTERN VALUE mrb_eInterrupt;
+RUBY_EXTERN VALUE mrb_eSignal;
+RUBY_EXTERN VALUE mrb_eFatal;
+RUBY_EXTERN VALUE mrb_eArgError;
+RUBY_EXTERN VALUE mrb_eEOFError;
+RUBY_EXTERN VALUE mrb_eIndexError;
+RUBY_EXTERN VALUE mrb_eStopIteration;
+RUBY_EXTERN VALUE mrb_eKeyError;
+RUBY_EXTERN VALUE mrb_eRangeError;
+RUBY_EXTERN VALUE mrb_eIOError;
+RUBY_EXTERN VALUE mrb_eRuntimeError;
+RUBY_EXTERN VALUE mrb_eSecurityError;
+RUBY_EXTERN VALUE mrb_eSystemCallError;
+RUBY_EXTERN VALUE mrb_eThreadError;
+RUBY_EXTERN VALUE mrb_eTypeError;
+RUBY_EXTERN VALUE mrb_eZeroDivError;
+RUBY_EXTERN VALUE mrb_eNotImpError;
+RUBY_EXTERN VALUE mrb_eNoMemError;
+RUBY_EXTERN VALUE mrb_eNoMethodError;
+RUBY_EXTERN VALUE mrb_eFloatDomainError;
+RUBY_EXTERN VALUE mrb_eLocalJumpError;
+RUBY_EXTERN VALUE mrb_eSysStackError;
+RUBY_EXTERN VALUE mrb_eRegexpError;
+RUBY_EXTERN VALUE mrb_eEncodingError;
+RUBY_EXTERN VALUE mrb_eEncCompatError;
 
-RUBY_EXTERN VALUE rb_eScriptError;
-RUBY_EXTERN VALUE rb_eNameError;
-RUBY_EXTERN VALUE rb_eSyntaxError;
-RUBY_EXTERN VALUE rb_eLoadError;
+RUBY_EXTERN VALUE mrb_eScriptError;
+RUBY_EXTERN VALUE mrb_eNameError;
+RUBY_EXTERN VALUE mrb_eSyntaxError;
+RUBY_EXTERN VALUE mrb_eLoadError;
 
-RUBY_EXTERN VALUE rb_eMathDomainError;
+RUBY_EXTERN VALUE mrb_eMathDomainError;
 
-RUBY_EXTERN VALUE rb_stdin, rb_stdout, rb_stderr;
+RUBY_EXTERN VALUE mrb_stdin, mrb_stdout, mrb_stderr;
 
 static inline VALUE
 rb_class_of(VALUE obj)
 {
     if (IMMEDIATE_P(obj)) {
-	if (FIXNUM_P(obj)) return rb_cFixnum;
-	if (obj == Qtrue)  return rb_cTrueClass;
-	if (SYMBOL_P(obj)) return rb_cSymbol;
+	if (FIXNUM_P(obj)) return mrb_cFixnum;
+	if (obj == Qtrue)  return mrb_cTrueClass;
+	if (SYMBOL_P(obj)) return mrb_cSymbol;
     }
     else if (!RTEST(obj)) {
-	if (obj == Qnil)   return rb_cNilClass;
-	if (obj == Qfalse) return rb_cFalseClass;
+	if (obj == Qnil)   return mrb_cNilClass;
+	if (obj == Qfalse) return mrb_cFalseClass;
     }
     return mrb_basic(obj)->klass;
 }
@@ -1300,7 +1300,7 @@ rb_type(VALUE obj)
     return BUILTIN_TYPE(obj);
 }
 
-#define RB_TYPE_P(obj, type) ( \
+#define mrb_TYPE_P(obj, type) ( \
 	((type) == T_FIXNUM) ? FIXNUM_P(obj) : \
 	((type) == T_TRUE) ? ((obj) == Qtrue) : \
 	((type) == T_FALSE) ? ((obj) == Qfalse) : \
@@ -1310,15 +1310,15 @@ rb_type(VALUE obj)
 	(!SPECIAL_CONST_P(obj) && BUILTIN_TYPE(obj) == (type)))
 
 #ifdef __GNUC__
-#define rb_type_p(obj, type) \
-    __extension__ (__builtin_constant_p(type) ? RB_TYPE_P((obj), (type)) : \
-		   rb_type(obj) == (type))
+#define mrb_type_p(obj, type) \
+    __extension__ (__builtin_constant_p(type) ? mrb_TYPE_P((obj), (type)) : \
+		   mrb_type(obj) == (type))
 #else
-#define rb_type_p(obj, type) (rb_type(obj) == (type))
+#define mrb_type_p(obj, type) (rb_type(obj) == (type))
 #endif
 
 #ifdef __GNUC__
-#define rb_special_const_p(obj) \
+#define mrb_special_const_p(obj) \
     __extension__ ({VALUE special_const_obj = (obj); (int)(SPECIAL_CONST_P(special_const_obj) ? Qtrue : Qfalse);})
 #else
 static inline int
@@ -1363,50 +1363,50 @@ int ruby_native_thread_p(void);
 #define RUBY_EVENT_SWITCH   0x20000
 #define RUBY_EVENT_COVERAGE 0x40000
 
-typedef unsigned int rb_event_flag_t;
+typedef unsigned int mrb_event_flag_t;
 typedef void (*rb_event_hook_func_t)(rb_event_flag_t, VALUE data, VALUE, ID, VALUE klass);
 
-typedef struct rb_event_hook_struct {
-    rb_event_flag_t flag;
-    rb_event_hook_func_t func;
+typedef struct mrb_event_hook_struct {
+    mrb_event_flag_t flag;
+    mrb_event_hook_func_t func;
     VALUE data;
-    struct rb_event_hook_struct *next;
-} rb_event_hook_t;
+    struct mrb_event_hook_struct *next;
+} mrb_event_hook_t;
 
-#define RB_EVENT_HOOKS_HAVE_CALLBACK_DATA 1
-void rb_add_event_hook(rb_event_hook_func_t func, rb_event_flag_t events,
+#define mrb_EVENT_HOOKS_HAVE_CALLBACK_DATA 1
+void mrb_add_event_hook(rb_event_hook_func_t func, mrb_event_flag_t events,
 		       VALUE data);
-int rb_remove_event_hook(rb_event_hook_func_t func);
+int mrb_remove_event_hook(rb_event_hook_func_t func);
 
 /* locale insensitive functions */
 
-#define rb_isascii(c) ((unsigned long)(c) < 128)
-int rb_isalnum(int c);
-int rb_isalpha(int c);
-int rb_isblank(int c);
-int rb_iscntrl(int c);
-int rb_isdigit(int c);
-int rb_isgraph(int c);
-int rb_islower(int c);
-int rb_isprint(int c);
-int rb_ispunct(int c);
-int rb_isspace(int c);
-int rb_isupper(int c);
-int rb_isxdigit(int c);
-int rb_tolower(int c);
-int rb_toupper(int c);
+#define mrb_isascii(c) ((unsigned long)(c) < 128)
+int mrb_isalnum(int c);
+int mrb_isalpha(int c);
+int mrb_isblank(int c);
+int mrb_iscntrl(int c);
+int mrb_isdigit(int c);
+int mrb_isgraph(int c);
+int mrb_islower(int c);
+int mrb_isprint(int c);
+int mrb_ispunct(int c);
+int mrb_isspace(int c);
+int mrb_isupper(int c);
+int mrb_isxdigit(int c);
+int mrb_tolower(int c);
+int mrb_toupper(int c);
 
 #ifndef ISPRINT
-#define ISASCII(c) rb_isascii((unsigned char)(c))
+#define ISASCII(c) mrb_isascii((unsigned char)(c))
 #undef ISPRINT
-#define ISPRINT(c) rb_isprint((unsigned char)(c))
-#define ISSPACE(c) rb_isspace((unsigned char)(c))
-#define ISUPPER(c) rb_isupper((unsigned char)(c))
-#define ISLOWER(c) rb_islower((unsigned char)(c))
-#define ISALNUM(c) rb_isalnum((unsigned char)(c))
-#define ISALPHA(c) rb_isalpha((unsigned char)(c))
-#define ISDIGIT(c) rb_isdigit((unsigned char)(c))
-#define ISXDIGIT(c) rb_isxdigit((unsigned char)(c))
+#define ISPRINT(c) mrb_isprint((unsigned char)(c))
+#define ISSPACE(c) mrb_isspace((unsigned char)(c))
+#define ISUPPER(c) mrb_isupper((unsigned char)(c))
+#define ISLOWER(c) mrb_islower((unsigned char)(c))
+#define ISALNUM(c) mrb_isalnum((unsigned char)(c))
+#define ISALPHA(c) mrb_isalpha((unsigned char)(c))
+#define ISDIGIT(c) mrb_isdigit((unsigned char)(c))
+#define ISXDIGIT(c) mrb_isxdigit((unsigned char)(c))
 #endif
 
 int st_strcasecmp(const char *s1, const char *s2);
