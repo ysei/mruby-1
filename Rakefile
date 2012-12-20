@@ -11,8 +11,9 @@ MAKE = ENV['MAKE'] || 'make'
 # mruby source root path
 MRUBY_ROOT = ENV['MRUBY_ROOT'] || File.expand_path(File.dirname(__FILE__))
 
+ENV['ENABLE_GEMS'] = 'true'
 # by default GEMs are deactivated
-ENABLE_GEMS = true
+ENABLE_GEMS = ENV['ENABLE_GEMS'] == 'true'
 
 # the default file which contains the active GEMs
 ACTIVE_GEMS = File.join(File.dirname(__FILE__), 'mrbgems', 'GEMS.active')
