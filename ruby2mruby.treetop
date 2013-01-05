@@ -1,0 +1,22 @@
+#ruby2mruby.treetop
+grammar Translation
+	rule fun
+   		f '(' argds ')'
+	end
+
+	rule argds
+	   	(argd ',')* arg
+	end
+
+	rule argd
+		 sym  sym
+	end
+
+	rule f
+		 sym
+	end
+
+	rule sym
+		 [\w?!]+
+	end#
+end

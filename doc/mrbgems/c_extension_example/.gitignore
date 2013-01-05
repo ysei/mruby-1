@@ -1,3 +1,5 @@
-gem_srclib.c
-*.ctmp
-*.rbtmp
+# mrbgems
+*.d
+gem_init.c
+gem_test.c
+

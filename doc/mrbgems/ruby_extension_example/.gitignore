@@ -1,3 +1,4 @@
-gem_mrblib.c
-*.ctmp
-*.rbtmp
+# mrbgems
+*.d
+gem_init.c
+gem_test.c

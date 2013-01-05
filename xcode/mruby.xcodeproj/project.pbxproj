@@ -77,9 +77,6 @@
 		88760B9F1576A4A200113BFB /* mrblib.c in Sources */ = {isa = PBXBuildFile; fileRef = 88760B1C15769CEE00113BFB /* mrblib.c */; };
 		88760BA01576A4A700113BFB /* libmruby_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88760B1715769BE400113BFB /* libmruby_core.a */; };
 		A5A01495165BF247000CAFED /* gvar.c in Sources */ = {isa = PBXBuildFile; fileRef = A5A01494165BF247000CAFED /* gvar.c */; };
-		A5A0E8AC168117B100C8DC55 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A5A0E8A4168117B100C8DC55 /* Makefile */; };
-		A5A0E8AD168117B100C8DC55 /* io.c in Sources */ = {isa = PBXBuildFile; fileRef = A5A0E8A9168117B100C8DC55 /* io.c */; };
-		A5A0E8B016811C5D00C8DC55 /* io.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A0E8AF16811C5D00C8DC55 /* io.h */; };
 		A5B75CCD16563FB400000282 /* ascii.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B75CC816563FB300000282 /* ascii.c */; };
 		A5B75CCE16563FB400000282 /* encoding.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B75CC916563FB300000282 /* encoding.c */; };
 		A5B75CCF16563FB400000282 /* unicode.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B75CCA16563FB300000282 /* unicode.c */; };
@@ -300,12 +297,8 @@
 		88EDC30215757CB40098CF0D /* y.tab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = y.tab.c; sourceTree = "<group>"; };
 		A5A01494165BF247000CAFED /* gvar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = gvar.c; sourceTree = "<group>"; };
 		A5A01497165BF272000CAFED /* gvar.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = gvar.rb; sourceTree = "<group>"; };
-		A5A0E8A4168117B100C8DC55 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		A5A0E8A6168117B100C8DC55 /* example.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = example.rb; sourceTree = "<group>"; };
-		A5A0E8A7168117B100C8DC55 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		A5A0E8A9168117B100C8DC55 /* io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = io.c; sourceTree = "<group>"; };
-		A5A0E8AB168117B100C8DC55 /* example.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = example.rb; sourceTree = "<group>"; };
-		A5A0E8AF16811C5D00C8DC55 /* io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = io.h; sourceTree = "<group>"; };
+		A5A0E8C116988F3F00C8DC55 /* mrbgem.rake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mrbgem.rake; sourceTree = "<group>"; };
+		A5A0E8C21698903700C8DC55 /* build_config.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = build_config.rb; sourceTree = "<group>"; };
 		A5B75CC816563FB300000282 /* ascii.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ascii.c; sourceTree = "<group>"; };
 		A5B75CC916563FB300000282 /* encoding.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = encoding.c; sourceTree = "<group>"; };
 		A5B75CCA16563FB300000282 /* unicode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unicode.c; sourceTree = "<group>"; };
@@ -532,6 +525,7 @@
 				8844353B1576F1A3007F95A4 /* libmruby_core.a */,
 				8844353C1576F1A3007F95A4 /* mrbc */,
 				8844358F1577301B007F95A4 /* mrbtest */,
+				A5A0E8C21698903700C8DC55 /* build_config.rb */,
 				8844353E1576F1A3007F95A4 /* libmruby.a */,
 				8844353F1576F1A3007F95A4 /* mruby.framework */,
 				A5B83F2A16775BEC00FAE4D4 /* libfile.a */,
@@ -710,43 +704,6 @@
 			path = ../mrblib;
 			sourceTree = "<group>";
 		};
-		A5A0E8A3168117B100C8DC55 /* io */ = {
-			isa = PBXGroup;
-			children = (
-				A5A0E8A4168117B100C8DC55 /* Makefile */,
-				A5A0E8A5168117B100C8DC55 /* mrblib */,
-				A5A0E8A7168117B100C8DC55 /* README.md */,
-				A5A0E8A8168117B100C8DC55 /* src */,
-				A5A0E8AA168117B100C8DC55 /* test */,
-			);
-			path = io;
-			sourceTree = "<group>";
-		};
-		A5A0E8A5168117B100C8DC55 /* mrblib */ = {
-			isa = PBXGroup;
-			children = (
-				A5A0E8A6168117B100C8DC55 /* example.rb */,
-			);
-			path = mrblib;
-			sourceTree = "<group>";
-		};
-		A5A0E8A8168117B100C8DC55 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				A5A0E8AF16811C5D00C8DC55 /* io.h */,
-				A5A0E8A9168117B100C8DC55 /* io.c */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		A5A0E8AA168117B100C8DC55 /* test */ = {
-			isa = PBXGroup;
-			children = (
-				A5A0E8AB168117B100C8DC55 /* example.rb */,
-			);
-			path = test;
-			sourceTree = "<group>";
-		};
 		A5B83F3816785DA800FAE4D4 /* bignum */ = {
 			isa = PBXGroup;
 			children = (
@@ -800,7 +757,6 @@
 		A5D472B1165F663F00CAE96A /* g */ = {
 			isa = PBXGroup;
 			children = (
-				A5A0E8A3168117B100C8DC55 /* io */,
 				A5B83F3816785DA800FAE4D4 /* bignum */,
 				A5D4F9DC16726119007B9C7C /* require */,
 				A5D4F2DE16725BA0007B9C7C /* c_and_ruby_extension_example */,
@@ -833,6 +789,7 @@
 		A5D472BD165FFBD100CAE96A /* c_and_ruby_extension_example */ = {
 			isa = PBXGroup;
 			children = (
+				A5A0E8C116988F3F00C8DC55 /* mrbgem.rake */,
 				A5D472BE165FFBD100CAE96A /* Makefile */,
 				A5D472BF165FFBD100CAE96A /* mrblib */,
 				A5D472C1165FFBD100CAE96A /* README.md */,
@@ -1009,7 +966,6 @@
 			files = (
 				A5B75CD61656439600000282 /* value.h in Headers */,
 				A5B83F441678645600FAE4D4 /* mriruby.h in Headers */,
-				A5A0E8B016811C5D00C8DC55 /* io.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1380,8 +1336,6 @@
 				A5B83F4116785DA800FAE4D4 /* Makefile in Sources */,
 				A5B83F4216785DA800FAE4D4 /* bignum.c in Sources */,
 				A5B83F47167B021800FAE4D4 /* util.c in Sources */,
-				A5A0E8AC168117B100C8DC55 /* Makefile in Sources */,
-				A5A0E8AD168117B100C8DC55 /* io.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

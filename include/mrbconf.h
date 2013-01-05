@@ -124,6 +124,9 @@ typedef short mrb_sym;
 #ifndef DISABLE_BIGNUM
 #define ENABLE_BIGNUM
 #endif
+#ifndef DISABLE_REQUIRE
+#define ENABLE_REQUIRE
+#endif
 
 #ifndef FALSE
 # define FALSE 0
