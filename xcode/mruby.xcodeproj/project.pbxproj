@@ -90,8 +90,6 @@
 		A5B83F4216785DA800FAE4D4 /* bignum.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B83F3E16785DA800FAE4D4 /* bignum.c */; };
 		A5B83F441678645600FAE4D4 /* mriruby.h in Headers */ = {isa = PBXBuildFile; fileRef = A5B83F431678645600FAE4D4 /* mriruby.h */; };
 		A5B83F47167B021800FAE4D4 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B83F46167B021800FAE4D4 /* util.c */; };
-		A5D472B7165F663F00CAE96A /* generator.c in Sources */ = {isa = PBXBuildFile; fileRef = A5D472B4165F663F00CAE96A /* generator.c */; };
-		A5D472B8165F663F00CAE96A /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A5D472B5165F663F00CAE96A /* Makefile */; };
 		A5D472D5165FFBD100CAE96A /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A5D472BE165FFBD100CAE96A /* Makefile */; };
 		A5D472D6165FFBD100CAE96A /* example.c in Sources */ = {isa = PBXBuildFile; fileRef = A5D472C3165FFBD100CAE96A /* example.c */; };
 		A5D472D7165FFBD100CAE96A /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A5D472C7165FFBD100CAE96A /* Makefile */; };
@@ -315,11 +313,6 @@
 		A5B83F451678F1FD00FAE4D4 /* bignum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bignum.h; sourceTree = "<group>"; };
 		A5B83F46167B021800FAE4D4 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
 		A5B83F48167B032B00FAE4D4 /* util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
-		A5D472B2165F663F00CAE96A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		A5D472B3165F663F00CAE96A /* GEMS.active */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GEMS.active; sourceTree = "<group>"; };
-		A5D472B4165F663F00CAE96A /* generator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = generator.c; sourceTree = "<group>"; };
-		A5D472B5165F663F00CAE96A /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		A5D472B6165F663F00CAE96A /* Makefile4gem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile4gem; sourceTree = "<group>"; };
 		A5D472BB165FFBD100CAE96A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		A5D472BE165FFBD100CAE96A /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		A5D472C0165FFBD100CAE96A /* example.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = example.rb; sourceTree = "<group>"; };
@@ -745,10 +738,6 @@
 			isa = PBXGroup;
 			children = (
 				A5D472B1165F663F00CAE96A /* g */,
-				A5D472B3165F663F00CAE96A /* GEMS.active */,
-				A5D472B4165F663F00CAE96A /* generator.c */,
-				A5D472B5165F663F00CAE96A /* Makefile */,
-				A5D472B6165F663F00CAE96A /* Makefile4gem */,
 			);
 			name = mrbgems;
 			path = ../mrbgems;
@@ -760,7 +749,6 @@
 				A5B83F3816785DA800FAE4D4 /* bignum */,
 				A5D4F9DC16726119007B9C7C /* require */,
 				A5D4F2DE16725BA0007B9C7C /* c_and_ruby_extension_example */,
-				A5D472B2165F663F00CAE96A /* .gitignore */,
 			);
 			path = g;
 			sourceTree = "<group>";
@@ -1320,8 +1308,6 @@
 				A5B75CD016563FB400000282 /* us_ascii.c in Sources */,
 				A5B75CD116563FB400000282 /* utf_8.c in Sources */,
 				A5A01495165BF247000CAFED /* gvar.c in Sources */,
-				A5D472B7165F663F00CAE96A /* generator.c in Sources */,
-				A5D472B8165F663F00CAE96A /* Makefile in Sources */,
 				A5D472D5165FFBD100CAE96A /* Makefile in Sources */,
 				A5D472D6165FFBD100CAE96A /* example.c in Sources */,
 				A5D472D7165FFBD100CAE96A /* Makefile in Sources */,
