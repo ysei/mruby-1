@@ -1,5 +1,5 @@
 #require 'plist'
-require 'urlu.rb'
+load 'urlu.rb'
 class Text
     def initialize(name)
         @name = name

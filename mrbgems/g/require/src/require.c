@@ -100,8 +100,44 @@ replace_stop_with_return(mrb_state *mrb, mrb_irep *irep)
     }
 }
 
+
 static void
 load_file(mrb_state *mrb, mrb_value filename)
+{
+    FILE *fp;
+    mrb_value str, ret;
+    mrbc_context *c;
+    int arena_idx;
+    
+    arena_idx = mrb_gc_arena_save(mrb);
+    str = mrb_str_new(mrb, RSTRING_PTR(filename), RSTRING_LEN(filename));
+    c = mrbc_context_new(mrb);
+    c->capture_errors = 1;
+    c->no_exec = 1;
+    mrbc_filename(mrb, c, RSTRING_PTR(str));
+    
+    fp = fopen(c->filename, "r");
+    if (!fp) {
+        mrbc_context_free(mrb, c);
+        mrb_raisef(mrb, E_LOAD_ERROR, "file '%s' not found.", RSTRING_PTR(str));
+    }
+    ret = mrb_load_file_cxt(mrb, fp, c);
+    fclose(fp);
+    mrbc_context_free(mrb, c);
+    mrb_gc_arena_restore(mrb, arena_idx);
+    
+    if (mrb_fixnum_p(ret)) {
+        mrb_run_irep_as_proc(mrb, mrb->irep[mrb_fixnum(ret)]);
+    }
+    else if (mrb->exc) {
+        // fail to load.
+        longjmp(*(jmp_buf*)mrb->jmp, 1);
+    }
+
+}
+
+static void
+load_file1(mrb_state *mrb, mrb_value filename)
 {
     mrb_value str;
     int arena_idx;
@@ -109,18 +145,25 @@ load_file(mrb_state *mrb, mrb_value filename)
     void *dlh;
     const char *data;
     
+    
     arena_idx = mrb_gc_arena_save(mrb);
     str = mrb_str_new_cstr(mrb, "data_");
     mrb_str_concat(mrb, str, mrb_str_new(mrb, RSTRING_PTR(filename), RSTRING_LEN(filename) - 3));
-    
-    dlh = dlopen(NULL, RTLD_LAZY);
+    //dlh = dlopen(RSTRING_PTR(filename), RTLD_LAZY);
+    dlh = fopen(RSTRING_PTR(filename), "r");
+    if(dlh == NULL) {
+        mrb_raisef(mrb, E_SCRIPT_ERROR, "unable to open '%s' ", RSTRING_PTR(filename));
+    }
+    /*
     data = (const char *)dlsym(dlh, RSTRING_PTR(str));
-    
+       
     if (!data) {
         dlclose(dlh);
         mrb_raisef(mrb, E_SCRIPT_ERROR, "file '%s' not found.", RSTRING_PTR(str));
     }
-    n = mrb_read_irep(mrb, data);
+    n = mrb_read_irep(mrb, data);*/
+    n = mrb_read_irep(mrb, dlh);
+    fprintf(stderr,"n = %ud\n",n);
     dlclose(dlh);
     
     mrb_gc_arena_restore(mrb, arena_idx);
