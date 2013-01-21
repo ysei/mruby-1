@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Debug mirb.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>build using make.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>commands.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>file.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>framework.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>libraries.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>8844358E1577301B007F95A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88760A8A157590F000113BFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88760AA115759B4F00113BFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88760AE415759EFE00113BFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88760B2315769E6100113BFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88760B3215769F3000113BFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88760B731576A33100113BFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5B83F2916775BEC00FAE4D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
